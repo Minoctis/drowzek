@@ -1,4 +1,4 @@
-@extends('layouts.front')
+
 
 @section('nav')
 
