@@ -1,5 +1,3 @@
-
-
 @section('nav')
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
