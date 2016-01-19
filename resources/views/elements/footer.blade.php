@@ -1,12 +1,12 @@
 @section('footer')
 <footer class="navbar navbar-default">
 	<div class="container">
-		<div class="row">
+		<div class="row reseaux">
 			<div class="col-lg-12">
 				RETROUVEZ NOUS AUSSI SUR :
 			</div>
 		</div>	
-		<div class="row">
+		<div class="row reseaux">
 			<div class="col-lg-offset-3 col-lg-1">
 				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				NOS SERVICES<br /><br />
 				LIVRAISON<br />
 				FINANCEMENT<br />
@@ -44,11 +44,13 @@
 				nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
 				officia deserunt mollit anim id est laborum.
 			</div>
-			<div class="col-lg-1">
+			<div class="col-lg-offset-1 col-lg-3">
 				LOGO
 			</div>
 		</div>
-		<div class="row">
+	</div>
+	<div class="row mentions">
+		<div class="container">
 			<div class="col-lg-12">
 				CONTACT | POLITIQUE DE CONFIDENTIALITÉ | MENTIONS LÉGALES | PLAN DU SITE
 			</div>
