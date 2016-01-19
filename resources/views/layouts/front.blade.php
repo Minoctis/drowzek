@@ -12,14 +12,15 @@
     
     <body>
         <div class="homepage">
+            @yield('nav')
             <div class="container">
-                <nav class="navbar navbar-inverse navbar-fixed-top">
-                    <!-- Navbar Contents -->
-                    test
-                </nav>
+                
             </div>
 
             @yield('content')
+            
+            
+            @yield('footer')
         </div>
     </body>
 </html>

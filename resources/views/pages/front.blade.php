@@ -4,7 +4,7 @@
 
 @section('title', 'Page d\'accueil')
 
-
+@include('elements.nav')
 
 @section('content')
     <p>
@@ -21,3 +21,8 @@ Nam volutpat, nunc et imperdiet viverra, purus erat condimentum enim, ac ullamco
 
     </p>
 @endsection
+
+
+
+
+@include('elements.footer')
