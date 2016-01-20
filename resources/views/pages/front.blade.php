@@ -11,6 +11,7 @@
 @endsection
 
 
+@include('elements.engagement')
 
 
 @include('elements.footer')
