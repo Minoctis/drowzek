@@ -22,25 +22,42 @@
 
         <li><a href="#">ambiance</a></li>
 
-        <li class="dropdown">
+        <li class="dropdown dropdown-large">
+
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-           <li class="dropdown-header"><a href="#">sejours</a></li>
-            <li><a href="#">canape</a></li>
-            <li><a href="#">fauteuil</a></li>
-            <li><a href="#">table basse</a></li>
-            <li><a href="#">Meuble tv</a></li>
-            <!--<li role="separator" class="divider"></li>-->
-            <li class="dropdown-header"><a href="#">Salle a manger</a></li>
-            <li><a href="#">chaises, tabourets</a></li>
-            <li><a href="#">bancs</a></li>
-            <li><a href="#">table de repas</a></li>
-            <li><a href="#">buffets, colonnes</a></li>
-            <li><a href="#">vaisseliers</a></li>
-            <!--<li role="separator" class="divider"></li>-->
-            <li class="dropdown-header"><a href="#">chambre</a></li>
-            <li><a href="#">Lits</a></li>
-            <li><a href="#">Armoires</a></li>
+          
+          <ul class="dropdown-menu dropdown-menu-large row">
+             <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header"><a href="#">sejours</a></li>
+                <li><a href="#">canape</a></li>
+                <li><a href="#">fauteuil</a></li>
+                <li><a href="#">table basse</a></li>
+                <li><a href="#">Meuble tv</a></li>
+                <!--<li role="separator" class="divider"></li>-->
+              </ul>
+             </li>
+
+             <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header"><a href="#">Salle a manger</a></li>
+                <li><a href="#">chaises, tabourets</a></li>
+                <li><a href="#">bancs</a></li>
+                <li><a href="#">table de repas</a></li>
+                <li><a href="#">buffets, colonnes</a></li>
+                <li><a href="#">vaisseliers</a></li>
+                <!--<li role="separator" class="divider"></li>-->
+               </ul>
+             </li>
+
+             <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header"><a href="#">chambre</a></li>
+                <li><a href="#">Lits</a></li>
+               <li><a href="#">Armoires</a></li>
+              </ul>
+            </li>
+        
           </ul>
         </li>
       </ul>
