@@ -33,10 +33,12 @@ h1.title{
     font-size: 24px;
     text-transform: uppercase;
     text-align: center;
+    padding: 20px 0;
 }
 h3.sub-title{
     font-size: 13px;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 

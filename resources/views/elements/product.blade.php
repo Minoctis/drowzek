@@ -1,4 +1,4 @@
-@section('newProducts')
+@section('product')
 
 
 @endsection
