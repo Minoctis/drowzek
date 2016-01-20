@@ -75,7 +75,7 @@
 	<div class="container">
 		<div class="row aPropos">
 			<div class="col-lg-3">
-				<span class="titleFooter">Nos services</span>
+				<h3 class="titleFooter">Nos services</h3>
 				<p>
 					<a href="#">Livraison</a><br />
 					<a href="#">Financement</a><br />
@@ -85,7 +85,7 @@
 				</p>
 			</div>
 			<div class="col-lg-6 aPropos">
-				<span class="titleFooter">A propos de nous</span>
+				<h3 class="titleFooter">A propos de nous</h3>
 				<p>
 					Home de Goût a été créé par son designer principal, Philippe Drowzek.
 					Son amour du design et des beaux objets l'on poussé a créer des meubles avant-gardistes.
