@@ -39,11 +39,11 @@
 	font-size: 38px;
 }
 
-.aPropos {
+.a-propos {
 	font-size: 13px;
 }
 
-.aPropos a  {
+.a-propos a  {
 	font-size: 13px;
 	height: auto;
 	text-decoration: none;
@@ -52,26 +52,26 @@
 	text-transform: uppercase;
 }
 
-.aPropos a:hover  {
+.a-propos a:hover  {
 	text-decoration: underline;
 	color: #000000;
 }
 
-.titleFooter {
+.title-footer {
 	font-size: 16px;
 	height: 40px;
 	line-height: 40px;
 	text-transform: uppercase;
 }
 
-.titleFooterBig {
+.title-footer-big {
 	font-size: 28px;
 	height: 40px;
 	line-height: 40px;
 	text-transform: uppercase;
 }
 
-.socialIcons {
+.social-icons {
 	height: 70px;
 }
 
@@ -79,7 +79,7 @@
 
 {
 
-    .aPropos {
+    .a-propos {
 	padding-bottom: 20px;
 	}
 }

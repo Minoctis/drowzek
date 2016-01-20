@@ -4,11 +4,11 @@
 		<div class="row spacer"></div>
 		<div class="row reseaux">
 			<div class="col-lg-12">
-				<span class="titleFooterBig">Retrouvez nous aussi sur :</span>
+				<span class="title-footer-big">Retrouvez nous aussi sur :</span>
 			</div>
 		</div>	
 		<div class="row reseaux">
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#043861">
@@ -18,7 +18,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#307be1">
@@ -28,7 +28,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#ca0814">
@@ -38,7 +38,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#77400b">
@@ -48,7 +48,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#cd2c2f">
@@ -58,7 +58,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 social-icons">
 				<p>
 					<a ref="#">
 						<span style="color:#650205">
@@ -74,8 +74,8 @@
 	<div class="row spacer"></div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 aPropos">
-				<h3 class="titleFooter">Nos services</h3>
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 a-propos">
+				<h3 class="title-footer">Nos services</h3>
 				<p>
 					<a href="#">Livraison</a><br />
 					<a href="#">Financement</a><br />
@@ -84,15 +84,15 @@
 					<a href="#">Conditions générales de vente</a><br />
 				</p>
 			</div>
-			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 aPropos">
-				<h3 class="titleFooter">A propos de nous</h3>
+			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 a-propos">
+				<h3 class="title-footer">A propos de nous</h3>
 				<p>
 					Home de Goût a été créé par son designer principal, Philippe Drowzek.
 					Son amour du design et des beaux objets l'on poussé a créer des meubles avant-gardistes.
 					Il cherche aussi les accessoires qui complètent ses designs chez les antiquaires et les designers.
 				</p>
 			</div>
-			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 aPropos">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 a-propos">
 				<img src="{{ asset('img/logo_footer.svg') }}" style="width: 100%;" />
 			</div>
 		</div>
