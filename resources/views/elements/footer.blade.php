@@ -93,7 +93,7 @@
 				</p>
 			</div>
 			<div class="col-lg-3 aPropos">
-				<span class="titleFooter">LOGO</span>
+				<img src="{{ asset('img/logo_footer.svg') }}" style="width: 100%;" />
 			</div>
 		</div>
 	</div>
