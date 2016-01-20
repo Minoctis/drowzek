@@ -1,9 +1,9 @@
 .mentions {
 	background: #000000;
 	color: #ffffff;
-	height: 30px;
-	line-height: 30px;
 	text-transform: uppercase;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .mentions a {
@@ -42,6 +42,7 @@
 .aPropos {
 	font-size: 13px;
 }
+
 .aPropos a  {
 	font-size: 13px;
 	height: auto;
@@ -68,4 +69,17 @@
 	height: 40px;
 	line-height: 40px;
 	text-transform: uppercase;
+}
+
+.socialIcons {
+	height: 70px;
+}
+
+@media screen and (max-width: 767px)
+
+{
+
+    .aPropos {
+	padding-bottom: 20px;
+	}
 }

@@ -8,7 +8,7 @@
 			</div>
 		</div>	
 		<div class="row reseaux">
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#043861">
@@ -18,7 +18,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#307be1">
@@ -28,7 +28,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#ca0814">
@@ -38,7 +38,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#77400b">
@@ -48,7 +48,7 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-2">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#cd2c2f">
@@ -58,11 +58,11 @@
 					</a>
 				</p>
 			</div>
-			<div class="col-lg-1">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 socialIcons">
 				<p>
 					<a ref="#">
 						<span style="color:#650205">
-							<i class="fa fa-youtube"></i>
+							<i class="fa fa-youtube"></i><br />
 							Youtube
 						<span>
 					</a>
@@ -73,8 +73,8 @@
 	<div class="row spacer bottom"></div>
 	<div class="row spacer"></div>
 	<div class="container">
-		<div class="row aPropos">
-			<div class="col-lg-3">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 aPropos">
 				<h3 class="titleFooter">Nos services</h3>
 				<p>
 					<a href="#">Livraison</a><br />
@@ -84,7 +84,7 @@
 					<a href="#">Conditions générales de vente</a><br />
 				</p>
 			</div>
-			<div class="col-lg-6 aPropos">
+			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 aPropos">
 				<h3 class="titleFooter">A propos de nous</h3>
 				<p>
 					Home de Goût a été créé par son designer principal, Philippe Drowzek.
@@ -92,12 +92,12 @@
 					Il cherche aussi les accessoires qui complètent ses designs chez les antiquaires et les designers.
 				</p>
 			</div>
-			<div class="col-lg-3 aPropos">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 aPropos">
 				<img src="{{ asset('img/logo_footer.svg') }}" style="width: 100%;" />
 			</div>
 		</div>
 	</div>
-	<div class="row spacer">
+	<div class="row spacer hidden-xs">
 	</div>
 	<div class="row mentions">
 		<div class="container">
