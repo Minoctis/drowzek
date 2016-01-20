@@ -6,7 +6,34 @@
 	text-transform: uppercase;
 }
 
+.mentions a {
+	text-decoration: none;
+	color: white;
+}
+
+.mentions a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
 .reseaux {
 	height: 100px;
 	text-align: center;
+}
+
+.aPropos a  {
+	height: auto;
+	text-decoration: none;
+	color: #000000;
+	margin-bottom: 100px;
+}
+
+.aPropos a:hover  {
+	text-decoration: underline;
+	color: #000000;
+}
+
+.titleFooter {
+	height: 40px;
+	line-height: 40px;
 }
