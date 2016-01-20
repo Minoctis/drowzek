@@ -1,9 +1,7 @@
 @section('footer')
 <footer>
 	<div class="container">
-		<div style="height:200px">
-				<!-- cette div est en attente de hauteur du header (deux doigts coupe faim) -->
-		</div>
+		<div class="row spacer"></div>
 		<div class="row reseaux">
 			<div class="col-lg-12">
 				<span class="titleFooterBig">Retrouvez nous aussi sur :</span>
@@ -11,32 +9,70 @@
 		</div>	
 		<div class="row reseaux">
 			<div class="col-lg-2">
-				<img src="{{ asset('img/icons/fb.png') }}" />
-				<p><span style="color:#043861">Facebook</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#043861">
+							<i class="fa fa-facebook"></i><br />
+							Facebook
+						</span>
+					</a>
+				</p>
 			</div>
 			<div class="col-lg-2">
-				<img src="{{ asset('img/icons/twitter.png') }}" />
-				<p><span style="color:#307be1">Twitter</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#307be1">
+							<i class="fa fa-twitter"></i><br />
+							Twitter
+						</span>
+					</a>
+				</p>
 			</div>
 			<div class="col-lg-2">
-				<img src="{{ asset('img/icons/gplus.png') }}" />
-				<p><span style="color:#ca0814">Google +</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#ca0814">
+							<i class="fa fa-google-plus"></i><br />
+							Google +
+						</span>
+					</a>
+				</p>
 			</div>
 			<div class="col-lg-2">
-				<img src="{{ asset('img/icons/instagram.png') }}" />
-				<p><span style="color:#77400b">Instagram</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#77400b">
+							<i class="fa fa-instagram"></i><br />
+							Instagram
+						</span>
+					</a>
+				</p>
 			</div>
 			<div class="col-lg-2">
-				<img src="{{ asset('img/icons/pinterest.png') }}" />
-				<p><span style="color:#cd2c2f">Pinterest</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#cd2c2f">
+							<i class="fa fa-pinterest"></i><br />
+							Pinterest
+						</span>
+					</a>
+				</p>
 			</div>
 			<div class="col-lg-1">
-				<img src="{{ asset('img/icons/youtube.png') }}" />
-				<p><span style="color:#650205">Youtube</span></p>
+				<p>
+					<a ref="#">
+						<span style="color:#650205">
+							<i class="fa fa-youtube"></i>
+							Youtube
+						<span>
+					</a>
+				</p>
 			</div>
 		</div>
-		<div class="row spacer bottom"></div>
-		<div class="row spacer"></div>
+	</div>
+	<div class="row spacer bottom"></div>
+	<div class="row spacer"></div>
+	<div class="container">
 		<div class="row aPropos">
 			<div class="col-lg-3">
 				<span class="titleFooter">Nos services</span>
@@ -66,7 +102,9 @@
 	<div class="row mentions">
 		<div class="container">
 			<div class="col-lg-12">
-				<a href="#">Contact</a> | <a href="#">Politique de confidentialité</a> | <a href="#">Mentions légales</a> | <a href="#">Plan du site</a>
+				<p>
+					<a href="#">Contact</a> | <a href="#">Politique de confidentialité</a> | <a href="#">Mentions légales</a> | <a href="#">Plan du site</a>
+				</p>
 			</div>
 		</div>
 	</div>
