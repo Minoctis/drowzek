@@ -27,7 +27,7 @@
 
             @yield('content')
             
-            
+            @yield('engagement')
             @yield('footer')
         </div>
     </body>
