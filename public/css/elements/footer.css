@@ -9,11 +9,20 @@
 .mentions a {
 	text-decoration: none;
 	color: white;
+	text-transform: uppercase;
 }
 
 .mentions a:hover {
 	text-decoration: underline;
 	color: white;
+}
+
+.spacer {
+	margin-top: 40px;
+}
+
+.bottom{
+	border-bottom: 2px solid #000000;
 }
 
 .reseaux {
@@ -26,6 +35,7 @@
 	text-decoration: none;
 	color: #000000;
 	margin-bottom: 100px;
+	text-transform: uppercase;
 }
 
 .aPropos a:hover  {
@@ -36,4 +46,12 @@
 .titleFooter {
 	height: 40px;
 	line-height: 40px;
+	text-transform: uppercase;
+}
+
+.titleFooterBig {
+	font-size: 34px;
+	height: 40px;
+	line-height: 40px;
+	text-transform: uppercase;
 }

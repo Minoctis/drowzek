@@ -6,55 +6,62 @@
 		</div>
 		<div class="row reseaux">
 			<div class="col-lg-12">
-				RETROUVEZ NOUS AUSSI SUR :
+				<span class="titleFooterBig">Retrouvez nous aussi sur :</span>
 			</div>
 		</div>	
 		<div class="row reseaux">
-			<div class="col-lg-offset-3 col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>
+			<div class="col-lg-2">
+				<img src="{{ asset('img/icons/fb.png') }}" />
+				<p><span style="color:#043861">Facebook</span></p>
+			</div>
+			<div class="col-lg-2">
+				<img src="{{ asset('img/icons/twitter.png') }}" />
+				<p><span style="color:#307be1">Twitter</span></p>
+			</div>
+			<div class="col-lg-2">
+				<img src="{{ asset('img/icons/gplus.png') }}" />
+				<p><span style="color:#ca0814">Google +</span></p>
+			</div>
+			<div class="col-lg-2">
+				<img src="{{ asset('img/icons/instagram.png') }}" />
+				<p><span style="color:#77400b">Instagram</span></p>
+			</div>
+			<div class="col-lg-2">
+				<img src="{{ asset('img/icons/pinterest.png') }}" />
+				<p><span style="color:#cd2c2f">Pinterest</span></p>
 			</div>
 			<div class="col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>
-			</div>
-			<div class="col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>
-			</div>
-			<div class="col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>
-			</div>
-			<div class="col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>	
-			</div>
-			<div class="col-lg-1">
-				<span class="glyphicon glyphicon-th-large"></span>
+				<img src="{{ asset('img/icons/youtube.png') }}" />
+				<p><span style="color:#650205">Youtube</span></p>
 			</div>
 		</div>
+		<div class="row spacer bottom"></div>
+		<div class="row spacer"></div>
 		<div class="row aPropos">
 			<div class="col-lg-3">
-				<span class="titleFooter">NOS SERVICES</span>
+				<span class="titleFooter">Nos services</span>
 				<p>
-					<a href="#">LIVRAISON</a><br />
-					<a href="#">FINANCEMENT</a><br />
-					<a href="#">CATALOGUES</a><br />
-					<a href="#">GARANTIES</a><br />
-					<a href="#">CONDITIONS GÉNÉRALE DE VENTE</a><br />
+					<a href="#">Livraison</a><br />
+					<a href="#">Financement</a><br />
+					<a href="#">Catalogue</a><br />
+					<a href="#">Garanties</a><br />
+					<a href="#">Conditions générales de vente</a><br />
 				</p>
 			</div>
-			<div class="col-lg-offset-1 col-lg-4 aPropos">
-				<span class="titleFooter">A PROPOS DE NOUS</span>
+			<div class="col-lg-6 aPropos">
+				<span class="titleFooter">A propos de nous</span>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-					irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-					nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-					officia deserunt mollit anim id est laborum.
+					Home de Goût a été créé par son designer principal, Philippe Drowzek.
+					Son amour du design et des beaux objets l'on poussé a créer des meubles avant-gardistes.
+					Il cherche aussi les accessoires qui complètent ses designs chez les antiquaires et les designers.
 				</p>
 			</div>
-			<div class="col-lg-offset-1 col-lg-3 aPropos">
+			<div class="col-lg-3 aPropos">
 				<span class="titleFooter">LOGO</span>
 			</div>
 		</div>
+	</div>
+	<div class="row spacer">
 	</div>
 	<div class="row mentions">
 		<div class="container">
