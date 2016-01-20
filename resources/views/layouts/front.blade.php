@@ -16,6 +16,7 @@
         <script type="text/javascript" src=" {{ asset('js/bootstrap.min.js') }} "></script>
         
         
+        
     </head>
     
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -29,8 +30,6 @@
                 
                 @yield('product')
                 
-                @yield('ambiances')
-                
                 @yield('content')
                 
                 @yield('engagement')
@@ -41,5 +40,7 @@
 
 
         </div>
+        
+        <script type="text/javascript" src=" {{ asset('js/main.js') }} "></script>
     </body>
 </html>

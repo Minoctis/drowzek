@@ -6,9 +6,16 @@
 
 @include('elements.nav')
 
-@include('elements.product')
 
-@include('elements.ambiances')
+
+@section('content')
+   
+    @include('elements.product')
+   
+    @include('elements.ambiances')
+    
+@endsection
+
 
 @include('elements.engagement')
 
