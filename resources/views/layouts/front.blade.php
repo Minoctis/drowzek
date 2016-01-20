@@ -29,6 +29,8 @@
                 
                 @yield('newProducts')
                 
+                @yield('ambiances')
+                
                 @yield('content')
                 
                 @yield('engagement')

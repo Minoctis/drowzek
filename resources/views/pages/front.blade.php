@@ -8,6 +8,7 @@
 
 @include('elements.newProducts')
 
+@include('elements.ambiances')
 
 @include('elements.engagement')
 
