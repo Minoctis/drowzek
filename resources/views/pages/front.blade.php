@@ -7,11 +7,10 @@
 @include('elements.nav')
 
 
-
 @section('content')
-   
+    
+    
     @include('elements.product')
-   
     @include('elements.ambiances')
     
 @endsection

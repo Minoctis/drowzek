@@ -28,7 +28,6 @@
             
             <div class="homepage-content">
                 
-                @yield('product')
                 
                 @yield('content')
                 
