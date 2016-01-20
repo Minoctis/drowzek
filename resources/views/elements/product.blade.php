@@ -3,6 +3,11 @@
 	<div class="row">
 		<div class="col-lg-3">
 			<div class="product-container">
+				<div class="call-add-basket">
+					<div class="call-product-page">
+						Afficher
+					</div>
+				</div>
 				<img src="http://placehold.it/250x250" />
 				<div class="caption">
 					<div class="desc-product">

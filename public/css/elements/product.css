@@ -7,6 +7,8 @@
 	/*border: 0px solid #ddd;*/
 	/*border-radius: 4px;*/
 	font-size: 16px;
+	position:absolute;
+	z-index:1;
 }
 
 .desc-product {
@@ -20,6 +22,8 @@
 	visibility:hidden;
 	display: none;
 	text-align: right;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .bloc-add-basket {
@@ -33,6 +37,26 @@
 	text-transform: uppercase;
 }
 
+.call-add-basket {
+	position: absolute;
+	z-index: 2;
+	background: #000000;
+	opacity: 0.25;
+	width: 250px;
+	height: 250px	;
+	visibility:hidden;
+	display: none;
+}
+
+.call-product-page {
+	width: 100px;
+	height: 25px;
+	background: #ccc;
+	text-align: center;
+	text-transform: uppercase;
+	margin : auto auto;
+}
+
 .product-container:hover .bloc-add-basket {
 	visibility:visible;
 	display: block;	
@@ -44,6 +68,11 @@
 }
 
 .product-container:hover .price-product {
+	visibility:visible;
+	display: block;
+}
+
+.product-container:hover .call-add-basket {
 	visibility:visible;
 	display: block;
 }
