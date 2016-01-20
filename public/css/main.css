@@ -12,3 +12,8 @@
     font-family: 'Quicksand', sans-serif;
     foont-size : 13px;
 }
+
+.homepage-content{
+    position: relative;
+    top: 50px;
+}

@@ -21,15 +21,17 @@
     <body>
         <div class="homepage">
             @yield('nav')
-            <div class="container">
-                
+            <div class="homepage-content">
+            
+                @yield('content')
+
+                @yield('engagement')
+
+                @yield('footer')  
+                          
             </div>
 
-            @yield('content')
-            
-            @yield('engagement')
-            
-            @yield('footer')
+
         </div>
     </body>
 </html>
