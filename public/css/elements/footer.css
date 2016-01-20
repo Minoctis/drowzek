@@ -3,4 +3,10 @@
 	color: #ffffff;
 	height: 30px;
 	line-height: 30px;
+	text-transform: uppercase;
+}
+
+.reseaux {
+	height: 100px;
+	text-align: center;
 }

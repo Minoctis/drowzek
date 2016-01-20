@@ -1,6 +1,9 @@
 @section('footer')
 <footer class="navbar navbar-default">
 	<div class="container">
+		<div style="height:200px">
+				<!-- cette div est en attente de hauteur du header (deux doigts coupe faim) -->
+		</div>
 		<div class="row reseaux">
 			<div class="col-lg-12">
 				RETROUVEZ NOUS AUSSI SUR :
@@ -11,19 +14,19 @@
 				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
 			<div class="col-lg-1">
-				Teutter
+				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
 			<div class="col-lg-1">
-				géplus
+				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
 			<div class="col-lg-1">
-				pindereste
+				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
 			<div class="col-lg-1">
-				hein !	
+				<span class="glyphicon glyphicon-th-large"></span>	
 			</div>
 			<div class="col-lg-1">
-				iouteub
+				<span class="glyphicon glyphicon-th-large"></span>
 			</div>
 		</div>
 		<div class="row">
@@ -52,7 +55,7 @@
 	<div class="row mentions">
 		<div class="container">
 			<div class="col-lg-12">
-				CONTACT | POLITIQUE DE CONFIDENTIALITÉ | MENTIONS LÉGALES | PLAN DU SITE
+				Contact | Politique de confidentialité | Mentions légales | Plan du site
 			</div>
 		</div>
 	</div>
