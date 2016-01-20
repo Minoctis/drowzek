@@ -1,6 +1,7 @@
 /* CSS FILES */
 @import url(elements/nav.css);
 @import url(elements/footer.css);
+@import url(elements/engagement.css);
 
 
 
@@ -17,3 +18,11 @@
     position: relative;
     top: 50px;
 }
+
+h3.small-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 0;
+    text-align: center;
+}
+
