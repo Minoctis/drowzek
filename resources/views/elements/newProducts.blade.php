@@ -1,9 +1,10 @@
 @section('newProducts')
 <div class="new-products">
-
-   <h1>Les nouveautés</h1>
-    
-    
+    <div class="container">
+        <h1 class="title">Les nouveautés</h1> 
+        
+        
+    </div> 
 </div>
 
 
