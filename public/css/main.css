@@ -20,6 +20,12 @@ p{font-size: 13px;}
     top: 50px;
 }
 
+
+/*NAVBAR*/
+a.navbar-brand.header-logo {
+    padding: 7px;
+}
+/*END NAVBAR*/
 h3.small-title {
     font-size: 16px;
     text-transform: uppercase;
