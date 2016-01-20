@@ -26,9 +26,11 @@
             </div>
             
             <div class="homepage-content">
-            
+                
+                @yield('newProducts')
+                
                 @yield('content')
-
+                
                 @yield('engagement')
 
                 @yield('footer')  

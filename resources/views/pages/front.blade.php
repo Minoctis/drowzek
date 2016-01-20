@@ -6,10 +6,7 @@
 
 @include('elements.nav')
 
-@section('content')
-
-@endsection
-
+@include('elements.newProducts')
 
 @include('elements.engagement')
 
