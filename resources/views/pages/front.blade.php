@@ -6,7 +6,7 @@
 
 @include('elements.nav')
 
-@include('elements.newProducts')
+@include('elements.product')
 
 @include('elements.ambiances')
 

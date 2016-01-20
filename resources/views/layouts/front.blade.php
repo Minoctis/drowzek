@@ -27,7 +27,7 @@
             
             <div class="homepage-content">
                 
-                @yield('newProducts')
+                @yield('product')
                 
                 @yield('ambiances')
                 

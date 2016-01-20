@@ -1,0 +1,4 @@
+@section('newProducts')
+
+
+@endsection
