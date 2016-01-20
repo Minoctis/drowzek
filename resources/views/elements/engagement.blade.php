@@ -13,7 +13,7 @@
             <i class="fa fa-lock"></i>
             <h3 class="small-title">Paiement sécurisé</h3>
             <div class="content">
-                <p>Virement - Chèque - Paiement en plusieurs fois</p>
+                <p>Virement - Paiement en plusieurs fois</p>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
