@@ -8,6 +8,7 @@
 /* FONTS */
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,300,700);
 
+p{font-size: 13px;}
 
 .homepage{
     font-family: 'Quicksand', sans-serif;
