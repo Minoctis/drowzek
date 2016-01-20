@@ -18,9 +18,13 @@
         
     </head>
     
-    <body>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="homepage">
             @yield('nav')
+            <div class="slider-hp">
+                <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
+            </div>
+            
             <div class="homepage-content">
             
                 @yield('content')

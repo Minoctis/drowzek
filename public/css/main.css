@@ -19,12 +19,30 @@ p{font-size: 13px;}
     position: relative;
     top: 50px;
 }
-
+/* SLIDER */
+.slider-hp img{
+    width: 100%;
+    height: auto;
+}
+/* END SLIDER*/
 
 /*NAVBAR*/
 a.navbar-brand.header-logo {
     padding: 6px;
 }
+
+.homepage nav.navbar.navbar-inverse.navbar-fixed-top{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: transparent;
+    transition: all .5s ease .25s;
+}
+#nav.affix {
+    background-color: black;
+    -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
 /*END NAVBAR*/
 h3.small-title {
     font-size: 16px;
