@@ -1,3 +1,20 @@
 .ambiance {
     min-height: 400px;
+    background-color: #eeeeee;
+    padding: 20px 0;
+}
+hr{
+    width: 10%;
+    border-top-color: black;
+}
+
+.ambiance3 {
+    margin-top: 18px;
+}
+
+h3.show-ambiances {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
 }
