@@ -30,10 +30,10 @@
              <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header"><a href="#">sejours</a></li>
-                <li><a href="#">canape</a></li>
-                <li><a href="#">fauteuil</a></li>
-                <li><a href="#">table basse</a></li>
-                <li><a href="#">Meuble tv</a></li>
+                <li class="sous-dropdown-header"><a href="#">canape</a></li>
+                <li class="sous-dropdown-header"><a href="#">fauteuil</a></li>
+                <li class="sous-dropdown-header"><a href="#">table basse</a></li>
+                <li class="sous-dropdown-header"><a href="#">Meuble tv</a></li>
                 <!--<li role="separator" class="divider"></li>-->
               </ul>
              </li>
@@ -41,11 +41,11 @@
              <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header"><a href="#">Salle a manger</a></li>
-                <li><a href="#">chaises, tabourets</a></li>
-                <li><a href="#">bancs</a></li>
-                <li><a href="#">table de repas</a></li>
-                <li><a href="#">buffets, colonnes</a></li>
-                <li><a href="#">vaisseliers</a></li>
+                <li class="sous-dropdown-header"><a href="#">chaises, tabourets</a></li>
+                <li class="sous-dropdown-header"><a href="#">bancs</a></li>
+                <li class="sous-dropdown-header"><a href="#">table de repas</a></li>
+                <li class="sous-dropdown-header"><a href="#">buffets, colonnes</a></li>
+                <li class="sous-dropdown-header"><a href="#">vaisseliers</a></li>
                 <!--<li role="separator" class="divider"></li>-->
                </ul>
              </li>
@@ -53,9 +53,15 @@
              <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header"><a href="#">chambre</a></li>
-                <li><a href="#">Lits</a></li>
-               <li><a href="#">Armoires</a></li>
+                <li class="sous-dropdown-header"><a href="#">Lits</a></li>
+               <li class="sous-dropdown-header"><a href="#">Armoires</a></li>
               </ul>
+            </li>
+
+            <li class="col-sm-3">
+              <img id="sejour" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
+              <img id="salle-a-manger" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
+              <img id="chambre" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
             </li>
         
           </ul>
