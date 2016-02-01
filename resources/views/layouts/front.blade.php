@@ -28,7 +28,6 @@
             
             <div class="homepage-content">
                 
-                
                 @yield('content')
                 
                 @yield('engagement')

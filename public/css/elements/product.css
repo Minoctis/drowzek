@@ -10,7 +10,10 @@
 	/*position:absolute;*/
 	z-index:1;
 }
-
+.product-container img {
+    width: 100%;
+    height: auto;
+}
 .desc-product {
 	float: left;
 	width: 100%;
