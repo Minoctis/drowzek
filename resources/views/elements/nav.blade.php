@@ -1,6 +1,6 @@
 @section('nav')
 
-<nav class="navbar navbar-inverse navbar-fixed-top"id="nav"data-spy="affix" data-offset-top="500">
+<nav class="navbar navbar-inverse navbar-fixed-top"id="nav" data-spy="affix" data-offset-top="500">
     <!-- Navbar Contents -->
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +26,7 @@
 
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
           
-          <ul class="dropdown-menu dropdown-menu-large row">
+          <ul class="dropdown-menu dropdown-menu-large row" data-spy="affix" data-offset-top="500">
              <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header"><a href="#">sejours</a></li>
