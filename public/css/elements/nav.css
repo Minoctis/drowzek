@@ -23,7 +23,7 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
     text-transform: uppercase;
 }
 
-.navbar-nav>li>.dropdown-menu{ background-color:#000; border:0;}
+.navbar-nav>li>.dropdown-menu{border:0;}
 .navbar-nav>li>.dropdown-menu a{ color:#fff;}
 
 .dropdown-header {
