@@ -6,7 +6,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							Afficher
+							<a href="#">Afficher</a>
 						</div>
 					</div>
 					<img src="http://placehold.it/250x250"  width="100%" />
@@ -30,7 +30,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							Afficher
+							<a href="#">Afficher</a>
 						</div>
 					</div>
 					<img src="http://placehold.it/250x250"  width="100%" />
@@ -54,7 +54,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							Afficher
+							<a href="#">Afficher</a>
 						</div>
 					</div>
 					<img src="http://placehold.it/250x250"  width="100%" />
@@ -78,7 +78,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							Afficher
+							<a href="#">Afficher</a>
 						</div>
 					</div>
 					<img src="http://placehold.it/250x250"  width="100%" />

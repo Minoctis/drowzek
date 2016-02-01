@@ -68,6 +68,11 @@
 	text-transform: uppercase;
 	margin : auto;
 	margin-top: 45%;
+	font-weight: bold;
+}
+
+.call-product-page a{
+	color: #000000;
 }
 
 .product-container:hover .bloc-add-basket {
