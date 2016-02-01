@@ -3,12 +3,14 @@
 	<div class="row">
 		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 			<div class="product-container">
-				<div class="call-add-basket">
-					<div class="call-product-page">
-						Afficher
+				<div class="image-content">
+					<div class="call-add-basket">
+						<div class="call-product-page">
+							Afficher
+						</div>
 					</div>
+					<img src="http://placehold.it/250x250"  width="100%" />
 				</div>
-				<img src="http://placehold.it/250x250"  width="100%" />
 				<div class="caption">
 					<div class="desc-product">
 						<h3>Chaise design bois</h3>
