@@ -8,7 +8,16 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
     color: #fff;
     background-color: transparent;
 }
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
 
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 15px 10px;
+}
 
 /*--------------------- MENU 1----------------------- */
 

@@ -2,9 +2,9 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top"id="nav" data-spy="affix" data-offset-top="500">
     <!-- Navbar Contents -->
-  <div class="container">
+  <div class="container col-sm-12">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header col-sm-2">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -15,7 +15,10 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--<div class="collapse navbar-collapse col-sm-10" id="bs-example-navbar-collapse-1">-->
+    <div class="col-sm-10">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="col-sm-2"></div>
       <ul class="nav navbar-nav">
 
         <li class="active"><a href="#">accueil<span class="sr-only">(current)</span></a></li>
@@ -89,6 +92,7 @@
         </li>-->
       </ul>
     </div><!-- /.navbar-collapse -->
+  </div>
   </div><!-- /.container-fluid -->
 </nav>
 
