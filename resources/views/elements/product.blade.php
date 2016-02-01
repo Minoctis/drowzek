@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a href="#" class="btn btn-primary button-add-basket" role="button">Ajouter au panier</a></p>
+					<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" role="button">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a href="#" class="btn btn-primary button-add-basket" role="button">Ajouter au panier</a></p>
+					<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" role="button">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a href="#" class="btn btn-primary button-add-basket" role="button">Ajouter au panier</a></p>
+					<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" role="button">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a href="#" class="btn btn-primary button-add-basket" role="button">Ajouter au panier</a></p>
+					<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" role="button">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
