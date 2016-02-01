@@ -42,7 +42,7 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
 
 }
 
-.image-nav{ width:100%;
+.image-nav{ width:100%; display:none;
 }
 
 

@@ -27,7 +27,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
           
           <ul class="dropdown-menu dropdown-menu-large row affix-top" data-spy="affix" data-offset-top="500">
-             <li class="col-sm-3">
+             <li class="col-sm-3 sejour">
               <ul>
                 <li class="dropdown-header"><a href="#">sejours</a></li>
                 <li class="sous-dropdown-header"><a href="#">canape</a></li>
@@ -38,7 +38,7 @@
               </ul>
              </li>
 
-             <li class="col-sm-3">
+             <li class="col-sm-3 salle-a-manger">
               <ul>
                 <li class="dropdown-header"><a href="#">Salle a manger</a></li>
                 <li class="sous-dropdown-header"><a href="#">chaises, tabourets</a></li>
@@ -50,7 +50,7 @@
                </ul>
              </li>
 
-             <li class="col-sm-3">
+             <li class="col-sm-3 chambre">
               <ul>
                 <li class="dropdown-header"><a href="#">chambre</a></li>
                 <li class="sous-dropdown-header"><a href="#">Lits</a></li>
