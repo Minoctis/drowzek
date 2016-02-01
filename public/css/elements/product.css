@@ -1,6 +1,6 @@
 .product-container {
 	display: block;
-	padding: 4px;
+	/*padding: 4px;*/
 	margin-bottom: 20px;
 	line-height: 1.42857143;
 	background-color: #fff;
@@ -8,13 +8,14 @@
 	/*border: 0px solid #ddd;*/
 	/*border-radius: 4px;*/
 	font-size: 16px;
-	/*position:absolute;*/
+	position:relative;
 	z-index:1;
 }
 .product-container img {
     width: 100%;
     height: auto;
 }
+
 .desc-product {
 	float: left;
 	width: 100%;
