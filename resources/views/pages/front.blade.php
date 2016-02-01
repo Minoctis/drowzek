@@ -9,9 +9,13 @@
 
 @section('content')
     
-    
     @include('elements.product')
+    
     @include('elements.ambiances')
+    
+    @include('elements.opportunity')
+    
+    @include('elements.actualites')
     
 @endsection
 
