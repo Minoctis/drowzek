@@ -28,7 +28,7 @@ p{font-size: 13px;}
 /* END SLIDER*/
 
 
-/* TITILE & SUBTITLE */
+/* TITILE & SUBTITLE & BUTTONS*/
 
 h1.title{
     font-size: 24px;
@@ -36,13 +36,28 @@ h1.title{
     text-align: center;
     padding: 20px 0;
 }
+
 h3.sub-title{
     font-size: 13px;
     text-align: center;
     padding-bottom: 10px;
 }
 
+h3.small-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 0;
+    text-align: center;
+}
 
+hdg-button-default{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+}
 /* END TITILE & SUBTITLE */
 
 /*NAVBAR*/
@@ -63,10 +78,32 @@ a.navbar-brand.header-logo {
 }
 
 /*END NAVBAR*/
-h3.small-title {
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 15px 0;
-    text-align: center;
+
+
+/* PAGE AMBIANCES */
+
+.ambiance-content{
+    position: relative;
+    
 }
 
+.ambiance-content .ambiance-text{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    left: 20px;
+}
+
+.ambiance-content .ambiance-text .ambiance-name {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.ambiance-content .ambiance-text .ambiance-desc {
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+
+/* END PAGE AMBIANCES */
