@@ -26,7 +26,7 @@
 
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
           
-          <ul class="dropdown-menu dropdown-menu-large row" data-spy="affix" data-offset-top="500">
+          <ul class="dropdown-menu dropdown-menu-large row affix-top" data-spy="affix" data-offset-top="500">
              <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header"><a href="#">sejours</a></li>
