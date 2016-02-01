@@ -4,6 +4,7 @@
 	margin-bottom: 20px;
 	line-height: 1.42857143;
 	background-color: #fff;
+	width: 100%;
 	/*border: 0px solid #ddd;*/
 	/*border-radius: 4px;*/
 	font-size: 16px;
@@ -32,6 +33,7 @@
 .bloc-add-basket {
 	visibility:hidden;
 	display: block;
+	margin: auto;
 }
 
 .button-add-basket {
@@ -45,8 +47,8 @@
 	z-index: 2;
 	background: #000000;
 	opacity: 0.25;
-	width: 250px;
-	height: 250px	;
+	width: 100%;
+	height: 100%;
 	visibility:hidden;
 	display: none;
 }
@@ -57,7 +59,8 @@
 	background: #ccc;
 	text-align: center;
 	text-transform: uppercase;
-	margin : auto auto;
+	margin : auto;
+	margin-top: 45%;
 }
 
 .product-container:hover .bloc-add-basket {
@@ -78,4 +81,9 @@
 .product-container:hover .call-add-basket {
 	visibility:visible;
 	display: block;
+}
+
+.button-add-basket:hover{
+	background: #ccc;
+	color: #000000;
 }
