@@ -47,17 +47,19 @@
 	text-transform: uppercase;
 }
 
+/*Div grise au dessus de l'image produit */
 .call-add-basket {
 	position: absolute;
 	z-index: 2;
 	background: #000000;
-	opacity: 0.25;
+	opacity: 0.40;
 	width: 100%;
 	height: 100%;
 	visibility:hidden;
 	display: none;
 }
 
+/* lien afficher dans la div grise */
 .call-product-page {
 	width: 100px;
 	height: 25px;
