@@ -1,4 +1,4 @@
-@section('product')
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -9,7 +9,7 @@
 							<a href="#">Afficher</a>
 						</div>
 					</div>
-					<img src="http://placehold.it/250x250"  width="100%" />
+					<img src="http://placehold.it/250x251"  width="100%" />
 				</div>
 				<div class="caption">
 					<div class="desc-product">
@@ -98,4 +98,3 @@
 		</div>
 	</div>
 </div>
-@show

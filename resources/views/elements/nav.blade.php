@@ -1,6 +1,6 @@
 @section('nav')
 
-<nav class="navbar navbar-inverse navbar-fixed-top"id="nav" data-spy="affix" data-offset-top="500">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="nav" data-spy="affix" data-offset-top="500">
     <!-- Navbar Contents -->
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->

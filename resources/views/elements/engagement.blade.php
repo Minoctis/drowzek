@@ -1,4 +1,3 @@
-@section('engagement')
 
 <div class="engagement row">
    <div class="container">
@@ -29,5 +28,3 @@
     </div>
 </div>
 
-
-@endsection

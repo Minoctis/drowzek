@@ -30,9 +30,9 @@
                 
                 @yield('content')
                 
-                @yield('engagement')
+                @include('elements.engagement')
 
-                @yield('footer')  
+                @include('elements.footer') 
                           
             </div>
 

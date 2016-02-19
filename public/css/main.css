@@ -1,9 +1,7 @@
 /* CSS FILES */
 @import url(elements/nav.css);
 @import url(elements/footer.css);
-@import url(elements/engagement.css);
 @import url(elements/product.css);
-@import url(elements/ambiances.css);
 
 
 /* FONTS */
@@ -13,7 +11,7 @@ p{font-size: 13px;}
 
 .homepage{
     font-family: 'Quicksand', sans-serif;
-    foont-size : 13px;
+    font-size : 13px;
 }
 
 .homepage-content{
@@ -59,6 +57,16 @@ h3.small-title {
     font-size: 16px;
     border-radius: 0;
 }
+
+a{
+    color: black;
+    text-transform: uppercase;
+}
+a:hover, a:active{
+    color: black;
+    text-decoration: underline;
+}
+
 /* END TITILE & SUBTITLE */
 
 /*NAVBAR*/
@@ -91,10 +99,40 @@ a.navbar-brand.header-logo {
     transition: all .5s ease .25s; 
 }
 
-/*END NAVBAR*/
+/* END NAVBAR */
 
 
-/* PAGE AMBIANCES */
+/* BLOC AMBIANCES HOMEPAGE */
+.ambiance {
+    min-height: 400px;
+    background-color: #eeeeee;
+    padding: 20px 0;
+}
+
+hr{
+    width: 10%;
+    border-top-color: black;
+}
+
+.ambiance3 {
+    margin-top: 18px;
+}
+
+h3.show-ambiances {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+h3.show-ambiances:after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 18px;
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 2px;
+}
 
 .ambiance-content{
     position: relative;
@@ -120,4 +158,17 @@ a.navbar-brand.header-logo {
 }
 
 
-/* END PAGE AMBIANCES */
+/* END BLOC AMBIANCES HOMEPAGE */
+
+/* BLOC ENGAGEMENTS */
+.engagement.row {
+    color: white;
+    background: #000000;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.engagement p{
+    font-size: 13px;
+}
+/* END BLOC ENGAGEMENT */

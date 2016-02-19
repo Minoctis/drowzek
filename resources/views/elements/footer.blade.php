@@ -1,4 +1,4 @@
-@section('footer')
+
 <footer>
 	<div class="container">
 		<div class="row spacer"></div>
@@ -111,4 +111,3 @@
 </footer>
 
 
-@endsection
