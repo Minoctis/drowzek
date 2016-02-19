@@ -75,19 +75,71 @@
 
 
     <!-- Les opportnités -->
-	<div class="opportunity row">
-	    <h1 class="title">Opportunité exeptionnelle</h1>
-	    <h3 class="sub-title">Votre canapé à personnaliser selon vos envie</h3>
-	    
-	    <div class="opportunity-content">
+	<div class="opportunity">
+	<img class="opportunity-img" src="http://placehold.it/1200x500" alt="">
+		<div class="container">
+		    <h1 class="title">Opportunité exeptionnelle</h1>
+		    <h3 class="sub-title">Votre canapé à personnaliser selon vos envie</h3>
+		    <span>Couleur</span>
+		    <span>Dimension</span>
+		    <span>Matière</span>
+		    
+		    <div class="opportunity-content">
+		    	<div class="row"></div>
+		    	<div class="row">
+		    		<div class="col-md-6">
+		    			<p>Restez informer de nouvelles opportunités</p>
+		    			<input class="hdg-input-default" type="text" placeholder="Votre adresse email"></input>
+		    			<button class="hdg-button-small">Valider</button>
+		    		</div>
+		    		<div class="col-md-6">
+		    			<button class="hdg-button-default">Accéder à l'opportunité</button>
+		    		</div>
+		    	</div>	
+		    </div>		
+		</div>
 
-	    </div>
 	</div> <!-- Fin du bloc des opportnités -->
 
 	<!-- Les actualités -->
 	<div class="actualites">
 		<div class="container">
-			<p>ici les actualités</p>
+			<div class="col-md-6">
+				<div class="thumbnail news">
+			      <img src="http://placehold.it/540x150">
+			      <div class="caption">
+			        <h3 class="news-title">Nouvelle collection bientôt sur notre site</h3>
+			        <p>
+			        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+			        </p>
+			        <p><a href="#" class="news-show" role="button">Lire la suite</a></p>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-3">
+				<div class="thumbnail news">
+			      <img src="http://placehold.it/255x150">
+			      <div class="caption">
+			        <h3 class="news-title">ça parle de nous</h3>
+			        <p>
+			        	Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+			        </p>
+			        <p><a href="#" class="news-show" role="button">Lire la suite</a></p>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-3">
+				<div class="thumbnail news">
+			      <img src="http://placehold.it/255x150">
+			      <div class="caption">
+			        <h3 class="news-title">Comment décorer votre salon?</h3>
+			        <p>
+			        	Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+			        </p>
+			        <p><a href="#" class="news-show" role="button">Lire la suite</a></p>
+			      </div>
+			    </div>
+			</div>
 		</div>
 	</div> <!-- Fin du bloc des actualités -->
 

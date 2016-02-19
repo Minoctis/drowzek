@@ -9,7 +9,7 @@
 							<a href="#">Afficher</a>
 						</div>
 					</div>
-					<img src="http://placehold.it/250x251"  width="100%" />
+					<img src="http://placehold.it/250x250"  width="100%" />
 				</div>
 				<div class="caption">
 					<div class="desc-product">
