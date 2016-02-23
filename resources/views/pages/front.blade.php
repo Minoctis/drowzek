@@ -4,9 +4,6 @@
 
 @section('title', 'Page d\'accueil')
 
-@include('elements.nav')
-
-
 @section('content')
     
     @include('elements.product')
