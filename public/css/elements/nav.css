@@ -51,11 +51,12 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
 
 }
 
-.navbar-nav>li>.dropdown-menu.affix-top {
+.navbar-nav>li>.dropdown-menu {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: transparent;
     transition: all .5s ease .25s;
     padding: 30px 0 30px 0px;
+    min-height: 180px;
 }
 .image-nav{ width:100%; display:none;
 }
