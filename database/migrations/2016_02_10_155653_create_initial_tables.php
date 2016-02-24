@@ -179,7 +179,7 @@ class CreateInitialTables extends Migration
             $table->foreign('produit_id')->references('id')->on('produits');
         });
 
-        Schema::create('produis_associes', function(Blueprint $table) {
+        Schema::create('produits_associes', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('produit_1')->unsigned();
             $table->integer('produit_2')->unsigned();
@@ -244,15 +244,15 @@ class CreateInitialTables extends Migration
             $table->string('code_promo_libelle')->nullable();
             $table->float('code_promo_valeur')->nullable();
             $table->integer('code_promo_type_id')->nullable()->unsigned();
-            $table->integer('pays_id_livraison')->unsigned();
-            $table->integer('pays_id_facturation')->unsigned();
+            $table->integer('pays_livraison_id')->unsigned();
+            $table->integer('pays_facturation_id')->unsigned();
             $table->integer('paiement_type_id')->unsigned();
             $table->integer('client_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('code_promo_type_id')->references('id')->on('promotion_type');
-            $table->foreign('pays_id_livraison')->references('id')->on('pays');
-            $table->foreign('pays_id_facturation')->references('id')->on('pays');
+            $table->foreign('pays_livraison_id')->references('id')->on('pays');
+            $table->foreign('pays_facturation_id')->references('id')->on('pays');
             $table->foreign('paiement_type_id')->references('id')->on('paiement_type');
             $table->foreign('client_id')->references('id')->on('clients');
         });
