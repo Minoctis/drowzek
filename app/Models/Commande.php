@@ -40,6 +40,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\PaiementType $paiementType
  * @property-read \App\Models\PromotionType $promotionType
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CommandeProduit[] $produits
+ * @property integer $commande_statut_id
+ * @property-read \App\Models\CommandeStatut $statut
  */
 class Commande extends Model
 {
@@ -70,5 +72,9 @@ class Commande extends Model
 
     public function produits() {
         return $this->hasMany('App\Models\CommandeProduit');
+    }
+
+    public function statut() {
+        return $this->belongsTo('App\Models\CommandeStatut', 'commande_statut_id');
     }
 }

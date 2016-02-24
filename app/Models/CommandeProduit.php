@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon $updated_at
  * @property-read \App\Models\Commande $commande
  * @property-read \App\Models\TauxTVA $taux_tva
+ * @property string $produit_libelle
+ * @property string $option_libelle
  */
 class CommandeProduit extends Model
 {
