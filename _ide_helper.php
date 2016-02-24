@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.14 on 2016-02-23.
+ * Generated for Laravel 5.2.20 on 2016-02-24.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2819,15 +2819,39 @@ namespace {
         }
         
         /**
-         * Set the default fetch mode for the connection.
+         * Get the fetch argument to be applied when selecting.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function getFetchArgument(){
+            //Method inherited from \Illuminate\Database\Connection            
+            return \Illuminate\Database\MySqlConnection::getFetchArgument();
+        }
+        
+        /**
+         * Get custom constructor arguments for the PDO::FETCH_CLASS fetch mode.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getFetchConstructorArgument(){
+            //Method inherited from \Illuminate\Database\Connection            
+            return \Illuminate\Database\MySqlConnection::getFetchConstructorArgument();
+        }
+        
+        /**
+         * Set the default fetch mode for the connection, and optional arguments for the given fetch mode.
          *
          * @param int $fetchMode
+         * @param mixed $fetchArgument
+         * @param array $fetchConstructorArgument
          * @return int 
          * @static 
          */
-        public static function setFetchMode($fetchMode){
+        public static function setFetchMode($fetchMode, $fetchArgument = null, $fetchConstructorArgument = array()){
             //Method inherited from \Illuminate\Database\Connection            
-            return \Illuminate\Database\MySqlConnection::setFetchMode($fetchMode);
+            return \Illuminate\Database\MySqlConnection::setFetchMode($fetchMode, $fetchArgument, $fetchConstructorArgument);
         }
         
         /**
@@ -3017,6 +3041,52 @@ namespace {
          */
         public static function findOrFail($id, $columns = array()){
             return \Illuminate\Database\Eloquent\Builder::findOrFail($id, $columns);
+        }
+        
+        /**
+         * Find a model by its primary key or return fresh model instance.
+         *
+         * @param mixed $id
+         * @param array $columns
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function findOrNew($id, $columns = array()){
+            return \Illuminate\Database\Eloquent\Builder::findOrNew($id, $columns);
+        }
+        
+        /**
+         * Get the first record matching the attributes or instantiate it.
+         *
+         * @param array $attributes
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function firstOrNew($attributes){
+            return \Illuminate\Database\Eloquent\Builder::firstOrNew($attributes);
+        }
+        
+        /**
+         * Get the first record matching the attributes or create it.
+         *
+         * @param array $attributes
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function firstOrCreate($attributes){
+            return \Illuminate\Database\Eloquent\Builder::firstOrCreate($attributes);
+        }
+        
+        /**
+         * Create or update a record matching the attributes, and fill it with values.
+         *
+         * @param array $attributes
+         * @param array $values
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function updateOrCreate($attributes, $values = array()){
+            return \Illuminate\Database\Eloquent\Builder::updateOrCreate($attributes, $values);
         }
         
         /**
@@ -5153,7 +5223,7 @@ namespace {
          * Get a translation according to an integer value.
          *
          * @param string $key
-         * @param int $number
+         * @param int|array|\Countable $number
          * @param array $replace
          * @param string $locale
          * @return string 
@@ -5181,7 +5251,7 @@ namespace {
          * Get a translation according to an integer value.
          *
          * @param string $id
-         * @param int $number
+         * @param int|array|\Countable $number
          * @param array $parameters
          * @param string $domain
          * @param string $locale
@@ -6368,6 +6438,16 @@ namespace {
          */
         public static function cookie($key = null, $default = null){
             return \Illuminate\Http\Request::cookie($key, $default);
+        }
+        
+        /**
+         * Get an array of all of the files on the request.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function allFiles(){
+            return \Illuminate\Http\Request::allFiles();
         }
         
         /**
@@ -7645,6 +7725,29 @@ namespace {
             return \Illuminate\Http\Request::isXmlHttpRequest();
         }
         
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void 
+         * @static 
+         */
+        public static function macro($name, $macro){
+            \Illuminate\Http\Request::macro($name, $macro);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasMacro($name){
+            return \Illuminate\Http\Request::hasMacro($name);
+        }
+        
     }
 
 
@@ -7731,6 +7834,18 @@ namespace {
          */
         public static function download($file, $name = null, $headers = array(), $disposition = 'attachment'){
             return \Illuminate\Routing\ResponseFactory::download($file, $name, $headers, $disposition);
+        }
+        
+        /**
+         * Return the raw contents of a binary file.
+         *
+         * @param \SplFileInfo|string $file
+         * @param array $headers
+         * @return \Symfony\Component\HttpFoundation\BinaryFileResponse 
+         * @static 
+         */
+        public static function file($file, $headers = array()){
+            return \Illuminate\Routing\ResponseFactory::file($file, $headers);
         }
         
         /**
@@ -7955,6 +8070,27 @@ namespace {
         }
         
         /**
+         * Set the unmapped global resource parameters to singular.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function singularResourceParameters(){
+            \Illuminate\Routing\Router::singularResourceParameters();
+        }
+        
+        /**
+         * Set the global resource parameter mapping.
+         *
+         * @param array $parameters
+         * @return void 
+         * @static 
+         */
+        public static function resourceParameters($parameters = array()){
+            \Illuminate\Routing\Router::resourceParameters($parameters);
+        }
+        
+        /**
          * Register an array of resource controllers.
          *
          * @param array $resources
@@ -8120,6 +8256,34 @@ namespace {
          */
         public static function middlewareGroup($name, $middleware){
             return \Illuminate\Routing\Router::middlewareGroup($name, $middleware);
+        }
+        
+        /**
+         * Add a middleware to the beginning of a middleware group.
+         * 
+         * If the middleware is already in the group, it will not be added again.
+         *
+         * @param string $group
+         * @param string $middleware
+         * @return $this 
+         * @static 
+         */
+        public static function prependMiddlewareToGroup($group, $middleware){
+            return \Illuminate\Routing\Router::prependMiddlewareToGroup($group, $middleware);
+        }
+        
+        /**
+         * Add a middleware to the end of a middleware group.
+         * 
+         * If the middleware is already in the group, it will not be added again.
+         *
+         * @param string $group
+         * @param string $middleware
+         * @return $this 
+         * @static 
+         */
+        public static function pushMiddlewareToGroup($group, $middleware){
+            return \Illuminate\Routing\Router::pushMiddlewareToGroup($group, $middleware);
         }
         
         /**
@@ -9134,6 +9298,16 @@ namespace {
         }
         
         /**
+         * Get a default cloud filesystem instance.
+         *
+         * @return \Illuminate\Contracts\Filesystem\Filesystem 
+         * @static 
+         */
+        public static function cloud(){
+            return \Illuminate\Filesystem\FilesystemManager::cloud();
+        }
+        
+        /**
          * Create an instance of the local driver.
          *
          * @param array $config
@@ -9185,6 +9359,16 @@ namespace {
          */
         public static function getDefaultDriver(){
             return \Illuminate\Filesystem\FilesystemManager::getDefaultDriver();
+        }
+        
+        /**
+         * Get the default cloud driver name.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultCloudDriver(){
+            return \Illuminate\Filesystem\FilesystemManager::getDefaultCloudDriver();
         }
         
         /**
