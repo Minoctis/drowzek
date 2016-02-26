@@ -36,6 +36,8 @@ class AjoutPivotProduitAmbiance extends Migration
      */
     public function down()
     {
-        Schema::drop('ambiances_has_produits');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('ambiances_has_produits');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

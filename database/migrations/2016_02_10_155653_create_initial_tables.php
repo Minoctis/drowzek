@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
 
 class CreateInitialTables extends Migration
 {
@@ -279,28 +278,30 @@ class CreateInitialTables extends Migration
      */
     public function down()
     {
-        Schema::drop('civilites');
-        Schema::drop('adresse_type');
-        Schema::drop('pays');
-        Schema::drop('paiement_type');
-        Schema::drop('reduction_type');
-        Schema::drop('promotion_type');
-        Schema::drop('panier_type');
-        Schema::drop('taux_tva');
-        Schema::drop('categories');
-        Schema::drop('ambiances');
-        Schema::drop('ambiances_img');
-        Schema::drop('codes_promo');
-        Schema::drop('clients');
-        Schema::drop('adresses');
-        Schema::drop('produits');
-        Schema::drop('produits_img');
-        Schema::drop('produits_associes');
-        Schema::drop('produit_options');
-        Schema::drop('paniers');
-        Schema::drop('paniers_has_produits');
-        Schema::drop('reductions');
-        Schema::drop('commandes');
-        Schema::drop('commande_produits');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('civilites');
+        Schema::dropIfExists('adresse_type');
+        Schema::dropIfExists('pays');
+        Schema::dropIfExists('paiement_type');
+        Schema::dropIfExists('reduction_type');
+        Schema::dropIfExists('promotion_type');
+        Schema::dropIfExists('panier_type');
+        Schema::dropIfExists('taux_tva');
+        Schema::dropIfExists('categories');
+        Schema::dropIfExists('ambiances');
+        Schema::dropIfExists('ambiances_img');
+        Schema::dropIfExists('codes_promo');
+        Schema::dropIfExists('clients');
+        Schema::dropIfExists('adresses');
+        Schema::dropIfExists('produits');
+        Schema::dropIfExists('produits_img');
+        Schema::dropIfExists('produits_associes');
+        Schema::dropIfExists('produit_options');
+        Schema::dropIfExists('paniers');
+        Schema::dropIfExists('paniers_has_produits');
+        Schema::dropIfExists('reductions');
+        Schema::dropIfExists('commandes');
+        Schema::dropIfExists('commande_produits');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
