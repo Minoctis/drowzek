@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
     Route::group(['prefix' => 'catalogue', 'as' => 'catalogue::'], function () {
 
         //Accueil du catalogue
-        Route::get('/', ['as' => 'dashboard' ,function () { return view('pages.admin.catalogue.accueil'); }]);
+        Route::get('/', ['as' => 'dashboard' ,function () { return view('pages.admin.catalogue.dashboard'); }]);
 
         //Routes des catégories
         Route::group(['prefix' => 'categories', 'as' => 'categories::'], function () {
@@ -94,6 +94,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
             //Liste des ambiances
             Route::get('/', ['as' => 'liste', function () { return view('pages.admin.catalogue.ambiances.accueil'); }]);
+
+            //Ajouter une ambiance
+            Route::get('add', ['as' => 'add', function () { return view('pages.admin.catalogue.ambiances.add'); }]);
+
+            //Modifier une ambiance
+            Route::get('edit/{id}', ['as' => 'edit', function ($id) { return view('pages.admin.catalogue.ambiances.edit'); }]);
         });
 
     });

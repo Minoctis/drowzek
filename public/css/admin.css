@@ -135,7 +135,7 @@ body {
 
 @media (max-width:767px) {
     #wrapper {
-        padding-left: 70px;
+        padding-left: 50px;
         transition: all .4s ease 0s;
     }
     #sidebar-wrapper {
