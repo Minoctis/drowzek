@@ -93,7 +93,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
         Route::group(['prefix' => 'ambiances', 'as' => 'ambiances::'], function () {
 
             //Liste des ambiances
-            Route::get('/', ['as' => 'liste', function () { return view('pages.admin.catalogue.ambiances.accueil'); }]);
+            Route::get('/', ['as' => 'liste', function () { return view('pages.admin.catalogue.ambiances.liste'); }]);
 
             //Ajouter une ambiance
             Route::get('add', ['as' => 'add', function () { return view('pages.admin.catalogue.ambiances.add'); }]);

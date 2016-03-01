@@ -12,8 +12,9 @@
         <label for="description">Description</label>
         <textarea name="description" rows="5" class="form-control"></textarea>
     </div>
+    <a href="{{ route('admin::catalogue::dashboard') }}" class="btn btn-default">Annuler</a>
     <div class="pull-right">
-        <a href="{{ route('admin::catalogue::dashboard') }}" class="btn btn-default">Annuler</a>
+        <a href="" class="btn btn-default">Prévisualiser</a>
         <input type="submit" class="btn btn-default" value="Enregistrer">
     </div>
 </form>

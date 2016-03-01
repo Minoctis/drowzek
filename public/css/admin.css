@@ -1,6 +1,7 @@
 body {
     padding-bottom: 0 !important;
     font-family: sans-serif;
+    background-color: #eeeeee;
 }
 
 #main-nav {
@@ -41,8 +42,6 @@ body {
     padding-left: 0;
     margin-left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: #eeeeee;
 }
 #wrapper.active {
     padding-left: 150px;

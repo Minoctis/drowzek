@@ -13,8 +13,9 @@
                 <h3 class="panel-title">Catégories</h3>
             </div>
             <div class="panel-body">
-                Panel content
-                <a href="{{ route('admin::catalogue::categories::liste') }}" class="btn btn-default">Accéder aux catégories</a>
+                <a href="{{ route('admin::catalogue::categories::liste') }}" class="btn btn-default pull-right">Ajouter une catégories</a>
+                <p class="help-block">Pour modifier l'ordre des catégories et des sous-catégories, faites un glisser-déposer de la ligne à la position voulue.</p>
+                <div class="row">@include('pages.admin.catalogue.categories.liste')</div>
             </div>
         </div>
     </div>
@@ -24,9 +25,10 @@
                 <h3 class="panel-title">Ambiances</h3>
             </div>
             <div class="panel-body">
-                <a href="{{ route('admin::catalogue::ambiances::add') }}" class="btn btn-default">Ajouter une ambiance</a>
+                <a href="{{ route('admin::catalogue::ambiances::add') }}" class="btn btn-default pull-right">Ajouter une ambiance</a>
+                <p class="help-block">Pour modifier l'ordre des ambiances, faites un glisser-déposer de la ligne à la position voulue.</p>
+                <div class="row">@include('pages.admin.catalogue.ambiances.liste')</div>
             </div>
         </div>
-        <div class="row">@include('pages.admin.catalogue.ambiances.accueil')</div>
     </div>
 @endsection
