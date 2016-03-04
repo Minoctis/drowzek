@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
     Route::group(['prefix' => 'catalogue', 'as' => 'catalogue::'], function () {
 
         //Accueil du catalogue
-        Route::get('/', ['as' => 'dashboard' ,function () { return view('pages.admin.catalogue.dashboard'); }]);
+        Route::get('/', ['as' => 'dashboard' , 'uses' => 'Admin\CatalogueController@dashboardz']);
 
         //Routes des catégories
         Route::group(['prefix' => 'categories', 'as' => 'categories::'], function () {
