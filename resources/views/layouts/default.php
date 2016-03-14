@@ -22,6 +22,11 @@
     <body>
         <div class="page">
             @include('elements.nav')
+            
+            <div class="breadcrumb">
+                
+            </div>
+            
             <div class="main-content">
                 
                 @yield('content')
