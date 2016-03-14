@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.default')
 
 @section('title', 'Page d\'accueil')
 
