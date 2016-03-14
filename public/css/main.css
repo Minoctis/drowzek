@@ -16,7 +16,7 @@ p{font-size: 13px;}
 
 .homepage-content{
     position: relative;
-    top: 50px;
+    top: 0;
 }
 /* SLIDER */
 .slider-hp img{
@@ -256,3 +256,28 @@ h3.show-ambiances:after {
     padding-left: 0;
 }
 /* END BLOC ACTUALITES HOMEPAGE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Défault layout*/
+.breadcrumb{
+    top: 50px;
+    position: relative;
+}
+
+.main-content{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
