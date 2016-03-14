@@ -9,7 +9,10 @@
         <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
     </div>
     
-    @include('elements.product')
+    <div class="nouveautes">
+      @include('elements.product')
+    </div>
+
     
     <!-- Les ambiances -->
 	<div class="ambiance row">
