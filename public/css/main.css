@@ -10,6 +10,9 @@
 
 p{font-size: 13px;}
 
+body{
+    overflow-x: hidden;
+}
 .homepage,
 .page{
     font-family: 'Quicksand', sans-serif;
@@ -290,3 +293,14 @@ h3.show-ambiances:after {
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+
+/*FIN DEFAULT LAYOUT*/
+
+/*BEGIN PRODUCT LIST CSS*/
+
+h3.product-title-list{
+    font-size: 16px; 
+    margin: 5px 0;
+}
+/*FIN PRODUCT LIST CSS*/

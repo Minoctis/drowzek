@@ -14,7 +14,7 @@
 				</div>
 				<div class="caption">
 					<div class="desc-product">
-						<h3>Chaise design bois</h3>
+						<h3 class="product-title-list">Chaise design bois</h3>
 					</div>
 					<div class="price-product">
 						333 €

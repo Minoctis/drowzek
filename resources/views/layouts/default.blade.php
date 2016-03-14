@@ -20,7 +20,7 @@
     </head>
     
     <body>
-        <div class="page">
+        <div class="page" id="@yield('page-id')">
             @include('elements.nav')
             
             <div class="breadcrumb">
