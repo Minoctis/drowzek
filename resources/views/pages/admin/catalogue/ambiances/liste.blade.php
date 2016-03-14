@@ -15,8 +15,8 @@
                 <th>{{ $i+1 }}</th>
                 <th>{nom}</th>
                 <th>0</th>
-                <th><a href="{{ route('admin::catalogue::ambiances::edit', ['id' => 0]) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifier</a></th>
-                <th><button class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer</button></th>
+                <th><a href="{{ route('admin::catalogue::ambiances::edit', ['id' => 0]) }}" class="btn btn-default center-block"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifier</a></th>
+                <th><button class="btn btn-default center-block"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer</button></th>
             </tr>
         @endfor
         </tbody>
