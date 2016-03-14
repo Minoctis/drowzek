@@ -9,7 +9,8 @@
 
 p{font-size: 13px;}
 
-.homepage{
+.homepage,
+.page{
     font-family: 'Quicksand', sans-serif;
     font-size : 13px;
 }
@@ -272,6 +273,13 @@ h3.show-ambiances:after {
 
 
 /*Défault layout*/
+.page .navbar-nav>li>.dropdown-menu.affix-top{
+    background-color: #000000;
+}
+.page .navbar-inverse{
+    background-color: #000000;
+    border-color: #000000;
+}
 .breadcrumb{
     top: 50px;
     position: relative;
