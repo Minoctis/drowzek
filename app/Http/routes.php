@@ -19,6 +19,10 @@ Route::get('/', ['as' => 'accueil', function () { return view('pages.front'); }]
 //Page catégorie
 Route::get('creations', ['as' => 'creations', function() {return view('pages.creations'); }]);
 
+// page produit
+Route::get('produit', ['as' => 'produit', function() {return view('pages.produit'); }]);
+
+
 //Routes du Back-office
 Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
