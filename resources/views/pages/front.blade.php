@@ -5,6 +5,9 @@
 @section('title', 'Page d\'accueil')
 
 @section('content')
+	<div class="slider-hp">
+        <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
+    </div>
     
     @include('elements.product')
     

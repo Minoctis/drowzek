@@ -16,6 +16,9 @@
 //Accueil
 Route::get('/', ['as' => 'accueil', function () { return view('pages.front'); }]);
 
+//Page catégorie
+Route::get('creations', ['as' => 'creations', function() {return view('pages.creations'); }]);
+
 //Routes du Back-office
 Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
