@@ -8,12 +8,18 @@
 	<div class="slider-hp">
         <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
     </div>
-    
-    <div class="nouveautes">
-      @include('elements.product')
-    </div>
 
-    
+	<div class="nouveautes">
+    <div class="container">
+		<div class="row">
+		    @for ($i = 0; $i < 4; $i++)
+
+		    	@include('elements.product')
+		    
+		    @endfor
+		</div>
+	</div>
+	</div>
     <!-- Les ambiances -->
 	<div class="ambiance row">
 	    <div class="container">

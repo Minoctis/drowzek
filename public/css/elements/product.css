@@ -10,6 +10,7 @@
 	font-size: 16px;
 	position:relative;
 	z-index:1;
+	min-height: 335px;
 }
 .product-container img {
     width: 100%;
@@ -56,7 +57,7 @@
 	width: 100%;
 	height: 100%;
 	visibility:hidden;
-	display: none;
+	display: block;
 }
 
 /* lien afficher dans la div grise */
