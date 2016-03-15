@@ -3,9 +3,33 @@
 @section('title', 'Page d\'accueil')
 
 @section('content')
-<div class="row">
-	<div class="col-lg-6 col-xs-12">
-		<img class="img-products" src="{{ asset('img/products/fauteuil-panier.jpg')}}" width="100%" />
+<div class="row size-carousel">
+	<div class="col-lg-6 col-xs-12 align-bottom">
+			<div class="carousel slide article-slide" id="myCarousel">
+		     	<div class="carousel-inner cont-slider">
+			        <div class="item active">
+			          <img class="img-products" src="{{ asset('img/products/fauteuil-panier.jpg')}}" width="100%" />
+			        </div>
+			        <div class="item">
+			          <img src="http://placehold.it/1200x440/999999/cccccc">
+			        </div>
+			        <div class="item">
+			          <img src="http://placehold.it/1200x440/dddddd/333333">
+			        </div>               
+		     	</div>
+		      <!-- Indicators -->
+		     	<ol class="carousel-indicators visible-lg visible-md">
+			        <li class="active" data-slide-to="0" data-target="#myCarousel">
+			          <img alt="" title="" src="http://placehold.it/120x44/cccccc/ffffff">
+			        </li>
+			        <li class="" data-slide-to="1" data-target="#myCarousel">
+			          <img alt="" title="" src="http://placehold.it/120x44/999999/cccccc">
+			        </li>
+			        <li class="" data-slide-to="2" data-target="#myCarousel">
+			          <img alt="" title="" src="http://placehold.it/120x44/dddddd/333333">
+			        </li>               
+		     	</ol>                 
+		    </div>
 	</div>
 	<div class="col-lg-6 col-xs-12 padding-product showborder">
 		<div class="row">
@@ -141,6 +165,11 @@
 		    	@include('elements.product')
 		    
 		    @endfor
+		</div>
+	</div>
+	<div class="comment-product">
+		<div class="row">
+			<h3>Avis des clients</h3>
 		</div>
 	</div>
 </div>
