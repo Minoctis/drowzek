@@ -304,3 +304,83 @@ h3.product-title-list{
     margin: 5px 0;
 }
 /*FIN PRODUCT LIST CSS*/
+
+
+
+
+
+/*BEFIN FICHE PRODUIT*/
+h2.product-title{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.fiche-produit .bloc-images.col-lg-6.col-md-6{
+    position: absolute;
+}
+
+.fiche-produit .bloc-images.col-xs-12{
+    position: relative;
+}
+
+.fiche-produit .bloc-images .item img{
+    max-height: 500px;
+}
+
+.fiche-produit .product-price{
+    font-size: 18px;
+}
+
+/*END FICHE PRODUIT*/
+
+
+
+/* BEGIN SOCIAL */
+.social .social-icon{
+    display: inline-block;
+    text-align: center;
+    padding-right: 15px;
+}
+.social i{
+    font-size: 24px;
+}
+
+.social .social-icon.fb a{
+    color: #043861;
+}
+
+.social .social-icon.twitter a{
+    color: #307be1;
+}
+
+.social .social-icon.google-plus a{
+    color: #ca0814;
+}
+
+.social .social-icon.instagram a{
+    color: #77400b;
+}
+
+.social .social-icon.pinterest a{
+    color: #cd2c2f;
+}
+
+.social .social-icon.youtube a{
+    color: #650205;
+}
+
+.social .social-icon a{
+    font-size: 13px;
+    text-transform: none;
+    text-align: center;
+}
+
+.social .social-icon a:hover{
+    text-decoration: none;
+}
+
+.social {
+    display: block;
+    text-align: center;
+}
+/*END SOCIAL*/
