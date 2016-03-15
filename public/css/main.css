@@ -315,13 +315,10 @@ h2.product-title{
     text-transform: uppercase;
 }
 
-.fiche-produit .bloc-images.col-lg-6.col-md-6{
+.fiche-produit .bloc-images{
     position: absolute;
 }
 
-.fiche-produit .bloc-images.col-xs-12{
-    position: relative;
-}
 
 .fiche-produit .bloc-images .item img{
     max-height: 500px;
@@ -330,7 +327,19 @@ h2.product-title{
 .fiche-produit .product-price{
     font-size: 18px;
 }
+h3.related-product-title,
+h3.selected-product-title,
+h3.comment-product-title{
+ padding-right: 15px;
+ padding-left: 15px;
+ text-transform: uppercase;
+ font-size: 18px;
+}
 
+h4.review-title{
+    font-size: 16px;
+    font-weight: 600;
+}
 /*END FICHE PRODUIT*/
 
 
@@ -381,6 +390,6 @@ h2.product-title{
 
 .social {
     display: block;
-    text-align: center;
+    padding-top: 20px;
 }
 /*END SOCIAL*/

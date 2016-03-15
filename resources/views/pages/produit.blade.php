@@ -6,7 +6,8 @@
 
 <div class="fiche-produit">
 	<div class="row size-carousel">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 align-bottom bloc-images" >
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 product-images">
+			<div class="align-bottom bloc-images">
 				<div class="carousel slide article-slide" id="myCarousel">
 			     	<div class="carousel-inner cont-slider">
 				        <div class="item active">
@@ -32,9 +33,11 @@
 				        </li>               
 			     	</ol>                 
 			    </div>
+			</div>
 		</div>
 		<div class="container">
-			<div class="col-lg-6 col-lg-offset-6 col-md-6 col-md-offset-6 col-sm-12 col-xs-12 ">
+			<div class="col-lg-6 col-md-6"></div>
+			<div class="col-lg-6  col-md-6 col-sm-12 col-xs-12 ">
 				<h2 class="product-title">Craddle chair by Richard Clarkson</h2>
 				<p>Description :</p>
 				<p>
@@ -65,7 +68,7 @@
 				</div>	
 				<div class="row">
 					<div class="col-xs-12">
-						Partagez sur les réseaux sociaux
+						<p class="share-content"><i class="fa fa-share-alt-square"></i> Partagez sur les réseaux sociaux</p> 
 						<div class="social">
 							<div class="fb social-icon">
 								<a href="#">
@@ -114,7 +117,7 @@
 <div class="container">
 	<div class="related-product">
 		<div class="row">
-			<h3>Produits dans la même catégorie</h3>
+			<h3 class="related-product-title">Produits dans la même catégorie</h3>
 		    @for ($i = 0; $i < 4; $i++)
 
 		    	@include('elements.product')
@@ -124,7 +127,7 @@
 	</div>
 	<div class="selected-product">
 		<div class="row">
-			<h3>Produits sélectionnés pour vous</h3>
+			<h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
 		    @for ($i = 0; $i < 4; $i++)
 
 		    	@include('elements.product')
@@ -134,10 +137,10 @@
 	</div>
 	<div class="comment-product">
 		<div class="row">
-			<h3>Avis des clients</h3>
+			<h3 class="comment-product-title">Avis des clients</h3>
 			@for ($i = 0; $i < 3; $i++)
 				<div class="col-lg-4 col-xs-12">
-					<h4>Jean Dupond : Mais c'est génial</h4>
+					<h4 class="review-title">Jean Dupond : Mais c'est génial</h4>
 					<p>
 						Ajouté le 11.12.15<br />
 						Très beau design. Une pièce original à avoir chez sois !<br />

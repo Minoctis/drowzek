@@ -30,4 +30,18 @@ jQuery(document).ready(function () {
     })
     
     
+
+
+    // Hauteur caroussel images produit
+    function resizeHeight(div){
+        var height = $(div).height()+"px";
+        var width = $(div).width()+"px";
+        $(div).parent().css("height", height);
+    }
+    resizeHeight(".bloc-images");
+    $(window).bind('resize',function () {
+        //Update slider height on resize
+        resizeHeight(".bloc-images");
+    });
+
 });
