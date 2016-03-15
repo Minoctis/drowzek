@@ -11,10 +11,10 @@
 			          <img class="img-products" src="{{ asset('img/products/fauteuil-panier.jpg')}}" width="100%" />
 			        </div>
 			        <div class="item">
-			          <img src="http://placehold.it/1200x440/999999/cccccc">
+			          <img src="http://placehold.it/560x560/999999/cccccc">
 			        </div>
 			        <div class="item">
-			          <img src="http://placehold.it/1200x440/dddddd/333333">
+			          <img src="http://placehold.it/560x560/dddddd/333333">
 			        </div>               
 		     	</div>
 		      <!-- Indicators -->
@@ -170,6 +170,17 @@
 	<div class="comment-product">
 		<div class="row">
 			<h3>Avis des clients</h3>
+			@for ($i = 0; $i < 3; $i++)
+				<div class="col-lg-4 col-xs-12">
+					<h4>Jean Dupond : Mais c'est génial</h4>
+					<p>
+						Ajouté le 11.12.15<br />
+						Très beau design. Une pièce original à avoir chez sois !<br />
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					</p>
+				</div>
+			@endfor
 		</div>
 	</div>
 </div>
