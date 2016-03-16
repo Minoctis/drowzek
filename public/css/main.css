@@ -139,65 +139,9 @@ a:hover, a:active{
         padding: 15px 10px;
         margin: 0;
     }
-
-
-
-
-    .search-bloc{
-        position: relative;
-        height: 60px;
-    }
-    #search-navbar-top {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-    }
-    #label {
-        width: 60px;
-        height: 60px;
-        position: relative;
-        z-index: 20;
-    }
-
-    #search-navbar-top input {
-        position: absolute;
-        top: 0;
-        left: 60px;
-        /* width: 450px; */
-        /* height: 60px; */
-        z-index: 5;
-        overflow: hidden;
-    }
-    #search-navbar-top input {
-        display: block;
-        position: absolute;
-         top: 8px; 
-        /* left: -450px; */
-        /* width: 304px; */
-        /* height: 100%; */
-        /* margin: 0; */
-        /* padding: 0 10px; */
-        border: none;
-        /* background-color: #23688b; */
-        color: #fff;
-        font-size: 18px;
-        backface-visibility: none;
+    #search-navbar-top input{
         border-radius: 50px;
-        transition: left 0;
     }
-    #search-navbar-top input:focus {
-        outline: none
-    }
-    #search-navbar-top.focus {
-        z-index: 20
-    }
-    #search-navbar-top.focus input {
-        left: 0;
-        transition: left 0.3s;
-    }
-
 
     /* END NAVBAR */
 
@@ -627,6 +571,26 @@ h4.review-title{
     @media screen and (max-width: 767px){
 
         /* MENU */
+        .navbar-fixed-bottom .navbar-collapse, 
+        .navbar-fixed-top .navbar-collapse{
+            height: 100%;
+            overflow-y: scroll;
+        }
+        .navbar-nav>li>.dropdown-menu.affix-top,
+        .navbar-nav>li>.dropdown-menu.affix{
+            background-color: transparent;
+        }
+        .navbar-nav>li>.dropdown-menu{
+            min-height: auto;
+            min-width: auto;
+            padding: 0;
+            left: 0;
+            position : static!important;
+        }
+        .navbar-nav .open .dropdown-menu .dropdown-header, 
+        .navbar-nav .open .dropdown-menu>li>a {
+            padding: 5px 15px 5px 0;
+        }
         .navbar-inverse .navbar-toggle{
             border-color: transparent;
         }
@@ -638,7 +602,18 @@ h4.review-title{
         .navbar-inverse .navbar-toggle:hover .icon-bar{
             background-color: #eeeeee;
         }
-
+        .navbar-nav>li>.dropdown-menu a {
+            position: relative;
+            display: block;
+            padding: 15px 10px;
+        }
+        .nav>li{
+            border-bottom: 1px solid white;
+        }
+        .navbar-inverse .navbar-collapse, 
+        .navbar-inverse .navbar-form{
+            border-color: transparent;
+        }
         /* END MENU */
         /* FOOTER */
         .bloc-footer {

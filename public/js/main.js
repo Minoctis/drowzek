@@ -70,7 +70,7 @@ jQuery(document).ready(function () {
             });
         }(window));
 
-    // fin recherche menu
+*/
 
 
 
