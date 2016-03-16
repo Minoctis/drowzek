@@ -28,43 +28,22 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
           
           <ul class="dropdown-menu dropdown-menu-large row affix-top" data-spy="affix" data-offset-top="500">
-             <li class="col-sm-6 col-md-3 sejour">
-              <ul>
-                <li class="dropdown-header"><a href="#">sejours</a></li>
-                <li class="sous-dropdown-header"><a href="#">canape</a></li>
-                <li class="sous-dropdown-header"><a href="#">fauteuil</a></li>
-                <li class="sous-dropdown-header"><a href="#">table basse</a></li>
-                <li class="sous-dropdown-header"><a href="#">Meuble tv</a></li>
-                <!--<li role="separator" class="divider"></li>-->
-              </ul>
-             </li>
-
-             <li class="col-sm-6 col-md-4 salle-a-manger">
-              <ul>
-                <li class="dropdown-header"><a href="#">Salle a manger</a></li>
-                <li class="sous-dropdown-header"><a href="#">chaises, tabourets</a></li>
-                <li class="sous-dropdown-header"><a href="#">bancs</a></li>
-                <li class="sous-dropdown-header"><a href="#">table de repas</a></li>
-                <li class="sous-dropdown-header"><a href="#">buffets, colonnes</a></li>
-                <li class="sous-dropdown-header"><a href="#">vaisseliers</a></li>
-                <!--<li role="separator" class="divider"></li>-->
-               </ul>
-             </li>
-
-             <li class="col-sm-6 col-md-2 chambre">
-              <ul>
-                <li class="dropdown-header"><a href="#">chambre</a></li>
-                <li class="sous-dropdown-header"><a href="#">Lits</a></li>
-               <li class="sous-dropdown-header"><a href="#">Armoires</a></li>
-              </ul>
-            </li>
-
+            @foreach($categories as $categorie)
+              <li class="col-sm-6 col-md-2 categorie {{ $categorie->slug }}">
+                <ul>
+                  <li class="dropdown-header"><a href="#">{{ $categorie->nom }}</a></li>
+                  @foreach($categorie->children as $sous_categorie)
+                    <li class="sous-dropdown-header"><a href="#">{{ $sous_categorie->nom }}</a></li>
+                  @endforeach
+                </ul>
+              </li>
+            @endforeach
             <li class="col-sm-6 col-md-3 image-categorie hidden-xs">
-              <img id="sejour" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
-              <img id="salle-a-manger" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
-              <img id="chambre" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
+              @foreach($categories as $categorie)
+                <img id="{{ $categorie->slug }}" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
+                {{-- todo : gestion des images --}}
+              @endforeach
             </li>
-        
           </ul>
         </li>
       </ul>
