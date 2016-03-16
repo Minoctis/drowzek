@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="col-lg-6 col-md-6"></div>
+			<!-- <div class="col-lg-6 col-md-6"></div> -->
 			<div class="col-lg-6  col-md-6 col-sm-12 col-xs-12 ">
 				<h2 class="product-title">Craddle chair by Richard Clarkson</h2>
 				<p>Description :</p>
