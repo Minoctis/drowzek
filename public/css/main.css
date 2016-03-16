@@ -381,6 +381,8 @@ h2.product-title{
 
 .fiche-produit .bloc-images .item img{
     max-height: 500px;
+    width: 100%;
+    height: auto;
 }
 
 .fiche-produit .product-price{
@@ -398,6 +400,10 @@ h3.comment-product-title{
 h4.review-title{
     font-size: 16px;
     font-weight: 600;
+}
+.carousel-control-comment.left, 
+.carousel-control-comment.right{
+
 }
 /* END FICHE PRODUIT */
 
