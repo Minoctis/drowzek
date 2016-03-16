@@ -9,6 +9,6 @@
 				Découvrir
 			</div>
 		</div>
-		<img class="img-products" src="{{ asset('img/ambiances/modern-01.jpg')}}" width="100%" />
+		<img class="img-products" src="http://placehold.it/1398x880" width="100%" />
 	</div>
 </div>

@@ -11,13 +11,13 @@
 				<div class="carousel slide article-slide" id="myCarousel">
 			     	<div class="carousel-inner cont-slider">
 				        <div class="item active">
-				          <img class="img-products" src="{{ asset('img/products/fauteuil-panier.jpg')}}" width="100%" />
+				          <img src="http://placehold.it/600x560/999999/cccccc">
 				        </div>
 				        <div class="item">
-				          <img src="http://placehold.it/560x560/999999/cccccc">
+				          <img src="http://placehold.it/600x560/999999/cccccc">
 				        </div>
 				        <div class="item">
-				          <img src="http://placehold.it/560x560/dddddd/333333">
+				          <img src="http://placehold.it/600x560/dddddd/333333">
 				        </div>               
 			     	</div>
 			      <!-- Indicators -->
