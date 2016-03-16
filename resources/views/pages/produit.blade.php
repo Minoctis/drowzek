@@ -138,12 +138,11 @@
 	<div class="comment-product" id="comment">
 		<div class="row">
 			<h3 class="comment-product-title">Avis des clients</h3>
-			<div class="col-lg-offset-9 col-lg-3 align-right-indicators">
+			<div style="float:right;">
 				<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-caret-left fa-2x"></i></a>
                 <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
 			</div>
-		</div>
-		<div class="row">
+		
 			<div class="well">
             <!-- Carousel
             ================================================== -->            
