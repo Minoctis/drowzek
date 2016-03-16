@@ -28,7 +28,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cr&eacute;ation<span class="caret"></span></a>
           
           <ul class="dropdown-menu dropdown-menu-large row affix-top" data-spy="affix" data-offset-top="500">
-             <li class="col-sm-3 sejour">
+             <li class="col-sm-6 col-md-3 sejour">
               <ul>
                 <li class="dropdown-header"><a href="#">sejours</a></li>
                 <li class="sous-dropdown-header"><a href="#">canape</a></li>
@@ -39,7 +39,7 @@
               </ul>
              </li>
 
-             <li class="col-sm-4 salle-a-manger">
+             <li class="col-sm-6 col-md-4 salle-a-manger">
               <ul>
                 <li class="dropdown-header"><a href="#">Salle a manger</a></li>
                 <li class="sous-dropdown-header"><a href="#">chaises, tabourets</a></li>
@@ -51,7 +51,7 @@
                </ul>
              </li>
 
-             <li class="col-sm-2 chambre">
+             <li class="col-sm-6 col-md-2 chambre">
               <ul>
                 <li class="dropdown-header"><a href="#">chambre</a></li>
                 <li class="sous-dropdown-header"><a href="#">Lits</a></li>
@@ -59,7 +59,7 @@
               </ul>
             </li>
 
-            <li class="col-sm-3">
+            <li class="col-sm-6 col-md-3 image-categorie hidden-xs">
               <img id="sejour" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
               <img id="salle-a-manger" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
               <img id="chambre" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
@@ -75,9 +75,18 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>-->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-user"></i></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;Panier</a></li>
+        <li><a href="#"><i class="fa fa-user fa-lg"></i> <span class='visible-xs'>  Mon compte</span> </a></li>
+        <li>
+
+          <form class="navbar-form" id="search-navbar-top" role="search"> 
+            <i class="fa fa-search fa-lg"></i>
+            <div class="form-group"> 
+              <input type="text" class="form-control" placeholder="Rechercher"> 
+            </div> 
+          </form>
+
+        </li>
+        <li><a href="#"><i class="fa fa-shopping-cart fa-lg"></i>  Panier</a></li>
         <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

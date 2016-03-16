@@ -122,6 +122,22 @@ a:hover, a:active{
         transition: all .5s ease .25s; 
     }
 
+    .dropdown-menu li>ul{
+        padding-left: 30px;
+    }
+
+    .navbar-form i{
+        color: white;
+    }
+    #search-navbar-top .form-group{
+        display: none;
+    }
+    #search-navbar-top .navbar-form{
+        position: relative;
+        display: block;
+        padding: 15px 10px;
+        margin: 0;
+    }
     /* END NAVBAR */
 
 /* END ELEMENTS */
@@ -549,12 +565,59 @@ h4.review-title{
     /* ECRANS MOBILE */
     @media screen and (max-width: 767px){
 
+        /* MENU */
+        .navbar-inverse .navbar-toggle{
+            border-color: transparent;
+        }
+        .navbar-inverse .navbar-toggle:focus, 
+        .navbar-inverse .navbar-toggle:hover{
+            background-color: transparent;
+        }
+
+        .navbar-inverse .navbar-toggle:hover .icon-bar{
+            background-color: #eeeeee;
+        }
+
+        /* END MENU */
         /* FOOTER */
         .bloc-footer {
             padding-bottom: 20px;
         }
     }
     /* END ECRANS MOBILE*/
+
+    /* ECRANS TABLETTE */
+    @media screen and (min-width: 786px) and (max-width: 992px){
+        /* MENU */
+        .navbar-nav>li>.dropdown-menu{
+            min-height: 282px;
+        }
+        .dropdown-menu li.image-categorie img{
+            height: 100px;
+            width: auto;
+            margin: auto;
+        }
+        .dropdown-menu li.image-categorie{
+            padding: 10px 0 0 0;
+        }
+        .dropdown-menu{
+            min-width: 500px !important;
+        }
+        /* END MENU */
+    }
+    /* FIN ECRANS TABLETTE */
+
+    /* ECRANS DESKTOP */
+
+    @media screen and (min-width: 993px) and (max-width: 1199px){
+        /* MENU */
+        .dropdown-menu{
+            min-width: 660px !important ;
+        }
+        /* END MENU */
+    }
+
+    /* FIN ECRANS DESKTOP */
 
 /********************************************************
 ******************** END RESPONSIVE *********************
