@@ -22,6 +22,11 @@ Route::get('creations', ['as' => 'creations', function() {return view('pages.cre
 // page produit
 Route::get('produit', ['as' => 'produit', function() {return view('pages.produit'); }]);
 
+// page ambiance
+Route::get('ambiance', ['as' => 'ambiance', function() {return view('pages.ambiance'); }]);
+
+// fiche ambiance
+Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view('pages.fiche-ambiance'); }]);
 
 //Routes du Back-office
 Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
