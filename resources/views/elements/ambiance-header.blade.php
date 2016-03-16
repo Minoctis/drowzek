@@ -1,4 +1,4 @@
-<div class="col-lg-12">
+<div class="col-lg-12 padding-header">
 	<div class="border-ambiance">
 		<div class="see-ambiance-header">
 			<h2>Moderne</h2>
