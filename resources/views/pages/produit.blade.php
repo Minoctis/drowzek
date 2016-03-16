@@ -143,59 +143,44 @@
                 <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
 			</div>
 		</div>
-				<div class="row">
-					<div class="well">
-		            <!-- Carousel
-		            ================================================== -->            
-		            <div id="myCarousel-comment" class="carousel slide" data-interval="false">
-		                <div class="carousel-inner">
-		                    <div class="item active">
-		                        <div class="row">
-		                            @for ($i = 0; $i < 3; $i++)
-								    	@include('elements.comment')
-								    @endfor
-		                        </div>
-		                    </div>
-		                    <div class="item">
-		                        <div class="row">
-		                            @for ($i = 0; $i < 3; $i++)
-								    	@include('elements.comment')
-								    @endfor
-		                        </div>
-		                    </div>
-		                    <div class="item">
-		                        <div class="row">
-		                             @for ($i = 0; $i < 3; $i++)
-								    	@include('elements.comment')
-								    @endfor
-		                        </div>
-		                    </div>
-		                </div>
-		                <!--
-		                <ol class="carousel-indicators-comment">
-		                    <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
-		                    <li data-target="#myCarousel-comment" data-slide-to="1"></li>
-		                    <li data-target="#myCarousel-comment" data-slide-to="2"></li>
-		                </ol>
-		            	-->
-		            </div><!-- End Carousel --> 
-		        </div><!-- End Well -->
-		    </div><!-- End Row -->
-<!--
-			@for ($i = 0; $i < 3; $i++)
-				<div class="col-lg-4 col-xs-12">
-					<h4 class="review-title">Jean Dupond : Mais c'est génial</h4>
-					<p>
-						Ajouté le 11.12.15<br />
-						Très beau design. Une pièce original à avoir chez sois !<br />
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					</p>
-				</div>
-			@endfor
-			-->
-
-		</div>
+		<div class="row">
+			<div class="well">
+            <!-- Carousel
+            ================================================== -->            
+	            <div id="myCarousel-comment" class="carousel slide" data-interval="false">
+	                <div class="carousel-inner">
+	                    <div class="item active">
+	                        <div class="row">
+	                            @for ($i = 0; $i < 3; $i++)
+							    	@include('elements.comment')
+							    @endfor
+	                        </div>
+	                    </div>
+	                    <div class="item">
+	                        <div class="row">
+	                            @for ($i = 0; $i < 3; $i++)
+							    	@include('elements.comment')
+							    @endfor
+	                        </div>
+	                    </div>
+	                    <div class="item">
+	                        <div class="row">
+	                             @for ($i = 0; $i < 3; $i++)
+							    	@include('elements.comment')
+							    @endfor
+	                        </div>
+	                    </div>
+	                </div>
+	                <!--
+	                <ol class="carousel-indicators-comment">
+	                    <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
+	                    <li data-target="#myCarousel-comment" data-slide-to="1"></li>
+	                    <li data-target="#myCarousel-comment" data-slide-to="2"></li>
+	                </ol>
+	            	-->
+	            </div><!-- End Carousel --> 
+	        </div><!-- End Well -->
+	    </div><!-- End Row -->
 	</div>
 </div>
 

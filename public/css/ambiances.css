@@ -1,0 +1,33 @@
+.border-ambiance {
+	padding:10px;
+	border: 1px solid #AEAEAE;
+}
+
+.see-ambiance-header {
+	width: 250px;
+	height: 150px;
+	background-color: rgba(204, 204, 204, 0.6);
+	text-align: left;
+	
+	margin-left : 50%;
+	margin-top: 30%;
+	font-weight: bold;
+	z-index: 2;
+	position: absolute;
+}
+
+.see-ambiance-header h2 {
+	text-transform: uppercase;
+}
+
+.click-to-see-ambiance-header {
+	width: 138px;
+	height: 28px;
+	background-color: #000000;
+	color: #ffffff;
+	padding-top:5px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	text-transform: uppercase;
+}
