@@ -54,7 +54,7 @@
 					Dimensions : 
 				</p>
 				<p class="reviews">
-					Note des clients ayant acheté ce produit : 5/5, <a href="#">Afficher les avis</a>
+					Note des clients ayant acheté ce produit : 5/5, <a href="#comment">Afficher les avis</a>
 				</p>			
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -135,7 +135,7 @@
 		    @endfor
 		</div>
 	</div>
-	<div class="comment-product">
+	<div class="comment-product" id="comment">
 		<div class="row">
 			<h3 class="comment-product-title">Avis des clients</h3>
 			<div class="col-lg-offset-9 col-lg-3 align-right-indicators">
