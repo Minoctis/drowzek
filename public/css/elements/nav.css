@@ -22,9 +22,25 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
 /*--------------------- MENU 1----------------------- */
 
 .dropdown-menu{
-	min-width:650px;
+	min-width:700px;
+  top: 52px;
+  left: -160px
 
 }
+
+.dropdown-menu li{
+  padding: 0;
+}
+
+.dropdown-menu li.image-categorie{
+  padding: 0 15px 0 20px;
+}
+
+.dropdown-menu .sous-dropdown-header {
+    font-size: 13px;
+    list-style-type: none;
+}
+
 .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
     border-top-left-radius: 0;
