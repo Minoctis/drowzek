@@ -4,8 +4,9 @@
 
 @section('content')
 
+<img src="http://placehold.it/1349x200" class="img-creation"alt="">
 <div class="creation">
-	<img src="http://placehold.it/1349x200" alt="">
+	
 
 <div class="container">
 	
