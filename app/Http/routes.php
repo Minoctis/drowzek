@@ -126,8 +126,8 @@ Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view(
                 Route::post('add', ['uses' => 'Admin\CatalogueController@addAmbiance']);
 
                 //Modifier une ambiance
-                Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@editAmbiance']);
-//                Route::post('edit/{id}', ['uses' => 'Admin\CatalogueController@editAmbiance']))
+                Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@afficheEditAmbiance']);
+                Route::post('edit/{id}', ['uses' => 'Admin\CatalogueController@editAmbiance']);
             });
 
         });
