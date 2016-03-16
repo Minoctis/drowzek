@@ -1,6 +1,5 @@
 /*CSS FILES */
 @import url(elements/nav.css);
-@import url(elements/footer.css);
 @import url(elements/product.css);
 @import url(fiche-produit.css);
 
@@ -23,12 +22,6 @@ body{
     position: relative;
     top: 0;
 }
-/* SLIDER */
-.slider-hp img{
-    width: 100%;
-    height: auto;
-}
-/* END SLIDER*/
 
 
 /* TITILE & SUBTITLE & BUTTONS*/
@@ -87,7 +80,7 @@ a:hover, a:active{
     outline: none;
 }
 
-    /*input*/
+    /* INPUT */
 
     input.hdg-input-default{
         height: 30px;
@@ -96,173 +89,194 @@ a:hover, a:active{
 
 /* END TITILE & SUBTITLE */
 
-/*NAVBAR*/
-a.navbar-brand.header-logo {
-    padding: 6px;
-}
 
-.homepage nav.navbar.navbar-inverse.navbar-fixed-top{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-color: transparent;
-    transition: all .5s ease .25s;
-}
-#nav.affix {
-    background-color: black;
-    -webkit-transform: translate3d(0,0,0);
-    -o-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-}
+/* BEGIN ELEMENTS */
 
-.navbar-nav>li>.dropdown-menu.affix{
-    position: absolute;
-     background-color: black;
-    -webkit-transform: translate3d(0,0,0);
-    -o-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);   
-}
-.navbar-nav>li>.dropdown-menu.affix-top{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-color: transparent;
-    transition: all .5s ease .25s; 
-}
+    /* NAVBAR */
+    a.navbar-brand.header-logo {
+        padding: 6px;
+    }
 
-/* END NAVBAR */
+    .homepage nav.navbar.navbar-inverse.navbar-fixed-top{
+        background-color: rgba(0, 0, 0, 0.5);
+        border-color: transparent;
+        transition: all .5s ease .25s;
+    }
+    #nav.affix {
+        background-color: black;
+        -webkit-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    .navbar-nav>li>.dropdown-menu.affix{
+        position: absolute;
+         background-color: black;
+        -webkit-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);   
+    }
+    .navbar-nav>li>.dropdown-menu.affix-top{
+        background-color: rgba(0, 0, 0, 0.5);
+        border-color: transparent;
+        transition: all .5s ease .25s; 
+    }
+
+    /* END NAVBAR */
+
+/* END ELEMENTS */
 
 
-/* BLOC AMBIANCES HOMEPAGE */
-.ambiance {
-    min-height: 400px;
-    background-color: #eeeeee;
-    padding: 20px 0;
-}
+/* BEGIN HOMEPAGE*/
 
-hr{
-    width: 10%;
-    border-top-color: black;
-}
+    /* SLIDER */
+    .slider-hp img{
+        width: 100%;
+        height: auto;
+    }
+    /* END SLIDER*/
 
-.ambiance3 {
-    margin-top: 18px;
-}
-
-h3.show-ambiances {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 20px;
-    padding: 20px 0;
-}
-
-h3.show-ambiances:after {
-    content: "\f054";
-    font-family: FontAwesome;
-    font-size: 18px;
-    position: absolute;
-    padding-left: 5px;
-    padding-top: 2px;
-}
-
-.ambiance-content{
-    position: relative;
     
-}
+    /* BLOC AMBIANCES HOMEPAGE */
+    .ambiance {
+        min-height: 400px;
+        background-color: #eeeeee;
+        padding: 20px 0;
+    }
 
-.ambiance-content .ambiance-text{
-    position: absolute;
-    top: 20px;
-    width: 400px;
-    left: 20px;
-}
+    .ambiance img {
+        width: 100%;
+    }
 
-.ambiance-content .ambiance-text .ambiance-name {
-    text-transform: uppercase;
-    padding-bottom: 10px;
-    font-size: 20px;
-}
+    hr{
+        width: 10%;
+        border-top-color: black;
+    }
 
-.ambiance-content .ambiance-text .ambiance-desc {
-    padding-bottom: 10px;
-    font-size: 13px;
-}
+    .ambiance3 {
+        margin-top: 18px;
+    }
 
+    h3.show-ambiances {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px 0;
+    }
 
-/* END BLOC AMBIANCES HOMEPAGE */
+    h3.show-ambiances:after {
+        content: "\f054";
+        font-family: FontAwesome;
+        font-size: 18px;
+        position: absolute;
+        padding-left: 5px;
+        padding-top: 2px;
+    }
 
-/* BLOC ENGAGEMENTS */
-.engagement.row {
-    color: white;
-    background: #000000;
-    padding: 40px 0;
-    text-align: center;
-}
+    .ambiance-content{
+        position: relative;
+        
+    }
 
-.engagement p{
-    font-size: 13px;
-}
-/* END BLOC ENGAGEMENT */
-.opportunity h1.title,
-.opportunity h3.sub-title{
-    text-align: left;
-}
-/* BLOC OPPORTUNITES HOMEPAGE */
+    .ambiance-content .ambiance-text{
+        position: absolute;
+        top: 20px;
+        width: 400px;
+        left: 20px;
+    }
 
-.opportunity{
-    min-height: 450px;
-    position: relative;
-}
+    .ambiance-content .ambiance-text .ambiance-name {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        font-size: 20px;
+    }
 
-.opportunity .container {
-    padding: 40px 0;
-}
-
-.opportunity .opportunity-content p {
-    font-size: 18px;
-}
-.opportunity .opportunity-img{
-    width: 100%;
-    position: absolute;
-    height: 450px;
-    z-index: -1;
-
-}
-.opportunity .hdg-button-default {
-    display: block;
-    margin: auto;
-}
-.opportunity h3.sub-title {
-    font-size: 18px;
-}
-.opportunity span{
-    font-size: 16px;
-    text-transform: uppercase;
-    padding-right: 20px;
-}
-/* END BLOC OPPORTUNITES HOMEPAGE */
-
-/* BLOC ACTUALITES HOMEPAGE */
-.actualites {
-    padding: 40px 0 ;
-}
-.actualites .thumbnail{
-    padding: 0;
-    border: 0;
-}
-.actualites .thumbnail h3.news-title{
-    font-size: 16px;
-    text-transform: uppercase;
-    min-height: 45px;
-}
-.actualites a.news-show{
-    text-transform: none;
-    float: right;
-    text-decoration: underline;
-}
-.actualites .thumbnail .caption {
-    padding-right: 0;
-    padding-left: 0;
-}
-/* END BLOC ACTUALITES HOMEPAGE 
+    .ambiance-content .ambiance-text .ambiance-desc {
+        padding-bottom: 10px;
+        font-size: 13px;
+    }
 
 
+    /* END BLOC AMBIANCES HOMEPAGE */
+
+    /* BLOC ENGAGEMENTS */
+    .engagement.row {
+        color: white;
+        background: #000000;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .engagement p{
+        font-size: 13px;
+    }
+    /* END BLOC ENGAGEMENT */
+
+
+    /* BLOC OPPORTUNITES HOMEPAGE */
+
+    .opportunity h1.title,
+    .opportunity h3.sub-title{
+        text-align: left;
+    }
+    .opportunity{
+        min-height: 450px;
+        position: relative;
+    }
+
+    .opportunity .container {
+        padding: 40px 0;
+    }
+
+    .opportunity .opportunity-content p {
+        font-size: 18px;
+    }
+    .opportunity .opportunity-img{
+        width: 100%;
+        position: absolute;
+        height: 450px;
+        z-index: -1;
+
+    }
+    .opportunity .hdg-button-default {
+        display: block;
+        margin: auto;
+    }
+    .opportunity h3.sub-title {
+        font-size: 18px;
+    }
+    .opportunity span{
+        font-size: 16px;
+        text-transform: uppercase;
+        padding-right: 20px;
+    }
+    /* END BLOC OPPORTUNITES HOMEPAGE */
+
+    /* BLOC ACTUALITES HOMEPAGE */
+    .actualites {
+        padding: 40px 0 ;
+    }
+    .actualites .thumbnail{
+        padding: 0;
+        border: 0;
+    }
+    .actualites .thumbnail h3.news-title{
+        font-size: 16px;
+        text-transform: uppercase;
+        min-height: 45px;
+    }
+    .actualites a.news-show{
+        text-transform: none;
+        float: right;
+        text-decoration: underline;
+    }
+    .actualites .thumbnail .caption {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* END BLOC ACTUALITES HOMEPAGE */
+
+/* END HOMEPAGE */
 
 
 
@@ -276,7 +290,16 @@ h3.show-ambiances:after {
 
 
 
-/*Défault layout*/
+
+
+
+
+
+
+
+
+
+/* DEFAULT LAYOUT */
 .page .navbar-nav>li>.dropdown-menu.affix-top{
     background-color: #000000;
 }
@@ -294,22 +317,22 @@ h3.show-ambiances:after {
     padding-bottom: 40px;
 }
 
-
 /*FIN DEFAULT LAYOUT*/
 
-/*BEGIN PRODUCT LIST CSS*/
+
+/* BEGIN PRODUCT LIST CSS */
 
 h3.product-title-list{
     font-size: 16px; 
     margin: 5px 0;
 }
-/*FIN PRODUCT LIST CSS*/
+/* FIN PRODUCT LIST CSS */
 
 
 
 
 
-/*BEFIN FICHE PRODUIT*/
+/* BEFIN FICHE PRODUIT */
 h2.product-title{
     font-size: 24px;
     text-transform: uppercase;
@@ -340,7 +363,10 @@ h4.review-title{
     font-size: 16px;
     font-weight: 600;
 }
-/*END FICHE PRODUIT*/
+/* END FICHE PRODUIT */
+
+
+
 
 
 
@@ -396,90 +422,125 @@ h4.review-title{
 
 
 
-/* BEGIN FOOTER */
-.mentions {
-    background: #000000;
-    color: #ffffff;
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.mentions a {
-    font-size: 13px;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-}
-
-.mentions a:hover {
-    text-decoration: underline;
-    color: white;
-}
-
-.spacer {
-    margin-top: 40px;
-}
-
-.bottom{
-    border-bottom: 2px solid #000000;
-}
-
-.reseaux {
-    height: 100px;
-    text-align: center;
-}
-
-.reseaux p{
-    font-size: 13px;
-}
-
-.reseaux i{
-    font-size: 38px;
-}
-
-.a-propos {
-    font-size: 13px;
-}
-
-.a-propos a  {
-    font-size: 13px;
-    height: auto;
-    text-decoration: none;
-    color: #000000;
-    margin-bottom: 100px;
-    text-transform: uppercase;
-}
-
-.a-propos a:hover  {
-    text-decoration: underline;
-    color: #000000;
-}
-
-.title-footer {
-    font-size: 16px;
-    height: 40px;
-    line-height: 40px;
-    text-transform: uppercase;
-}
-
-.title-footer-big {
-    font-size: 24px;
-    height: 40px;
-    line-height: 40px;
-    text-transform: uppercase;
-}
-
-.social-icons {
-    height: 70px;
-}
-
-@media screen and (max-width: 767px)
-
-{
-
-    .a-propos {
-    padding-bottom: 20px;
+/********************************************************
+******************** BEGIN BOTTOM ***********************
+********************************************************/
+    
+    /* SOCIAL BOTTOM */
+    .social-bottom {
+        padding: 25px 0 50px 0;
     }
-}
-/* END FOOTER */
+
+    h3.social-bottom-title{
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .social-bottom .social .social-icon.fb a>i{
+        font-size: 30px;
+    }
+
+    .social-bottom .social {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .social-bottom .social .social-icon{
+        padding-right: 30px;
+    }
+
+    /* END SOCIAL BOTTOM */
+
+    /* FOOTER */
+
+    footer.footer {
+        padding: 30px 0 20px 0;
+        border-top: 1px solid black;
+    }
+
+    .mentions {
+        background: #000000;
+        color: #ffffff;
+        text-transform: uppercase;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .mentions a {
+        font-size: 13px;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .mentions a:hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .bloc-footer {
+        font-size: 13px;
+    }
+
+    .bloc-footer a  {
+        font-size: 13px;
+        height: auto;
+        text-decoration: none;
+        color: #000000;
+        margin-bottom: 100px;
+        text-transform: uppercase;
+    }
+
+    .bloc-footer a:hover  {
+        text-decoration: underline;
+        color: #000000;
+    }
+
+    .title-footer {
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+
+    .title-footer-big {
+        font-size: 24px;
+        height: 40px;
+        line-height: 40px;
+        text-transform: uppercase;
+    }
+
+    .social-icons {
+        height: 70px;
+    }
+
+    /* END FOOTER */
+
+    
+/********************************************************
+******************** END BOTTOM *************************
+********************************************************/
+
+
+
+
+
+/********************************************************
+******************** RESPONSIVE *************************
+********************************************************/
+
+    /* ECRANS MOBILE */
+    @media screen and (max-width: 767px){
+
+        /* FOOTER */
+        .bloc-footer {
+            padding-bottom: 20px;
+        }
+    }
+    /* END ECRANS MOBILE*/
+
+/********************************************************
+******************** END RESPONSIVE *********************
+********************************************************/

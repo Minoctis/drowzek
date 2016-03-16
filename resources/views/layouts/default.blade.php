@@ -33,6 +33,8 @@
                 
                 @include('elements.engagement')
 
+                @include('elements.social-links')
+
                 @include('elements.footer') 
                           
             </div>
