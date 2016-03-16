@@ -31,3 +31,37 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+
+.padding-sub {
+	margin-top: 20px;
+}
+
+.see-ambiance-sub {
+	width: 250px;
+	height: 150px;
+	background-color: rgba(204, 204, 204, 0.6);
+	text-align: left;
+	
+	margin-left : 50%;
+	margin-top: 30%;
+	font-weight: bold;
+	z-index: 2;
+	position: absolute;
+}
+
+.see-ambiance-sub h2 {
+	text-transform: uppercase;
+}
+
+.click-to-see-ambiance-sub {
+	width: 138px;
+	height: 28px;
+	background-color: #000000;
+	color: #ffffff;
+	padding-top:5px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	text-transform: uppercase;
+}

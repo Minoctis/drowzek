@@ -12,6 +12,11 @@
 		</div>
 		<div class="row">
 			<!-- éléments secondaires ambiance -->
+			@for ($i = 0; $i < 4; $i++)
+
+		    	@include('elements.ambiance-sub')
+		    
+		    @endfor
 		</div>
 	</div>
 </div>
