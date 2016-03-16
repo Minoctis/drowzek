@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Ambiance;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +14,8 @@ class CatalogueController extends Controller
 {
     public function dashboard() {
         $ambiances = Ambiance::orderBy('ordre', 'asc')->get();
-        return view('pages.admin.catalogue.dashboard', ['ambiances' => $ambiances]);
+        $categories = Categorie::with('children')->whereNull('parent_id')->orderBy('ordre', 'asc')->get();
+        return view('pages.admin.catalogue.dashboard', ['ambiances' => $ambiances, 'categories' => $categories]);
     }
 
     public function addAmbiance(Request $request) {

@@ -13,7 +13,7 @@
                 <h3 class="panel-title">Catégories</h3>
             </div>
             <div class="panel-body">
-                <a href="{{ route('admin::catalogue::categories::liste') }}" class="btn btn-default pull-right">Ajouter une catégories</a>
+                <a href="{{ route('admin::catalogue::categories::add') }}" class="btn btn-default pull-right">Ajouter une catégories</a>
                 <p class="help-block">Pour modifier l'ordre des catégories et des sous-catégories, faites un glisser-déposer de la ligne à la position voulue.</p>
                 <div class="row">@include('pages.admin.catalogue.categories.liste')</div>
             </div>

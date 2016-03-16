@@ -126,8 +126,7 @@ body {
 }
 
 .content-header h1 {
-    margin: 0;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
     line-height: 65px;
     display: inline-block;
 }
@@ -154,6 +153,10 @@ li > .panel {
     margin-bottom: 0 !important;
 }
 
-/*.sortable {*/
-    /*padding-left: 0;*/
-/*}*/
+.sortable {
+    padding-right: 40px;
+}
+
+#titre-liste-categorie {
+    padding: 0 40px;
+}

@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Categorie extends Model
 {
-    protected $table = 'catalogue';
+    protected $table = 'categories';
 
     protected $fillable = ['*'];
 
