@@ -138,6 +138,137 @@
 	<div class="comment-product">
 		<div class="row">
 			<h3 class="comment-product-title">Avis des clients</h3>
+			<div class="col-lg-offset-9 col-lg-3 align-right-indicators">
+				<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
+                <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-chevron-right fa-2x"></i></a>
+			</div>
+		</div>
+				<div class="row">
+					<div class="well">
+		            <!-- Carousel
+		            ================================================== -->            
+		            <div id="myCarousel-comment" class="carousel slide">
+		                <div class="carousel-inner">
+		                    <div class="item active">
+		                        <div class="row">
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                           <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="item">
+		                        <div class="row">
+		                           <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                           <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="item">
+		                        <div class="row">
+		                           <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                            <div class="col-md-3">
+		                                <div class="thumbnail-comment">
+		                                  <div class="caption">
+		                                    <h3>Product label</h3>
+		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+		                                  </div>
+		                                </div>        
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <!--
+		                <ol class="carousel-indicators-comment">
+		                    <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
+		                    <li data-target="#myCarousel-comment" data-slide-to="1"></li>
+		                    <li data-target="#myCarousel-comment" data-slide-to="2"></li>
+		                </ol>
+		            	-->
+		            </div><!-- End Carousel --> 
+		        </div><!-- End Well -->
+		    </div><!-- End Row -->
+<!--
 			@for ($i = 0; $i < 3; $i++)
 				<div class="col-lg-4 col-xs-12">
 					<h4 class="review-title">Jean Dupond : Mais c'est génial</h4>
@@ -149,6 +280,8 @@
 					</p>
 				</div>
 			@endfor
+			-->
+
 		</div>
 	</div>
 </div>

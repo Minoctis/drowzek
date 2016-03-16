@@ -1,3 +1,7 @@
+.showborder {
+    1px solide #00ff00;
+}
+
 .img-products {
 	max-width: 100%;
 }
@@ -30,6 +34,12 @@
 	height: 550px;
 }
 
+.align-right-indicators {
+    text-align: right;
+}
+
+/* Ceci est le carousel des images du produit*/
+
 #myCarousel .carousel-indicators {
     bottom: 0;
     left: 10px;
@@ -57,3 +67,65 @@
 #myCarousel .carousel-indicators .active img {
     border: 2px solid #39b3d7;
 }
+
+/* ceci est le slider des avis clients du produit.*/
+
+/*#####################
+Additional Styles (required)
+######################*/
+#myCarousel-comment .thumbnail-comment {
+    margin-bottom: 0;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image:none !important;
+}
+.carousel-control-comment {
+    color:#fff;
+    top:40%;
+    /*color:#428BCA;*/
+    color:#000000;
+    bottom:auto;
+    padding-top:4px;
+    width:30px;
+    height:30px;
+    text-shadow:none;
+    opacity:1;
+}
+.carousel-control-comment:hover {
+    /*color: #d9534f;*/
+    color:#bfbfbf;
+}
+.carousel-control-comment.left, .carousel-control-comment.right {
+    background-image:none !important;
+}
+.carousel-control-comment.right {
+    left:auto;
+    right:-32px;
+}
+.carousel-control-comment.left {
+    right:auto;
+    left:-32px;
+}
+.carousel-indicators-comment {
+    bottom:-30px;
+}
+.carousel-indicators-comment li {
+    border-radius:0;
+    width:10px;
+    height:10px;
+    background:#ccc;
+    border:1px solid #ccc;
+}
+.carousel-indicators-comment .active {
+    width:12px;
+    height:12px;
+    background:#3276b1;
+    border-color:#3276b1;
+}
+
+.well {
+    background-color: #ffffff;
+    border: 0px solid #f5f5f5;
+    box-shadow: none;
+}
+
