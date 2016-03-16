@@ -127,17 +127,21 @@ a:hover, a:active{
         padding-left: 30px;
     }
 
-    .navbar-form i{
+    #search-navbar-top.navbar-form i{
         color: white;
+        cursor: pointer;
     }
     #search-navbar-top .form-group{
         display: none;
     }
-    #search-navbar-top .navbar-form{
+    #search-navbar-top.navbar-form{
         position: relative;
         display: block;
         padding: 15px 10px;
         margin: 0;
+    }
+    #search-navbar-top input{
+        border-radius: 50px;
     }
     /* END NAVBAR */
 
