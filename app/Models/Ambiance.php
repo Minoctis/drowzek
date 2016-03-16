@@ -30,4 +30,5 @@ class Ambiance extends Model
     public function images() {
         return $this->hasMany('App\Models\AmbianceImage');
     }
+
 }

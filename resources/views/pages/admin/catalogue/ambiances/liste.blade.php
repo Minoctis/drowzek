@@ -10,15 +10,15 @@
             </tr>
         </thead>
         <tbody>
-        @for($i = 0; $i < 10; $i++)
+        @foreach($ambiances as $ambiance)
             <tr>
-                <th>{{ $i+1 }}</th>
-                <th>{nom}</th>
+                <th>{{ $ambiance->ordre }}</th>
+                <th>{{ $ambiance->nom }}</th>
                 <th>0</th>
-                <th><a href="{{ route('admin::catalogue::ambiances::edit', ['id' => 0]) }}" class="btn btn-default center-block"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifier</a></th>
+                <th><a href="{{ route('admin::catalogue::ambiances::edit', ['id' => $ambiance->id]) }}" class="btn btn-default center-block"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifier</a></th>
                 <th><button class="btn btn-default center-block"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer</button></th>
             </tr>
-        @endfor
+        @endforeach
         </tbody>
     </table>
 </div>
