@@ -5,3 +5,5 @@ Homestead.json
 .env
 .idea
 .DS_Store
+/composer-setup.php
+/composer.phar

@@ -76,7 +76,7 @@
       </form>-->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="fa fa-user fa-lg"></i> <span class='visible-xs'>  Mon compte</span> </a></li>
-        <li>
+        <li class="search-bloc" >
 
           <form class="navbar-form" id="search-navbar-top" role="search"> 
             <i class="fa fa-search fa-lg"></i>

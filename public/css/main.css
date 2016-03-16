@@ -132,17 +132,73 @@ a:hover, a:active{
         cursor: pointer;
     }
     #search-navbar-top .form-group{
-        display: none;
+        transition: all .5s ease .25s; 
     }
     #search-navbar-top.navbar-form{
         position: relative;
-        display: block;
         padding: 15px 10px;
         margin: 0;
     }
-    #search-navbar-top input{
-        border-radius: 50px;
+
+
+
+
+    .search-bloc{
+        position: relative;
+        height: 60px;
     }
+    #search-navbar-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+    }
+    #label {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        z-index: 20;
+    }
+
+    #search-navbar-top input {
+        position: absolute;
+        top: 0;
+        left: 60px;
+        /* width: 450px; */
+        /* height: 60px; */
+        z-index: 5;
+        overflow: hidden;
+    }
+    #search-navbar-top input {
+        display: block;
+        position: absolute;
+         top: 8px; 
+        /* left: -450px; */
+        /* width: 304px; */
+        /* height: 100%; */
+        /* margin: 0; */
+        /* padding: 0 10px; */
+        border: none;
+        /* background-color: #23688b; */
+        color: #fff;
+        font-size: 18px;
+        backface-visibility: none;
+        border-radius: 50px;
+        transition: left 0;
+    }
+    #search-navbar-top input:focus {
+        outline: none
+    }
+    #search-navbar-top.focus {
+        z-index: 20
+    }
+    #search-navbar-top.focus input {
+        left: 0;
+        transition: left 0.3s;
+    }
+
+
     /* END NAVBAR */
 
 /* END ELEMENTS */
