@@ -401,6 +401,9 @@ h4.review-title{
     font-size: 16px;
     font-weight: 600;
 }
+.fiche-produit .product-images{
+    position: relative;
+}
 .carousel-control-comment.left, 
 .carousel-control-comment.right{
 
@@ -409,6 +412,17 @@ h4.review-title{
 
 
 
+/* LISTE PRODUIT */
+
+.creation {
+    padding-top: 50px;
+}
+.img-creation{
+    height: auto; width: 100%;
+}
+
+
+/* FIN LISTE PRODUIT */
 
 
 
