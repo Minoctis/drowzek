@@ -11,13 +11,13 @@
 				<div class="carousel slide article-slide" id="myCarousel">
 			     	<div class="carousel-inner cont-slider">
 				        <div class="item active">
-				          <img src="http://placehold.it/600x560/999999/cccccc">
+				          <img src="http://placehold.it/800x560/999999/cccccc">
 				        </div>
 				        <div class="item">
-				          <img src="http://placehold.it/600x560/999999/cccccc">
+				          <img src="http://placehold.it/800x560/999999/cccccc">
 				        </div>
 				        <div class="item">
-				          <img src="http://placehold.it/600x560/dddddd/333333">
+				          <img src="http://placehold.it/800x560/dddddd/333333">
 				        </div>               
 			     	</div>
 			      <!-- Indicators -->
@@ -36,8 +36,8 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="col-lg-6 col-md-6"></div>
-			<div class="col-lg-6  col-md-6 col-sm-12 col-xs-12 ">
+			<!-- <div class="col-lg-6 col-md-6"></div> -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
 				<h2 class="product-title">Craddle chair by Richard Clarkson</h2>
 				<p>Description :</p>
 				<p>
