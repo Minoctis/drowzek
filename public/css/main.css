@@ -136,7 +136,22 @@ a:hover, a:active{
     }
     /* END SLIDER*/
 
-    
+    /* BLOC NOUVEAUTES */
+    .nouveautes{
+        position: relative;
+    }
+
+    .nouveautes h1.title{
+        transform: rotate(-90deg);
+        margin: 0;
+        padding: 0;
+        left: 0;
+        top: 63px;
+        position: absolute;
+    }
+
+    /* END BLOC NOUVEAUTES */
+
     /* BLOC AMBIANCES HOMEPAGE */
     .ambiance {
         min-height: 400px;

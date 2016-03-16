@@ -5,21 +5,28 @@
 @section('title', 'Page d\'accueil')
 
 @section('content')
+
+	<!-- SLIDER -->
 	<div class="slider-hp">
         <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
-    </div>
+    </div> 
+    <!-- FIN SLIDER -->
 
+    <!-- BEGIN NOUVEAUTES -->
 	<div class="nouveautes">
-    <div class="container">
-		<div class="row">
-		    @for ($i = 0; $i < 4; $i++)
+		<h1 class="title">Nouveauté</h1>
+	    <div class="container">
+			<div class="row">
+			    @for ($i = 0; $i < 4; $i++)
 
-		    	@include('elements.product')
-		    
-		    @endfor
+			    	@include('elements.product')
+			    
+			    @endfor
+			</div>
 		</div>
 	</div>
-	</div>
+	<!--  FIN NOUVEUTES -->
+
     <!-- Les ambiances -->
 	<div class="ambiance row">
 	    <div class="container">
