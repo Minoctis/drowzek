@@ -139,122 +139,35 @@
 		<div class="row">
 			<h3 class="comment-product-title">Avis des clients</h3>
 			<div class="col-lg-offset-9 col-lg-3 align-right-indicators">
-				<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
-                <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-chevron-right fa-2x"></i></a>
+				<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-caret-left fa-2x"></i></a>
+                <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
 			</div>
 		</div>
 				<div class="row">
 					<div class="well">
 		            <!-- Carousel
 		            ================================================== -->            
-		            <div id="myCarousel-comment" class="carousel slide">
+		            <div id="myCarousel-comment" class="carousel slide" data-interval="false">
 		                <div class="carousel-inner">
 		                    <div class="item active">
 		                        <div class="row">
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                           <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
+		                            @for ($i = 0; $i < 3; $i++)
+								    	@include('elements.comment')
+								    @endfor
 		                        </div>
 		                    </div>
 		                    <div class="item">
 		                        <div class="row">
-		                           <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                           <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
+		                            @for ($i = 0; $i < 3; $i++)
+								    	@include('elements.comment')
+								    @endfor
 		                        </div>
 		                    </div>
 		                    <div class="item">
 		                        <div class="row">
-		                           <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
-		                            <div class="col-md-3">
-		                                <div class="thumbnail-comment">
-		                                  <div class="caption">
-		                                    <h3>Product label</h3>
-		                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-		                                  </div>
-		                                </div>        
-		                            </div>
+		                             @for ($i = 0; $i < 3; $i++)
+								    	@include('elements.comment')
+								    @endfor
 		                        </div>
 		                    </div>
 		                </div>
