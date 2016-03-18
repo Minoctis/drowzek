@@ -12,19 +12,22 @@ use Validator;
 
 class CatalogueController extends Controller
 {
+    //Accueil du cataogue
     public function dashboard() {
         $ambiances = Ambiance::orderBy('ordre', 'asc')->get();
         $categories = Categorie::with('children')->whereNull('parent_id')->orderBy('ordre', 'asc')->get();
         return view('pages.admin.catalogue.dashboard', ['ambiances' => $ambiances, 'categories' => $categories]);
     }
 
+    //Ajout d'une ambiance
     public function addAmbiance(Request $request) {
+        //validation
         $this->validate($request, [
-            'nom' => 'required|unique:ambiances',
-            'slug' => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:ambiances'],
+            'nom'         => 'required|unique:ambiances',
+            'slug'        => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:ambiances'],
             'description' => 'required'
         ]);
-
+        //Insertion en base
         $ambiance = new Ambiance;
 
         $ambiance->nom = $request->nom;
@@ -33,29 +36,76 @@ class CatalogueController extends Controller
         $ambiance->ordre = Ambiance::count() + 1;
 
         $ambiance->save();
-
+        //Redirection
         return redirect()->route('admin::catalogue::dashboard');
     }
 
-    public function afficheEditAmbiance($id) {
-        $ambiance = Ambiance::find($id);
-
-        return view('pages.admin.catalogue.ambiances.edit', ['ambiance' => $ambiance]);
-    }
-
+    //Edition d'une ambiance
     public function editAmbiance($id, Request $request) {
+        //Validation
         $this->validate($request, [
-            'nom' => 'required|unique:ambiances,nom,'.$id,
-            'slug' => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:ambiances,slug,'.$id],
+            'nom'         => 'required|unique:ambiances,nom,'.$id,
+            'slug'        => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:ambiances,slug,'.$id],
             'description' => 'required'
         ]);
-
+        //Update des données
         $ambiance = Ambiance::find($id);
         $ambiance->nom = $request->nom;
         $ambiance->slug = $request->slug;
         $ambiance->description = $request->description;
         $ambiance->save();
+        //Redirection
+        return redirect()->route('admin::catalogue::dashboard');
+    }
 
+    //Ajout d'une catégorie
+    public function addCategorie(Request $request) {
+        //Validation
+        $this->validate($request, [
+            'nom'  => 'required|unique:categories',
+            'slug' => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:categories'],
+            'img'  => 'image|mimes:jpeg,png,gif|size:500'
+        ]);
+        //Enregistrement de l'image
+        $extension = $request->file('img')->getClientOriginalExtension();
+        $imageName = $request->slug . '.' . $extension;
+        $request->file('img')->move( base_path() . '/public/img/categories/', $imageName);
+        //Insertion en base
+        $categorie = new Categorie();
+
+        $categorie->nom = $request->nom;
+        $categorie->slug = $request->slug;
+        $categorie->ordre = Categorie::where(['parent_id' => null])->get()->count() + 1;
+        $categorie->img_name = $imageName;
+
+        $categorie->save();
+        //Redirection
+        return redirect()->route('admin::catalogue::dashboard');
+    }
+
+    //Edition d'une catégorie
+    public function editCategorie(Request $request, $id) {
+        //Validation
+        $this->validate($request, [
+            'nom'  => 'required|unique:categories,nom,'.$id,
+            'slug' => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:categories,slug,'.$id],
+            'img'  => 'image|mimes:jpeg,png,gif|size:500'
+        ]);
+        //Update des données
+        $categorie = Categorie::find($id);
+        $categorie->nom = $request->nom;
+        $categorie->slug = $request->slug;
+        //Si changement de l'image
+        if ($request->hasFile('img')) {
+            //Enregistrement de l'image
+            $extension = $request->file('img')->getClientOriginalExtension();
+            $imageName = $request->slug . '.' . $extension;
+            $request->file('img')->move(base_path() . '/public/img/categories/', $imageName);
+
+            $categorie->img = $imageName;
+        }
+        $categorie->save();
+        //Redirection
         return redirect()->route('admin::catalogue::dashboard');
     }
 }

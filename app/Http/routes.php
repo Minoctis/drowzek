@@ -24,6 +24,9 @@
 |
 */
 
+use App\Models\Ambiance;
+use App\Models\Categorie;
+
 Route::group(['middleware' => ['web']], function () {
     //Routes du front-office
 
@@ -103,12 +106,15 @@ Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view(
                 Route::get('/', ['as' => 'liste', function () { return view('pages.admin.catalogue.categories.accueil'); }]);
 
                 //Ajouter une catégorie
-                Route::get('ajouter', ['as' => 'add', function () {} ]);
-                Route::post('ajouter', ['as' => 'add' ,function () {} ]);
+                Route::get('ajouter', ['as' => 'add', function () { return view('pages.admin.catalogue.categories.add');} ]);
+                Route::post('ajouter', ['uses' => 'Admin\CatalogueController@addCategorie']);
 
                 //Modifier une catégorie
-                Route::get('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
-                Route::post('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
+                Route::get('modifier/{id}', ['as' => 'edit', function ($id) {
+                    $categorie = Categorie::find($id);
+                    return view('pages.admin.catalogue.categories.edit', ['categorie' => $categorie]);
+                } ]);
+                Route::post('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@editCategorie']);
 
                 //Supprimer une catégorie
                 Route::post('supprimer/{id}', ['as' => 'delete' ,function ($id) {} ]);
@@ -126,7 +132,10 @@ Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view(
                 Route::post('add', ['uses' => 'Admin\CatalogueController@addAmbiance']);
 
                 //Modifier une ambiance
-                Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@afficheEditAmbiance']);
+                Route::get('edit/{id}', ['as' => 'edit', function($id) {
+                    $ambiance = Ambiance::find($id);
+                    return view('pages.admin.catalogue.ambiances.edit', ['ambiance' => $ambiance]);
+                }]);
                 Route::post('edit/{id}', ['uses' => 'Admin\CatalogueController@editAmbiance']);
             });
 
