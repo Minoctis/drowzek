@@ -45,6 +45,9 @@ Route::get('ambiance', ['as' => 'ambiance', function() {return view('pages.ambia
 // fiche ambiance
 Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view('pages.fiche-ambiance'); }]);
 
+// panier
+Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
+
 //Routes du Back-office
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
