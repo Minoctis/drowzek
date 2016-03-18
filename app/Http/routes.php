@@ -48,6 +48,26 @@ Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view(
 // panier
 Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
 
+//Routes du compte utlisateur
+Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
+
+    //compte utilisateur accueil
+    Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
+
+    //compte utilisateur commandes
+    Route::get('commandes', ['as' => 'commandes', function() {return view('pages.compte.commandes'); }]);
+
+    //compte utilisateur adresses
+    Route::get('adresses', ['as' => 'adresses', function() {return view('pages.compte.adresses'); }]);
+
+    //compte utilisateur paniers enregistrés
+    Route::get('mes-listes', ['as' => 'mes-listes', function() {return view('pages.compte.listes'); }]);
+
+    //compte utilisateur infos perso
+    Route::get('infos', ['as' => 'infos', function() {return view('pages.compte.infos'); }]);
+
+}
+
 //Routes du Back-office
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
