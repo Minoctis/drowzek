@@ -66,7 +66,7 @@ Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
     //compte utilisateur infos perso
     Route::get('infos', ['as' => 'infos', function() {return view('pages.compte.infos'); }]);
 
-}
+});
 
 //Routes du Back-office
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
