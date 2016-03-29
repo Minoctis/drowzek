@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand header-logo" href="#"><img style="height: 40px;" src="{{ asset('img/white-logo.svg') }}" alt="Logo Home de goût"></a>
+      <a class="navbar-brand header-logo" href="{{ route('accueil') }}"><img style="height: 40px;" src="{{ asset('img/white-logo.svg') }}" alt="Logo Home de goût"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,7 +19,7 @@
       <div class="col-sm-2"></div>
       <ul class="nav navbar-nav">
 
-        <li class="active"><a href="#">accueil<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{{ route('accueil') }}">accueil<span class="sr-only">(current)</span></a></li>
 
         <li><a href="#">ambiance</a></li>
 
