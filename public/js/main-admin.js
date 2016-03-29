@@ -11,7 +11,7 @@ $(document).ready(function(){
         toleranceElement: '> div',
         maxLevels: 2,
         placeholder: "panel panel-default panel-body list-unstyled",
-        relocate: function() {
+        stop: function() {
             updateCategoriesSort()
         }
     });
@@ -23,19 +23,23 @@ $(document).ready(function(){
         maxLevels: 1,
         placeholder: "panel panel-default panel-body list-unstyled"
     });
-
-    $('#toArray').click(function(e){
-        arraied = $('.sortable-2-levels').nestedSortable('toArray', {startDepthCount: 0});
-        console.log(arraied);
-    });
 });
 
 function updateCategoriesSort() {
+    // todo : update de l'affichage de la position
     $.ajax({
         url: '/admin/catalogue/categories/ordre',
         method: 'post',
-        data: function() {$('.sortable-2-levels').nestedSortable('toArray', {startDepthCount: 0})}
+        data: getCategoriesData()
     }).success(function(data) {
         console.log(data);
     });
+}
+
+function getCategoriesData() {
+    var data = $('.sortable-2-levels').nestedSortable('toHierarchy');
+    console.log(data);
+    var json = {data: data};
+    console.log(json);
+    return json;
 }

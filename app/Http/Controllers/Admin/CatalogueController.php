@@ -114,6 +114,22 @@ class CatalogueController extends Controller
     }
 
     public function updateOrdreCategories(Request $request) {
-        return $request;
+        $categories = $request->data;
+        //update ordre des catégories
+        foreach($categories as $index => $categorie) {
+            $categorieToUpdate = Categorie::find($categorie['id']);
+            $categorieToUpdate->ordre = $index + 1;
+            $categorieToUpdate->save();
+
+            if (isset($categorie['children'])) {
+                foreach($categorie['children'] as $childIndex => $child) {
+                    $sousCategorieToUpdate = Categorie::find($child['id']);
+                    $sousCategorieToUpdate->ordre = $childIndex + 1;
+                    $sousCategorieToUpdate->parent_id = $categorie['id'];
+                    $sousCategorieToUpdate->save();
+                }
+            }
+        }
+        return $categories;
     }
 }

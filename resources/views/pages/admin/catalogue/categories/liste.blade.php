@@ -3,7 +3,6 @@
         <div class="col-xs-2">Position</div>
         <div class="col-xs-5">Nom</div>
     </div>
-    <button class="btn btn-default" id="toArray">Click me</button>
     <ol class="sortable-2-levels">
         @foreach($categories as $categorie)
         <li class="list-unstyled" data-id="{{ $categorie->id }}" id="categorie_{{ $categorie->id }}">
