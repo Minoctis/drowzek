@@ -3,9 +3,10 @@
         <div class="col-xs-2">Position</div>
         <div class="col-xs-5">Nom</div>
     </div>
+    <button class="btn btn-default" id="toArray">Click me</button>
     <ol class="sortable-2-levels">
         @foreach($categories as $categorie)
-        <li class="list-unstyled">
+        <li class="list-unstyled" data-id="{{ $categorie->id }}" id="categorie_{{ $categorie->id }}">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="container-fluid">
@@ -21,7 +22,7 @@
             @if(!empty($categorie->children))
                 <ol class="sortable-1-level">
                     @foreach($categorie->children as $child)
-                        <li class="list-unstyled">
+                        <li class="list-unstyled" data-id="{{ $child->id }}" id="categorie_{{ $child->id }}">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="container-fluid">

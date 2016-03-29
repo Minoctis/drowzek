@@ -40,8 +40,7 @@
             @endforeach
             <li class="col-sm-6 col-md-3 image-categorie hidden-xs">
               @foreach($categories as $categorie)
-                <img id="{{ $categorie->slug }}" class="image-nav" src="{{ asset('img/themes/navigation/chambre.jpeg') }}"/>
-                {{-- todo : gestion des images --}}
+                <img id="{{ $categorie->slug }}" class="image-nav" src="{{ asset('img/categories/'.$categorie->img_name) }}"/>
               @endforeach
             </li>
           </ul>

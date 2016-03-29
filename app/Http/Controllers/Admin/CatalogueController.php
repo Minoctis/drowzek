@@ -58,6 +58,10 @@ class CatalogueController extends Controller
         return redirect()->route('admin::catalogue::dashboard');
     }
 
+    public function updateOrdreAmbiances(Request $request) {
+        echo 'test';
+    }
+
     //Ajout d'une catégorie
     public function addCategorie(Request $request) {
         //Validation
@@ -107,5 +111,9 @@ class CatalogueController extends Controller
         $categorie->save();
         //Redirection
         return redirect()->route('admin::catalogue::dashboard');
+    }
+
+    public function updateOrdreCategories(Request $request) {
+        return $request;
     }
 }

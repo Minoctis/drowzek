@@ -20,7 +20,8 @@
                 </ul>
             </div>
         @endif
-        <form action="" method="post" enctype="multipart/form-data">
+        <form enctype="multipart/form-data">
+            {{ method_field('PUT') }}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label for="nom">Nom</label>

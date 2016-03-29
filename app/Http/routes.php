@@ -137,10 +137,12 @@ Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
                     $categorie = Categorie::find($id);
                     return view('pages.admin.catalogue.categories.edit', ['categorie' => $categorie]);
                 } ]);
-                Route::post('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@editCategorie']);
+                Route::put('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\CatalogueController@editCategorie']);
+                //Modifier l'ordre des catégories
+                Route::post('ordre', ['as' => 'ordre', 'uses' => 'Admin\CatalogueController@updateOrdreCategories']);
 
                 //Supprimer une catégorie
-                Route::post('supprimer/{id}', ['as' => 'delete' ,function ($id) {} ]);
+                Route::delete('supprimer/{id}', ['as' => 'delete' ,function ($id) {} ]);
 
             });
 
