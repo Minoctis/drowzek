@@ -430,7 +430,81 @@ h4.review-title{
 
 /* FIN LISTE PRODUIT */
 
+/* BEGIN MON COMPTE PAGE */
 
+.entete-page img{
+    width: 100%;
+    height: auto;
+}
+
+.moncompte h1.page-title {
+    position: relative;
+    top: -46px;
+    font-size: 24px;
+    padding: 10px 50px;
+    background-color: #dddddd;
+    margin: 0;
+    width: 255px;
+}
+
+.moncompte ul.mon-compte-nav {
+    margin-top: 30px;
+}
+
+.moncompte ul.mon-compte-nav li{
+    float: none;
+}
+
+.moncompte ul.mon-compte-nav li a {
+    border-width: 1px;
+    border-color: black;
+    border-radius: 0;
+    padding-left: 40px;
+}
+
+ul.mon-compte-nav>li.active>a, 
+ul.mon-compte-nav>li.active>a:focus, 
+ul.mon-compte-nav>li.active>a:hover{
+    background-color: black;
+    border-color: black;
+    color: white
+}
+
+a.logout{
+    text-transform: none;
+}
+
+h3.title-content-compte {
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+}
+
+
+p.date-commande{
+    float: right;
+}
+p.etat-commande,
+p.date-commande{
+    font-style: italic;
+    display: inline;
+}
+
+
+
+.facture{
+    float: right;
+    text-align: right;
+}
+.facture a{
+    color: #6aa84f;
+    text-decoration: underline;
+    text-transform: none;
+}
+
+/* FIN MON COMPTE PAGE */
 
 /* BEGIN SOCIAL */
 .social .social-icon{
