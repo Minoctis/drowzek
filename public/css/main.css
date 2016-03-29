@@ -143,6 +143,9 @@ a:hover, a:active{
         border-radius: 50px;
     }
 
+    .dropdown-menu li.categorie {
+        min-height: 150px;
+    }
     /* END NAVBAR */
 
 /* END ELEMENTS */
