@@ -36,4 +36,12 @@ class Categorie extends Model
     public function produits() {
         return $this->hasMany('App\Models\Produit');
     }
+
+    //Methods
+
+    public function getBySlug($slug) {
+        $categorie = Categorie::where('slug', $slug)->first();
+
+        return $categorie;
+    }
 }

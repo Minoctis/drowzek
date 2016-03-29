@@ -1,10 +1,10 @@
 @extends('layouts.default')
 
-@section('title', 'Page d\'accueil')
+@section('title', 'Créations - '.$categorie->nom)
 
 @section('content')
 
-<img src="http://placehold.it/1349x200" class="img-creation"alt="">
+<img src="{{ isset($categorie->img_name) ? '/img/categories/'.$categorie->img_name : 'http://placehold.it/1349x200' }}" class="img-creation"alt="image de la catégorie {{ $categorie->nom }}">
 <div class="creation">
 	
 

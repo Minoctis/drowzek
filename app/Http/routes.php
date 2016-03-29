@@ -33,23 +33,23 @@ Route::group(['middleware' => ['web']], function () {
 //Accueil
     Route::get('/', ['as' => 'accueil', function () { return view('pages.front'); }]);
 
-//Page catégorie
-    Route::get('creations', ['as' => 'creations', function() {return view('pages.creations'); }]);
+    //Page catégorie
+    Route::get('creations/{slug}', ['as' => 'creations', 'uses' => 'Front\CatalogueController@showCategorie' ]);
 
-// page produit
+    // page produit
     Route::get('produit', ['as' => 'produit', function() {return view('pages.produit'); }]);
 
-// page ambiance
-Route::get('ambiance', ['as' => 'ambiance', function() {return view('pages.ambiance'); }]);
+    // page ambiance
+    Route::get('ambiance', ['as' => 'ambiance', function() {return view('pages.ambiance'); }]);
 
-// fiche ambiance
-Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view('pages.fiche-ambiance'); }]);
+    // fiche ambiance
+    Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view('pages.fiche-ambiance'); }]);
 
-// panier
-Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
+    // panier
+    Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
 
-//Routes du compte utlisateur
-Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
+    //Routes du compte utlisateur
+    Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
 
     //compte utilisateur accueil
     Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);

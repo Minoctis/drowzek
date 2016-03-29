@@ -31,9 +31,9 @@
             @foreach($categories as $categorie)
               <li class="col-sm-6 col-md-2 categorie {{ $categorie->slug }}">
                 <ul>
-                  <li class="dropdown-header"><a href="#">{{ $categorie->nom }}</a></li>
+                  <li class="dropdown-header"><a href="{{ route('creations', ['slug' => $categorie->slug]) }}">{{ $categorie->nom }}</a></li>
                   @foreach($categorie->children as $sous_categorie)
-                    <li class="sous-dropdown-header"><a href="#">{{ $sous_categorie->nom }}</a></li>
+                    <li class="sous-dropdown-header"><a href="{{ route('creations', ['slug' => $sous_categorie->slug]) }}">{{ $sous_categorie->nom }}</a></li>
                   @endforeach
                 </ul>
               </li>
