@@ -72,6 +72,24 @@
 				    			</div>
 
 				    		</div>
+				    		<div class="produit col-md-3">
+				    			<div class="img-content">
+				    				<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
+				    			</div>
+
+				    		</div>
+				    		<div class="produit col-md-3">
+				    			<div class="img-content">
+				    				<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
+				    			</div>
+
+				    		</div>
+				    		<div class="produit col-md-3">
+				    			<div class="img-content">
+				    				<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
+				    			</div>
+
+				    		</div>
 				    	</div>
 				    </div>
 

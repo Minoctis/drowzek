@@ -4,6 +4,8 @@
 
 @section('title', 'Page d\'accueil')
 
+@section('page-id', 'hp')
+
 @section('content')
 
 	<!-- SLIDER -->

@@ -2,6 +2,8 @@
 
 @section('title', 'Page d\'accueil')
 
+@section('page-id', 'fiche-ambiance')
+
 @section('content')
 <div class="container">
 	<div class="fiche-ambiance">

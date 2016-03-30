@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
-@section('title', 'Page d\'accueil')
+@section('title', 'Produit')
+
+@section('page-id', 'fiche-produit')
 
 @section('content')
 

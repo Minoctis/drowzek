@@ -2,6 +2,8 @@
 
 @section('title', 'Créations - '.$categorie->nom)
 
+@section('page-id', 'liste-produit')
+
 @section('content')
 
 <img src="{{ isset($categorie->img_name) ? '/img/categories/'.$categorie->img_name : 'http://placehold.it/1349x200' }}" class="img-creation"alt="image de la catégorie {{ $categorie->nom }}">
