@@ -21,7 +21,7 @@
 
         <li class="active"><a href="{{ route('accueil') }}">accueil<span class="sr-only">(current)</span></a></li>
 
-        <li><a href="#">ambiance</a></li>
+        <li><a href="{{ route('ambiances::liste') }}">ambiance</a></li>
 
         <li class="dropdown dropdown-large">
 

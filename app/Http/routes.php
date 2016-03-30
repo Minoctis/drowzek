@@ -39,11 +39,13 @@ Route::group(['middleware' => ['web']], function () {
     // page produit
     Route::get('produit', ['as' => 'produit', function() {return view('pages.produit'); }]);
 
-    // page ambiance
-    Route::get('ambiance', ['as' => 'ambiance', function() {return view('pages.ambiance'); }]);
+    Route::group(['prefix' => 'ambiances', 'as' => 'ambiances::'], function() {
+        //Liste des ambiances
+        Route::get('/', ['as' => 'liste', function() {return view('pages.ambiance'); }]);
 
-    // fiche ambiance
-    Route::get('fiche-ambiance', ['as' => 'fiche-ambiance', function() {return view('pages.fiche-ambiance'); }]);
+        // fiche ambiance
+        Route::get('/{slug}', ['as' => 'fiche', function() {return view('pages.fiche-ambiance'); }]);
+    });
 
     // panier
     Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
