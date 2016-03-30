@@ -5,9 +5,10 @@
 			<p>
 				Retrouvez une gamme de produit donnant une ambiance moderne
 			</p>
-			<div class="click-to-see-ambiance-header">
+			
+			<a class="hdg-button-default">
 				Découvrir
-			</div>
+			</a>
 		</div>
 		<img class="img-products" src="http://placehold.it/1398x880" width="100%" />
 	</div>

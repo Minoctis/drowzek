@@ -5,9 +5,9 @@
 			<p>
 				Retrouvez une gamme de produit pour une ambiance vintage
 			</p>
-			<div class="click-to-see-ambiance-sub">
+			<a class="hdg-button-small ">
 				Découvrir
-			</div>
+			</a>
 		</div>
 		<img class="img-products" src="http://placehold.it/1398x880/999999/cccccc" width="100%" />
 	</div>
