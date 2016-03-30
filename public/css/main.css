@@ -432,6 +432,15 @@ h4.review-title{
 
 /* BEGIN MON COMPTE PAGE */
 
+#moncompte .engagement {
+    display: none;
+}
+
+#moncompte .social-bottom{
+    border-top: 1px solid black;
+    margin-top: 50px;
+}
+
 .entete-page img{
     width: 100%;
     height: auto;
@@ -459,7 +468,7 @@ h4.review-title{
     border-width: 1px;
     border-color: black;
     border-radius: 0;
-    padding-left: 40px;
+    padding-left: 45px;
 }
 
 ul.mon-compte-nav>li.active>a, 
@@ -470,6 +479,11 @@ ul.mon-compte-nav>li.active>a:hover{
     color: white
 }
 
+ul.mon-compte-nav>li i{
+    position: absolute;
+    left: 20px;
+    font-size: 16px;
+}
 a.logout{
     text-transform: none;
 }
@@ -492,17 +506,196 @@ p.date-commande{
     display: inline;
 }
 
-
-
-.facture{
-    float: right;
-    text-align: right;
+.infos-link,
+h4.sub-title-content-commande.col-md-9{
+    margin: 0;
+    padding: 0;
 }
-.facture a{
+
+.infos-link a{
     color: #6aa84f;
     text-decoration: underline;
     text-transform: none;
+    float: right;
 }
+
+
+.commande-infos .top-content,
+.livraison-infos .top-content,
+.paiement-infos .top-content {
+    margin: 15px 0;
+}
+
+    /* Détails commande */
+
+        /* Informations produit commande */
+
+        .produit-commandes img {
+            max-width: 100%;
+        }
+
+        h4.title-produit {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        p.options, p.qte, p.price {
+            margin: 0;
+        }
+
+        .produit-commandes {
+            background-color: #eeeeee;
+            padding: 15px;
+        }
+        .produit-commandes .pagination li>a {
+            border-radius: 0;
+            color: black;
+        }
+        .produit-commandes .pagination{
+            margin: 20px 0 0;
+        }
+        /* Fin informations produit commande */
+
+
+        /* Recap */
+        .recap-infos table.table {
+            text-align: right;
+        }
+
+        .recap-infos .table>tbody>tr:not(.last)>td{
+            border: none;
+            padding: 0 8px;
+        }
+
+        .recap-infos .table>tbody>tr:nth-child(4)>td{
+            padding-bottom: 8px;
+        }
+
+        .recap-commande,
+        .livraison-infos {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid black;
+        }
+
+        /* fin recap */
+
+
+
+        /* Adresses */
+        .panel-default>.panel-heading {
+            color: white;
+            background-color: black;
+            border-radius: 0;
+        }
+        .panel-default {
+            border-color: black;
+            border-radius: 0;
+        }
+        .panel-body{
+            padding: 15px 15px 0 15px;
+        }
+        .panel-body ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        /* Fin adresses */
+        .paiement-info{
+            padding-bottom: 50px;
+        }
+        .mode-paiement .mode,
+        .mode-paiement .price{
+            font-weight: bold;
+        }
+        /* Paiement infos */
+
+
+
+        /* Fin paiement infos */
+
+    /* FIn détails commande */
+
+
+
+    /* Onglet adresses */
+        
+    a.update-adresse {
+        float: right;
+        text-transform: none;
+        text-decoration: underline;
+    }
+
+    span.remove-adresse a {
+        color: white;
+        float: right;
+    }
+
+    a.add-adresse{
+        text-transform: none;
+        text-align: right;
+        margin: 0;
+
+    }
+
+    #adresses .top-content{
+        margin: 30px 0 40px;
+    }
+
+    #adresses .top-content h4,
+    #adresses a.add-adresse{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fin onglet adresses */
+
+    /* Ongle informations perso */
+    .form-personal-infos label{
+        display: block;
+    }
+
+    .form-personal-infos input{
+        min-width: 300px;
+    }
+    .form-personal-infos {
+        padding: 30px;
+        border: 1px solid black;
+    }
+    .form-personal-infos input#submit{
+        min-width: auto;
+    }
+    .form-personal-infos .submit-button{
+        text-align: right;
+    }
+    .personal-infos{margin-top: 18px;}
+    /* fin onglet infos perso */
+
+    /* WISHLIST */
+    .wishlist{
+        padding: 15px;
+        border: 1px solid black;
+        
+    }
+
+    .wishlist img{
+        max-width: 100%;
+    }
+
+    .wishlist > .row{
+        margin-top: 20px;
+    }
+
+    .footer-wishlist {
+        padding: 10px 15px;
+        background-color: black;
+        margin-bottom: 20px;
+    }
+    .footer-wishlist a{
+        color: white;
+        text-transform: none;
+        text-align: right;
+        display: block;
+    }
+    /* FIN WISHLIST */
 
 /* FIN MON COMPTE PAGE */
 
