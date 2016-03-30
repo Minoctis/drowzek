@@ -109,3 +109,34 @@
 .nouveautes {
 	margin: 30px 0;
 }
+
+/* afficheur testeur de bordure */
+
+.show-border {
+	border: 1px solid #00ff00;
+}
+
+/* fond noir */
+
+.fond-noir {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* triangle noir css */
+.triangle-noir {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 25px 0 25px 30px;
+	border-color: transparent transparent transparent #000000;
+}
+
+/* triangle blanc css */
+.triangle-blanc {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 25px 0 25px 30px;
+	border-color: transparent transparent transparent #ffffff;
+}

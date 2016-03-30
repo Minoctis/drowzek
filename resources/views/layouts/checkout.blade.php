@@ -19,7 +19,7 @@
     
     <body>
         <div class="page" id="@yield('page-id')">
-            
+            @include('elements.header-checkout')
             <div class="breadcrumb">
                 
             </div>

@@ -28,6 +28,13 @@ jQuery(document).ready(function () {
         resizeHeight("#fiche-produit .bloc-images");
     });
 
+
+    function resizeHeight(div){
+        var height = $(div).height()+"px";
+        var width = $(div).width()+"px";
+        $(div).parent().css("height", height);
+    }
+    
     /*$(function() {
         $('a[href*="#"]:not([href="#"])').click(function() {
             if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

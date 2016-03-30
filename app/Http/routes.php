@@ -47,28 +47,31 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/{slug}', ['as' => 'fiche', 'uses' => 'Front\CatalogueController@showAmbiance']);
     });
 
+    Route::group(['prefix' => 'checkout', 'as' => 'checkout::'], function() {
+        //Page 1 du tunnel, les adresses facturation et livraison
+        Route::get('/adresses', ['as' => 'adresses', function() {return view('pages.checkout.adresses'); }]);
+
+        //Page 2 du tunnel, les modes de livraison
+        Route::get('/livraison', ['as' => 'livraison', function() {return view('pages.checkout.livraison'); }]);
+
+        //Page 3 du tunnel, le paiement
+        Route::get('/paiement', ['as' => 'paiement', function() {return view('pages.checkout.paiement'); }]);
+
+        //Page 4 du tunnel, la confirmation
+        Route::get('/confirmation', ['as' => 'confirmation', function() {return view('pages.checkout.confirmation'); }]);
+
+    });
+
     // panier
     Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
 
     //Routes du compte utlisateur
     Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
 
-    //compte utilisateur accueil
-    Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
+        //compte utilisateur accueil
+        Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
 
-    //compte utilisateur commandes
-    Route::get('commandes', ['as' => 'commandes', function() {return view('pages.compte.commandes'); }]);
-
-    //compte utilisateur adresses
-    Route::get('adresses', ['as' => 'adresses', function() {return view('pages.compte.adresses'); }]);
-
-    //compte utilisateur paniers enregistrés
-    Route::get('mes-listes', ['as' => 'mes-listes', function() {return view('pages.compte.listes'); }]);
-
-    //compte utilisateur infos perso
-    Route::get('infos', ['as' => 'infos', function() {return view('pages.compte.infos'); }]);
-
-});
+    });
 
 //Routes du Back-office
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
