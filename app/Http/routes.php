@@ -44,7 +44,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/', ['as' => 'liste', function() {return view('pages.ambiance'); }]);
 
         // fiche ambiance
-        Route::get('/{slug}', ['as' => 'fiche', function() {return view('pages.fiche-ambiance'); }]);
+        Route::get('/{slug}', ['as' => 'fiche', 'uses' => 'Front\CatalogueController@showAmbiance']);
     });
 
     // panier
