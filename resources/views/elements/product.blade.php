@@ -12,7 +12,7 @@
 				</div>
 				<div class="caption">
 					<div class="desc-product">
-						<h3 class="product-title-list">{{ $produit->nom }}</h3>
+						<h3 class="product-title-list">Chaise</h3>
 					</div>
 					<div class="price-product">
 						333 €

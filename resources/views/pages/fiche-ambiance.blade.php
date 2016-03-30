@@ -41,11 +41,11 @@
 	</div>
 	<section>
 			<div class="row">
-				@foreach($ambiance->produits as $produit)
-
+				{{--@foreach($ambiance->produits as $produit)--}}
+				 @for($i = 0; $i < 12; $i++)
 			    	@include('elements.product')
-			    
-			    @endforeach
+			    @endfor
+			    {{--@endforeach--}}
 			</div>
 		</div>	
 	</section>
