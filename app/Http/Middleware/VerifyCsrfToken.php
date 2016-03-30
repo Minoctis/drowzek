@@ -12,6 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'admin/catalogue/categories/ordre'
+        'admin/catalogue/categories/ordre',
+        'admin/catalogue/ambiances/ordre'
     ];
 }

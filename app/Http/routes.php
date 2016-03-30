@@ -162,6 +162,8 @@ Route::group(['middleware' => ['web']], function () {
                     return view('pages.admin.catalogue.ambiances.edit', ['ambiance' => $ambiance]);
                 }]);
                 Route::post('edit/{id}', ['uses' => 'Admin\CatalogueController@editAmbiance']);
+                //Modifier l'ordre des catégories
+                Route::post('ordre', ['as' => 'ordre', 'uses' => 'Admin\CatalogueController@updateOrdreAmbiances']);
             });
 
         });

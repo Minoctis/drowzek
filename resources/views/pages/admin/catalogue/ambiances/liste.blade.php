@@ -6,7 +6,7 @@
     </div>
     <ol class="sortable-1-level">
         @foreach($ambiances as $ambiance)
-            <li class="list-unstyled">
+            <li class="list-unstyled" data-id="{{ $ambiance->id }}" id="ambiance_{{ $ambiance->id }}">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="container-fluid">

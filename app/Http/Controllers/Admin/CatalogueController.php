@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Ambiance;
 use App\Models\Categorie;
+use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -59,7 +60,17 @@ class CatalogueController extends Controller
     }
 
     public function updateOrdreAmbiances(Request $request) {
-        echo 'test';
+        $ambiances = $request->data;
+        return json_encode($ambiances);
+        //update ordre des catégories
+        foreach($ambiances as $index => $ambiance) {
+            return $ambiance['id'];
+            $ambianceToUpdate = Ambiance::find($ambiance['id']);
+            return json_encode($ambianceToUpdate);
+//            $ambianceToUpdate->ordre = $index + 1;
+//            $ambianceToUpdate->save();
+        }
+        return $ambiances;
     }
 
     //Ajout d'une catégorie
