@@ -24,11 +24,18 @@ class Ambiance extends Model
 
     //Relationships
     public function produits() {
-        return $this->belongsToMany('App\Models\Produit');
+        return $this->belongsToMany('App\Models\Produit', 'ambiances_has_produits', 'ambiance_id', 'produit_id');
     }
 
     public function images() {
         return $this->hasMany('App\Models\AmbianceImage');
     }
 
+    //Methods
+
+    public function getBySlug($slug) {
+        $ambiance = Ambiance::where('slug', $slug)->first();
+
+        return $ambiance;
+    }
 }
