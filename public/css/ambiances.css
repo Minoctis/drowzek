@@ -1,4 +1,4 @@
-.border-ambiance {
+.fiche-ambiance .bloc-images{
 	padding:10px;
 	border: 1px solid #AEAEAE;
 }
@@ -84,28 +84,25 @@
 
 #myCarousel-ambiance .carousel-indicators {
     bottom: 0;
-    left: 10px;
-    margin-left: 5px;
-    width: 100%;
+    width: auto;
+    right: 0;
+    margin: 0;
 }
 #myCarousel-ambiance .carousel-indicators li {
     border: medium none;
     border-radius: 0;
-    float: left;
-    height: 50px;
-    margin-bottom: 5px;
+    float: right;
+    height: 150px;
     margin-left: 0;
-    margin-right: 5px !important;
     margin-top: 0;
-    width: 50px;
+    width: auto;
 }
 #myCarousel-ambiance .carousel-indicators img {
-    border: 2px solid #FFFFFF;
-    float: left;
-    height: 50px;
+    float: right;
+    height: 100%;
     left: 0;
-    width: 50px;
+    width: auto;
 }
 #myCarousel-ambiance .carousel-indicators .active img {
-    border: 2px solid #39b3d7;
+    border: 1px solid #39b3d7;
 }
