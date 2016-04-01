@@ -875,6 +875,27 @@ h4.sub-title-content-commande.col-md-9{
     }
 
     /* END NAV DU CHECKOUT */
+
+    /* contenu du checkout */
+
+    .black-border {
+        border: 1px solid #000000;
+    }
+
+    .left-border {
+        border-left: 1px solid #000000;
+    }
+
+    .overflow-panier {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    .right-content {
+        text-align: right;
+    }
+
+    /* EN contenu du checkout */
     
 /********************************************************
 ******************** END BOTTOM *************************
