@@ -18,14 +18,18 @@ class CatalogueController extends Controller
         return view('pages.creations', ['categorie' => $categorie]);
     }
 
+    public function showListeAmbiances() {
+        $model = new Ambiance();
+        $ambiances = $model->getAllAmbiances();
+        ini_set('xdebug.var_display_max_depth', 10);
+//        die(var_dump($ambiances));
+
+        return view('pages.ambiance', ['ambiances' => $ambiances]);
+    }
+
     public function showAmbiance($slug) {
         $model = new Ambiance();
-        $ambiance = $model->where('slug', $slug)->with('produits')->first();
-//        foreach($ambiance->produits as $produit) {
-//            $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTVA')->get();
-//            $ambiance->produits->options = $options;
-//        }
-//        die($ambiance);
+        $ambiance = $model->getBySlug($slug);
         return view('pages.fiche-ambiance', ['ambiance' => $ambiance]);
     }
 }

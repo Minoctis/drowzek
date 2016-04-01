@@ -40,8 +40,14 @@ class Categorie extends Model
     //Methods
 
     public function getBySlug($slug) {
-        $categorie = Categorie::where('slug', $slug)->first();
-
+        $categorie = Categorie::where('slug', $slug)->with('produits')->first();
+        $categorie = $categorie->toArray();
+        foreach($categorie['produits'] as $key => $produit) {
+            $optionModel = new ProduitOption();
+            $option = $optionModel->where('produit_id', $produit['id'])->with('tauxTva')->orderBy('ordre', 'asc')->first();
+            $option = $option->toArray();
+            $categorie['produits'][$key]['option'] = $option;
+        }
         return $categorie;
     }
 }

@@ -35,7 +35,7 @@ class ProduitOption extends Model
         return $this->belongsTo('App\Models\Produit');
     }
 
-    public function tauxTVA() {
-        return $this->belongsTo('App\Models\TauxTVA');
+    public function tauxTva() {
+        return $this->belongsTo('App\Models\TauxTVA', 'taux_tva_id');
     }
 }

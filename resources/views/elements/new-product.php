@@ -3,7 +3,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							<a href="{{ route('produit', ['slug' => $produit['slug']]) }}">Afficher</a>
+							<a href="#">Afficher</a>
 						</div>
 					</div>
 					<div>
@@ -12,10 +12,10 @@
 				</div>
 				<div class="caption">
 					<div class="desc-product">
-						<h3 class="product-title-list">{{ $produit['nom'] }}</h3>
+						<h3 class="product-title-list">Mon Super Produit</h3>
 					</div>
 					<div class="price-product">
-						{{ $produit['option']['prix_ht'] + ($produit['option']['prix_ht'] * $produit['option']['taux_tva']['valeur'] / 100) }} €
+						168 €
 					</div>
 				</div>
 				<div class="bloc-add-basket">

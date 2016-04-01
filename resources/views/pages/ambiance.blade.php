@@ -4,6 +4,10 @@
 
 @section('page-id', 'ambiance')
 
+@section('breadcrumbs')
+	<li class="active">Ambiances</li>
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -14,11 +18,13 @@
 		</div>
 		<div class="row">
 			<!-- éléments secondaires ambiance -->
-			@for ($i = 0; $i < 4; $i++)
-
+			@foreach ($ambiances as $index => $ambiance)
+				@if ($index == 0)
+					@continue
+				@endif
 		    	@include('elements.ambiance-sub')
 		    
-		    @endfor
+		    @endforeach
 		</div>
 	</div>
 </div>

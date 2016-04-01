@@ -160,7 +160,7 @@ class CreateInitialTables extends Migration
             $table->string('slug');
             $table->integer('categorie_id')->unsigned();
             $table->integer('ambiance_id')->unsigned();
-            $table->integer('reduction_id')->unsigned();
+            $table->integer('reduction_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('categorie_id')->references('id')->on('categories');
