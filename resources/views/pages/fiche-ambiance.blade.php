@@ -11,43 +11,82 @@
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 product-images slider-ambiances">
 				<div class="align-bottom bloc-images">
 					<div class="carousel slide article-slide" id="myCarousel-ambiance">
-				     	<div class="carousel-inner cont-slider">
-					        <div class="item active">
-					          	<img src="http://placehold.it/1200x500/cccccc/ffffff">
-
-					        </div>
-					        <div class="item">
-					          	<img src="http://placehold.it/1200x400/999999/cccccc">
-
-					        </div>
-					        <div class="item">
-					          	<img src="http://placehold.it/1100x500/dddddd/333333">
-
-					        </div>               
-				     	</div>
-				    	<!-- Indicators -->
-				    	<ol class="carousel-indicators visible-lg visible-md">
-				    		<div class="ambiance">
-				    			
-				    		</div>
-				    		<div class="indicator">
-				    			<li class="active" data-slide-to="0" data-target="#myCarousel-ambiance">
-								<img alt="" title="" src="http://placehold.it/160x150/cccccc/ffffff">
+						<!-- Indicators -->
+						<div class="carousel-indicators-wrapper">
+							<ol class="carousel-indicators">
+								<li data-target="#myCarousel-ambiance" data-slide-to="0" class="active">
+									<img alt="" title="" src="http://placehold.it/160x150/cccccc/ffffff">
 								</li>
-								<li class="" data-slide-to="1" data-target="#myCarousel-ambiance">
+								<li data-target="#myCarousel-ambiance" data-slide-to="1">
 									<img alt="" title="" src="http://placehold.it/170x150/999999/cccccc">
 								</li>
-								<li class="" data-slide-to="2" data-target="#myCarousel-ambiance">
+								<li data-target="#myCarousel-ambiance" data-slide-to="2">
 									<img alt="" title="" src="http://placehold.it/150x150/dddddd/333333">
-								</li>         
-				    		</div>
-							      
-						</ol>
+								</li>
+							</ol>							
+						</div>
+
+						<!-- slider -->
+				     	<div class="carousel-inner " role="listbox">
+				     		<!-- Item 1 -->
+					        <div class="item active"> 
+								<div class="carousel-page">
+									<img src="http://placehold.it/1200x500/cccccc/ffffff" class="img-responsive" style="margin:0px auto;"  />
+								</div> 
+								<div class="carousel-caption">
+									<h5>Moderne</h5>
+									<p>
+										Retrouvez une gamme de produit d'ambiance moderne !
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									</p>
+								</div>
+							</div>  
+
+					        <!-- Item 2 -->
+							<div class="item"> 
+								<div class="carousel-page">
+									<img src="http://placehold.it/1200x400/999999/cccccc" class="img-responsive" style="margin:0px auto;"  />
+								</div> 
+								<div class="carousel-caption">
+									<h5>Moderne</h5>
+									<p>
+										Retrouvez une gamme de produit d'ambiance moderne !
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									</p>
+								</div>
+							</div> 
+					        <!-- item 3 -->
+					        <div class="item"> 
+								<div class="carousel-page">
+									<img src="http://placehold.it/1100x500/dddddd/333333" class="img-responsive" style="margin:0px auto;"  />
+								</div> 
+								<div class="carousel-caption">
+									<h5>Moderne</h5>
+									<p>
+										Retrouvez une gamme de produit d'ambiance moderne !
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									</p>
+								</div>
+							</div>              
+				     	</div>
+
+
+
+						<!-- Controls -->
+					  	<a class="left carousel-control" href="#myCarousel-ambiance" role="button" data-slide="prev">
+					    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    	<span class="sr-only">Previous</span>
+					  	</a>
+					  	<a class="right carousel-control" href="#myCarousel-ambiance" role="button" data-slide="next">
+					    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    	<span class="sr-only">Next</span>
+					  	</a>
 				    </div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<section>
 			<div class="row">
 				{{--@foreach($ambiance->produits as $produit)--}}

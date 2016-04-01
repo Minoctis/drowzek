@@ -81,18 +81,35 @@
 }
 
 /* Ceci est le carousel des images fiche ambiance*/
+.fiche-ambiance {
+    margin-bottom: 50px;
+}
+#myCarousel-ambiance .carousel-indicators-wrapper{
+    width: 60%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    max-height: 150px
+}
 
 #myCarousel-ambiance .carousel-indicators {
-    bottom: 0;
+	position: initial;
     width: auto;
-    right: 0;
-    margin: 0;
+
 }
+
+#myCarousel-ambiance .carousel-indicators li,
+#myCarousel-ambiance .carousel-indicators .active{
+	width: auto;
+	height: auto;
+}
+
 #myCarousel-ambiance .carousel-indicators li {
     border: medium none;
     border-radius: 0;
     float: right;
-    height: 150px;
     margin-left: 0;
     margin-top: 0;
     width: auto;
@@ -105,4 +122,16 @@
 }
 #myCarousel-ambiance .carousel-indicators .active img {
     border: 1px solid #39b3d7;
+}
+
+#myCarousel-ambiance .carousel-caption{
+	right: auto%; 
+    left: 0;
+    padding: 10px 30px;
+    width: 40%;
+    bottom: 0;
+}
+
+#myCarousel-ambiance .carousel-caption p{
+	text-align: left;
 }
