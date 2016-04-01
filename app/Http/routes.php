@@ -31,17 +31,17 @@ Route::group(['middleware' => ['web']], function () {
     //Routes du front-office
 
 //Accueil
-    Route::get('/', ['as' => 'accueil', function () { return view('pages.front'); }]);
+    Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
 
     //Page catégorie
     Route::get('creations/{slug}', ['as' => 'creations', 'uses' => 'Front\CatalogueController@showCategorie' ]);
 
     // page produit
-    Route::get('produit', ['as' => 'produit', function() {return view('pages.produit'); }]);
+    Route::get('produit/{slug}', ['as' => 'produit', 'uses' => 'Front\ProduitsController@showProduit']);
 
     Route::group(['prefix' => 'ambiances', 'as' => 'ambiances::'], function() {
         //Liste des ambiances
-        Route::get('/', ['as' => 'liste', function() {return view('pages.ambiance'); }]);
+        Route::get('/', ['as' => 'liste', 'uses' => 'Front\CatalogueController@showListeAmbiances']);
 
         // fiche ambiance
         Route::get('/{slug}', ['as' => 'fiche', 'uses' => 'Front\CatalogueController@showAmbiance']);

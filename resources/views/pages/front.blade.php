@@ -21,7 +21,7 @@
 			<div class="row">
 			    @for ($i = 0; $i < 4; $i++)
 
-			    	@include('elements.product')
+			    	@include('elements.new-product')
 			    
 			    @endfor
 			</div>

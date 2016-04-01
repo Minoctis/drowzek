@@ -4,6 +4,11 @@
 
 @section('page-id', 'fiche-produit')
 
+@section('breadcrumbs')
+	<li><a href="{{ route('creations', $categorie->slug) }}">{{ $categorie->nom }}</a></li>
+	<li class="active">{{ $produit->nom }}</li>
+@endsection
+
 @section('content')
 
 <div class="fiche-produit">
@@ -40,20 +45,11 @@
 		<div class="container">
 			<!-- <div class="col-lg-6 col-md-6"></div> -->
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-				<h2 class="product-title">Craddle chair by Richard Clarkson</h2>
+				<h2 class="product-title">{{ $produit->nom }}</h2>
 				<p>Description :</p>
+				<p>{{ $produit->description }}</p>
 				<p>
-					Designée par Richard Clarkson, Grace Emmanual, Brodie Campbell, 
-					Jeremy Broker, Eamon Moore, Kahlivia Russell et Joya Boerrigter, 
-					la Cradle Chair (« chaise berceau » en Anglais) est une rocking 
-					chair visant l’apport de confort, de relaxation et de calme. 
-					Sa conception s’appuie sur des recherches menées sur l’autisme 
-					et la rythmie du sommeil. La Cradle Chair combine donc sécurité, 
-					soutien et esthétique pour répondre aux besoins de toute personne 
-					et de tout intérieur. Plus d’infos sur le site de Richard Clarkson.
-				</p>
-				<p>
-					Dimensions : 
+					Dimensions : {{ $produit->dimensions }}
 				</p>
 				<p class="reviews">
 					Note des clients ayant acheté ce produit : 5/5, <a href="#comment">Afficher les avis</a>
@@ -61,7 +57,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<p class="product-price">
-							Prix : <strong>263 €</strong>
+							Prix : <strong>{{ $options[0]->prix_ht + ($options[0]->prix_ht * $options[0]->tauxTva->valeur / 100) }} €</strong>
 						</p>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -122,7 +118,7 @@
 			<h3 class="related-product-title">Produits dans la même catégorie</h3>
 		    @for ($i = 0; $i < 4; $i++)
 
-		    	@include('elements.product')
+		    	@include('elements.same-cat-product')
 		    
 		    @endfor
 		</div>
@@ -132,7 +128,7 @@
 			<h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
 		    @for ($i = 0; $i < 4; $i++)
 
-		    	@include('elements.product')
+		    	@include('elements.related-product')
 		    
 		    @endfor
 		</div>

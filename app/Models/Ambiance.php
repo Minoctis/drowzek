@@ -33,9 +33,32 @@ class Ambiance extends Model
 
     //Methods
 
-    public function getBySlug($slug) {
-        $ambiance = Ambiance::where('slug', $slug)->first();
+    public function getAllAmbiances() {
+        $ambiances = Ambiance::all();
+        $ambiances = $ambiances->toArray();
+        foreach($ambiances as $index => $ambiance) {
+            $images = AmbianceImage::where('ambiance_id', $ambiance['id'])->where('ordre', 1)->get();
+            $images = $images->toArray();
+            foreach($images as $row => $kk) {
+                foreach($kk as $key => $value)
+                $ambiances[$index]['image'][$key] = $value;
+            }
+//            $ambiances[$index]['image'] = $images;
+        }
 
+        return $ambiances;
+    }
+
+    public function getBySlug($slug) {
+        $model = new Ambiance();
+        $ambiance = $model->where('slug', $slug)->with('produits')->first();
+        $ambiance = $ambiance->toArray();
+        foreach($ambiance['produits'] as $key => $produit) {
+            $optionModel = new ProduitOption();
+            $option = $optionModel->where('produit_id', $produit['id'])->with('tauxTva')->orderBy('ordre', 'asc')->first();
+            $option = $option->toArray();
+            $ambiance['produits'][$key]['option'] = $option;
+        }
         return $ambiance;
     }
 }

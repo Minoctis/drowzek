@@ -23,9 +23,10 @@
         <div class="page" id="@yield('page-id')">
             @include('elements.nav')
             
-            <div class="breadcrumb">
-                
-            </div>
+            <ol class="breadcrumb">
+                <li><a href="{{ route('accueil') }}">Accueil</a></li>
+                @yield('breadcrumbs')
+            </ol>
             
             <div class="main-content">
                 
