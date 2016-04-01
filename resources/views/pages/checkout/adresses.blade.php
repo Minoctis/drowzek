@@ -5,49 +5,15 @@
 @section('page-id', 'checkout-adresses')
 
 @section('content')
-<div class="container show-border">
-	<div class="row" style="height:100px;">
-		<div class="col-lg-12">
-			<div class="fond-noir">
-				Identification
-			</div>
-			<div class="triangle-noir index-5">
-				
-			</div>
-			<div class="triangle-blanc decal-15 index-4">
-				
-			</div>
-			<div class="fond-noir decal-29 index-3">
-				Identification
-			</div>
-			<div class="triangle-noir index-5">
-				
-			</div>
-			<div class="triangle-blanc decal-15 index-4">
-				
-			</div>
-			<div class="fond-noir decal-29 index-3">
-				Identification
-			</div>
-			<div class="triangle-noir index-5">
-				
-			</div>
-			<div class="triangle-blanc decal-15 index-4">
-				
-			</div>
-			<div class="fond-noir decal-29 index-3">
-				Identification
-			</div>
-			<div class="triangle-noir index-5">
-				
-			</div>
-			<div class="triangle-blanc decal-15 index-4">
-				
-			</div>
-			<div class="fond-noir decal-29 index-3">
-				Identification
-			</div>
-		</div>
+<div class="container">
+	<div class="row">
+		<ul class="nav nav-pills nav-justified nav-checkout">
+			<li role="presentation">identification</li>
+			<li role="presentation" class="active">adresses</li>
+			<li role="presentation">livraison</li>
+			<li role="presentation">paiement</li>
+			<li role="presentation">confirmation</li>
+		</ul>
 	</div>
 </div>
 @endsection

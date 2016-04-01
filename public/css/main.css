@@ -856,6 +856,25 @@ h4.sub-title-content-commande.col-md-9{
 
     /* END FOOTER */
 
+    /* NAV DU CHECKOUT */
+    
+    .nav-checkout {
+        background-color: #000000;
+        color: #999999;
+        text-transform: uppercase;
+    }
+
+    .nav-checkout .active {
+        color: #ffffff;
+    }
+
+    .nav-checkout li {
+       text-align: center;
+       padding: 10px;
+       font-weight: bold;
+    }
+
+    /* END NAV DU CHECKOUT */
     
 /********************************************************
 ******************** END BOTTOM *************************

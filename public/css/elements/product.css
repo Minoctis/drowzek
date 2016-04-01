@@ -127,52 +127,5 @@
 	width: 215px;
 	padding-left: 35px;
 	padding-right: 25px;
-}
-
-.triangle-noir {
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 25px 0 25px 30px;
-	border-color: transparent transparent transparent #000000;
-	float: left;
-	position: relative;
-}
-
-.triangle-blanc {
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 25px 0 25px 30px;
-	border-color: transparent transparent transparent #ffffff;
-	float: left;
-	position: relative;
-}
-
-.decal-15 {
-	margin-left: -15px;
-}
-
-.decal-29 {
-	margin-left: -29px;
-}
-
-.index-1 {
-	z-index: 1;
-}
-
-.index-2 {
-	z-index: 2;
-}
-
-.index-3 {
 	z-index: 3;
-}
-
-.index-4 {
-	z-index: 4;
-}
-
-.index-5 {
-	z-index: 5;
 }
