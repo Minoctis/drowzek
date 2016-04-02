@@ -4,6 +4,13 @@
 
 @section('page-id', 'liste-produit')
 
+@section('breadcrumbs')
+	@if(isset($categorie['parent']))
+		<li><a href="{{ route('creations', $categorie['parent']['slug']) }}">{{ $categorie['parent']['nom'] }}</a></li>
+	@endif
+	<li class="active">{{ $categorie['nom'] }}</li>
+@endsection
+
 @section('content')
 
 <img src="{{ isset($categorie['img_name']) ? '/img/categories/'.$categorie['img_name'] : 'http://placehold.it/1349x200' }}" class="img-creation"alt="image de la catégorie {{ $categorie['nom'] }}">

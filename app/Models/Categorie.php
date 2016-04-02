@@ -40,13 +40,21 @@ class Categorie extends Model
     //Methods
 
     public function getBySlug($slug) {
+        //get categorie with produits
         $categorie = Categorie::where('slug', $slug)->with('produits')->first();
         $categorie = $categorie->toArray();
+        //add options for each produit
         foreach($categorie['produits'] as $key => $produit) {
             $optionModel = new ProduitOption();
             $option = $optionModel->where('produit_id', $produit['id'])->with('tauxTva')->orderBy('ordre', 'asc')->first();
             $option = $option->toArray();
             $categorie['produits'][$key]['option'] = $option;
+        }
+        //add parent categorie if exists
+        if(isset($categorie['parent_id'])) {
+            $parent = Categorie::find($categorie['parent_id']);
+            $parent = $parent->toArray();
+            $categorie['parent'] = $parent;
         }
         return $categorie;
     }
