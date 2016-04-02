@@ -6,7 +6,7 @@
 				{{ $ambiances[0]['description'] }}
 			</p>
 			
-			<a class="hdg-button-default">
+			<a href="{{ route('ambiances::fiche', $ambiances[0]['slug']) }}" class="hdg-button-default">
 				Découvrir
 			</a>
 		</div>

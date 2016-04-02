@@ -4,6 +4,11 @@
 
 @section('page-id', 'fiche-ambiance')
 
+@section('breadcrumbs')
+	<li><a href="{{ route('ambiances::liste') }}">Ambiances</a></li>
+	<li class="active">{{ $ambiance['nom'] }}</li>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="fiche-ambiance">
@@ -34,11 +39,8 @@
 									<img src="http://placehold.it/1200x500/cccccc/ffffff" class="img-responsive" style="margin:0px auto;"  />
 								</div> 
 								<div class="carousel-caption">
-									<h5>Moderne</h5>
-									<p>
-										Retrouvez une gamme de produit d'ambiance moderne !
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-									</p>
+									<h5>{{ $ambiance['nom'] }}</h5>
+									<p>{{ $ambiance['description'] }}</p>
 								</div>
 							</div>  
 
@@ -48,11 +50,8 @@
 									<img src="http://placehold.it/1200x400/999999/cccccc" class="img-responsive" style="margin:0px auto;"  />
 								</div> 
 								<div class="carousel-caption">
-									<h5>Moderne</h5>
-									<p>
-										Retrouvez une gamme de produit d'ambiance moderne !
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-									</p>
+									<h5>{{ $ambiance['nom'] }}</h5>
+									<p>{{ $ambiance['description'] }}</p>
 								</div>
 							</div> 
 					        <!-- item 3 -->
@@ -61,11 +60,8 @@
 									<img src="http://placehold.it/1100x500/dddddd/333333" class="img-responsive" style="margin:0px auto;"  />
 								</div> 
 								<div class="carousel-caption">
-									<h5>Moderne</h5>
-									<p>
-										Retrouvez une gamme de produit d'ambiance moderne !
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-									</p>
+									<h5>{{ $ambiance['nom'] }}</h5>
+									<p>{{ $ambiance['description'] }}</p>
 								</div>
 							</div>              
 				     	</div>
