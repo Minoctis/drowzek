@@ -55,6 +55,9 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::group(['prefix' => 'checkout', 'as' => 'checkout::'], function() {
+        //Etape 1 : Identification
+        Route::get('/identification', ['as' => 'identification', function() {return view('pages.checkout.identification'); }]);
+
         //Page 1 du tunnel, les adresses facturation et livraison
         Route::get('/adresses', ['as' => 'adresses', function() {return view('pages.checkout.adresses'); }]);
 

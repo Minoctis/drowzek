@@ -972,8 +972,17 @@ h4.sub-title-content-commande.col-md-9{
 
     /* END FOOTER */
 
-    /* NAV DU CHECKOUT */
+
     
+/********************************************************
+******************** END BOTTOM *************************
+********************************************************/
+
+/********************************************************
+******************** BEGIN CHEKOUT **********************
+********************************************************/
+    
+    /* NAV CHECKOUT */
     .nav-checkout {
         background-color: #000000;
         color: #999999;
@@ -989,35 +998,78 @@ h4.sub-title-content-commande.col-md-9{
        padding: 10px;
        font-weight: bold;
     }
+    /* END NAV CHECKOUT */
 
-    /* END NAV DU CHECKOUT */
+.checkout-panel{
+    border: 1px solid #000000;
+    border-width: 0 1px 1px 1px;
+}
 
-    /* contenu du checkout */
+.checkout-panel .social{
+    text-align: center;
+}
 
-    .black-border {
-        border: 1px solid #000000;
-    }
+.checkout-panel .checkout-left{
+    padding: 0 50px;
+}
 
-    .left-border {
-        border-left: 1px solid #000000;
-    }
+.checkout-panel p.cgv {
+    margin-top: 30px;
+}
 
-    .overflow-panier {
-        height: 350px;
-        overflow-y: scroll;
-    }
+.checkout-panel hr.divider{
+    width: 100%;
+}
 
-    .right-content {
-        text-align: right;
-    }
+.checkout-content-panel{
+    padding: 20px;
+}
 
-    /* EN contenu du checkout */
-    
+.title-checkout-panel h3{
+    font-size: 20px;
+}
+
+.title-checkout-panel a,
+.cgv a{
+    font-size: 14px;
+    text-decoration: underline;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.login-form label{
+    display: block;
+    margin: auto;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+
+.checkout-panel form.login-form input, 
+.checkout-panel form.create-account-form input{
+    width: 100%;
+}
+
+.checkout-panel form.create-account-form {
+    margin-top: 25px;
+}
+
+.left-border {
+    border-left: 1px solid #000000;
+}
+
+.overflow-panier {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.right-content {
+    text-align: right;
+}
+
 /********************************************************
-******************** END BOTTOM *************************
+******************** END CHEKOUT **********************
 ********************************************************/
-
-
 
 
 
