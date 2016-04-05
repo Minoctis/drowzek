@@ -42,6 +42,9 @@ Route::group(['middleware' => ['web']], function () {
     // page de connexion
     Route::get('connexion', ['as' => 'connexion', function() {return view('pages.connexion'); }]);
 
+    // page de déconnexion
+    Route::get('deconnexion', ['as' => 'deconnexion', function() {return view('pages.deconnexion'); }]);
+
     // page de création compte
     Route::get('creation-compte', ['as' => 'creation-compte', function() {return view('pages.creation-compte'); }]);
 
