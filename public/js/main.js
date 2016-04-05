@@ -16,6 +16,7 @@ jQuery(document).ready(function () {
     
 
 
+
     // Hauteur caroussel images produit
     function resizeHeight(div){
         var height = $(div).height()+"px";

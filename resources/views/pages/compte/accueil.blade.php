@@ -482,6 +482,7 @@
 									<input id="new-password-confirm" name="new-password-confirm" type="password"></input>
 								</div>								
 
+								<!-- Bouton valider -->
 								<div class="form-group submit-button">
 									<input class="hdg-button-small" id="submit" name="submit" type="submit" value="Enregistrer" />
 								</div>	

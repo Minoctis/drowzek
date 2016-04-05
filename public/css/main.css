@@ -439,6 +439,122 @@ h4.review-title{
 
 /* FIN LISTE PRODUIT */
 
+
+/* PAGE DE CONNEXION + PAGE DE CREATION COMPTE (HORS CHECKOUT) */
+#login .main-content,
+#create-account .main-content{
+    padding-top: 0;
+}
+
+#login header.header,
+#create-account header.header {
+    padding: 40px 0;
+}
+
+#login .engagement,
+#create-account .engagement {
+    display: none;
+}
+
+#login .title-content-login h1,
+#create-account .title-content-create-account h1{
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 0;
+}
+
+#login .login-page,
+#create-account .create-account-page{
+    border: 1px solid black;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+#login .login-form label,
+#create-account .create-account-form label{
+    display: block;
+    width: 300px;
+    margin: auto;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+
+#login span.divider-or {
+    display: inline-block;
+    position: relative;
+}
+
+#login span.divider-or:before, span.divider-or:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    border-bottom: 1px solid black;
+    /* border-top: 1px solid black; */
+    top: 8px;
+   
+    width: 100px;
+}
+#login span.divider-or:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+#login span.divider-or:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+#login .social-account-content,
+#login .login-content,
+#login .create-account-content,
+#create-account .create-account-content,
+#create-account .social-account-content{
+    padding: 25px 0;
+}
+
+#create-account .social-account-content{
+    padding: 25px 0 0;
+}
+
+#create-account p.cgv{
+    padding-top: 50px;
+}
+
+form.create-account-form input[type=radio],
+form.create-account-form input[type=checkbox]{
+    width: 15px;
+}
+form.login-form input,
+form.create-account-form input {
+    width: 300px;
+}
+
+hr.divider {
+    width: 80%;
+    /* border-color: #ccc; */
+}
+
+#login .create-account-content a,
+#create-account .login-content a,
+#create-account .cgv a,
+#create-account .email-account a{
+    text-transform: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#create-account .social-icon a{
+    cursor: pointer;
+}
+/* FIN PAGE DE CONNEXION (NON CHECKOUT) */
+
 /* BEGIN MON COMPTE PAGE */
 
 #moncompte .engagement {

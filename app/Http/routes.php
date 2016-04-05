@@ -28,9 +28,9 @@ use App\Models\Ambiance;
 use App\Models\Categorie;
 
 Route::group(['middleware' => ['web']], function () {
-    //Routes du front-office
+//Routes du front-office
 
-//Accueil
+    //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
 
     //Page catégorie
@@ -39,7 +39,14 @@ Route::group(['middleware' => ['web']], function () {
     // page produit
     Route::get('produit/{slug}', ['as' => 'produit', 'uses' => 'Front\ProduitsController@showProduit']);
 
+    // page de connexion
+    Route::get('connexion', ['as' => 'connexion', function() {return view('pages.connexion'); }]);
+
+    // page de création compte
+    Route::get('creation-compte', ['as' => 'creation-compte', function() {return view('pages.creation-compte'); }]);
+
     Route::group(['prefix' => 'ambiances', 'as' => 'ambiances::'], function() {
+    
         //Liste des ambiances
         Route::get('/', ['as' => 'liste', 'uses' => 'Front\CatalogueController@showListeAmbiances']);
 
