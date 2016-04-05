@@ -20,7 +20,7 @@
 
 		<div class="checkout-content-panel">
 			<div class="row">
-				<div class="col-md-7 col-xs-12 checkout-left">
+				<div class="col-md-7 col-xs-12 checkout-left-content">
 
 					<div class="checkout-create-account">
 						<div class="title-checkout-panel">
@@ -89,7 +89,7 @@
 
 					<hr class="divider"></hr>
 
-					<div class="checkout-login row">
+					<div class="checkout-login">
 
 						<div class="title-checkout-panel">
 							<h3>Déjà inscrit ? <a data-toggle="collapse" data-target="#checkout-login" >Se connecter !</a></h3>
@@ -124,7 +124,9 @@
 
 				</div>
 
-				<div class="col-md-5 col-xs-12">test</div>
+				<div class="col-md-5 col-xs-12 checkout-right-content recap-panier">
+					@include('elements.checkout-mini-panier')
+				</div>
 
 			</div>
 		</div>

@@ -979,7 +979,7 @@ h4.sub-title-content-commande.col-md-9{
 ********************************************************/
 
 /********************************************************
-******************** BEGIN CHEKOUT **********************
+******************** BEGIN CHECKOUT **********************
 ********************************************************/
     
     /* NAV CHECKOUT */
@@ -1000,17 +1000,27 @@ h4.sub-title-content-commande.col-md-9{
     }
     /* END NAV CHECKOUT */
 
+#checkout-identification .main-container{
+    padding: 0;
+}  
+
+#checkout-identification header.header{
+    padding: 40px 0;
+}
+
 .checkout-panel{
     border: 1px solid #000000;
     border-width: 0 1px 1px 1px;
+    margin-bottom: 40px;
 }
 
 .checkout-panel .social{
     text-align: center;
 }
 
-.checkout-panel .checkout-left{
+.checkout-panel .checkout-left-content{
     padding: 0 50px;
+    border-right: 1px solid black;
 }
 
 .checkout-panel p.cgv {
@@ -1058,17 +1068,90 @@ h4.sub-title-content-commande.col-md-9{
     border-left: 1px solid #000000;
 }
 
-.overflow-panier {
-    height: 350px;
-    overflow-y: scroll;
-}
+
 
 .right-content {
     text-align: right;
 }
 
+
+    /*Adresses*/
+    p.checkbox-facturation{
+        margin: 20px 0;
+    }
+
+    a.add-new-adresse,
+    a.back-to-panier{
+        text-transform: none;
+        text-decoration: underline;
+    }
+    .recap-panier img{
+        max-width: 100%;
+    }
+    .product-recap-panier{
+        margin: 5px 0;
+    }
+    .bloc-recap-panier{
+        height: 281px;
+        overflow-y: scroll;
+        border-bottom: 1px solid black;
+    }
+    .product-recap-panier h4{
+        margin: 5px 0;
+    }
+    .checkout-right-content.recap-panier {
+        padding-bottom: 20px;
+        border-left: 1px solid black;
+        margin-left: -1px;
+    }
+    .recap-panier .recap-infos {
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 5px;
+    }
+    .recap-panier .table{
+        margin: 0;
+    }
+
+    .checkout-footer{
+        margin-bottom: 50px;
+    }
+    .checkout-footer a.next-step{
+        float: right;
+    }
+    .select-facturation{
+        margin-bottom: 20px
+    }
+    /*end adresse*/
+
+
+    /*livraison*/
+    ul.mode-livraison{
+        padding-left: 20px;
+    }
+    ul.mode-livraison>.row{
+        margin-top: 25px;
+    }
+    ul.mode-livraison li {
+        padding: 15px;
+        border: 1px solid black;
+        list-style: none;
+        display: inline-block;
+        width: 90%;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    ul.mode-livraison input[type="checkbox"] {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    ul.mode-livraison img{
+        max-width: 100%;s
+    }
+    /* end livraison */
+
 /********************************************************
-******************** END CHEKOUT **********************
+******************** END CHECKOUT **********************
 ********************************************************/
 
 

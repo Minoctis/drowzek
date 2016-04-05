@@ -1,46 +1,40 @@
-<div class="container-fluid">
-	<h4>Mon panier</h4>
-	<div class="row overflow-panier">
+
+<div class="title-checkout-panel">
+	<h3>Mon panier</h3>
+</div>
+	<div class="bloc-recap-panier">
 		@for ($i = 0; $i < 8; $i++)
 			
 			@include('elements.checkout-product')
 
 		@endfor
 	</div>
-	<div class="row black-border">
-		<div class="row">
-			<div class="col-lg-6 right-content">
-				Total TTC:
-			</div>
-			<div class="col-lg-6 right-content">
-				1899 €
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 right-content">
-				Total hors taxes:
-			</div>
-			<div class="col-lg-6 right-content">
-				1500 €
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 right-content">
-				Total TVA 20%:
-			</div>
-			<div class="col-lg-6 right-content">
-				499 €
-			</div>
-		</div>
-	</div>
-	<div class="row black-border">
-		<div class="row">
-			<div class="col-lg-6 right-content">
-				Montant Total TTC:
-			</div>
-			<div class="col-lg-6 right-content">
-				1899 €
-			</div>
-		</div>
+
+
+
+<div class="recap-infos">
+	<div class="table-responsive">
+		<table class="table">
+			<tr>
+				<td>Total HT :</td>
+				<td>1899 €</td>
+			</tr>
+			<tr>
+				<td>Total TTC :</td>
+				<td>2000 €</td>
+			</tr>
+			<tr>
+				<td>Dont TVA :</td>
+				<td>200 €</td>
+			</tr>
+
+			<!-- Montant Total -->
+			<tr class="last">
+				<td>Montant Total :</td>
+				<td>2000 €</td>
+			</tr> 
+			<!-- Fin Montant Total -->
+
+		</table>
 	</div>
 </div>

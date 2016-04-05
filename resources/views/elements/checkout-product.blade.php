@@ -1,14 +1,18 @@
-<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
-	<img src="http://placehold.it/105x105">
-</div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-	<h4>Chaise design bois</h4>
-	<p>
-		Matière : bois<br />
-		Quantité : 2
-	</p>
-	<p>
-		Prix : 550 €
-	</p>
+<div class="product-recap-panier">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<div class="img-content">
+				<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
+			</div>
+		</div>
 
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			<div class="produit-infos">
+				<h4 class="title-produit">Chaise design en bois</h4>
+				<p class="options">Matières : bois</p>
+				<p class="qte">Quantité : 2</p>
+				<p class="price">Prix : 170€</p>
+			</div>
+		</div>
+	</div>	
 </div>
