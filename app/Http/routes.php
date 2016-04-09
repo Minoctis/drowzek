@@ -2,19 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-
-
-/*
-|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 |
@@ -28,8 +15,8 @@ use App\Models\Ambiance;
 use App\Models\Categorie;
 
 Route::group(['middleware' => ['web']], function () {
+    Route::auth();
 //Routes du front-office
-
     //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
 
@@ -79,8 +66,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('panier', ['as' => 'panier', function() {return view('pages.panier'); }]);
 
     //Routes du compte utlisateur
-    Route::group(['prefix' => 'compte', 'as' => 'compte::'], function () {
-
+    Route::group(['prefix' => 'compte', 'as' => 'compte::', 'middleware' => 'auth'], function () {
         //compte utilisateur accueil
         Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
 
