@@ -40,18 +40,39 @@
 		<span class="divider-or">ou</span>
 
 		<div class="login-content">
-			<form class="login-form">	
-
+			<form class="login-form" role="form" method="POST" action="{{ url('/connexion') }}">
+				{!! csrf_field() !!}
 				<!-- Adresse email -->
-				<div class="form-group">
+				<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 					<label for="email">Adresse e-mail <span>*</span> </label>
-					<input id="email" name="email" type="email"></input>
+					<input id="email" name="email" type="email" value="{{ old('email') }}">
+
+					@if ($errors->has('email'))
+						<span class="help-block">
+							<strong>{{ $errors->first('email') }}</strong>
+						</span>
+					@endif
 				</div>
 
 				<!-- Mot de passe -->
-				<div class="form-group">
+				<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 				<label for="password">Mot de passe <span>*</span></label>
-					<input id="password" name="password" type="password"></input>
+					<input id="password" name="password" type="password">
+					@if ($errors->has('password'))
+						<span class="help-block">
+							<strong>{{ $errors->first('password') }}</strong>
+						</span>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-6 col-md-offset-4">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="remember"> Se souvenir de moi
+							</label>
+						</div>
+					</div>
 				</div>
 
 				<!-- Bouton se connecter -->
@@ -62,7 +83,7 @@
 			</form>
 		</div>
 
-		<hr class="divider"></hr>
+		<hr class="divider">
 
 		<div class="create-account-content">
 			<p>Vous n'avez pas de compte ? Créez en un par <a href="#">ici</a> </p>
