@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Home de goût - @yield('title')</title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- CSS -->
         <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" >
