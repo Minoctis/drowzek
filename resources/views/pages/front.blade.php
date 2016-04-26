@@ -10,7 +10,7 @@
 
 	<!-- SLIDER -->
 	<div class="slider-hp">
-        <img src="{{ asset('img/themes/slider/slide.png') }}" alt="">    
+        <img src="{{ asset('img/themes/slider/slide.jpg') }}" alt="">
     </div> 
     <!-- FIN SLIDER -->
 

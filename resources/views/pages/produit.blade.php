@@ -11,9 +11,9 @@
 
 @section('content')
 
-<div class="fiche-produit">
-	<div class="row size-carousel">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 product-images">
+<div class="row fiche-produit">
+		<div class="product-images">
+			
 			<div class="align-bottom bloc-images">
 				<div class="carousel slide article-slide" id="myCarousel">
 			     	<div class="carousel-inner cont-slider">
@@ -42,9 +42,7 @@
 			    </div>
 			</div>
 		</div>
-		<div class="container">
-			<!-- <div class="col-lg-6 col-md-6"></div> -->
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+			<div class="product-description">
 				<h2 class="product-title">{{ $produit->nom }}</h2>
 				<p>Description :</p>
 				<p>{{ $produit->description }}</p>
@@ -107,78 +105,80 @@
 						</div>
 					</div>
 				</div>		
-			</div>		
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="related-product">
-		<div class="row">
-			<h3 class="related-product-title">Produits dans la même catégorie</h3>
-		    @for ($i = 0; $i < 4; $i++)
-
-		    	@include('elements.same-cat-product')
-		    
-		    @endfor
-		</div>
-	</div>
-	<div class="selected-product">
-		<div class="row">
-			<h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
-		    @for ($i = 0; $i < 4; $i++)
-
-		    	@include('elements.related-product')
-		    
-		    @endfor
-		</div>
-	</div>
-	<div class="comment-product" id="comment">
-		<div class="row">
-			<h3 class="comment-product-title">Avis des clients</h3>
-			<div style="float:right;">
-				<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-caret-left fa-2x"></i></a>
-                <a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
 			</div>
-		
-			<div class="well">
-            <!-- Carousel
-            ================================================== -->            
-	            <div id="myCarousel-comment" class="carousel slide" data-interval="false">
-	                <div class="carousel-inner">
-	                    <div class="item active">
-	                        <div class="row">
-	                            @for ($i = 0; $i < 3; $i++)
-							    	@include('elements.comment')
-							    @endfor
-	                        </div>
-	                    </div>
-	                    <div class="item">
-	                        <div class="row">
-	                            @for ($i = 0; $i < 3; $i++)
-							    	@include('elements.comment')
-							    @endfor
-	                        </div>
-	                    </div>
-	                    <div class="item">
-	                        <div class="row">
-	                             @for ($i = 0; $i < 3; $i++)
-							    	@include('elements.comment')
-							    @endfor
-	                        </div>
-	                    </div>
-	                </div>
-	                <!--
-	                <ol class="carousel-indicators-comment">
-	                    <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
-	                    <li data-target="#myCarousel-comment" data-slide-to="1"></li>
-	                    <li data-target="#myCarousel-comment" data-slide-to="2"></li>
-	                </ol>
-	            	-->
-	            </div><!-- End Carousel --> 
-	        </div><!-- End Well -->
-	    </div><!-- End Row -->
+
+</div>
+
+<div class="product-bottom">
+	<div class="container">
+		<div class="related-product">
+			<div class="row">
+				<h3 class="related-product-title">Produits dans la même catégorie</h3>
+				@for ($i = 0; $i < 4; $i++)
+
+					@include('elements.same-cat-product')
+
+				@endfor
+			</div>
+		</div>
+		<div class="selected-product">
+			<div class="row">
+				<h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
+				@for ($i = 0; $i < 4; $i++)
+
+					@include('elements.related-product')
+
+				@endfor
+			</div>
+		</div>
+		<div class="comment-product" id="comment">
+			<div class="row">
+				<h3 class="comment-product-title">Avis des clients</h3>
+				<div style="float:right;">
+					<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-caret-left fa-2x"></i></a>
+					<a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
+				</div>
+
+				<div class="well">
+					<!-- Carousel
+                    ================================================== -->
+					<div id="myCarousel-comment" class="carousel slide" data-interval="false">
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="row">
+									@for ($i = 0; $i < 3; $i++)
+										@include('elements.comment')
+									@endfor
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									@for ($i = 0; $i < 3; $i++)
+										@include('elements.comment')
+									@endfor
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									@for ($i = 0; $i < 3; $i++)
+										@include('elements.comment')
+									@endfor
+								</div>
+							</div>
+						</div>
+						<!--
+                        <ol class="carousel-indicators-comment">
+                            <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel-comment" data-slide-to="1"></li>
+                            <li data-target="#myCarousel-comment" data-slide-to="2"></li>
+                        </ol>
+                        -->
+					</div><!-- End Carousel -->
+				</div><!-- End Well -->
+			</div><!-- End Row -->
+		</div>
 	</div>
 </div>
+
 
 @endsection
