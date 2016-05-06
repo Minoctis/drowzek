@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			<p>Bonjour, <span>Lorem ipsum</span> </p>
-			<a href="#" class="logout"><i class="fa fa-sign-out"></i> Se déconnecter</a>
+			<a href="{{ route('deconnexion') }}" class="logout"><i class="fa fa-sign-out"></i> Se déconnecter</a>
 
 			<ul class="nav nav-tabs mon-compte-nav">
 				<li class="active"><a data-toggle="tab" href="#accueil"><i class="fa fa-home"></i> Accueil de mon compte</a></li>

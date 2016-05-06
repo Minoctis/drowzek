@@ -5,7 +5,6 @@
 @section('page-id', 'create-account')
 
 @section('content')
-{{dump($errors)}}
 <div class="container">
 	<div class="create-account-page">
 		<div class="title-content-create-account">

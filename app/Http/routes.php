@@ -18,7 +18,8 @@ Route::group(['middleware' => ['web']], function () {
     //Routes d'auth
     Route::get('connexion', ['as' => 'connexion', 'uses' => 'Auth\AuthController@showLoginForm']);
     Route::post('connexion', 'Auth\AuthController@login');
-    Route::get('deconnexion', 'Auth\AuthController@logout');
+    Route::get('deconnexion', ['as' => 'deconnexion', 'uses' => 'Auth\AuthController@logout']);
+    Route::get('deconnexion-confirmation', ['as' => 'confirmation-deconnexion', function() { return view('auth.deconnexion'); }]);
 
     Route::get('creation-compte', ['as' => 'creation-compte', 'uses' => 'Auth\AuthController@showRegistrationForm']);
     Route::post('creation-compte', 'Auth\AuthController@register');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Client;
 use Auth;
+use Barryvdh\Debugbar\Middleware\Debugbar;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -85,5 +86,10 @@ class AuthController extends Controller
             'date_naissance' => $dateNaissance,
             'password' => bcrypt($data['password'])
         ]);
+    }
+
+    public function logout() {
+        Auth::guard($this->getGuard())->logout();
+        return view('auth.deconnexion');
     }
 }
