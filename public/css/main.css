@@ -255,6 +255,7 @@ a:hover, a:active{
         background: #000000;
         padding: 40px 0;
         text-align: center;
+        position: relative;
     }
 
     .engagement p{
@@ -360,11 +361,12 @@ a:hover, a:active{
 .breadcrumb{
     top: 50px;
     position: relative;
+    margin: 0;
+    background-color: white;
 }
 
 .main-content{
     padding-top: 40px;
-    padding-bottom: 40px;
 }
 
 /*FIN DEFAULT LAYOUT*/
@@ -382,7 +384,7 @@ h3.product-title-list{
 
 
 
-/* BEFIN FICHE PRODUIT */
+/* BEGIN FICHE PRODUIT */
 h2.product-title{
     font-size: 24px;
     text-transform: uppercase;
@@ -394,9 +396,8 @@ h2.product-title{
 
 
 .fiche-produit .bloc-images .item img{
-    max-height: 500px;
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-width: inherit;
 }
 
 .fiche-produit .product-price{
@@ -417,10 +418,44 @@ h4.review-title{
 }
 .fiche-produit .product-images{
     position: relative;
+    width:50%;
+    float: left;
+    overflow: hidden;
 }
+
+.product-description{
+    float: right;
+    width:50%;
+    position: relative;
+    top: 50px;
+    padding: 0 50px;
+}
+
+.product-bottom {
+    background-color: white;
+    top: 500px;
+    position: relative;
+}
+.row.fiche-produit {
+    height: 500px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#fiche-produit .breadcrumb{
+    z-index: 1;
+    background-color: transparent;
+}
+
 .carousel-control-comment.left, 
 .carousel-control-comment.right{
 
+}
+
+.product-bottom {
+    background-color: white;
 }
 /* END FICHE PRODUIT */
 
@@ -883,6 +918,8 @@ h4.sub-title-content-commande.col-md-9{
     /* SOCIAL BOTTOM */
     .social-bottom {
         padding: 25px 0 50px 0;
+        position: relative;
+        background-color: white;
     }
 
     h3.social-bottom-title{
@@ -909,8 +946,10 @@ h4.sub-title-content-commande.col-md-9{
     /* FOOTER */
 
     footer.footer {
-        padding: 30px 0 20px 0;
+        padding: 30px 0 0 0;
         border-top: 1px solid black;
+        background-color: white;
+        position: relative;
     }
 
     .mentions {
@@ -1146,7 +1185,7 @@ h4.sub-title-content-commande.col-md-9{
         vertical-align: middle;
     }
     ul.mode-livraison img{
-        max-width: 100%;s
+        max-width: 100%;
     }
     /* end livraison */
 
@@ -1159,6 +1198,31 @@ h4.sub-title-content-commande.col-md-9{
 /********************************************************
 ******************** RESPONSIVE *************************
 ********************************************************/
+    /* ECRANS TABLETTE & MOBILE */
+    @media screen and (max-width: 991px){
+        /* Page produit */
+        .fiche-produit .product-images{
+            width: 100%;
+            top: -24px;
+        }
+        .row.fiche-produit{
+            position: relative;
+            margin: 0;
+        }
+        .product-description {
+            width: 100%;
+            top: auto;
+            padding: 20px 50px;
+            z-index: 1;
+            margin-bottom: 5%;
+            border-bottom: 1px solid;
+        }
+
+        .product-bottom {
+            top: auto !important;
+        }
+
+    }
 
     /* ECRANS MOBILE */
     @media screen and (max-width: 767px){

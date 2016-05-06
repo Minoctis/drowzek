@@ -1,4 +1,26 @@
 jQuery(document).ready(function () {
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Intro Height  */
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    function introHeight() {
+        var wh = $(window).height();
+        $('#fiche-produit .fiche-produit').css({height: wh});
+        $('#fiche-produit .product-bottom').css({top: wh});
+        $('#fiche-produit .product-images .carousel-inner .item img').css({"min-height": wh});
+    }
+
+    introHeight();
+    $(window).bind('resize',function () {
+        if ($(window).width() > 991){  
+            //Update slider height on resize
+            introHeight();
+        }  
+    });
+
+    $('.product-bottom').append(jQuery('.bottom-page'));
     
     //Manipulation des images du sous menu
 
@@ -63,6 +85,11 @@ jQuery(document).ready(function () {
         }(window));
 
 */
+
+    // Colonne sous menu
+    $('.categorie.salle-a-manger').removeClass('col-md-2');
+    $('.categorie.salle-a-manger').addClass('col-md-3');
+
 
 
 

@@ -31,13 +31,14 @@
             <div class="main-content">
                 
                 @yield('content')
-                
-                @include('elements.engagement')
 
-                @include('elements.social-links')
+                <div class="bottom-page">
+                    @include('elements.engagement')
 
-                @include('elements.footer') 
-                          
+                    @include('elements.social-links')
+
+                    @include('elements.footer')
+                </div>
             </div>
 
 
