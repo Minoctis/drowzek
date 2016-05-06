@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Client;
-use App\User;
+use Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -33,6 +33,10 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected $registerView = "auth.creation-compte";
+
+    protected $loginView = "auth.connexion";
+
     /**
      * Create a new authentication controller instance.
      *
@@ -40,7 +44,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'deconnexion']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**
@@ -52,8 +56,13 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'civilite' => 'required|in:1,2',
+            'prenom' => 'required',
+            'nom' => 'required',
             'email' => 'required|email|max:255|unique:clients',
+            'date-naissance' => 'date_format:Y-m-d',
             'password' => 'required|confirmed|min:6',
+            'newsletter' => 'in:0,1'
         ]);
     }
 
@@ -65,9 +74,16 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $dateNaissance = $data['date-naissance'] ? date('Y-m-d',strtotime( $data['date-naissance'])) : null;
+
         return Client::create([
+            'civilite_id' => $data['civilite'],
+            'prenom' => $data['prenom'],
+            'nom' => $data['nom'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'date_inscription' => time(),
+            'date_naissance' => $dateNaissance,
+            'password' => bcrypt($data['password'])
         ]);
     }
 }

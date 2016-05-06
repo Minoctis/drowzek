@@ -5,7 +5,6 @@
 @section('page-id', 'moncompte')
 
 @section('content')
-
 <div class="moncompte">
 	<div class="entete-page">
 		<img src="http://placehold.it/1200x200" class="img img-reponsive" alt="Mon Compte">

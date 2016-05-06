@@ -53,7 +53,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>-->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-user fa-lg" style='float:left'></i> <span style="padding-left: 20px;" class='visible-xs'>  Mon compte</span> </a></li>
+        <li><a href="{{ route('compte::accueil') }}"><i class="fa fa-user fa-lg" style='float:left'></i> <span style="padding-left: 20px;" class='visible-xs'>  Mon compte</span> </a></li>
         <li class="search-bloc" >
 
           <form class="navbar-form" id="search-navbar-top" role="search"> 
@@ -64,7 +64,7 @@
           </form>
 
         </li>
-        <li><a href="#"><i class="fa fa-shopping-cart fa-lg"></i>  Panier</a></li>
+        <li><a href="{{ route('panier') }}"><i class="fa fa-shopping-cart fa-lg"></i>  Panier</a></li>
         <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

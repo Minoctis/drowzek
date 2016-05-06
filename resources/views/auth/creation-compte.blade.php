@@ -5,7 +5,7 @@
 @section('page-id', 'create-account')
 
 @section('content')
-
+{{dump($errors)}}
 <div class="container">
 	<div class="create-account-page">
 		<div class="title-content-create-account">
@@ -52,60 +52,81 @@
 
 
 
-		<div id="create-account-with-email" class="create-account-content collapse">
+		<div id="create-account-with-email" class="create-account-content collapse {{ $errors->all() ? 'in': '' }}">
 
-			<hr class="divider"></hr>
+			<hr class="divider">
 			
-			<form class="create-account-form">	
+			<form class="create-account-form" method="post">
+				{!! csrf_field() !!}
 
 				<!-- Civilité -->
 				<div class="form-group">
 				    <label >Titre</label>
-					<input id="civilite" name="civilite" type="radio" /> <span>Mr.</span>
-					<input id="civilite" name="civilite" type="radio" /> <span>Mme</span>
+					@foreach($errors->get('civilite') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
+					<input id="civilite-mr" name="civilite" type="radio" value="1"/> <span>Mr.</span>
+					<input id="civilite-mme" name="civilite" type="radio" value="2"/> <span>Mme</span>
 				</div>
 								
 								
 				<!-- Prénom -->
 				<div class="form-group">
+					@foreach($errors->get('prenom') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
 					<label for="prenom">Prénom <span>*</span></label>
-					<input id="prenom" name="prenom" type="text"></input>
+					<input id="prenom" name="prenom" type="text">
 				</div>
 
 				<!-- Nom -->
 				<div class="form-group">
+					@foreach($errors->get('nom') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
 					<label for="nom">Nom <span>*</span></label>
-					<input id="nom" name="nom" type="text"></input>
+					<input id="nom" name="nom" type="text">
 				</div>
 
 				<!-- Adresse email -->
 				<div class="form-group">
+					@foreach($errors->get('email') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
 					<label for="email">Adresse e-mail <span>*</span> </label>
-					<input id="email" name="email" type="email"></input>
+					<input id="email" name="email" type="email">
 				</div>
 
 				<!-- Date de naissance -->
 				<div class="form-group">
+					@foreach($errors->get('date-naissance') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
 					<label for="date">Date de naissance </label>
-					<input id="date" name="date" type="date"></input>
+					<input id="date" name="date-naissance" type="date">
 				</div>
 
 				<!-- Nouveau mot de passe-->
 				<div class="form-group">
+					@foreach($errors->get('password') as $error)
+						<p class="bg-danger">{{ $error }}</p>
+					@endforeach
 					<label for="password">Mot de passe<span>*</span> </label>
-					<input id="password" name="password" type="password"></input>
+					<input id="password" name="password" type="password">
+					<p class="help-block">6 caractères minimum.</p>
 				</div>	
 
 				<!-- Confirmation du mot de passe-->
 				<div class="form-group">
 					<label for="password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
-					<input id="password-confirm" name="password-confirm" type="password"></input>
+					<input id="password-confirm" name="password_confirmation" type="password">
 				</div>								
 
 				<!-- Newsletter -->
 				<div class="form-group">
-					<input id="check-newsletter" name="newsletter" type="checkbox" />
-					<label for="check-newsletter"> J'aimerais m'abonner à la newsletter de Home de goît.com</label>
+					<input type="hidden" name="newsletter" value="0">
+					<input id="check-newsletter" name="newsletter" type="checkbox" value="1"/>
+					<label for="check-newsletter"> J'aimerais m'abonner à la newsletter de Home de goût.com</label>
 				</div>	
 				
 
@@ -117,10 +138,10 @@
 			</form>
 		</div>
 
-		<hr class="divider"></hr>
+		<hr class="divider">
 
 		<div class="login-content">
-			<p>Vous avez déjà un compte ? connectez-vous par <a href="#">ici</a> </p>
+			<p>Vous avez déjà un compte ? connectez-vous par <a href="{{ route('connexion') }}">ici</a> </p>
 		</div>
 
 	</div>

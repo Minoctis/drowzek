@@ -15,7 +15,18 @@ use App\Models\Ambiance;
 use App\Models\Categorie;
 
 Route::group(['middleware' => ['web']], function () {
-    Route::auth();
+    //Routes d'auth
+    Route::get('connexion', ['as' => 'connexion', 'uses' => 'Auth\AuthController@showLoginForm']);
+    Route::post('connexion', 'Auth\AuthController@login');
+    Route::get('deconnexion', 'Auth\AuthController@logout');
+
+    Route::get('creation-compte', ['as' => 'creation-compte', 'uses' => 'Auth\AuthController@showRegistrationForm']);
+    Route::post('creation-compte', 'Auth\AuthController@register');
+
+    Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+    Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+    Route::post('password/reset', 'Auth\PasswordController@reset');
+
 //Routes du front-office
     //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
@@ -26,15 +37,6 @@ Route::group(['middleware' => ['web']], function () {
     // page produit
     Route::get('produit/{slug}', ['as' => 'produit', 'uses' => 'Front\ProduitsController@showProduit']);
 
-    // page de connexion
-    Route::get('connexion', ['as' => 'connexion', function() {return view('pages.connexion'); }]);
-
-    // page de déconnexion
-    Route::get('deconnexion', ['as' => 'deconnexion', function() {return view('pages.deconnexion'); }]);
-
-    // page de création compte
-    Route::get('creation-compte', ['as' => 'creation-compte', function() {return view('pages.creation-compte'); }]);
-
     Route::group(['prefix' => 'ambiances', 'as' => 'ambiances::'], function() {
     
         //Liste des ambiances
@@ -44,7 +46,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/{slug}', ['as' => 'fiche', 'uses' => 'Front\CatalogueController@showAmbiance']);
     });
 
-    Route::group(['prefix' => 'checkout', 'as' => 'checkout::'], function() {
+    Route::group(['prefix' => 'checkout', 'as' => 'checkout::', 'middleware' => 'auth'], function() {
         //Etape 1 : Identification
         Route::get('/identification', ['as' => 'identification', function() {return view('pages.checkout.identification'); }]);
 

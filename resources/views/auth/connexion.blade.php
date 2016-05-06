@@ -86,7 +86,7 @@
 		<hr class="divider">
 
 		<div class="create-account-content">
-			<p>Vous n'avez pas de compte ? Créez en un par <a href="#">ici</a> </p>
+			<p>Vous n'avez pas de compte ? Créez en un par <a href="{{ route('creation-compte') }}">ici</a> </p>
 		</div>
 
 	</div>

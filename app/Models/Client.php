@@ -27,7 +27,7 @@ class Client extends Authenticatable
 {
     protected $table = 'clients';
 
-    protected $fillable = ['prenom', 'nom', 'email', 'date_naissance', 'password'];
+    protected $fillable = ['prenom', 'nom', 'email', 'date_naissance', 'date_inscription', 'password', 'civilite_id'];
 
     protected $hidden = ['password', 'token_forget_password'];
 
