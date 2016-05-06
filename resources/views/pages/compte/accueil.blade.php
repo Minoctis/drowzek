@@ -12,7 +12,7 @@
 	</div>
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-			<p>Bonjour, <span>Lorem ipsum</span> </p>
+			<p>Bonjour, <span>{{ Auth::user()->prenom." ".Auth::user()->nom }}</span> </p>
 			<a href="{{ route('deconnexion') }}" class="logout"><i class="fa fa-sign-out"></i> Se déconnecter</a>
 
 			<ul class="nav nav-tabs mon-compte-nav">
@@ -429,56 +429,60 @@
 				<div id="infos" class="tab-pane fade">
 					<h3 class="title-content-compte">Mes informations personnelles</h3>
 					<div class="personal-infos">
+						@foreach ($errors->all() as $error)
+							{{ $error }}
+						@endforeach
 						<div class="form-personal-infos">
-							<form>
-								<!-- Civilité -->
+							<form method="post" action="{{ route('compte::updateClient') }}">
+								{!! csrf_field() !!}
+										<!-- Civilité -->
 								<div class="form-group">
 								    <label >Titre</label>
-									<input id="civilite" name="civilite" type="radio" /> <span>Mr.</span>
-									<input id="civilite" name="civilite" type="radio" /> <span>Mme</span>
+									<input id="civilite-mr" name="civilite" type="radio" value="1" {{ Auth::user()->civilite_id == 1 ? 'checked': '' }}/> <span>Mr.</span>
+									<input id="civilite-mme" name="civilite" type="radio" value="2" {{ Auth::user()->civilite_id == 2 ? 'checked': '' }}/> <span>Mme</span>
 								</div>
 								
 								
 								<!-- Prénom -->
 								<div class="form-group">
 									<label for="prenom">Prénom <span>*</span></label>
-									<input id="prenom" name="prenom" type="text"></input>
+									<input id="prenom" name="prenom" type="text" value="{{ Auth::user()->prenom }}" required>
 								</div>
 
 								<!-- Nom -->
 								<div class="form-group">
 									<label for="nom">Nom <span>*</span></label>
-									<input id="nom" name="nom" type="text"></input>
+									<input id="nom" name="nom" type="text" value="{{ Auth::user()->nom }}" required>
 								</div>
 
 								<!-- Adresse email -->
 								<div class="form-group">
 									<label for="email">Adresse e-mail <span>*</span> </label>
-									<input id="email" name="email" type="email"></input>
+									<input id="email" name="email" type="email" value="{{ Auth::user()->email }}" required>
 								</div>
 
 								<!-- Date de naissance -->
 								<div class="form-group">
 									<label for="date">Date de naissance </label>
-									<input id="date" name="date" type="date"></input>
+									<input id="date" name="date-naissance" type="date" value="{{ Auth::user()->date_naissance }}">
 								</div>
 
 								<!-- Mot de passe actuel -->
 								<div class="form-group">
 									<label for="password">Mot de passe actuel <span>*</span> </label>
-									<input id="password" name="password" type="password"></input>
+									<input id="password" name="password" type="password" required>
 								</div>
 
 								<!-- Nouveau mot de passe-->
 								<div class="form-group">
 									<label for="new-password">Votre nouveau mot de passe<span>*</span> </label>
-									<input id="new-password" name="new-password" type="password"></input>
+									<input id="new-password" name="new-password" type="password">
 								</div>	
 
 								<!-- Confirmation du mot de passe-->
 								<div class="form-group">
 									<label for="new-password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
-									<input id="new-password-confirm" name="new-password-confirm" type="password"></input>
+									<input id="new-password-confirm" name="new-password_confirmation" type="password">
 								</div>								
 
 								<!-- Bouton valider -->

@@ -73,6 +73,8 @@ Route::group(['middleware' => ['web']], function () {
         //compte utilisateur accueil
         Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
 
+        Route::post('info-utilisateur', ['as' => 'updateClient', 'uses' => 'Front\CompteController@updateCompteClient']);
+
     });
 
 //Routes du Back-office
