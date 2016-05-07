@@ -8,7 +8,7 @@
 <!-- Ajouter contenu pour la page panier -->
 <div class="panier">
 	<div class="achat"><a class="link" href="#">continuer mes achats</a></div>
-	<a class="link" href="#"><div class="securise">commande securisé</div></a>
+	<a class="link" href="{{ route('checkout::adresses') }}"><div class="securise">commande securisé</div></a>
 <!-- <a class="hdg-button-default">commande securisé</a>-->
 	<div class="container">
                   

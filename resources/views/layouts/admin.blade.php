@@ -4,6 +4,7 @@
     <title>Home de goût - ADMIN - @yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- CSS -->
     <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css">

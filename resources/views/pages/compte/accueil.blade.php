@@ -5,7 +5,6 @@
 @section('page-id', 'moncompte')
 
 @section('content')
-
 <div class="moncompte">
 	<div class="entete-page">
 		<img src="http://placehold.it/1200x200" class="img img-reponsive" alt="Mon Compte">
@@ -13,8 +12,8 @@
 	</div>
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-			<p>Bonjour, <span>Lorem ipsum</span> </p>
-			<a href="#" class="logout"><i class="fa fa-sign-out"></i> Se déconnecter</a>
+			<p>Bonjour, <span>{{ Auth::user()->prenom." ".Auth::user()->nom }}</span> </p>
+			<a href="{{ route('deconnexion') }}" class="logout"><i class="fa fa-sign-out"></i> Se déconnecter</a>
 
 			<ul class="nav nav-tabs mon-compte-nav">
 				<li class="active"><a data-toggle="tab" href="#accueil"><i class="fa fa-home"></i> Accueil de mon compte</a></li>
@@ -431,55 +430,77 @@
 					<h3 class="title-content-compte">Mes informations personnelles</h3>
 					<div class="personal-infos">
 						<div class="form-personal-infos">
-							<form>
-								<!-- Civilité -->
-								<div class="form-group">
-								    <label >Titre</label>
-									<input id="civilite" name="civilite" type="radio" /> <span>Mr.</span>
-									<input id="civilite" name="civilite" type="radio" /> <span>Mme</span>
+							<form method="post" action="{{ route('compte::updateClient') }}">
+								{!! csrf_field() !!}
+										<!-- Civilité -->
+								<div class="form-group{{ ($errors->has('civilite')) ? ' has-error' : '' }}">
+								    <label class="control-label">Titre</label>
+									@foreach($errors->get('civilite') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<input id="civilite-mr" name="civilite" type="radio" value="1" {{ Auth::user()->civilite_id == 1 ? 'checked': '' }}/> <span>Mr.</span>
+									<input id="civilite-mme" name="civilite" type="radio" value="2" {{ Auth::user()->civilite_id == 2 ? 'checked': '' }}/> <span>Mme</span>
 								</div>
 								
 								
 								<!-- Prénom -->
-								<div class="form-group">
-									<label for="prenom">Prénom <span>*</span></label>
-									<input id="prenom" name="prenom" type="text"></input>
+								<div class="form-group{{ ($errors->has('prenom')) ? ' has-error' : '' }}">
+									@foreach($errors->get('prenom') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="prenom">Prénom <span>*</span></label>
+									<input class="form-control" id="prenom" name="prenom" type="text" value="{{ Auth::user()->prenom }}" required>
 								</div>
 
 								<!-- Nom -->
-								<div class="form-group">
-									<label for="nom">Nom <span>*</span></label>
-									<input id="nom" name="nom" type="text"></input>
+								<div class="form-group{{ ($errors->has('nom')) ? ' has-error' : '' }}">
+									@foreach($errors->get('nom') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="nom">Nom <span>*</span></label>
+									<input class="form-control" id="nom" name="nom" type="text" value="{{ Auth::user()->nom }}" required>
 								</div>
 
 								<!-- Adresse email -->
-								<div class="form-group">
-									<label for="email">Adresse e-mail <span>*</span> </label>
-									<input id="email" name="email" type="email"></input>
+								<div class="form-group{{ ($errors->has('email')) ? ' has-error' : '' }}">
+									@foreach($errors->get('email') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="email">Adresse e-mail <span>*</span> </label>
+									<input class="form-control" id="email" name="email" type="email" value="{{ Auth::user()->email }}" required>
 								</div>
 
 								<!-- Date de naissance -->
-								<div class="form-group">
-									<label for="date">Date de naissance </label>
-									<input id="date" name="date" type="date"></input>
+								<div class="form-group{{ ($errors->has('date-naissance')) ? ' has-error' : '' }}">
+									@foreach($errors->get('date-naissance') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="date">Date de naissance </label>
+									<input class="form-control" id="date" name="date-naissance" type="date" value="{{ Auth::user()->date_naissance }}">
 								</div>
 
 								<!-- Mot de passe actuel -->
-								<div class="form-group">
-									<label for="password">Mot de passe actuel <span>*</span> </label>
-									<input id="password" name="password" type="password"></input>
+								<div class="form-group{{ ($errors->has('actual_password')) ? ' has-error' : '' }}">
+									@foreach($errors->get('actual_password') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="password">Mot de passe actuel <span>*</span> </label>
+									<input class="form-control" id="password" name="password" type="password" required>
 								</div>
 
 								<!-- Nouveau mot de passe-->
-								<div class="form-group">
-									<label for="new-password">Votre nouveau mot de passe<span>*</span> </label>
-									<input id="new-password" name="new-password" type="password"></input>
+								<div class="form-group{{ ($errors->has('new-password')) ? ' has-error' : '' }}">
+									@foreach($errors->get('new-password') as $error)
+										<div class="panel panel-danger"><div class="panel-body bg-danger"><p>{{ $error }}</p></div></div>
+									@endforeach
+									<label class="control-label" for="new-password">Votre nouveau mot de passe<span>*</span> </label>
+									<input class="form-control" id="new-password" name="new-password" type="password">
 								</div>	
 
 								<!-- Confirmation du mot de passe-->
-								<div class="form-group">
-									<label for="new-password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
-									<input id="new-password-confirm" name="new-password-confirm" type="password"></input>
+								<div class="form-group{{ ($errors->has('new-password')) ? ' has-error' : '' }}">
+									<label class="control-label" for="new-password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
+									<input class="form-control" id="new-password-confirm" name="new-password_confirmation" type="password">
 								</div>								
 
 								<!-- Bouton valider -->
@@ -493,7 +514,19 @@
 				</div>
 
 				<!-- FIN MES INFOS PERSONNELLES -->
+				<script>
+					var url = document.location.toString();
+					if ( url.match('#') ) {
+						var tab = '#'+url.split('#')[1];
+						$('#accueil').removeClass('active');
+						$(tab).addClass('in active');
 
+						var navigationTabs = $("ul.nav.nav-tabs.mon-compte-nav");
+						navigationTabs.children().removeClass('active');
+						var activeLink = $('a[href="'+tab+'"]');
+						activeLink.parent().addClass('active');
+					}
+				</script>
 
 			</div>
 		</div>

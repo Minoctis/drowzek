@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 /**
  * App\Models\Client
  *
@@ -22,11 +23,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Commande[] $commandes
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Panier[] $paniers
  */
-class Client extends Model
+class Client extends Authenticatable
 {
     protected $table = 'clients';
 
-    protected $fillable = ['prenom', 'nom', 'email', 'date_naissance'];
+    protected $fillable = ['prenom', 'nom', 'email', 'date_naissance', 'date_inscription', 'password', 'civilite_id'];
 
     protected $hidden = ['password', 'token_forget_password'];
 

@@ -13,7 +13,11 @@
 		</div>
 		<p>Vous allez etre rediriger vers la page d'accueil dans 5sec.</p>
 
-
+		<script>
+			window.setTimeout(function() {
+				window.location.href = '/';
+			}, 5000);
+		</script>
 	</div>
 </div>
 @endsection
