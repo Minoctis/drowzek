@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Client;
 use Auth;
-use Barryvdh\Debugbar\Middleware\Debugbar;
+use Debugbar;
+use Illuminate\Http\Request;
+use Session;
+use URL;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -36,7 +39,7 @@ class AuthController extends Controller
 
     protected $registerView = "auth.creation-compte";
 
-    protected $loginView = "auth.connexion";
+//    protected $loginView = "auth.connexion";
 
     /**
      * Create a new authentication controller instance.
@@ -76,7 +79,7 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $dateNaissance = $data['date-naissance'] ? date('Y-m-d',strtotime( $data['date-naissance'])) : null;
-
+        $this->redirectTo = Session::get('url.intended');
         return Client::create([
             'civilite_id' => $data['civilite'],
             'prenom' => $data['prenom'],
@@ -91,5 +94,16 @@ class AuthController extends Controller
     public function logout() {
         Auth::guard($this->getGuard())->logout();
         return view('auth.deconnexion');
+    }
+
+    public function showLoginForm()
+    {
+        $view = 'auth.connexion';
+        if (strpos(Session::get('url.intended'), 'checkout')) {
+            $view = 'auth.connexion-checkout';
+        }
+        Debugbar::info($view);
+        Debugbar::info(Session::get('url.intended'));
+        return view($view);
     }
 }
