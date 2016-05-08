@@ -10,20 +10,15 @@
 			</tr>
 		</thead>
 		<tbody>
+		@foreach($commandes as $commande)
 			<tr>
-				<td><a href="#">LSJKSJQL799</a></td>
-				<td>29/03/2016</td>
-				<td>En cours de livraison</td>
+				<td><a href="#">{{ $commande->reference }}</a></td>
+				<td>{{ date('d/m/Y', strtotime($commande->date)) }}</td>
+				<td>{{ $commande->statut->libelle }}</td>
 				<td><a href="#"><i class="fa fa-file-text"></i></a></td>
-				<td><a href="#"><i class="fa fa-external-link"></i></a></td>
+				<td><a href="{{ route('compte::detailCommande', $commande->reference) }}"><i class="fa fa-external-link"></i></a></td>
 			</tr>
-			<tr>
-				<td><a href="#">LSJKSJQL799</a></td>
-				<td>29/03/2016</td>
-				<td>En cours de préparation</td>
-				<td><a href="#"><i class="fa fa-file-text"></i></a></td>
-				<td><a href="#"><i class="fa fa-external-link"></i></a></td>
-			</tr>
+		@endforeach
 		</tbody>
 	</table>
 </div>

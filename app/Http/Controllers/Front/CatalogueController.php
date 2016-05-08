@@ -21,8 +21,6 @@ class CatalogueController extends Controller
     public function showListeAmbiances() {
         $model = new Ambiance();
         $ambiances = $model->getAllAmbiances();
-        ini_set('xdebug.var_display_max_depth', 10);
-//        die(var_dump($ambiances));
 
         return view('pages.ambiance', ['ambiances' => $ambiances]);
     }

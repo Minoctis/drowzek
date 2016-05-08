@@ -33,5 +33,4 @@ class CommandeProduit extends Model
     public function taux_tva() {
         return $this->belongsTo('App\Models\TauxTVA', 'taux_tva_id');
     }
-
 }

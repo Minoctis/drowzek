@@ -77,4 +77,9 @@ class Commande extends Model
     public function statut() {
         return $this->belongsTo('App\Models\CommandeStatut', 'commande_statut_id');
     }
+
+//    public function produitsImages()
+//    {
+//        return $this->hasManyThrough('App\Models\ProduitImage', 'App\Models\CommandeProduit', 'commande_id', 'produit_id');
+//    }
 }

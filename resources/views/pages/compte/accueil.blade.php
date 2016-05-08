@@ -18,7 +18,6 @@
 			<ul class="nav nav-tabs mon-compte-nav">
 				<li class="active"><a data-toggle="tab" href="#accueil"><i class="fa fa-home"></i> Accueil de mon compte</a></li>
 				<li><a data-toggle="tab" href="#commandes">Mes commandes</a></li>
-				<li><a data-toggle="tab" href="#infos-commande">Information de commande</a></li>
 				<li><a data-toggle="tab" href="#adresses">Mes adresses</a></li>
 				<li><a data-toggle="tab" href="#favorites">Mes produits enregistrés</a></li>
 				<li><a data-toggle="tab" href="#infos"><i class="fa fa-user"></i> Mes informations personnelles</a></li>
@@ -32,9 +31,30 @@
 				<div id="accueil" class="tab-pane fade in active">
 					<h3 class="title-content-compte">Accueil de mon compte</h3>
 					<p>Mes dernières commandes :</p>
-
-
-					@include('elements.table-commandes')
+					<div class="table-responsive table-commandes">
+						<table class="table">
+							<thead>
+							<tr>
+								<th>Numéro de commande</th>
+								<th>Date de commande</th>
+								<th>Etat</th>
+								<th>Facture</th>
+								<th>Afficher</th>
+							</tr>
+							</thead>
+							<tbody>
+							@foreach($commandes_recentes as $commande_recente)
+							<tr>
+								<td><a href="#">{{ $commande_recente->reference }}</a></td>
+								<td>{{ date("d/m/Y", strtotime($commande_recente->date)) }}</td>
+								<td>{{ $commande_recente->statut->libelle }}</td>
+								<td><a href="#"><i class="fa fa-file-text"></i></a></td>
+								<td><a href="{{ route('compte::detailCommande', $commande_recente->reference) }}"><i class="fa fa-external-link"></i></a></td>
+							</tr>
+							@endforeach
+							</tbody>
+						</table>
+					</div>
 				</div> 
 
 				<!-- FIN ACCUEIL DE MON COMPTE -->
@@ -50,230 +70,6 @@
 				</div>
 
 				<!-- FIN MES COMMANDES -->
-
-				<!-- INFORMATIONS DE COMMANDE -->
-
-				<div id="infos-commande" class="tab-pane fade">
-					<h3 class="title-content-compte">Commande N°LJDSJDS90</h3>
-					<p style="color:red;">Cet onglet s'affiche au clic sur une commande. L'onglet ne doit pas être visible. (texte à supprimer)</p>
-
-					<div class="entete-commande-infos">
-						<p class="etat-commande">Etat : paiement validé</p>
-						<p class="date-commande">Commande passée le 29/03/2016</p>
-					</div>
-
-					<div class="commande-infos">
-						<div class="top-content row">
-							<h4 class="sub-title-content-commande col-md-9 col-xs-12">Information de la commande :</h4>
-							<p class="infos-link facture col-md-3 col-xs-12"><a href="#">Imprimer la facture</a></p>
-						</div>
-
-
-						<!-- Liste des produits commandés -->
-						<div class="produit-commandes">
-							<div class="row">
-
-								<div class="produit col-md-3 col-sm-6 col-xs-12">
-									<div class="img-content">
-										<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
-									</div>
-									<div class="produit-infos">
-										<h4 class="title-produit">Chaise design en bois</h4>
-										<p class="options">Matières : bois</p>
-										<p class="qte">Quantité : 2</p>
-										<p class="price">Prix : 170€</p>
-									</div>
-								</div>
-
-								<div class="produit col-md-3 col-sm-6 col-xs-12">
-									<div class="img-content">
-										<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
-									</div>
-									<div class="produit-infos">
-										<h4 class="title-produit">Chaise design en bois</h4>
-										<p class="options">Matières : bois</p>
-										<p class="qte">Quantité : 2</p>
-										<p class="price">Prix : 170€</p>
-									</div>
-								</div>
-
-								<div class="produit col-md-3 col-sm-6 col-xs-12">
-									<div class="img-content">
-										<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
-									</div>
-									<div class="produit-infos">
-										<h4 class="title-produit">Chaise design en bois</h4>
-										<p class="options">Matières : bois</p>
-										<p class="qte">Quantité : 2</p>
-										<p class="price">Prix : 170€</p>
-									</div>
-								</div>
-
-								<div class="produit col-md-3 col-sm-6 col-xs-12">
-									<div class="img-content">
-										<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">
-									</div>
-									<div class="produit-infos">
-										<h4 class="title-produit">Chaise design en bois</h4>
-										<p class="options">Matières : bois</p>
-										<p class="qte">Quantité : 2</p>
-										<p class="price">Prix : 170€</p>
-									</div>
-								</div>
-
-							</div>
-							<ul class="pagination">
-							  	<li><a href="#">1</a></li>
-							  	<li><a href="#">2</a></li>
-							 	<li><a href="#">3</a></li>
-							  	<li><a href="#">4</a></li>
-							  	<li><a href="#">5</a></li>
-							</ul>
-						</div>
-						<!-- Fin de liste produits commandés -->
-
-					</div>
-
-					<!-- Récapitulatif de la commande -->
-
-					<div class="recap-commande">
-						<div class="row">
-							<h4 class="sub-title-content-commande col-md-4 col-xs-12">Récapitulatif</h4>
-							<div class="recap-infos col-md-8 col-xs-12">
-								<div class="table-responsive">
-									<table class="table">
-										<tr>
-											<td>Mode de livraison choisi :</td>
-											<td>9 €</td>
-										</tr>
-										<tr>
-											<td>Total HT :</td>
-											<td>1899 €</td>
-										</tr>
-										<tr>
-											<td>Total TTC :</td>
-											<td>2000 €</td>
-										</tr>
-										<tr>
-											<td>Dont TVA :</td>
-											<td>200 €</td>
-										</tr>
-
-										<!-- Montant Total -->
-										<tr class="last">
-											<td>Montant Total :</td>
-											<td>2000 €</td>
-										</tr> 
-										<!-- Fin Montant Total -->
-
-									</table>
-								</div>
-							</div>	
-						</div>
-					</div>
-
-					<!-- Fin du récap de commande -->
-
-					<!-- Informations de livraison -->
-
-					<div class="livraison-infos">
-						<div class="top-content row">
-							<h4 class="sub-title-content-commande col-md-9 col-xs-12">Information de livraison :</h4>
-							<p class="infos-link suivi col-md-3 col-xs-12"><a href="#">Suivi de la commande</a></p>
-						</div>
-
-						<p class="mode-livraison">Vous avez choisi la livraison à domicile</p>
-
-
-
-						<div class="adresses">
-
-							<div class="row">
-
-								<!-- adresse de livraison -->
-								<div class="adresse-livraison col-md-6 col-xs-12">
-									<div class="panel panel-default">
-										<div class="panel-heading">Votre adresse de livraison</div>
-										<div class="panel-body">
-											<ul>
-												<li>
-													<span class="nom-client">Lorem</span>
-													<span class="prenom-client"> ipsum</span>
-												</li>
-												<li>
-													<span class="adresse">100 rue national</span>
-												</li>
-												<li>
-													<span class="compl-adresse">Complement d'adresse</span>
-												</li>
-												<li>
-													<span class="ville">Lille</span>
-													<span class="cp">59000</span>
-												</li>
-												<li>
-													<span class="pays">France</span>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<!-- fin adresse de livraison -->
-
-								<!-- adresse de factutation -->
-								
-								<div class="adresse-livraison col-md-6 col-xs-12">
-									<div class="panel panel-default">
-										<div class="panel-heading">Votre adresse de livraison</div>
-										<div class="panel-body">
-											<ul>
-												<li>
-													<span class="nom-client">Lorem</span>
-													<span class="prenom-client"> ipsum</span>
-												</li>
-												<li>
-													<span class="adresse">100 rue national</span>
-												</li>
-												<li>
-													<span class="compl-adresse">Complement d'adresse</span>
-												</li>
-												<li>
-													<span class="ville">Lille</span>
-													<span class="cp">59000</span>
-												</li>
-												<li>
-													<span class="pays">France</span>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!-- fin adresse de facturation -->
-							</div>
-
-						</div>
-					</div>
-
-					<!-- Fin informations de livraison -->
-
-
-					<!-- Informations de paiement -->
-					<div class="paiement-infos">
-						<div class="top-content row">
-							<h4 class="sub-title-content-commande col-md-9 col-xs-12">Information de paiement :</h4>
-						</div>
-
-						<div class="paiement">
-							<p class="mode-paiement">Vous avez choisi le paiement par <span class="mode">carte bancaire</span>, montant payé de <span class="price">1809 €</span></p>
-						</div>
-					</div>
-					<!-- Fin informations de paiement -->
-
-
-
-				</div>
-
-				<!-- FIN INFORMATION DE COMMANDE -->
 
 				<!-- MES ADRESSES -->
 

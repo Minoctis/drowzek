@@ -71,7 +71,8 @@ Route::group(['middleware' => ['web']], function () {
     //Routes du compte utlisateur
     Route::group(['prefix' => 'compte', 'as' => 'compte::', 'middleware' => 'auth'], function () {
         //compte utilisateur accueil
-        Route::get('accueil', ['as' => 'accueil', function() {return view('pages.compte.accueil'); }]);
+        Route::get('accueil', ['as' => 'accueil', 'uses' => 'Front\CompteController@showCompteClient']);
+        Route::get('commande/{reference}', ['as' => 'detailCommande', 'uses' => 'Front\CompteController@detailCommande']);
 
         Route::post('info-utilisateur', ['as' => 'updateClient', 'uses' => 'Front\CompteController@updateCompteClient']);
 

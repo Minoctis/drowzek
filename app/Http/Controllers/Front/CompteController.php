@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Client;
+use App\Models\Commande;
+use App\Models\CommandeProduit;
+use App\Models\CommandeStatut;
 use Auth;
+use Debugbar;
 use Hash;
 use Illuminate\Http\Request;
 
@@ -49,5 +53,61 @@ class CompteController extends Controller
 
             return redirect('/compte/accueil#infos');
         }
+    }
+
+    public function showCompteClient() {
+
+        $commandes_recentes = Commande::where('client_id', Auth::user()->id)
+                                        ->with('statut')
+                                        ->orderBy('date', 'desc')
+                                        ->take(3)
+                                        ->get();
+
+        $commandes = Commande::where('client_id', Auth::user()->id)
+            ->with('statut')
+            ->orderBy('date', 'desc')
+            ->get();
+
+
+
+        $data = [
+            'commandes_recentes' => $commandes_recentes,
+            'commandes'          => $commandes
+        ];
+
+        return view('pages.compte.accueil', $data);
+    }
+
+    public function detailCommande($reference) {
+        $commande = Commande::where('reference', $reference)
+            ->with('statut')
+            ->with('paiementType')
+            ->with('paysLivraison')
+            ->with('paysFacturation')
+            ->first();
+
+        if ($commande->client_id !== Auth::user()->id) {
+            return redirect('/compte/accueil');
+        }
+
+        $commande_produits = CommandeProduit::where('commande_id', $commande->id)
+            ->with('taux_tva')
+            ->get();
+        $commande_total_HT = 0;
+        $commande_total_TTC = 0;
+
+        foreach($commande_produits as $produit) {
+            $commande_total_HT += $produit->prix_unitaire_ht * $produit->quantite;
+            $commande_total_TTC += $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite);
+        }
+
+        $data = [
+            'detail_commande'    => $commande,
+            'commande_produits'  => $commande_produits,
+            'commande_total_HT'  => $commande_total_HT,
+            'commande_total_TTC' => $commande_total_TTC
+        ];
+
+        return view('pages.compte.detail-commande', $data);
     }
 }
