@@ -201,7 +201,7 @@
                             </div>
 
                             <div class="paiement">
-                                <p class="mode-paiement">Vous avez choisi le paiement par <span class="mode">{{ $detail_commande->paiementType->libelle }}</span>, montant payé de <span class="price">1809 €</span></p>
+                                <p class="mode-paiement">Vous avez choisi le paiement par <span class="mode">{{ $detail_commande->paiementType->libelle }}</span>, montant payé de <span class="price">{{ $commande_total_TTC + $detail_commande->frais_de_port }} €</span></p>
                             </div>
                         </div>
                         <!-- Fin informations de paiement -->
