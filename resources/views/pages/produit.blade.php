@@ -17,27 +17,29 @@
 			<div class="align-bottom bloc-images">
 				<div class="carousel slide article-slide" id="myCarousel">
 			     	<div class="carousel-inner cont-slider">
-				        <div class="item active">
-				          <img src="http://placehold.it/800x560/999999/cccccc">
-				        </div>
-				        <div class="item">
-				          <img src="http://placehold.it/800x560/999999/cccccc">
-				        </div>
-				        <div class="item">
-				          <img src="http://placehold.it/800x560/dddddd/333333">
-				        </div>               
+						@if($produit->images->count() === 0)
+							<div class="item active">
+								<img src="http://placehold.it/1000x1000/999999/cccccc">
+							</div>
+						@endif
+						@foreach($produit->images as $key => $image)
+							<div class="item{{ $key === 0 ? ' active' : '' }}">
+								<img src="/img/products/{{$image->img_name}}">
+							</div>
+						@endforeach
 			     	</div>
 			      <!-- Indicators -->
 			     	<ol class="carousel-indicators visible-lg visible-md">
-				        <li class="active" data-slide-to="0" data-target="#myCarousel">
-				          <img alt="" title="" src="http://placehold.it/120x44/cccccc/ffffff">
-				        </li>
-				        <li class="" data-slide-to="1" data-target="#myCarousel">
-				          <img alt="" title="" src="http://placehold.it/120x44/999999/cccccc">
-				        </li>
-				        <li class="" data-slide-to="2" data-target="#myCarousel">
-				          <img alt="" title="" src="http://placehold.it/120x44/dddddd/333333">
-				        </li>               
+						@if($produit->images->count() === 0)
+							<li class="active" data-slide-to="0" data-target="#myCarousel">
+								<img src="http://placehold.it/1000x1000/999999/cccccc">
+							</li>
+						@endif
+						@foreach($produit->images as $key => $image)
+							<li {{ $key === 0 ? 'class="active"' : '' }} data-slide-to="{{ $key }}" data-target="#myCarousel">
+								<img src="/img/products/{{$image->img_name}}">
+							</li>
+						@endforeach
 			     	</ol>                 
 			    </div>
 			</div>

@@ -6,6 +6,7 @@ use App\Models\Ambiance;
 use App\Models\Categorie;
 use App\Models\Produit;
 use App\Models\ProduitOption;
+use Debugbar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,9 +32,10 @@ class ProduitsController extends Controller
     }
 
     public function showProduit($slug) {
-        $produit = Produit::where('slug', $slug)->first();
+        $produit = Produit::where('slug', $slug)->with('images')->first();
         $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTva')->orderBy('ordre')->get();
         $categorie = Categorie::find($produit->categorie_id);
+        Debugbar::info($produit->images->count());
         return view('pages.produit', ['produit' => $produit, 'options' => $options, 'categorie' => $categorie]);
     }
 }
