@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Ambiance;
 use App\Models\Categorie;
 use App\Models\Produit;
 use App\Models\ProduitOption;
@@ -17,7 +18,15 @@ class ProduitsController extends Controller
                                 ->with('images')
                                 ->get();
 
-        $data = ['new_produits' => $new_produits];
+        $top_ambiances = Ambiance::orderBy('ordre', 'asc')
+                                    ->take(3)
+                                    ->with('images')
+                                    ->get();
+
+        $data = [
+            'new_produits' => $new_produits,
+            'top_ambiances' => $top_ambiances
+        ];
         return view('pages.front', $data);
     }
 

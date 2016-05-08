@@ -1,5 +1,6 @@
 jQuery(document).ready(function () {
-
+    var productThumbnailWidth = $('.product-thumbnail-image').first().width();
+    $('.product-thumbnail-image').css({'height': productThumbnailWidth+'px'});
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     /* Intro Height  */
@@ -17,7 +18,10 @@ jQuery(document).ready(function () {
         if ($(window).width() > 991){  
             //Update slider height on resize
             introHeight();
-        }  
+        }
+
+        productThumbnailWidth = $('.product-thumbnail-image').first().width();
+        $('.product-thumbnail-image').css({'height': productThumbnailWidth+'px'});
     });
 
     $('.product-bottom').append(jQuery('.bottom-page'));
@@ -35,9 +39,6 @@ jQuery(document).ready(function () {
             var nom_categorie = current_class.substr(current_class.lastIndexOf(' ') + 1);
             $('#'+nom_categorie).css('display', 'none');
         });
-    
-
-
 
     // Hauteur caroussel images produit
     function resizeHeight(div){

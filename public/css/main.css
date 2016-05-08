@@ -157,6 +157,13 @@ a:hover, a:active{
     }
     /* END NAVBAR */
 
+.product-thumbnail-image {
+    width: 100%;
+    /*height: 263px;*/
+    background-size: cover;
+    background-position: center center;
+}
+
 /* END ELEMENTS */
 
 

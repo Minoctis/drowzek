@@ -6,8 +6,7 @@
 							<a href="{{ route('produit', $produit->slug) }}">Afficher</a>
 						</div>
 					</div>
-					<div>
-						<img src="{{isset($produit->images[0]) ? '/img/products/'.$produit->images[0]->img_name :'http://placehold.it/250x250'}}"  width="100%" />
+					<div class="product-thumbnail-image" style="background-image: url('{{isset($produit->images[0]) ? '/img/products/'.$produit->images[0]->img_name :'http://placehold.it/250x250'}}');">
 					</div>
 				</div>
 				<div class="caption">
