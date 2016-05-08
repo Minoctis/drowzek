@@ -403,8 +403,8 @@ h2.product-title{
 
 
 .fiche-produit .bloc-images .item img{
-    width: auto;
-    max-width: inherit;
+    width: 100%;
+    max-height:auto;
 }
 
 .fiche-produit .product-price{
@@ -428,6 +428,7 @@ h4.review-title{
     width:50%;
     float: left;
     overflow: hidden;
+    top:50px;
 }
 
 .product-description{

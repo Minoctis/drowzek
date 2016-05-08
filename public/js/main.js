@@ -10,7 +10,6 @@ jQuery(document).ready(function () {
         var wh = $(window).height();
         $('#fiche-produit .fiche-produit').css({height: wh});
         $('#fiche-produit .product-bottom').css({top: wh});
-        $('#fiche-produit .product-images .carousel-inner .item img').css({"min-height": wh});
     }
 
     introHeight();
