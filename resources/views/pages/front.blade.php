@@ -19,11 +19,11 @@
 		<h1 class="title">Nouveauté</h1>
 	    <div class="container">
 			<div class="row">
-			    @for ($i = 0; $i < 4; $i++)
+			    @foreach ($new_produits as $produit)
 
 			    	@include('elements.new-product')
 			    
-			    @endfor
+			    @endforeach
 			</div>
 		</div>
 	</div>

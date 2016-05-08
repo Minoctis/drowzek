@@ -13,7 +13,12 @@ use App\Http\Controllers\Controller;
 class ProduitsController extends Controller
 {
     public function showIndex() {
-        return view('pages.front');
+        $new_produits = Produit::where('is_new', 1)
+                                ->with('images')
+                                ->get();
+
+        $data = ['new_produits' => $new_produits];
+        return view('pages.front', $data);
     }
 
     public function showProduit($slug) {

@@ -3,16 +3,16 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							<a href="#">Afficher</a>
+							<a href="{{ route('produit', $produit->slug) }}">Afficher</a>
 						</div>
 					</div>
 					<div>
-						<img src="http://placehold.it/250x250"  width="100%" />
+						<img src="{{isset($produit->images[0]) ? '/img/products/'.$produit->images[0]->img_name :'http://placehold.it/250x250'}}"  width="100%" />
 					</div>
 				</div>
 				<div class="caption">
 					<div class="desc-product">
-						<h3 class="product-title-list">Mon Super Produit</h3>
+						<h3 class="product-title-list">{{ $produit->nom }}</h3>
 					</div>
 					<div class="price-product">
 						168 €
