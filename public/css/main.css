@@ -282,7 +282,7 @@ a:hover, a:active{
         text-align: left;
     }
     .opportunity{
-        min-height: 450px;
+        min-height: 600px;
         position: relative;
     }
 
@@ -293,12 +293,17 @@ a:hover, a:active{
     .opportunity .opportunity-content p {
         font-size: 18px;
     }
-    .opportunity .opportunity-img{
+    .opportunity .opp-image{
         width: 100%;
         position: absolute;
-        height: 450px;
+        height: 600px;
         z-index: -1;
+        overflow: hidden;
+    }
 
+    .opportunity .opportunity-img{
+        width:100%;
+        height:auto;
     }
     .opportunity .hdg-button-default {
         display: block;

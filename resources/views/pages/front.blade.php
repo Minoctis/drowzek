@@ -97,7 +97,10 @@
 
     <!-- Les opportnités -->
 	<div class="opportunity">
-	<img class="opportunity-img" src="http://placehold.it/1200x500" alt="">
+		<div class="opp-image">
+			<img class="opportunity-img" src="{{ asset('img/themes/opportunite.jpg') }}" alt="">
+		</div>
+
 		<div class="container">
 		    <h1 class="title">Opportunité exeptionnelle</h1>
 		    <h3 class="sub-title">Votre canapé à personnaliser selon vos envie</h3>
