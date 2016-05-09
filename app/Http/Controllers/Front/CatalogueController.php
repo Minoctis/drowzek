@@ -20,7 +20,6 @@ class CatalogueController extends Controller
 
     public function showListeAmbiances() {
         $ambiances = Ambiance::with('images')->orderBy('ordre', 'asc')->get();
-
         return view('pages.ambiance', ['ambiances' => $ambiances]);
     }
 
@@ -29,7 +28,15 @@ class CatalogueController extends Controller
                             ->with('images')
                             ->with('produits.options.tauxTva')
                             ->first();
-
-        return view('pages.fiche-ambiance', ['ambiance' => $ambiance]);
+        $prev_ambiance = Ambiance::where('slug', '<', $slug)->orderBy('ordre', 'asc')->first();
+        $next_ambiance = Ambiance::where('slug', '>', $slug)->orderBy('ordre', 'asc')->first();
+Debugbar::info($prev_ambiance);
+Debugbar::info($next_ambiance);
+        $data = [
+            'ambiance' => $ambiance,
+            'prev_ambiance' => $prev_ambiance,
+            'next_ambiance' => $next_ambiance
+        ];
+        return view('pages.fiche-ambiance', $data);
     }
 }

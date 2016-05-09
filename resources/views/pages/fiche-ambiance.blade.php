@@ -14,13 +14,17 @@
 	<div class="fiche-ambiance">
 		<div class="ambiance-header col-xs-12">
 			<div class="col-md-4 col-xs-12">
-				<p class="prev-ambiance"><i class="fa fa-chevron-left"></i> Industriel</p>
+				@if($prev_ambiance)
+				<p class="prev-ambiance"><i class="fa fa-chevron-left"></i> {{ $prev_ambiance->nom }}</p>
+				@endif
 			</div>
 			<div class="col-md-4 col-xs-12">
-				<h1 class="titre-ambiance">Océane</h1>
+				<h1 class="titre-ambiance">{{ $ambiance->nom }}</h1>
 			</div>
 			<div class="col-md-4 col-xs-12">
-				<p class="next-ambiance">Modern <i class="fa fa-chevron-right"></i></p>
+				@if($next_ambiance)
+				<p class="next-ambiance">{{ $next_ambiance->nom }} <i class="fa fa-chevron-right"></i></p>
+				@endif
 			</div>
 		</div>
 		<div class="row border-ambiance padding-header">
