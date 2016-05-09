@@ -108,8 +108,9 @@
 
 #myCarousel-ambiance .carousel-indicators li,
 #myCarousel-ambiance .carousel-indicators .active{
-	width: auto;
-	height: auto;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
 }
 
 #myCarousel-ambiance .carousel-indicators li {
@@ -118,7 +119,9 @@
     float: right;
     margin-left: 0;
     margin-top: 0;
-    width: auto;
+    width: 150px;
+	height:150px;
+	oveflow:hidden;
 }
 #myCarousel-ambiance .carousel-indicators img {
     float: right;
@@ -140,4 +143,8 @@
 
 #myCarousel-ambiance .carousel-caption p{
 	text-align: left;
+}
+
+#myCarousel-ambiance .carousel-inner{
+	height: 500px;
 }
