@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Models\Ambiance;
 use App\Models\Categorie;
 use App\Models\ProduitOption;
+use Debugbar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,15 +20,13 @@ class CatalogueController extends Controller
     }
 
     public function showListeAmbiances() {
-        $model = new Ambiance();
-        $ambiances = $model->getAllAmbiances();
+        $ambiances = Ambiance::with('images')->orderBy('ordre', 'asc')->get();
 
         return view('pages.ambiance', ['ambiances' => $ambiances]);
     }
 
     public function showAmbiance($slug) {
-        $model = new Ambiance();
-        $ambiance = $model->getBySlug($slug);
+        $ambiance = Ambiance::where('slug', $slug)->with('images')->with('produits')->first();
         return view('pages.fiche-ambiance', ['ambiance' => $ambiance]);
     }
 }

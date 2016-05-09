@@ -102,7 +102,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'produits', 'as' => 'produits::'], function () {
 
             //Accueil - Liste des produits
-            Route::get('/', ['as' => 'liste', function () { return view('pages.admin.produits.liste'); }]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ProduitsController@listeProduits']);
 
             //Accueil - Recherche/Filtre produits
             Route::post('/', ['as' => 'recherche', function () {} ]);

@@ -160,3 +160,7 @@ li > .panel {
 #titre-liste-categorie {
     padding: 0 40px;
 }
+
+td {
+    vertical-align: middle;
+}

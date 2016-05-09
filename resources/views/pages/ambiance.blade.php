@@ -23,7 +23,7 @@
 					@continue
 				@endif
 		    	@include('elements.ambiance-sub')
-		    
+
 		    @endforeach
 		</div>
 	</div>

@@ -6,7 +6,7 @@
 
 @section('breadcrumbs')
 	<li><a href="{{ route('ambiances::liste') }}">Ambiances</a></li>
-	<li class="active">{{ $ambiance['nom'] }}</li>
+	<li class="active">{{ $ambiance->nom }}</li>
 @endsection
 
 @section('content')
@@ -19,51 +19,28 @@
 						<!-- Indicators -->
 						<div class="carousel-indicators-wrapper">
 							<ol class="carousel-indicators">
-								<li data-target="#myCarousel-ambiance" data-slide-to="0" class="active">
-									<img alt="" title="" src="http://placehold.it/160x150/cccccc/ffffff">
+								@foreach($ambiance->images as $index => $image)
+								<li data-target="#myCarousel-ambiance" data-slide-to="{{ $index }}"{{ $index === 0 ? ' class="active"' : '' }}>
+									<img alt="" title="" src="/img/ambiances/{{ $image->img_name }}">
 								</li>
-								<li data-target="#myCarousel-ambiance" data-slide-to="1">
-									<img alt="" title="" src="http://placehold.it/170x150/999999/cccccc">
-								</li>
-								<li data-target="#myCarousel-ambiance" data-slide-to="2">
-									<img alt="" title="" src="http://placehold.it/150x150/dddddd/333333">
-								</li>
+								@endforeach
 							</ol>							
 						</div>
 
 						<!-- slider -->
 				     	<div class="carousel-inner " role="listbox">
 				     		<!-- Item 1 -->
-					        <div class="item active"> 
+							@foreach($ambiance->images as $index => $image)
+					        <div class="item{{ $index === 0 ? ' active' : '' }}">
 								<div class="carousel-page">
-									<img src="http://placehold.it/1200x500/cccccc/ffffff" class="img-responsive" style="margin:0px auto;"  />
+									<img src="/img/ambiances/{{ $image->img_name }}" class="img-responsive" style="margin:0px auto;"  />
 								</div> 
 								<div class="carousel-caption">
-									<h5>{{ $ambiance['nom'] }}</h5>
-									<p>{{ $ambiance['description'] }}</p>
+									<h5>{{ $ambiance->nom }}</h5>
+									<p>{{ $ambiance->description }}</p>
 								</div>
 							</div>  
-
-					        <!-- Item 2 -->
-							<div class="item"> 
-								<div class="carousel-page">
-									<img src="http://placehold.it/1200x400/999999/cccccc" class="img-responsive" style="margin:0px auto;"  />
-								</div> 
-								<div class="carousel-caption">
-									<h5>{{ $ambiance['nom'] }}</h5>
-									<p>{{ $ambiance['description'] }}</p>
-								</div>
-							</div> 
-					        <!-- item 3 -->
-					        <div class="item"> 
-								<div class="carousel-page">
-									<img src="http://placehold.it/1100x500/dddddd/333333" class="img-responsive" style="margin:0px auto;"  />
-								</div> 
-								<div class="carousel-caption">
-									<h5>{{ $ambiance['nom'] }}</h5>
-									<p>{{ $ambiance['description'] }}</p>
-								</div>
-							</div>              
+							@endforeach
 				     	</div>
 
 
@@ -85,17 +62,17 @@
 
 	<section>
 			<div class="row">
-				@if(!empty($ambiance['produits']))
-					@foreach($ambiance['produits'] as $produit)
+				{{--@if(!empty($ambiance['produits']))--}}
+					{{--@foreach($ambiance['produits'] as $produit)--}}
 	{{--				 @for($i = 0; $i < 12; $i++)--}}
-						@include('elements.product')
+						{{--@include('elements.product')--}}
 					{{--@endfor--}}
-					@endforeach
-				@else
-					<div class="col-xs-12">
-						<p>Désolé, cette ambiance ne contient pas de produits pour le moment.</p>
-					</div>
-				@endif
+					{{--@endforeach--}}
+				{{--@else--}}
+					{{--<div class="col-xs-12">--}}
+						{{--<p>Désolé, cette ambiance ne contient pas de produits pour le moment.</p>--}}
+					{{--</div>--}}
+				{{--@endif--}}
 			</div>
 		</div>	
 	</section>

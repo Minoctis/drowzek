@@ -32,10 +32,9 @@ class ProduitsController extends Controller
     }
 
     public function showProduit($slug) {
-        $produit = Produit::where('slug', $slug)->with('images')->first();
+        $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->first();
         $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTva')->orderBy('ordre')->get();
-        $categorie = Categorie::find($produit->categorie_id);
-        Debugbar::info($produit->images->count());
-        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'categorie' => $categorie]);
+
+        return view('pages.produit', ['produit' => $produit, 'options' => $options]);
     }
 }

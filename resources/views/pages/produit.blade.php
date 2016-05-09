@@ -5,7 +5,7 @@
 @section('page-id', 'fiche-produit')
 
 @section('breadcrumbs')
-	<li><a href="{{ route('creations', $categorie->slug) }}">{{ $categorie->nom }}</a></li>
+	<li><a href="{{ route('creations', $produit->categorie->slug) }}">{{ $produit->categorie->nom }}</a></li>
 	<li class="active">{{ $produit->nom }}</li>
 @endsection
 
