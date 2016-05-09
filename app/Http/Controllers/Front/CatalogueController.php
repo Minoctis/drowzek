@@ -26,7 +26,12 @@ class CatalogueController extends Controller
     }
 
     public function showAmbiance($slug) {
-        $ambiance = Ambiance::where('slug', $slug)->with('images')->with('produits')->first();
+        $ambiance = Ambiance::where('slug', $slug)
+                            ->with('images')
+                            ->with('produits.options.tauxTva')
+                            ->first();
+
+        Debugbar::info();
         return view('pages.fiche-ambiance', ['ambiance' => $ambiance]);
     }
 }

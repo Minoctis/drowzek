@@ -78,17 +78,15 @@
 
 	<section>
 			<div class="row">
-				{{--@if(!empty($ambiance['produits']))--}}
-					{{--@foreach($ambiance['produits'] as $produit)--}}
-	{{--				 @for($i = 0; $i < 12; $i++)--}}
-						{{--@include('elements.product')--}}
-					{{--@endfor--}}
-					{{--@endforeach--}}
-				{{--@else--}}
-					{{--<div class="col-xs-12">--}}
-						{{--<p>Désolé, cette ambiance ne contient pas de produits pour le moment.</p>--}}
-					{{--</div>--}}
-				{{--@endif--}}
+				@if($ambiance->produits->count() !== 0)
+					@foreach($ambiance->produits as $produit)
+						@include('elements.new-product')
+					@endforeach
+				@else
+					<div class="col-xs-12">
+						<p>Désolé, cette ambiance ne contient pas de produits pour le moment.</p>
+					</div>
+				@endif
 			</div>
 		</div>	
 	</section>

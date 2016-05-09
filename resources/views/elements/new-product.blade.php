@@ -14,7 +14,7 @@
 						<h3 class="product-title-list">{{ $produit->nom }}</h3>
 					</div>
 					<div class="price-product">
-						168 €
+						{{ round(($produit->options[0]->prix_ht + $produit->options[0]->prix_ht * $produit->options[0]->tauxTva->valeur / 100), 2) }} €
 					</div>
 				</div>
 				<div class="bloc-add-basket">

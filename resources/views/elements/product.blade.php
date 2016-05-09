@@ -3,7 +3,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							<a href="{{ route('produit', ['slug' => $produit['slug']]) }}">Afficher</a>
+							<a href="{{ route('produit', ['slug' => $produit['slug']) }}">Afficher</a>
 						</div>
 					</div>
 					<div>
