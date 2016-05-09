@@ -12,6 +12,17 @@
 @section('content')
 <div class="container">
 	<div class="fiche-ambiance">
+		<div class="ambiance-header col-xs-12">
+			<div class="col-md-4 col-xs-12">
+				<p class="prev-ambiance"><i class="fa fa-chevron-left"></i> Industriel</p>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<h1 class="titre-ambiance">Océane</h1>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<p class="next-ambiance">Modern <i class="fa fa-chevron-right"></i></p>
+			</div>
+		</div>
 		<div class="row border-ambiance padding-header">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 product-images slider-ambiances">
 				<div class="align-bottom bloc-images">

@@ -64,7 +64,7 @@
     height:auto;
 }
 #myCarousel .carousel-indicators .active {
-    border: 2px solid #39b3d7;
+    border: 2px solid #000000;
 }
 
 /* ceci est le slider des avis clients du produit.*/

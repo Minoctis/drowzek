@@ -92,12 +92,13 @@
 }
 #myCarousel-ambiance .carousel-indicators-wrapper{
     width: 60%;
-    height: 150px;
+    height: 119px;
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 1;
-    max-height: 150px
+    max-height: 119px;
+	background-color: rgba(255,255,255,.5);
 }
 
 #myCarousel-ambiance .carousel-indicators {
@@ -109,7 +110,7 @@
 #myCarousel-ambiance .carousel-indicators li,
 #myCarousel-ambiance .carousel-indicators .active{
 	width: 150px;
-	height: 150px;
+	height: 119px;
 	overflow: hidden;
 }
 
@@ -120,7 +121,7 @@
     margin-left: 0;
     margin-top: 0;
     width: 150px;
-	height:150px;
+	height:119px;
 	oveflow:hidden;
 }
 #myCarousel-ambiance .carousel-indicators img {
@@ -129,8 +130,8 @@
     left: 0;
     width: auto;
 }
-#myCarousel-ambiance .carousel-indicators .active img {
-    border: 1px solid #39b3d7;
+#myCarousel-ambiance .carousel-indicators .active {
+    border: 1px solid #000000;
 }
 
 #myCarousel-ambiance .carousel-caption{
@@ -154,4 +155,31 @@
 
 #myCarousel-ambiance .carousel-inner .item{
 	height:600px;
+}
+
+
+.ambiance-header {
+	background-color: black;
+	color: white;
+	padding: 10px 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.prev-ambiance{
+	text-align: left;
+}
+.next-ambiance{
+	text-align: right;
+}
+
+h1.titre-ambiance{
+	margin:0;
+	font-size:28px;
+}
+
+.prev-ambiance,
+.next-ambiance,
+h1.titre-ambiance{
+	vertical-align: middle;
 }
