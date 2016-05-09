@@ -75,6 +75,7 @@ h3.small-title {
     cursor: pointer;
     color: white;
     text-decoration: none;
+    background-color: #333 !important;
 }
 
 a{
@@ -374,7 +375,9 @@ a:hover, a:active{
     margin: 0;
     background-color: white;
 }
-
+.breadcrumb>.active{
+    text-transform: uppercase;
+}
 .main-content{
     padding-top: 40px;
 }
@@ -494,7 +497,7 @@ h4.review-title{
 
 #login header.header,
 #create-account header.header {
-    padding: 40px 0;
+    padding: 20px 0 10px;
 }
 
 #login .engagement,
@@ -939,7 +942,7 @@ h4.sub-title-content-commande.col-md-9{
         text-transform: uppercase;
     }
 
-    .social-bottom .social .social-icon.fb a>i{
+    .social-bottom .social .social-icon a>i{
         font-size: 30px;
     }
 
@@ -961,6 +964,10 @@ h4.sub-title-content-commande.col-md-9{
         border-top: 1px solid black;
         background-color: white;
         position: relative;
+    }
+
+    .top-footer {
+        padding-bottom: 30px;
     }
 
     .mentions {

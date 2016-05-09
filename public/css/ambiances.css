@@ -4,8 +4,8 @@
 }
 
 .see-ambiance-header {
-	width: 250px;
-	height: 150px;
+	width: 300px;
+	height: auto;
 	background-color: rgba(204, 204, 204, 0.6);
 	text-align: left;
 	padding-left: 10px;
@@ -13,12 +13,14 @@
 	margin-top: 30%;
 	z-index: 2;
 	position: absolute;
+	padding: 20px;
 }
 
 .see-ambiance-header h2 {
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 18px;
+	margin-top:0;
 }
 
 
@@ -31,6 +33,10 @@
 	vertical-align: middle;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+#ambiance .hdg-button-small{
+	display: inline-block;
 }
 
 .see-ambiance-header p,
@@ -125,7 +131,7 @@
 }
 
 #myCarousel-ambiance .carousel-caption{
-	right: auto%; 
+	right: auto;
     left: 0;
     padding: 10px 30px;
     width: 40%;
