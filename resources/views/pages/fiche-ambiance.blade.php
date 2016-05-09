@@ -91,7 +91,7 @@
 		</div>
 	</div>
 
-	<section>
+	<section class="produits-ambiance">
 			<div class="row">
 				@if($ambiance->produits->count() !== 0)
 					@foreach($ambiance->produits as $produit)

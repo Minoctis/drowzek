@@ -284,10 +284,19 @@ a:hover, a:active{
     .opportunity{
         min-height: 600px;
         position: relative;
+        cursor: pointer;
     }
 
     .opportunity .container {
         padding: 40px 0;
+        position: relative;
+        height:600px;
+    }
+
+    .opportunity-content {
+        position: absolute;
+        bottom: 100px;
+        width:100%;
     }
 
     .opportunity .opportunity-content p {
@@ -308,6 +317,7 @@ a:hover, a:active{
     .opportunity .hdg-button-default {
         display: block;
         margin: auto;
+        float: right;
     }
     .opportunity h3.sub-title {
         font-size: 18px;
@@ -340,6 +350,15 @@ a:hover, a:active{
     .actualites .thumbnail .caption {
         padding-right: 0;
         padding-left: 0;
+    }
+
+    .actualites .image-news img {
+        max-width: 100%;
+    }
+    .actualites .image-news {
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
     }
     /* END BLOC ACTUALITES HOMEPAGE */
 

@@ -157,6 +157,9 @@
 	height:600px;
 }
 
+section.produits-ambiance {
+	margin-bottom: 30px;
+}
 
 .ambiance-header {
 	background-color: black;
@@ -165,7 +168,10 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-
+.ambiance-header i{
+	color: white;
+	font-size:11px;
+}
 .prev-ambiance{
 	text-align: left;
 }
@@ -178,8 +184,15 @@ h1.titre-ambiance{
 	font-size:28px;
 }
 
-.prev-ambiance,
-.next-ambiance,
+a.prev-ambiance,
+a.next-ambiance,
 h1.titre-ambiance{
 	vertical-align: middle;
+	color: white;
+	display: block;
+}
+
+a.prev-ambiance:hover,
+a.next-ambiance:hover{
+	color: white;
 }

@@ -102,22 +102,18 @@
 		</div>
 
 		<div class="container">
-		    <h1 class="title">Opportunité exeptionnelle</h1>
+		    <!--h1 class="title">Opportunité exeptionnelle</h1>
 		    <h3 class="sub-title">Votre canapé à personnaliser selon vos envie</h3>
 		    <span>Couleur</span>
 		    <span>Dimension</span>
-		    <span>Matière</span>
+		    <span>Matière</span-->
 		    
 		    <div class="opportunity-content">
-		    	<div class="row"></div>
 		    	<div class="row">
-		    		<div class="col-md-6">
+		    		<div class="col-md-6 col-xs-12">
 		    			<p>Restez informer de nouvelles opportunités</p>
 		    			<input class="hdg-input-default" type="text" placeholder="Votre adresse email"></input>
 		    			<button class="hdg-button-small">Valider</button>
-		    		</div>
-		    		<div class="col-md-6">
-		    			<button class="hdg-button-default">Accéder à l'opportunité</button>
 		    		</div>
 		    	</div>	
 		    </div>		
@@ -130,7 +126,9 @@
 		<div class="container">
 			<div class="col-md-6">
 				<div class="thumbnail news">
-			      <img src="http://placehold.it/540x150">
+					<div class="image-news">
+						<img src="{{ asset('img/news/news3.jpeg') }}">
+					</div>
 			      <div class="caption">
 			        <h3 class="news-title">Nouvelle collection bientôt sur notre site</h3>
 			        <p>
@@ -142,7 +140,9 @@
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail news">
-			      <img src="http://placehold.it/255x150">
+					<div class="image-news">
+						<img src="{{ asset('img/news/news1.jpeg') }}">
+					</div>
 			      <div class="caption">
 			        <h3 class="news-title">ça parle de nous</h3>
 			        <p>
@@ -154,7 +154,9 @@
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail news">
-			      <img src="http://placehold.it/255x150">
+					<div class="image-news">
+						<img src="{{ asset('img/news/news2.jpeg') }}">
+					</div>
 			      <div class="caption">
 			        <h3 class="news-title">Comment décorer votre salon?</h3>
 			        <p>
