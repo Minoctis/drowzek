@@ -14,8 +14,7 @@ use App\Http\Controllers\Controller;
 class CatalogueController extends Controller
 {
     public function showCategorie($slug) {
-        $model = new Categorie();
-        $categorie = $model->getBySlug($slug);
+        $categorie = Categorie::where('slug', $slug)->with('parent')->with('children.produits')->with('produits')->first();
         return view('pages.creations', ['categorie' => $categorie]);
     }
 
@@ -31,7 +30,6 @@ class CatalogueController extends Controller
                             ->with('produits.options.tauxTva')
                             ->first();
 
-        Debugbar::info();
         return view('pages.fiche-ambiance', ['ambiance' => $ambiance]);
     }
 }

@@ -1,19 +1,19 @@
 @extends('layouts.default')
 
-@section('title', 'Créations - '.$categorie['nom'])
+@section('title', 'Créations - '.$categorie->nom)
 
 @section('page-id', 'liste-produit')
 
 @section('breadcrumbs')
-	@if(isset($categorie['parent']))
-		<li><a href="{{ route('creations', $categorie['parent']['slug']) }}">{{ $categorie['parent']['nom'] }}</a></li>
+	@if(isset($categorie->parent))
+		<li><a href="{{ route('creations', $categorie->parent->slug) }}">{{ $categorie->parent->nom }}</a></li>
 	@endif
-	<li class="active">{{ $categorie['nom'] }}</li>
+	<li class="active">{{ $categorie->nom }}</li>
 @endsection
 
 @section('content')
 
-<img src="{{ isset($categorie['img_name']) ? '/img/categories/'.$categorie['img_name'] : 'http://placehold.it/1349x200' }}" class="img-creation"alt="image de la catégorie {{ $categorie['nom'] }}">
+<img src="{{ isset($categorie->img_name) ? '/img/categories/'.$categorie->img_name : 'http://placehold.it/1349x200' }}" class="img-creation"alt="image de la catégorie {{ $categorie->nom }}">
 <div class="creation">
 	
 
@@ -22,10 +22,18 @@
 	
 
 	<div class="row">
-		@if(!empty($categorie['produits']))
-			@foreach($categorie['produits'] as $produit)
+		@if (isset($categorie->children))
+			@foreach($categorie->children as $categorie_enfant)
+				@foreach($categorie_enfant->produits as $produit)
 
-				@include('elements.product')
+					@include('elements.new-product')
+
+				@endforeach
+			@endforeach
+		@elseif($categorie->produits->count() !== 0)
+			@foreach($categorie->produits as $produit)
+
+				@include('elements.new-product')
 
 			@endforeach
 		@else
