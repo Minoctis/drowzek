@@ -50,7 +50,7 @@
 					        <div class="item{{ $index === 0 ? ' active' : '' }}">
 								<div class="carousel-page">
 									<img src="/img/ambiances/{{ $image->img_name }}" class="img-responsive" style="margin:0px auto;"  />
-								</div> 
+								</div>
 								<div class="carousel-caption">
 									<h5>{{ $ambiance->nom }}</h5>
 									<p>{{ $ambiance->description }}</p>

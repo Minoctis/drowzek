@@ -57,7 +57,7 @@
 	                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	                    <div class="row ambiance2">
 	                       <div class="ambiance-content">
-							   <img src="{{ isset($top_ambiances[1]->images[1]) ? '/img/ambiances/'.$top_ambiances[1]->images[1]->img_name : 'http://placehold.it/540x500' }}" alt="">
+							   <img src="{{ isset($top_ambiances[1]->images[0]) ? '/img/ambiances/'.$top_ambiances[1]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="">
 	                           <div class="ambiance-text">
 	                               <div class="ambiance-name">{{ $top_ambiances[1]->nom }}</div>
 	                               <div class="ambiance-desc">
@@ -73,10 +73,10 @@
 						@if (isset($top_ambiances[2]))
 	                    <div class="row ambiance3">
 	                       <div class="ambiance-content">
-	                           <img src="http://placehold.it/540x240" alt="">
+							   <img src="{{ isset($top_ambiances[2]->images[0]) ? '/img/ambiances/'.$top_ambiances[2]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="">
 	                           <div class="ambiance-text">
-								   <img src="{{ isset($top_ambiances[2]->images[2]) ? '/img/ambiances/'.$top_ambiances[2]->images[2]->img_name : 'http://placehold.it/540x500' }}" alt="">
 	                               <div class="ambiance-desc">
+									   <div class="ambiance-name">{{ $top_ambiances[2]->nom }}</div>
 									   {{ $top_ambiances[2]->description }}
 	                               </div>
 	                               <div class="ambiance-view">
