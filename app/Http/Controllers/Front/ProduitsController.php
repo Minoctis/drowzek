@@ -28,6 +28,7 @@ class ProduitsController extends Controller
             'new_produits' => $new_produits,
             'top_ambiances' => $top_ambiances
         ];
+
         return view('pages.front', $data);
     }
 

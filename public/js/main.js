@@ -92,7 +92,20 @@ jQuery(document).ready(function () {
     $('.categorie.salle-a-manger').removeClass('col-md-2');
     $('.categorie.salle-a-manger').addClass('col-md-3');
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* PANIER */
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    //Click sur le bouton d'ajout
+    $('.button-add-basket').on('click', function() {
+        var nomProduit = $(this).closest(".product-container").find("h3").html();
 
 
+        toastr.success(nomProduit + ' ajouté(e) au panier.');
+    });
+
+    function addProduct(produitId) {
+        
+    }
 
 });
