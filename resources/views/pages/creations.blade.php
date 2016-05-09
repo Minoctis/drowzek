@@ -22,7 +22,7 @@
 	
 
 	<div class="row">
-		@if (isset($categorie->children))
+		@if ($categorie->children->count() !== 0)
 			@foreach($categorie->children as $categorie_enfant)
 				@foreach($categorie_enfant->produits as $produit)
 
