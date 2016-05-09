@@ -10,6 +10,8 @@ jQuery(document).ready(function () {
         var wh = $(window).height();
         $('#fiche-produit .fiche-produit').css({height: wh});
         $('#fiche-produit .product-bottom').css({top: wh});
+        $('#fiche-produit #myCarousel').css({height: wh-"50"});
+        $('.slider-hp').css({height: wh});
     }
 
     introHeight();

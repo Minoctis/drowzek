@@ -50,21 +50,22 @@
     border: medium none;
     border-radius: 0;
     float: left;
-    height: 50px;
+    height: 100px;
     margin-bottom: 5px;
-    margin-left: 0;
+    margin-left: 5px;
     margin-right: 5px !important;
     margin-top: 0;
-    width: 50px;
+    width: 100px;
+    border: 2px solid #FFFFFF;
+    overflow: hidden;
 }
 #myCarousel .carousel-indicators img {
-    border: 2px solid #FFFFFF;
     float: left;
-    height: 50px;
     left: 0;
-    width: 50px;
+    width: 100%;
+    height:auto;
 }
-#myCarousel .carousel-indicators .active img {
+#myCarousel .carousel-indicators .active {
     border: 2px solid #39b3d7;
 }
 
