@@ -4,14 +4,24 @@
 
 @section('page-id', 'panier')
 
+@section('breadcrumbs')
+    <li class="active">Mon panier</li>
+    @endsection
+
 @section('content')
 <!-- Ajouter contenu pour la page panier -->
 <div class="panier">
-	<div class="achat"><a class="link" href="#">continuer mes achats</a></div>
-	<a class="link" href="{{ route('checkout::adresses') }}"><div class="securise">commande securisé</div></a>
-<!-- <a class="hdg-button-default">commande securisé</a>-->
+    <div class="entete-page">
+        <img src="{{ asset('img/themes/header-compte.jpg') }}" class="img img-reponsive" alt="Mon Compte">
+        <h1 class="page-title">Mon panier</h1>
+    </div>
 	<div class="container">
-                  
+        <div class="top-panier">
+            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
+            <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
+            <!-- <a class="hdg-button-default">commande securisé</a>-->
+        </div>
+
                <table class="table table-striped">
                    <thead>
                        <tr>
@@ -59,10 +69,13 @@
                       
                   </tbody>
             </table>
+
+        <div class="bottom-panier">
+            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
+            <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
+            <!-- <a class="hdg-button-default">commande securisé</a>-->
+        </div>
    </div>
-  
-  <div class="achat">continuer mes achats</div>
-	<div class="securise">commande securisé</div>
 
 </div>
 @endsection

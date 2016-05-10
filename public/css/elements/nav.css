@@ -152,17 +152,3 @@ nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active
   }
 }*/
 
-
-/*partie panier */
-
-.panier .table.table-striped thead{background-color:#000; color:#fff;}
-.panier .achat{display:inline-block; color:#000;margin: 9px 60px 5px 111px;}
-.panier .securise{display:inline-block; width: 146px;height:26px; background-color:#000; color:#fff;float:right; text-align:center;margin: 4px 103px 4px 69px;padding: 5px 6px 5px 6px; text-transform:uppercase;font-size: 11px;}
-.panier .bloc-img{display:inline-block;}
-.panier .bloc-text{display:inline-block;position:relative;top: 10px;left: 30px;}
-.panier .bloc-text p{font-weight:bold;}
-.panier .bloc-text span{line-height:0px;}
-/*.panier .bloc-text .link{text-transform:lowercase;}*/
-.panier .link{text-transform:lowercase;text-decoration:underline;}
-.panier .achat .link{text-transform:lowercase;}
- /*fin panier*/

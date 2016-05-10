@@ -4,10 +4,14 @@
 
 @section('page-id', 'moncompte')
 
+@section('breadcrumbs')
+	<li class="active">Mon compte</li>
+@endsection
+
 @section('content')
 <div class="moncompte">
 	<div class="entete-page">
-		<img src="http://placehold.it/1200x200" class="img img-reponsive" alt="Mon Compte">
+		<img src="{{ asset('img/themes/header-compte.jpg') }}" class="img img-reponsive" alt="Mon Compte">
 		<h1 class="page-title">Mon compte</h1>
 	</div>
 	<div class="container">
@@ -87,7 +91,137 @@
 					    @endfor						
 					</div>
 
+					<form action="">
+
+						<div class="top-content row">
+							<h4 class="">Ajouter une nouvelle adresse :</h4>
+						</div>
+
+
+						<!-- Prénom -->
+						<div class="form-group">
+							<label class="control-label" for="prenom">Prénom <span>*</span></label>
+							<input class="form-control" id="prenom" name="prenom" type="text" required>
+						</div>
+
+						<!-- nom -->
+						<div class="form-group">
+							<label class="control-label" for="nom">Nom <span>*</span></label>
+							<input class="form-control" id="nom" name="nom" type="text" required>
+						</div>
+
+						<!-- Adresse ligne 1 -->
+						<div class="form-group">
+							<label class="control-label" for="adressel1">Adresse ligne 1 <span>*</span></label>
+							<input class="form-control" id="adressel1" name="adressel1" type="text" required>
+						</div>
+
+						<!-- Adresse ligne 2 -->
+						<div class="form-group">
+							<label class="control-label" for="adressel2">Adresse ligne 2 <span>*</span></label>
+							<input class="form-control" id="adressel2" name="adressel2" type="text" required>
+						</div>
+
+						<!-- Code postale -->
+						<div class="form-group">
+							<label class="control-label" for="cp">Code postale <span>*</span></label>
+							<input class="form-control" id="cp" name="cp" type="text" required>
+						</div>
+
+						<!-- Ville -->
+						<div class="form-group">
+							<label class="control-label" for="ville">Ville <span>*</span></label>
+							<input class="form-control" id="ville" name="ville" type="text" required>
+						</div>
+
+						<!-- Pays -->
+						<div class="form-group">
+							<label class="control-label" for="pays">Pays <span>*</span></label>
+							<input class="form-control" id="pays" name="pays" type="text" required>
+						</div>
+
+						<!-- Numero Tel -->
+						<div class="form-group">
+							<label class="control-label" for="tel">Numéro de téléphone <span>*</span></label>
+							<input class="form-control" id="tel" name="tel" type="text" required>
+						</div>
+
+						<!-- Nom adresse -->
+						<div class="form-group">
+							<label class="control-label" for="adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
+							<input class="form-control" id="adressename" name="adressename" type="text" required>
+						</div>
+					</form>
+
+
+					<form action="">
+
+						<div class="top-content row">
+							<h4 class="">Mettre à jour votre adresse</h4>
+						</div>
+
+
+						<!-- Prénom -->
+						<div class="form-group">
+							<label class="control-label" for="prenom">Prénom <span>*</span></label>
+							<input class="form-control" id="prenom" name="prenom" type="text" required>
+						</div>
+
+						<!-- nom -->
+						<div class="form-group">
+							<label class="control-label" for="nom">Nom <span>*</span></label>
+							<input class="form-control" id="nom" name="nom" type="text" required>
+						</div>
+
+						<!-- Adresse ligne 1 -->
+						<div class="form-group">
+							<label class="control-label" for="adressel1">Adresse ligne 1 <span>*</span></label>
+							<input class="form-control" id="adressel1" name="adressel1" type="text" required>
+						</div>
+
+						<!-- Adresse ligne 2 -->
+						<div class="form-group">
+							<label class="control-label" for="adressel2">Adresse ligne 2 <span>*</span></label>
+							<input class="form-control" id="adressel2" name="adressel2" type="text" required>
+						</div>
+
+						<!-- Code postale -->
+						<div class="form-group">
+							<label class="control-label" for="cp">Code postale <span>*</span></label>
+							<input class="form-control" id="cp" name="cp" type="text" required>
+						</div>
+
+						<!-- Ville -->
+						<div class="form-group">
+							<label class="control-label" for="ville">Ville <span>*</span></label>
+							<input class="form-control" id="ville" name="ville" type="text" required>
+						</div>
+
+						<!-- Pays -->
+						<div class="form-group">
+							<label class="control-label" for="pays">Pays <span>*</span></label>
+							<input class="form-control" id="pays" name="pays" type="text" required>
+						</div>
+
+						<!-- Numero Tel -->
+						<div class="form-group">
+							<label class="control-label" for="tel">Numéro de téléphone <span>*</span></label>
+							<input class="form-control" id="tel" name="tel" type="text" required>
+						</div>
+
+						<!-- Nom adresse -->
+						<div class="form-group">
+							<label class="control-label" for="adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
+							<input class="form-control" id="adressename" name="adressename" type="text" required>
+						</div>
+					</form>
+
+
+
+
 				</div>
+
+
 
 				<!-- FIN MES ADRESSES -->
 

@@ -38,10 +38,8 @@
                 </ul>
               </li>
             @endforeach
-            <li class="col-sm-6 col-md-3 image-categorie hidden-xs">
-              @foreach($categories as $categorie)
-                <img id="{{ $categorie->slug }}" class="image-nav" src="{{ isset($categorie->img_name) ? asset('img/categories/'.$categorie->img_name) : 'http://placehold.it/200x200' }}"/>
-              @endforeach
+            <li class="col-sm-6 col-md-4 image-categorie hidden-xs">
+              <img src="{{ asset('img/themes/opp-menu.jpg') }}" class="img img-reponsive" alt="">
             </li>
           </ul>
         </li>
