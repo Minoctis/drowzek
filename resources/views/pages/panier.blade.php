@@ -31,42 +31,25 @@
                       </tr>
                   </thead>
                    <tbody>
+                   @foreach($produits as $produit)
                        <tr>
-
                         <td> 
-                        	<img src="http://placehold.it/100x100/999999/cccccc"class="bloc-img">
+                        	<img src="{{ $produit->produit->images->count() !== 0 ? 'img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/100x100/999999/cccccc' }}"class="bloc-img">
                         	<div class="bloc-text">
-                        		<p>chaise design en bois</p>
-                        	categorie: chaise<br>
+                        		<p>{{ $produit->produit->nom }}</p>
+                        	categorie: {{ $produit->produit->categorie->nom }}<br>
                         	disponible en plusieurs coloris<br>
                         	<span><a class="link" href="#">Sauvegarder</a>|<a class="link" href="#">supprimer</a></span>
                         </div>
                         </td>
-
-                        <td>Matières : bois<br>
-                        quantité : 2
-                       <p><a class="link" href="#">Modifier les options</a></p>
-                     </td>
-
-                        <td>1390</td>
-
-                      </tr>
-
-                       <tr>
-                        <td><img src="http://placehold.it/100x100/999999/cccccc"class="bloc-img">
-                        	<div class="bloc-text">
-                        	<p>fauteuil</p>
-                        	categorie: chaise<br>
-                        	disponible en plusieurs coloris<br>
-                        	<span><a class="link" href="#">Sauvegarder</a>|<a class="link" href="#">supprimer</a></span>
-                        	</div>
+                        <td>Matières : {{ $produit->libelle }}<br>quantité : {{ $quantites[$produit->id] }}
+                            <p><a class="link" href="#">Modifier les options</a></p>
                         </td>
 
-                        <td>Matières : cuir</td>
-                        <td>500</td>
-                     </tr>
+                        <td>{{ round(($produit->prix_ht + $produit->prix_ht * $produit->tauxTva->valeur / 100) * $quantites[$produit->id], 2) }} €</td>
 
-                      
+                      </tr>
+                    @endforeach
                   </tbody>
             </table>
 

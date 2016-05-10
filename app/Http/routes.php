@@ -67,6 +67,7 @@ Route::group(['middleware' => ['web']], function () {
 
     // panier
     Route::get('panier', ['as' => 'panier', 'uses' => 'Front\PanierController@showPanier']);
+    Route::post('ajout-panier', ['as' => 'ajout-panier', 'uses' => 'Front\PanierController@addProductToPanier']);
 
     //Routes du compte utlisateur
     Route::group(['prefix' => 'compte', 'as' => 'compte::', 'middleware' => 'auth'], function () {

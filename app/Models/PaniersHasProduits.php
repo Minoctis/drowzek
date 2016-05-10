@@ -15,5 +15,6 @@ use Illuminate\Database\Eloquent\Model;
 class PaniersHasProduits extends Model
 {
     protected $table = 'paniers_has_produits';
+    protected $fillable = ['panier_id', 'produit_option_id'];
 
 }

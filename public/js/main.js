@@ -99,13 +99,22 @@ jQuery(document).ready(function () {
     //Click sur le bouton d'ajout
     $('.button-add-basket').on('click', function() {
         var nomProduit = $(this).closest(".product-container").find("h3").html();
+        var optionId = $(this).data('option-id');
 
-
-        toastr.success(nomProduit + ' ajouté(e) au panier.');
+        addProduct(optionId, nomProduit);
     });
 
-    function addProduct(produitId) {
-        
+    function addProduct(optionId, nomProduit) {
+        $.ajax({
+            url: '/ajout-panier',
+            type: 'POST',
+            dataType: 'json',
+            data: {'option_id': optionId},
+            complete: function() {
+                toastr.success(nomProduit + ' ajouté(e) au panier.');
+            }
+        });
     }
+
 
 });

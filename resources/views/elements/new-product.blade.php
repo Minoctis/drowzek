@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a class="btn btn-primary hdg-button-default button-add-basket" role="button" data-produit-id="{{ $produit->id }}">Ajouter au panier</a></p>
+					<p><a class="btn btn-primary hdg-button-default button-add-basket" role="button" data-option-id="{{ $produit->options[0]->id }}">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>

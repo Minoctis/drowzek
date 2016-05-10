@@ -13,6 +13,7 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         'admin/catalogue/categories/ordre',
-        'admin/catalogue/ambiances/ordre'
+        'admin/catalogue/ambiances/ordre',
+        'ajout-panier'
     ];
 }

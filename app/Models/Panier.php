@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 class Panier extends Model
 {
     protected $table = 'paniers';
-    protected $fillable = ['client_id', 'panier_type_id', 'ip'];
+    protected $fillable = ['client_id', 'panier_type_id'];
 
     //Relationships
     public function client() {
