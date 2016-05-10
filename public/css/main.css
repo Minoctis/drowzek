@@ -1122,6 +1122,10 @@ h4.sub-title-content-commande.col-md-9{
     font-weight:normal;
 }
 
+.top-panier a.link,
+.bottom-panier a.link{
+    text-decoration: none;
+}
 
 .panier .table.table-striped thead{background-color:#000; color:#fff;}
 .panier .securise{display:inline-block; width: 146px;height:26px; background-color:#000; color:#fff;float:right; text-align:center;padding: 5px 6px 5px 6px; text-transform:uppercase;font-size: 11px;}
@@ -1139,7 +1143,26 @@ h4.sub-title-content-commande.col-md-9{
     display: inline-block;
 }
 .panier .left-content > div {
-    vertical-align: middle;
+    vertical-align: top;
+}
+
+.panier a{
+    text-transform: none;
+    text-decoration: underline;
+}
+
+.panier .bloc-text span {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.panier p.button-update {
+    margin-top: 10px;
+}
+
+.panier .middle-content,
+.panier .right-content {
+    padding-top: 15px;
 }
 /********************************************************
 ******************** END Panier *************************

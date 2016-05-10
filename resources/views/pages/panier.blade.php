@@ -42,16 +42,23 @@
                                     <p>{{ $produit->produit->nom }}</p>
                                     categorie: {{ $produit->produit->categorie->nom }}<br>
                                     disponible en plusieurs coloris<br>
-                                    <span><a class="link" href="#">Sauvegarder</a>|<a class="link" href="#">supprimer</a></span>
+                                    <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">supprimer</a></span>
                                 </div>
                             </div>
 
                         </td>
-                        <td>Matières : {{ $produit->libelle }}<br>quantité : {{ $quantites[$produit->id] }}
-                            <p><a class="link" href="#">Modifier les options</a></p>
+                        <td>
+                            <div class="middle-content">
+                                Matières : {{ $produit->libelle }}<br>quantité : {{ $quantites[$produit->id] }}
+                                <p class="button-update"><a class="link" href="#">Modifier les options</a></p>
+                            </div>
                         </td>
 
-                        <td>{{ round(($produit->prix_ht + $produit->prix_ht * $produit->tauxTva->valeur / 100) * $quantites[$produit->id], 2) }} €</td>
+                        <td>
+                            <div class="right-content">
+                                {{ round(($produit->prix_ht + $produit->prix_ht * $produit->tauxTva->valeur / 100) * $quantites[$produit->id], 2) }} €
+                            </div>
+                        </td>
 
                       </tr>
                     @endforeach
