@@ -1125,12 +1125,22 @@ h4.sub-title-content-commande.col-md-9{
 
 .panier .table.table-striped thead{background-color:#000; color:#fff;}
 .panier .securise{display:inline-block; width: 146px;height:26px; background-color:#000; color:#fff;float:right; text-align:center;padding: 5px 6px 5px 6px; text-transform:uppercase;font-size: 11px;}
-.panier .bloc-img{display:inline-block;}
+.panier .bloc-img{display:inline-block; max-width: 100%; height: auto;}
 .panier .bloc-text{display:inline-block;position:relative;top: 10px;left: 30px;}
 .panier .bloc-text p{font-weight:bold;}
 .panier .bloc-text span{line-height:0px;}
 .panier .achat .link{text-transform:lowercase;}
 
+.panier .mini-img{
+    height: 110px;
+    width:110px;
+    overflow: hidden;    
+    border: 1px solid;
+    display: inline-block;
+}
+.panier .left-content > div {
+    vertical-align: middle;
+}
 /********************************************************
 ******************** END Panier *************************
 ********************************************************/

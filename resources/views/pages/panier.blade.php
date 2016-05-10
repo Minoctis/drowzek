@@ -33,14 +33,19 @@
                    <tbody>
                    @foreach($produits as $produit)
                        <tr>
-                        <td> 
-                        	<img src="{{ $produit->produit->images->count() !== 0 ? 'img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/100x100/999999/cccccc' }}"class="bloc-img">
-                        	<div class="bloc-text">
-                        		<p>{{ $produit->produit->nom }}</p>
-                        	categorie: {{ $produit->produit->categorie->nom }}<br>
-                        	disponible en plusieurs coloris<br>
-                        	<span><a class="link" href="#">Sauvegarder</a>|<a class="link" href="#">supprimer</a></span>
-                        </div>
+                        <td>
+                            <div class="left-content">
+                                <div class="mini-img">
+                                    <img src="{{ $produit->produit->images->count() !== 0 ? 'img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/100x100/999999/cccccc' }}"class="bloc-img">
+                                </div>
+                                <div class="bloc-text">
+                                    <p>{{ $produit->produit->nom }}</p>
+                                    categorie: {{ $produit->produit->categorie->nom }}<br>
+                                    disponible en plusieurs coloris<br>
+                                    <span><a class="link" href="#">Sauvegarder</a>|<a class="link" href="#">supprimer</a></span>
+                                </div>
+                            </div>
+
                         </td>
                         <td>Matières : {{ $produit->libelle }}<br>quantité : {{ $quantites[$produit->id] }}
                             <p><a class="link" href="#">Modifier les options</a></p>
