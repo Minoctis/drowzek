@@ -64,7 +64,53 @@
                     @endforeach
                   </tbody>
             </table>
+        <div class="recap-commande">
+            <div class="row">
+                <div class="sub-title-content-commande col-md-4 col-xs-12">
+                    <div class="actions-panier">
+                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">supprimer</a></span>
+                    </div>
+                    <div class="code-promo">
+                        <span><a class="link" href="#">Code remise ou promotion ?</a> <span>
+                    </div>
+                </div>
+                <div class="recap-infos col-md-8 col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <select name="shipping" id="shipping">
+                                        <option value="17">17</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </td>
+                                <td>17 €</td>
+                            </tr>
+                            <tr>
+                                <td>Total HT :</td>
+                                <td>89 €</td>
+                            </tr>
+                            <tr>
+                                <td>Total TTC :</td>
+                                <td>9898 €</td>
+                            </tr>
+                            <tr>
+                                <td>Dont TVA :</td>
+                                <td>98 €</td>
+                            </tr>
 
+                            <!-- Montant Total -->
+                            <tr class="last">
+                                <td>Montant Total :</td>
+                                <td>8989 €</td>
+                            </tr>
+                            <!-- Fin Montant Total -->
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="bottom-panier">
             <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
