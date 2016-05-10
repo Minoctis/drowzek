@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Client;
+use App\Models\Panier;
+use App\Models\PaniersHasProduits;
 use Auth;
 use Debugbar;
 use Illuminate\Http\Request;
@@ -105,5 +107,21 @@ class AuthController extends Controller
         Debugbar::info($view);
         Debugbar::info(Session::get('url.intended'));
         return view($view);
+    }
+
+    protected function authenticated() {
+        if (Session::has('panier')) {
+            $panier = Panier::where('panier_type_id', 1)->where('client_id', Auth::user()->id)->first();
+            PaniersHasProduits::where('panier_id', $panier->id)->delete();
+            foreach(Session::get('panier.produits_option') as $key => $option) {
+
+                PaniersHasProduits::create([
+                    'panier_id' => $panier->id,
+                    'produit_option_id' => $option['produit_option_id']
+                ]);
+            }
+        }
+
+        return redirect(Session::get('url.intended'));
     }
 }

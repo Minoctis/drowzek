@@ -110,8 +110,11 @@ jQuery(document).ready(function () {
             type: 'POST',
             dataType: 'json',
             data: {'option_id': optionId},
-            complete: function() {
+            success: function() {
                 toastr.success(nomProduit + ' ajouté(e) au panier.');
+            },
+            error: function() {
+                toastr.error("Erreur lors de l'ajout du produit au panier.<br>Si l'erreur persiste, merci de contacter le service client.");
             }
         });
     }
