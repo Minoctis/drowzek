@@ -66,12 +66,17 @@
 
 										<!-- Civilité -->
 								<div class="form-group">
-									<label >Titre</label>
+									<label class="label-civilite">Titre</label>
 									@foreach($errors->get('civilite') as $error)
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
-									<input id="civilite-mr" name="civilite" type="radio" value="1"/> <span>Mr.</span>
-									<input id="civilite-mme" name="civilite" type="radio" value="2"/> <span>Mme</span>
+									<div class="bloc-civilite">
+										<input id="civilite-mr" name="civilite" type="radio" value="1"/> <span>Mr.</span>
+									</div>
+									<div class="bloc-civilite">
+										<input id="civilite-mme" name="civilite" type="radio" value="2"/> <span>Mme</span>
+									</div>
+
 								</div>
 
 
@@ -81,7 +86,7 @@
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
 									<label for="prenom">Prénom <span>*</span></label>
-									<input id="prenom" name="prenom" type="text">
+									<input class="form-control" id="prenom" name="prenom" type="text">
 								</div>
 
 								<!-- Nom -->
@@ -90,7 +95,7 @@
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
 									<label for="nom">Nom <span>*</span></label>
-									<input id="nom" name="nom" type="text">
+									<input class="form-control" id="nom" name="nom" type="text">
 								</div>
 
 								<!-- Adresse email -->
@@ -99,7 +104,7 @@
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
 									<label for="email">Adresse e-mail <span>*</span> </label>
-									<input id="email" name="email" type="email">
+									<input class="form-control" id="email" name="email" type="email">
 								</div>
 
 								<!-- Date de naissance -->
@@ -108,7 +113,7 @@
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
 									<label for="date">Date de naissance </label>
-									<input id="date" name="date-naissance" type="date">
+									<input class="form-control" id="date" name="date-naissance" type="date">
 								</div>
 
 								<!-- Nouveau mot de passe-->
@@ -117,14 +122,14 @@
 										<p class="bg-danger">{{ $error }}</p>
 									@endforeach
 									<label for="password">Mot de passe<span>*</span> </label>
-									<input id="password" name="password" type="password">
+									<input class="form-control" id="password" name="password" type="password">
 									<p class="help-block">6 caractères minimum.</p>
 								</div>
 
 								<!-- Confirmation du mot de passe-->
 								<div class="form-group">
 									<label for="password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
-									<input id="password-confirm" name="password_confirmation" type="password">
+									<input class="form-control" id="password-confirm" name="password_confirmation" type="password">
 								</div>
 
 								<!-- Newsletter -->
@@ -162,7 +167,7 @@
 										<!-- Adresse email -->
 								<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 									<label for="email">Adresse e-mail <span>*</span> </label>
-									<input id="email" name="email" type="email" value="{{ old('email') }}">
+									<input class="form-control" id="email" name="email" type="email" value="{{ old('email') }}">
 
 									@if ($errors->has('email'))
 										<span class="help-block">
@@ -174,7 +179,7 @@
 								<!-- Mot de passe -->
 								<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 									<label for="password">Mot de passe <span>*</span></label>
-									<input id="password" name="password" type="password">
+									<input class="form-control" id="password" name="password" type="password">
 									@if ($errors->has('password'))
 										<span class="help-block">
 							<strong>{{ $errors->first('password') }}</strong>

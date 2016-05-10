@@ -75,7 +75,7 @@
 						<p class="bg-danger">{{ $error }}</p>
 					@endforeach
 					<label for="prenom">Prénom <span>*</span></label>
-					<input id="prenom" name="prenom" type="text">
+					<input class="form-control" class="form-control" id="prenom" name="prenom" type="text">
 				</div>
 
 				<!-- Nom -->
@@ -84,7 +84,7 @@
 						<p class="bg-danger">{{ $error }}</p>
 					@endforeach
 					<label for="nom">Nom <span>*</span></label>
-					<input id="nom" name="nom" type="text">
+					<input class="form-control" id="nom" name="nom" type="text">
 				</div>
 
 				<!-- Adresse email -->
@@ -93,7 +93,7 @@
 						<p class="bg-danger">{{ $error }}</p>
 					@endforeach
 					<label for="email">Adresse e-mail <span>*</span> </label>
-					<input id="email" name="email" type="email">
+					<input class="form-control" id="email" name="email" type="email">
 				</div>
 
 				<!-- Date de naissance -->
@@ -102,7 +102,7 @@
 						<p class="bg-danger">{{ $error }}</p>
 					@endforeach
 					<label for="date">Date de naissance </label>
-					<input id="date" name="date-naissance" type="date">
+					<input class="form-control" id="date" name="date-naissance" type="date">
 				</div>
 
 				<!-- Nouveau mot de passe-->
@@ -111,14 +111,14 @@
 						<p class="bg-danger">{{ $error }}</p>
 					@endforeach
 					<label for="password">Mot de passe<span>*</span> </label>
-					<input id="password" name="password" type="password">
+					<input class="form-control" id="password" name="password" type="password">
 					<p class="help-block">6 caractères minimum.</p>
 				</div>	
 
 				<!-- Confirmation du mot de passe-->
 				<div class="form-group">
 					<label for="password-confirm">Confirmer votre nouveau mot de passe <span>*</span> </label>
-					<input id="password-confirm" name="password_confirmation" type="password">
+					<input class="form-control" id="password-confirm" name="password_confirmation" type="password">
 				</div>								
 
 				<!-- Newsletter -->

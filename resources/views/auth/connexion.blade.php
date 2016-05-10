@@ -45,7 +45,7 @@
 				<!-- Adresse email -->
 				<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 					<label for="email">Adresse e-mail <span>*</span> </label>
-					<input id="email" name="email" type="email" value="{{ old('email') }}">
+					<input class="form-control" id="email" name="email" type="email" value="{{ old('email') }}">
 
 					@if ($errors->has('email'))
 						<span class="help-block">
@@ -57,7 +57,7 @@
 				<!-- Mot de passe -->
 				<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 				<label for="password">Mot de passe <span>*</span></label>
-					<input id="password" name="password" type="password">
+					<input class="form-control" id="password" name="password" type="password">
 					@if ($errors->has('password'))
 						<span class="help-block">
 							<strong>{{ $errors->first('password') }}</strong>
@@ -69,7 +69,7 @@
 					<div class="col-md-6 col-md-offset-4">
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="remember"> Se souvenir de moi
+								<input type="checkbox" name="remember"> <span>Se souvenir de moi</span>
 							</label>
 						</div>
 					</div>

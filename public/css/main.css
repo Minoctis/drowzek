@@ -522,6 +522,24 @@ h4.review-title{
 
 
 /* PAGE DE CONNEXION + PAGE DE CREATION COMPTE (HORS CHECKOUT) */
+
+.nav-checkout > li:after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 77px;
+    position: absolute;
+    padding-left: 44px;
+    padding-top: 2px;
+    color: white;
+    top: -33px;
+    right:-20px;
+}
+
+.nav-checkout > li:last-child:after {
+    content: "";
+}
+
+
 #login .main-content,
 #create-account .main-content{
     padding-top: 0;
@@ -610,11 +628,12 @@ h4.review-title{
 
 form.create-account-form input[type=radio],
 form.create-account-form input[type=checkbox]{
-    width: 15px;
+    width: 15px !important;
 }
 form.login-form input,
 form.create-account-form input {
     width: 300px;
+    margin:auto;
 }
 
 hr.divider {
@@ -634,6 +653,20 @@ hr.divider {
 #create-account .social-icon a{
     cursor: pointer;
 }
+
+.bloc-civilite {
+    display: inline-block;
+}
+
+.label-civilite{
+    display: block;
+}
+
+#login .header-logo,
+#create-account .header-logo {
+    max-width: 700px;
+    margin: auto;
+}
 /* FIN PAGE DE CONNEXION (NON CHECKOUT) */
 
 /* BEGIN MON COMPTE PAGE */
@@ -652,6 +685,7 @@ hr.divider {
     height: auto;
 }
 
+.logout h1.page-title,
 .moncompte h1.page-title,
 .panier h1.page-title{
     position: relative;
@@ -1182,6 +1216,7 @@ h4.sub-title-content-commande.col-md-9{
 .checkout-panel form.login-form input, 
 .checkout-panel form.create-account-form input{
     width: 100%;
+    margin:auto;
 }
 
 .checkout-panel form.create-account-form {
@@ -1278,7 +1313,10 @@ h4.sub-title-content-commande.col-md-9{
 ******************** END CHECKOUT **********************
 ********************************************************/
 
-
+/* Page Logout */
+.logout{
+    margin-bottom:30px;
+}
 
 /********************************************************
 ******************** RESPONSIVE *************************
@@ -1360,6 +1398,12 @@ h4.sub-title-content-commande.col-md-9{
         /* FOOTER */
         .bloc-footer {
             padding-bottom: 20px;
+        }
+
+
+        /* Checkout */
+        .nav-checkout > li:after {
+            content: "";
         }
     }
     /* END ECRANS MOBILE*/
