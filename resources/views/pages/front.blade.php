@@ -33,7 +33,7 @@
 	<div class="ambiance row">
 	    <div class="container">
 	        <h1 class="title">Les ambiances</h1>
-	        <h3 class="sub-title">Chaque mois, on vous propose une sélection d'ambiance de la saison</h3>
+	        <h3 class="sub-title">Chaque mois, on vous propose une sélection d'ambiances de la saison</h3>
 	        <hr>
 	        <div class="content">
 	           <div class="row">
@@ -111,7 +111,7 @@
 		    <div class="opportunity-content">
 		    	<div class="row">
 		    		<div class="col-md-6 col-xs-12">
-		    			<p>Restez informer de nouvelles opportunités</p>
+		    			<p>Restez informé des nouvelles opportunités</p>
 		    			<input class="hdg-input-default" type="text" placeholder="Votre adresse email"></input>
 		    			<button class="hdg-button-small">Valider</button>
 		    		</div>
@@ -144,7 +144,7 @@
 						<img src="{{ asset('img/news/news1.jpeg') }}">
 					</div>
 			      <div class="caption">
-			        <h3 class="news-title">ça parle de nous</h3>
+			        <h3 class="news-title">on parle de nous !</h3>
 			        <p>
 			        	Lorem ipsum dolor sit amet, consectetur adipisicing elit...
 			        </p>
