@@ -75,6 +75,19 @@
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
             <!-- <a class="hdg-button-default">commande securisé</a>-->
         </div>
+
+        <div class="panier-bottom">
+                <div class="selected-product">
+                    <div class="row">
+                        <h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
+                        @for ($i = 0; $i < 4; $i++)
+
+                            @include('elements.related-product')
+
+                        @endfor
+                    </div>
+                </div>
+        </div>
    </div>
 
 </div>
