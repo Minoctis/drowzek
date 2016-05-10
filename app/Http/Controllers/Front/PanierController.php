@@ -15,15 +15,16 @@ use App\Http\Controllers\Controller;
 class PanierController extends Controller
 {
     public function showPanier(Request $request) {
-        $options_id = !empty($options_id) ? array_map(function($foo){return $foo['produit_option_id'];}, $request->session()->get('panier.produits_option')) : '';
+        $options_id = !empty($request->session()->get('panier.produits_option')) ? array_map(function($foo){return $foo['produit_option_id'];}, $request->session()->get('panier.produits_option')) : '';
         $quantites = !empty($options_id) ? array_count_values($options_id) : [];
+
         $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
 
         $data = [
             'produits' => $produits,
             'quantites' => $quantites
         ];
-        Debugbar::info($produits, $quantites);
+        
         return view('pages.panier', $data);
     }
 
