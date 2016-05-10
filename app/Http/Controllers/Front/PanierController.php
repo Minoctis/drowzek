@@ -17,7 +17,7 @@ class PanierController extends Controller
     public function showPanier(Request $request) {
 
         $options_id = $request->session()->get('panier.produits_option');
-        $quantites = array_count_values($options_id);
+        $quantites = !empty($options_id) ? array_count_values($options_id) : [];
         $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
 
         $data = [
