@@ -15,7 +15,7 @@ use App\Http\Controllers\Controller;
 class PanierController extends Controller
 {
     public function showPanier(Request $request) {
-        $options_id = array_map(function($foo){return $foo['produit_option_id'];}, $request->session()->get('panier.produits_option'));
+        $options_id = !empty($options_id) ? array_map(function($foo){return $foo['produit_option_id'];}, $request->session()->get('panier.produits_option')) : '';
         $quantites = !empty($options_id) ? array_count_values($options_id) : [];
         $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
 
@@ -76,7 +76,7 @@ class PanierController extends Controller
         }
         //Ajoute l'option en session
         $request->session()->push('panier.produits_option', ['produit_option_id' => intval($produit_option)]);
-
+        $request->session()->push('panier.date_modification', date('Y-m-d'));
         return json_encode(['test' => $produit_option]);
     }
 
