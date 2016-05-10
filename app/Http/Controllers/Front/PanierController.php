@@ -15,8 +15,7 @@ use App\Http\Controllers\Controller;
 class PanierController extends Controller
 {
     public function showPanier(Request $request) {
-
-        $options_id = $request->session()->get('panier.produits_option');
+        $options_id = array_map(function($foo){return $foo['produit_option_id'];}, $request->session()->get('panier.produits_option'));
         $quantites = !empty($options_id) ? array_count_values($options_id) : [];
         $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
 
@@ -30,7 +29,7 @@ class PanierController extends Controller
 
     public function ckeckIfPanierExists(Request $request) {
         //Récupère le panier actif de l'utilisateur s'il est connecté
-        $panier_actif = Auth::check() ? Panier::where('client_id', Auth::user()->id)->where('panier_type_id', 1)->with('produits')->first() : null;
+        $panier_actif = Auth::check() ? Panier::where('client_id', Auth::user()->id)->where('panier_type_id', 1)->with(['produits' => function($query) { $query->select('produit_option_id'); }])->first() : null;
 
         //Pas de panier en session
         if(!$request->session()->has('panier')) {
@@ -76,7 +75,7 @@ class PanierController extends Controller
             ]);
         }
         //Ajoute l'option en session
-        $request->session()->push('panier.produits_option', $produit_option);
+        $request->session()->push('panier.produits_option', ['produit_option_id' => intval($produit_option)]);
 
         return json_encode(['test' => $produit_option]);
     }
