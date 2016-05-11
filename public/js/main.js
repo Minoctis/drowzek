@@ -119,5 +119,39 @@ jQuery(document).ready(function () {
         });
     }
 
+    $('#shipping').on('change', function() {
+        var value = $('#shipping').val();
+        var old_grand_total_value = $('#grand-total').text();
+        var grand_total_value = parseFloat(value) === 100 ? parseFloat(old_grand_total_value) + 83 : parseFloat(old_grand_total_value) - 83;
+        console.log(value);
+        $('#shipping-value').text(value);
+        $('#grand-total').text(grand_total_value);
+    });
+
+    //Click sur le bouton "Modifier les options"
+    $('.button-update-produit-detail').on('click', function() {
+        var showProduitDetail = $(this).parent();
+        var editProduitDetail = showProduitDetail.next();
+
+        showProduitDetail.toggle();
+        editProduitDetail.toggle();
+    });
+
+    //Click sur le bouton "Annuler" dans modifier les options
+    $(".annuler-edit-detail").on('click', function() {
+        var editProduitDetail = $(this).parent();
+        var showProduitDetail = editProduitDetail.prev();
+
+        showProduitDetail.toggle();
+        editProduitDetail.toggle();
+    });
+
+    //Click sur le bouton "Mettre à jour" dans modifier les options
+    $(".valider-edit-detail").on('click', function() {
+        var editProduitDetail = $(this).parent();
+        var showProduitDetail = editProduitDetail.prev();
+        showProduitDetail.toggle();
+        editProduitDetail.toggle();
+    });
 
 });

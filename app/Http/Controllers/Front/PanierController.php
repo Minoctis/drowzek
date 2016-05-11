@@ -20,10 +20,20 @@ class PanierController extends Controller
         $quantites = !empty($options_id) ? array_count_values($options_id) : [];
 
         $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
+        
+        $total_ht = 0;
+        $total_tva = 0;
+        
+        foreach($produits as $produit) {
+            $total_ht += $produit->prix_ht * $quantites[$produit->id];
+            $total_tva += $produit->prix_ht * $produit->tauxTva->valeur / 100 * $quantites[$produit->id];
+        }
 
         $data = [
             'produits' => $produits,
-            'quantites' => $quantites
+            'quantites' => $quantites,
+            'total_ht' => $total_ht,
+            'total_tva' => $total_tva
         ];
         
         return view('pages.panier', $data);
@@ -58,6 +68,7 @@ class PanierController extends Controller
         $this->ckeckIfPanierExists($request);
         //Récupère l'option de produit cliqué
         $produit_option = $request->input('option_id');
+
         //Récupère le panier actif de l'utilisateur
         $panier_actif = Auth::check() ? Panier::where('client_id', Auth::user()->id)->where('panier_type_id', 1)->with('produits')->first() : null;
         //Si l'utilisateur connecté n'a pas de panier actif
