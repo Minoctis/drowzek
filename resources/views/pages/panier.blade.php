@@ -16,12 +16,14 @@
         <h1 class="page-title">Mon panier</h1>
     </div>
 	<div class="container">
+        @if($produits->count() !== 0)
         <div class="top-panier">
             <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
             <!-- <a class="hdg-button-default">commande securisé</a>-->
         </div>
-
+        @endif
+        @if($produits->count() !== 0)
         <div class="table-responsive">
             <table class="table table-striped">
                        <thead>
@@ -134,12 +136,16 @@
                 </div>
             </div>
         </div>
+        @else
+            <p>Votre panier ne contient pas de produits.</p>
+        @endif
+        @if($produits->count() !== 0)
         <div class="bottom-panier">
             <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
             <!-- <a class="hdg-button-default">commande securisé</a>-->
         </div>
-
+        @endif
         <div class="panier-bottom">
                 <div class="selected-product">
                     <div class="row">
