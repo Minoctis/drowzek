@@ -410,6 +410,7 @@ a:hover, a:active{
     position: relative;
     margin: 0;
     background-color: white;
+    border-radius: 0px;
 }
 .breadcrumb>.active{
     text-transform: uppercase;
