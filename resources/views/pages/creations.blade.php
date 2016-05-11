@@ -23,13 +23,14 @@
 	
 	<div class="row">
 		@if ($categorie->children->count() !== 0)
+			<?php $index = 0; ?>
 			@foreach($categorie->children as $categorie_enfant)
-				@foreach($categorie_enfant->produits as $index => $produit)
+				@foreach($categorie_enfant->produits as $produit)
+					 <?php ++$index; ?>
 					@if($index === $rand_newsletter)
 						@include('elements.bloc-newsletter')
 					@endif
 					@include('elements.new-product')
-
 				@endforeach
 			@endforeach
 		@elseif($categorie->produits->count() !== 0)
