@@ -6,14 +6,6 @@
 
 @section('content')
 
-@extends('layouts.checkout')
-
-@section('title', 'Étape 3 : Livraison')
-
-@section('page-id', 'checkout-livraison')
-
-@section('content')
-
 <form>
 <div class="container">
 	<div class="checkout-panel">
@@ -63,7 +55,7 @@
 							</li>
 						</div>
 						<!-- fin mode2 -->
-<div class="row">
+                        <div class="row">
 							<p><input name="livraison" type="radio" /> J'accepte les <a href="#">conditions générales de ventes</a></p>
 
 						</div>
@@ -95,11 +87,10 @@
 										<span class="pays">France</span>
 									</li>
 								</ul>
-							</div>
 						</div>
 					</div>
 
-					<!--<div class="panel panel-default">
+					<div class="panel panel-default">
 							<div class="panel-heading">
 								Votre adresse de facturation
 								<span class="remove-adresse"><a href="#"><i class="fa fa-minus-square-o"></i></a></span>
@@ -125,9 +116,8 @@
 										<span class="pays">France</span>
 									</li>
 								</ul>
-							</div>
 						</div>
-					</div>-->
+					</div>
 
 
 				</div>
