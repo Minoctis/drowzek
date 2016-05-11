@@ -61,7 +61,7 @@
 						</p>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" role="button">Ajouter au panier</a></p>
+						<p><a href="#" class="btn btn-primary hdg-button-default button-add-basket" data-option-id="{{ $produit->options[0]->id }}" data-nom="{{ $produit->nom }}" role="button">Ajouter au panier</a></p>
 					</div>
 				</div>	
 				<div class="row">

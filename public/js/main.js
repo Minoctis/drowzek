@@ -98,7 +98,7 @@ jQuery(document).ready(function () {
 
     //Click sur le bouton d'ajout
     $('.button-add-basket').on('click', function() {
-        var nomProduit = $(this).closest(".product-container").find("h3").html();
+        var nomProduit = $(this).data('nom');
         var optionId = $(this).data('option-id');
 
         addProduct(optionId, nomProduit);
