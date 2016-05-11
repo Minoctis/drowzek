@@ -8,8 +8,13 @@
                         ne passez pas à côté de notre actualité !
                     </p>
                     <div class="form-group">
-                        <input type="text" name="newsletter">
-                        <a href="#" class="hdg-button-default">Ok</a>
+                        <div class="form-newsletter col-md-9 col-xs-12">
+                            <input type="text" name="newsletter">
+                        </div>
+                        <div class="form-newsletter  col-md-3 col-xs-12">
+                            <a href="#" class="hdg-button-default">Ok</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

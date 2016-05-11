@@ -401,10 +401,12 @@ a:hover, a:active{
 .page .navbar-nav>li>.dropdown-menu.affix-top{
     background-color: #000000;
 }
+
 .page .navbar-inverse{
     background-color: #000000;
     border-color: #000000;
 }
+
 .breadcrumb{
     top: 50px;
     position: relative;
@@ -412,11 +414,17 @@ a:hover, a:active{
     background-color: white;
     border-radius: 0px;
 }
+
 .breadcrumb>.active{
     text-transform: uppercase;
 }
+
 .main-content{
     padding-top: 40px;
+}
+
+.image-categorie a {
+    padding: 0 !important;
 }
 
 /*FIN DEFAULT LAYOUT*/

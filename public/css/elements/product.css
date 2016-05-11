@@ -142,8 +142,22 @@
 
 h2.bloc-newsletter-titre {
 	margin-bottom: 25px;
+	margin-top:10px;
 }
 
 .product-thumbnail-image .bloc-newsletter-liste .form-group {
 	margin-top: 25px;
+}
+
+.bloc-newsletter-liste a.hdg-button-default {
+	padding: 0;
+	height: 28px;
+	display: block;
+	background-color: #989392;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.form-newsletter{
+	padding:0;
 }

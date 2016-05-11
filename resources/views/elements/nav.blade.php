@@ -39,7 +39,7 @@
               </li>
             @endforeach
             <li class="col-sm-6 col-md-4 image-categorie hidden-xs">
-              <img src="{{ asset('img/themes/opp-menu.jpg') }}" class="img img-reponsive" alt="">
+              <a href="#"><img src="{{ asset('img/themes/opp-menu.jpg') }}" class="img img-reponsive" alt=""></a>
             </li>
           </ul>
         </li>
