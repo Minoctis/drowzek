@@ -81,9 +81,9 @@
 	</div>
 
 	<div class="checkout-footer">
-		<a class="back-to-panier" href="#">Revenir au panier</a>
+		<a class="back-to-panier" href="{{ route('panier') }}">Revenir au panier</a>
 
-		<a class="next-step hdg-button-small" href="#">Choisir ma livraison</a>
+		<a class="next-step hdg-button-small" href="{{ route('checkout::paiement') }}">Choisir mon mode de paiement</a>
 	</div>
 </div>
 </form>
