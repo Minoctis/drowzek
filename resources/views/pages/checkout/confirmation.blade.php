@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="checkout-footer">
-		<a class="back-to-panier" href="#">Cas:Erreur paiement</a>
+		<a class="back-to-panier" href="#">Cas : Erreur paiement</a>
 
 		<a class="next-step hdg-button-small" href="http://drowzek.loc/">Aller vers la page d'accueil</a>
 	</div>
