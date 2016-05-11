@@ -79,7 +79,7 @@
                         <table class="table">
                             <tr>
                                 <td>
-                                    <select name="shipping" id="shipping">
+                                    <select class="form-control" name="shipping" id="shipping">
                                         <option value="17">17</option>
                                         <option value="100">100</option>
                                     </select>
