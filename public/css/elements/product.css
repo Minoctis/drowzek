@@ -129,3 +129,21 @@
 	padding-right: 25px;
 	z-index: 3;
 }
+
+
+.product-thumbnail-image .bloc-newsletter-liste {
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+h2.bloc-newsletter-titre {
+	margin-bottom: 25px;
+}
+
+.product-thumbnail-image .bloc-newsletter-liste .form-group {
+	margin-top: 25px;
+}
