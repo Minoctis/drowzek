@@ -23,17 +23,20 @@
 	
 	<div class="row">
 		@if ($categorie->children->count() !== 0)
-			
 			@foreach($categorie->children as $categorie_enfant)
-				@foreach($categorie_enfant->produits as $produit)
-
+				@foreach($categorie_enfant->produits as $index => $produit)
+					@if($index === $rand_newsletter)
+						@include('elements.bloc-newsletter')
+					@endif
 					@include('elements.new-product')
 
 				@endforeach
 			@endforeach
 		@elseif($categorie->produits->count() !== 0)
-			@foreach($categorie->produits as $produit)
-
+			@foreach($categorie->produits as $index => $produit)
+				@if($index === $rand_newsletter)
+					@include('elements.bloc-newsletter')
+				@endif
 				@include('elements.new-product')
 
 			@endforeach

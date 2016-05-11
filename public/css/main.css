@@ -542,6 +542,20 @@ h4.review-title{
     content: none;  
 }
 
+#newsletter-bloc::after {
+    content: none;
+    clear: none;
+}
+
+#newsletter-bloc:after {
+    content: none;
+}
+
+#newsletter-bloc::before {
+    content: none;
+    clear: none;
+}
+
 /* FIN LISTE PRODUIT */
 
 

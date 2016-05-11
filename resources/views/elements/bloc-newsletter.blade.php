@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="newsletter-bloc">
     <div class="product-container">
             <div class="product-thumbnail-image">
                 <div class="bloc-newsletter-liste">
@@ -13,6 +13,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>

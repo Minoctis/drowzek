@@ -94,7 +94,10 @@
 	<section class="produits-ambiance">
 			<div class="row">
 				@if($ambiance->produits->count() !== 0)
-					@foreach($ambiance->produits as $produit)
+					@foreach($ambiance->produits as $index => $produit)
+						@if($index === $rand_newsletter)
+							@include('elements.bloc-newsletter')
+						@endif
 						@include('elements.new-product')
 					@endforeach
 				@else
@@ -103,7 +106,7 @@
 					</div>
 				@endif
 			</div>
-		</div>	
+		</div>
 	</section>
 </div>
 @endsection
