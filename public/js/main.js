@@ -153,5 +153,26 @@ jQuery(document).ready(function () {
         showProduitDetail.toggle();
         editProduitDetail.toggle();
     });
+    
+    //Click sur le bouton supprimer sur la ligne d'un produit du panier
+    $('.delete-produit').on('click', function() {
+        var id = $(this).data('id');
+        $.ajax({
+            url: '/edit-panier',
+            type: 'POST',
+            dataType: 'json',
+            data: {'delete': id},
+            success: function(data) {
+                if (data.noError) {
+                    location.reload();
+                } else {
+                    toastr.error("Erreur lors de la supression du produit.<br>Si l'erreur persiste, merci de contacter le service client.");
+                }
+            },
+            error: function() {
+                toastr.error("Erreur lors de la supression du produit.<br>Si l'erreur persiste, merci de contacter le service client.");
+            }
+        });
+    });
 
 });

@@ -85,11 +85,26 @@ class PanierController extends Controller
                 'panier_id' => $panier_actif->id,
                 'produit_option_id' => $produit_option
             ]);
+
+            Session::put('panier.id', $panier_actif->id);
         }
         //Ajoute l'option en session
         Session::push('panier.produits_option', ['produit_option_id' => intval($produit_option)]);
-        Session::put('panier.date_modification', date('Y-m-d'));
+        Session::put('panier.date_modification', date('Y-m-d H:i:s'));
         return json_encode(['test' => $produit_option]);
+    }
+
+    public function editPanier(Request $request) {
+        if ($request->has('delete')) {
+            foreach(Session::get('panier.produits_option') as $index => $option) {
+                $session = Session::get('panier.produits_option');
+                if ($session[$index]['produit_option_id'] == $request->get('delete')) {
+                    Session::forget('panier.produits_option.'.$index);
+                }
+            }
+            return json_encode(['noError' => true]);
+        }
+        else return json_encode(['noError' => false]);
     }
 
 }

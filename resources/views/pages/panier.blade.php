@@ -46,7 +46,7 @@
                                         <p>{{ $produit->produit->nom }}</p>
                                         categorie: {{ $produit->produit->categorie->nom }}<br>
                                         disponible en plusieurs coloris<br>
-                                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">supprimer</a></span>
+                                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link delete-produit" data-id="{{ $produit->id }}" href="#">supprimer</a></span>
                                     </div>
                                 </div>
 

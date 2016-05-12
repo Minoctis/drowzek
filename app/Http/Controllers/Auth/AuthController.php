@@ -104,8 +104,7 @@ class AuthController extends Controller
         if (strpos(Session::get('url.intended'), 'checkout')) {
             $view = 'auth.connexion-checkout';
         }
-        Debugbar::info($view);
-        Debugbar::info(Session::get('url.intended'));
+
         return view($view);
     }
 
@@ -120,8 +119,10 @@ class AuthController extends Controller
                     'produit_option_id' => $option['produit_option_id']
                 ]);
             }
+            Session::put('panier.id', $panier->id);
         }
-
+        Session::put('panier.client_id', Auth::user()->id);
+        Session::has('panier.date_creation') ? Session::put('panier.date_creation', date('Y-m-d H:i:s')) : null;
         return redirect(Session::get('url.intended'));
     }
 }
