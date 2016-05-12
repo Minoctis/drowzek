@@ -2,12 +2,12 @@
 	<div class="container">
 		<div class="row">
 				<div class="col-xs-12">
-					<h3 class="social-bottom-title">Retrouvez nous aussi sur :</h3>
+					<h3 class="social-bottom-title">Retrouvez-nous aussi sur :</h3>
 					<div class="social">
 						<div class="fb social-icon">
 							<a href="#">
 								<i class="fa fa-facebook"></i> <br>
-								<span>Facebooks</span>
+								<span>Facebook</span>
 							</a>
 						</div>
 						<div class="twitter social-icon">

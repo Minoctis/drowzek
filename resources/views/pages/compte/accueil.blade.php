@@ -225,10 +225,10 @@
 
 				<!-- FIN MES ADRESSES -->
 
-				<!-- MES ARTICLES FAVORIES -->
+				<!-- MES ARTICLES FAVORIS -->
 
 				<div id="favorites" class="tab-pane fade">
-					<h3 class="title-content-compte">Mes articles favories</h3>
+					<h3 class="title-content-compte">Mes articles favoris</h3>
 
 						<!-- liste n°1 -->
 						<div class="wishlist">
