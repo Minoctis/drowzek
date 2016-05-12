@@ -40,7 +40,7 @@
                             <td>
                                 <div class="left-content">
                                     <div class="mini-img">
-                                        <img src="{{ $produit->produit->images->count() !== 0 ? 'img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/100x100/999999/cccccc' }}"class="bloc-img">
+                                        <img src="{{ $produit->produit->images->count() !== 0 ? '/img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/100x100/999999/cccccc' }}"class="bloc-img">
                                     </div>
                                     <div class="bloc-text">
                                         <p>{{ $produit->produit->nom }}</p>
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="sub-title-content-commande col-md-4 col-xs-12">
                     <div class="actions-panier">
-                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">supprimer</a></span>
+                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">Vider le panier</a></span>
                     </div>
                     <div class="code-promo">
                         <span><a class="link" href="#">Code remise ou promotion ?</a> <span>

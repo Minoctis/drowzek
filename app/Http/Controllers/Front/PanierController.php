@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Client;
 use App\Models\Panier;
 use App\Models\PaniersHasProduits;
 use App\Models\ProduitOption;
@@ -16,25 +17,7 @@ use Session;
 class PanierController extends Controller
 {
     public function showPanier(Request $request) {
-        $options_id = $request->session()->has('panier.produits_option') ? array_map(function($produit){return $produit['produit_option_id'];}, $request->session()->get('panier.produits_option')) : '';
-        $quantites = !empty($options_id) ? array_count_values($options_id) : [];
-
-        $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
-        
-        $total_ht = 0;
-        $total_tva = 0;
-        
-        foreach($produits as $produit) {
-            $total_ht += $produit->prix_ht * $quantites[$produit->id];
-            $total_tva += $produit->prix_ht * $produit->tauxTva->valeur / 100 * $quantites[$produit->id];
-        }
-
-        $data = [
-            'produits' => $produits,
-            'quantites' => $quantites,
-            'total_ht' => $total_ht,
-            'total_tva' => $total_tva
-        ];
+        $data = $this->getPanierData($request);
         
         return view('pages.panier', $data);
     }
@@ -107,4 +90,51 @@ class PanierController extends Controller
         else return json_encode(['noError' => false]);
     }
 
+    public function showAdresses(Request $request) {
+        $data = $this->getPanierData($request);
+        $data['client'] = Client::find(Session::get('panier.client_id'));;
+        return view('pages.checkout.adresses', $data);
+    }
+
+    public function showLivraison(Request $request) {
+        $data = $this->getPanierData($request);
+        
+        return view('pages.checkout.livraison', $data);
+    }
+
+    public function showPaiement(Request $request) {
+        $data = $this->getPanierData($request);
+        
+        return view('pages.checkout.paiement', $data);
+    }
+
+    public function showConfirmation(Request $request) {
+        $data = $this->getPanierData($request);
+        Session::forget('panier');
+        return view('pages.checkout.confirmation', $data);
+    }
+    
+    private function getPanierData(Request $request) {
+        $options_id = $request->session()->has('panier.produits_option') ? array_map(function($produit){return $produit['produit_option_id'];}, $request->session()->get('panier.produits_option')) : '';
+        $quantites = !empty($options_id) ? array_count_values($options_id) : [];
+
+        $produits = ProduitOption::whereIn('id', $options_id)->with('produit.images')->with('produit.categorie')->with('tauxTva')->get();
+
+        $total_ht = 0;
+        $total_tva = 0;
+
+        foreach($produits as $produit) {
+            $total_ht += $produit->prix_ht * $quantites[$produit->id];
+            $total_tva += $produit->prix_ht * $produit->tauxTva->valeur / 100 * $quantites[$produit->id];
+        }
+
+        $data = [
+            'produits' => $produits,
+            'quantites' => $quantites,
+            'total_ht' => $total_ht,
+            'total_tva' => $total_tva
+        ];
+        
+        return $data;
+    }
 }

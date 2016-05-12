@@ -48,20 +48,17 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::group(['prefix' => 'checkout', 'as' => 'checkout::', 'middleware' => 'auth'], function() {
-        //Etape 1 : Identification
-        Route::get('/identification', ['as' => 'identification', function() {return view('pages.checkout.identification'); }]);
-
         //Page 1 du tunnel, les adresses facturation et livraison
-        Route::get('/adresses', ['as' => 'adresses', function() {return view('pages.checkout.adresses'); }]);
+        Route::get('/adresses', ['as' => 'adresses', 'uses' => 'Front\PanierController@showAdresses']);
 
         //Page 2 du tunnel, les modes de livraison
-        Route::get('/livraison', ['as' => 'livraison', function() {return view('pages.checkout.livraison'); }]);
+        Route::get('/livraison', ['as' => 'livraison', 'uses' => 'Front\PanierController@showLivraison']);
 
         //Page 3 du tunnel, le paiement
-        Route::get('/paiement', ['as' => 'paiement', function() {return view('pages.checkout.paiement'); }]);
+        Route::get('/paiement', ['as' => 'paiement', 'uses' => 'Front\PanierController@showPaiement']);
 
         //Page 4 du tunnel, la confirmation
-        Route::get('/confirmation', ['as' => 'confirmation', function() {return view('pages.checkout.confirmation'); }]);
+        Route::get('/confirmation', ['as' => 'confirmation', 'uses' => 'Front\PanierController@showConfirmation']);
 
     });
 

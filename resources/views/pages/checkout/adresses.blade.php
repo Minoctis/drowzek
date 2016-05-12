@@ -46,11 +46,11 @@
 								<a href="#" class="update-adresse">Mettre à jour</a>
 								<ul>
 									<li>
-										<span class="nom-client">Lorem</span>
-										<span class="prenom-client"> ipsum</span>
+										<span class="nom-client">{{ $client->prenom }}</span>
+										<span class="prenom-client"> {{ $client->nom }}</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue national</span>
+										<span class="adresse">100 rue nationale</span>
 									</li>
 									<li>
 										<span class="compl-adresse">Complement d'adresse</span>
@@ -87,14 +87,14 @@
 								<a href="#" class="update-adresse">Mettre à jour</a>
 								<ul>
 									<li>
-										<span class="nom-client">Lorem</span>
-										<span class="prenom-client"> ipsum</span>
+										<span class="nom-client">{{ $client->prenom }}</span>
+										<span class="prenom-client"> {{ $client->nom }}</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue national</span>
+										<span class="adresse">100 rue nationale</span>
 									</li>
 									<li>
-										<span class="compl-adresse">Complement d'adresse</span>
+										<span class="compl-adresse">Appartement 3</span>
 									</li>
 									<li>
 										<span class="ville">Lille</span>

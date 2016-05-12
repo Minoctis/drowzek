@@ -3,11 +3,11 @@
 	<h3>Mon panier</h3>
 </div>
 	<div class="bloc-recap-panier">
-		@for ($i = 0; $i < 8; $i++)
+		@foreach($produits as $produit)
 			
 			@include('elements.checkout-product')
 
-		@endfor
+		@endforeach
 	</div>
 
 
@@ -17,21 +17,26 @@
 		<table class="table">
 			<tr>
 				<td>Total HT :</td>
-				<td>1899 €</td>
+				<td><span id="total-ht">{{ round($total_ht, 2) }}</span> €</td>
 			</tr>
 			<tr>
 				<td>Total TTC :</td>
-				<td>2000 €</td>
+				<td><span id="total-TTC">{{ round($total_ht, 2) + round($total_tva, 2) }}</span> €</td>
 			</tr>
 			<tr>
 				<td>Dont TVA :</td>
-				<td>200 €</td>
+				<td><span id="total-tva">{{ round($total_tva, 2) }}</span> €</td>
 			</tr>
-
+			@if(!Request::is('checkout/adresses'))
+			<tr>
+				<td>Frais de port :</td>
+				<td>17 €</td>
+			</tr>
+			@endif
 			<!-- Montant Total -->
 			<tr class="last">
 				<td>Montant Total :</td>
-				<td>2000 €</td>
+				<td>{{ Request::is('checkout/adresses') ? round($total_ht, 2) + round($total_tva, 2) : round($total_ht, 2) + round($total_tva, 2) + 17 }}</td>
 			</tr> 
 			<!-- Fin Montant Total -->
 

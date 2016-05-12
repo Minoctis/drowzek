@@ -28,8 +28,8 @@
 					</div>
 					 
 					 <div class="row">
-					 	<p>Vous avez effectuer une commande d'un montant de 1290€ sur notre boutique homedegout.com par carte bancaire.</p>
-					 	<p>Vous pouvez accéder à tout moment au suivi de votre commande et télécharger votre facture dans <a>Historique commandes </a>de la rubrique <a>Mon compte</a> sur notre site.</p>
+					 	<p>Vous avez effectué une commande d'un montant de {{ round($total_ht, 2) + round($total_tva, 2) + 17 }} € sur notre boutique homedegout.com par carte bancaire.</p>
+					 	<p>Vous pouvez accéder à tout moment au suivi de votre commande et télécharger votre facture dans <a href="{{ route('compte::accueil') }}#commandes">Historique commandes </a>de la rubrique <a href="{{ route('compte::accueil') }}">Mon compte</a> sur notre site.</p>
 					 </div>
 						<!-- mode1 -->
 						
@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="checkout-footer">
-		<a class="back-to-panier" href="#">Cas : Erreur paiement</a>
+		<a class="back-to-panier" href="#" style="color:white">Cas : Erreur paiement</a>
 
 		<a class="next-step hdg-button-small" href="http://drowzek.loc/">Aller vers la page d'accueil</a>
 	</div>

@@ -12,8 +12,8 @@
 		<div class="checkout-header">
 			<ul class="nav nav-pills nav-justified nav-checkout">
 				<li role="presentation" >Identification</li>
-				<li role="presentation" class="active">Adresses</li>
-				<li role="presentation">Livraison</li>
+				<li role="presentation">Adresses</li>
+				<li role="presentation" class="active">Livraison</li>
 				<li role="presentation">Paiement</li>
 				<li role="presentation">Confirmation</li>
 			</ul>
@@ -29,12 +29,12 @@
 					<ul class="mode-livraison">
 						<!-- mode1 -->
 						<div class="row">
-							<input name="livraison" type="radio" />
+							<input name="livraison" type="radio" checked>
 							<li>
 								<div class="col-md-10 col-xs-10">
 									<span class="livraison-name">Livraison à domicile</span> <br>
 									<span class="temps-expedition">Expédition sous 24H</span> <br>
-									<span class="price-livraison">Prix : 199€</span>
+									<span class="price-livraison">Prix : 17€</span>
 								</div>
 
 								<div class="col-md-2  col-xs-2">
@@ -49,12 +49,12 @@
 
 						<!-- mode2 -->
 						<div class="row">
-							<input name="livraison" type="radio" />
+							<input name="livraison" type="radio">
 							<li>
 								<div class="col-md-10 col-xs-10">
-									<span class="livraison-name">Livraison à domicile</span> <br>
+									<span class="livraison-name">Transporteur privé</span> <br>
 									<span class="temps-expedition">Expédition sous 24H</span> <br>
-									<span class="price-livraison">Prix : 199€</span>
+									<span class="price-livraison">Prix : 100€</span>
 								</div>
 
 								<div class="col-md-2 col-xs-2">

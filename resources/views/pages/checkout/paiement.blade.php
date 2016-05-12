@@ -29,7 +29,7 @@
 					<ul class="mode-livraison">
 						<!-- mode1 -->
 						<div class="row">
-							<input name="livraison" type="radio" />
+							<input name="livraison" type="radio" checked />
 							<li>
 								<div class="col-md-10 col-xs-10">
 									<span class="carte-bancaire">carte bancaire</span> <br>
@@ -56,7 +56,7 @@
 						</div>
 						<!-- fin mode2 -->
                         <div class="row">
-							<p><input name="livraison" type="radio" /> J'accepte les <a href="#">conditions générales de ventes</a></p>
+							<p><input name="livraison" type="checkbox" /> J'accepte les <a href="#">conditions générales de ventes</a></p>
 
 						</div>
 
@@ -70,14 +70,14 @@
 
 								<ul>
 									<li>
-										<span class="nom-client">Lorem</span>
-										<span class="prenom-client"> ipsum</span>
+										<span class="nom-client">Jean</span>
+										<span class="prenom-client"> Dupont</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue national</span>
+										<span class="adresse">100 rue nationale</span>
 									</li>
 									<li>
-										<span class="compl-adresse">Complement d'adresse</span>
+										<span class="compl-adresse">Appartement 3</span>
 									</li>
 									<li>
 										<span class="ville">Lille</span>
@@ -99,14 +99,14 @@
 
 								<ul>
 									<li>
-										<span class="nom-client">Lorem</span>
-										<span class="prenom-client"> ipsum</span>
+										<span class="nom-client">Jean</span>
+										<span class="prenom-client"> Dupont</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue national</span>
+										<span class="adresse">100 rue nationale</span>
 									</li>
 									<li>
-										<span class="compl-adresse">Complement d'adresse</span>
+										<span class="compl-adresse">Appartement 3</span>
 									</li>
 									<li>
 										<span class="ville">Lille</span>
