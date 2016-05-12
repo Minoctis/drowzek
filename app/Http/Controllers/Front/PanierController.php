@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Client;
+use App\Models\CommandeProduit;
+use App\Models\Commande;
 use App\Models\Panier;
 use App\Models\PaniersHasProduits;
+use App\Models\Pays;
 use App\Models\ProduitOption;
 use Auth;
 use Debugbar;
@@ -92,7 +95,7 @@ class PanierController extends Controller
 
     public function showAdresses(Request $request) {
         $data = $this->getPanierData($request);
-        $data['client'] = Client::find(Session::get('panier.client_id'));;
+        $data['client'] = Client::find(Auth::user()->id);
         return view('pages.checkout.adresses', $data);
     }
 
@@ -110,6 +113,50 @@ class PanierController extends Controller
 
     public function showConfirmation(Request $request) {
         $data = $this->getPanierData($request);
+        $client = Client::find(Auth::user()->id);
+        $pays = Pays::find(1);
+        $commande = new Commande();
+            $commande->reference = "RVJS15VG";
+            $commande->date = date('Y-m-d H:i:s');
+            $commande->adresse_facturation = '100 rue nationale';
+            $commande->compl_adresse_facturation = 'Appartement 3';
+            $commande->cp_facturation = '59000';
+            $commande->ville_facturation = 'Lille';
+            $commande->telephone_facturation = '0123456789';
+            $commande->prenom_livraison = $client->prenom;
+            $commande->nom_livraison = $client->nom;
+            $commande->adresse_livraison = '100 rue nationale';
+            $commande->pays_livraison_id = $pays->id;
+            $commande->pays_facturation_id = $pays->id;
+            $commande->compl_adresse_livraison = 'Appartement 3';
+            $commande->paiement_type_id = 1;
+            $commande->client_id = Auth::user()->id;
+            $commande->cp_livraison = '59000';
+            $commande->ville_livraison = 'Lille';
+            $commande->telephone_livraison = '0123456789';
+            $commande->commande_statut_id = 2;
+            $commande->frais_de_port = 17;
+
+        $commande->save();
+
+        foreach($data['produits'] as $produit) {
+            $commande_produit = new CommandeProduit;
+            
+                $commande_produit->taux_tva_id  = $produit->taux_tva_id;
+                $commande_produit->commande_id  = $commande->id;
+                $commande_produit->prix_unitaire_ht  = $produit->prix_ht;
+                $commande_produit->quantite  = $data['quantites'][$produit->id];
+                $commande_produit->produit_libelle  = $produit->produit->nom;
+                $commande_produit->option_libelle = $produit->libelle;
+
+            $commande_produit->save();
+        }
+
+        $panier = Panier::where('client_id', Auth::user()->id)->where('panier_type_id', 1)->first();
+
+        PaniersHasProduits::where('panier_id', $panier->id)->delete();
+        Panier::destroy($panier->id);
+
         Session::forget('panier');
         return view('pages.checkout.confirmation', $data);
     }

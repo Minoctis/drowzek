@@ -8,8 +8,8 @@
 			<a href="#" class="update-adresse">Mettre à jour</a>
 			<ul>
 				<li>
-					<span class="nom-client">Jean</span>
-					<span class="prenom-client"> Dupont</span>
+					<span class="nom-client">{{ Auth::user()->prenom }}</span>
+					<span class="prenom-client"> {{ Auth::user()->nom }}</span>
 				</li>
 				<li>
 					<span class="adresse">100 rue nationale</span>
