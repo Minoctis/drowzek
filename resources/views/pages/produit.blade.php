@@ -45,7 +45,7 @@
 			</div>
 		</div>
 			<div class="product-description">
-				<h2 class="product-title">{{ $produit->nom }}</h2>
+				<h1 class="product-title">{{ $produit->nom }}</h1>
 				<p>Description :</p>
 				<p>{{ $produit->description }}</p>
 				<p>
