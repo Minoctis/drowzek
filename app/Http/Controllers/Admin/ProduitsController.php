@@ -12,11 +12,7 @@ use App\Http\Controllers\Controller;
 class ProduitsController extends Controller
 {
     public function listeProduits() {
-        $produits = Produit::all();
-        foreach ($produits as $produit) {
-            $categorie = $produit->categorie();
-            dump($categorie);
-        }
+        $produits = Produit::with('categorie')->get();
         return view('pages.admin.produits.liste', ['produits' => $produits]);
     }
 }
