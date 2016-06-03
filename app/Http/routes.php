@@ -183,7 +183,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'clients', 'as' => 'clients::'], function () {
 
             //Liste des clients
-            Route::get('/', ['as' => 'liste', function () { return view('pages.admin.clients.liste'); } ]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ClientsController@showClientList' ]);
 
         });
 
