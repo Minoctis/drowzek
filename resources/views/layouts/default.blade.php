@@ -8,6 +8,7 @@
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" >
 <!--        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >-->
         <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css" >
 
 
         <!-- Fonts -->

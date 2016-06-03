@@ -7,6 +7,7 @@
         <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" >
 <!--        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >-->
+        <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css" >
         
         <!-- Fonts -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

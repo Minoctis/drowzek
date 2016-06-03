@@ -18,5 +18,11 @@ class ClientsController extends Controller
         return view('pages.admin.clients.liste', ['clients' => $clients]);
     }
 
+    public function showClient($client_id){
+        $client = Client::where('id',$client_id)->with('civilite')->with('adresses')->first();
+
+        return view('pages.admin.clients.edit', ['client' => $client]);
+    }
+
 
 }

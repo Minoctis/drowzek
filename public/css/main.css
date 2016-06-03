@@ -5,14 +5,9 @@
 @import url(ambiances.css);
 
 
-/* FONTS */
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,300,700);
 
-p{font-size: 13px;}
 
-body{
-    overflow-x: hidden;
-}
+
 .homepage,
 .page{
     font-family: 'Quicksand', sans-serif;
@@ -24,147 +19,20 @@ body{
     top: 0;
 }
 
-.form-control {
-    border-radius: 0;
-    box-shadow: none;
-}
-
-/* TITILE & SUBTITLE & BUTTONS*/
-
-h1.title{
-    font-size: 24px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 20px 0;
-}
-
-h3.sub-title{
-    font-size: 13px;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-h3.small-title {
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 15px 0;
-    text-align: center;
-}
-
-.hdg-button-default{
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: 0;
-    text-transform: uppercase;
-    font-size: 16px;
-    border-radius: 0;
-    font-weight: 500;
-}
-
-.hdg-button-small{
-    padding: 5px 10px;
-    background-color: black;
-    color: white;
-    border: 0;
-    text-transform: none;
-    font-size: 13px;
-    border-radius: 0;
-    height: 30px;
-    font-weight: 500;
-}
-
-.hdg-button-small:hover,
-.hdg-button-default:hover{
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-    background-color: #333 !important;
-}
 
 a{
     color: black;
     text-transform: uppercase;
 }
-a:hover, a:active{
-    color: black;
-    text-decoration: underline;
-}
 
-*:focus {
-    outline: none;
-}
 
-    /* INPUT */
-
-    input.hdg-input-default{
-        height: 30px;
-        min-width: 250px;
-    }
 
 /* END TITILE & SUBTITLE */
 
 
 /* BEGIN ELEMENTS */
 
-    /* NAVBAR */
-    a.navbar-brand.header-logo {
-        padding: 6px;
-    }
 
-    .homepage nav.navbar.navbar-inverse.navbar-fixed-top{
-        background-color: rgba(0, 0, 0, 0.5);
-        border-color: transparent;
-        transition: all .5s ease .25s;
-    }
-    #nav.affix {
-        background-color: black;
-        -webkit-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-    }
-
-    .navbar-nav>li>.dropdown-menu.affix{
-        position: absolute;
-         background-color: black;
-        -webkit-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);   
-    }
-    .navbar-nav>li>.dropdown-menu.affix-top{
-        background-color: rgba(0, 0, 0, 0.5);
-        border-color: transparent;
-        transition: all .5s ease .25s; 
-    }
-
-    .dropdown-menu li>ul{
-        padding-left: 30px;
-    }
-
-    #search-navbar-top.navbar-form i{
-        color: white;
-        cursor: pointer;
-    }
-    #search-navbar-top .form-group{
-        transition: all .5s ease .25s; 
-    }
-    #search-navbar-top.navbar-form{
-        position: relative;
-        padding: 15px 10px;
-        margin: 0;
-    }
-    #search-navbar-top input{
-        border-radius: 50px;
-    }
-
-    .dropdown-menu li.categorie {
-        min-height: 150px;
-    }
-
-    .image-categorie img{
-        max-width: 100%;
-    }
-    /* END NAVBAR */
 
 .product-thumbnail-image {
     width: 100%;
@@ -407,17 +275,7 @@ a:hover, a:active{
     border-color: #000000;
 }
 
-.breadcrumb{
-    top: 50px;
-    position: relative;
-    margin: 0;
-    background-color: white;
-    border-radius: 0px;
-}
 
-.breadcrumb>.active{
-    text-transform: uppercase;
-}
 
 .main-content{
     padding-top: 40px;
@@ -879,24 +737,6 @@ h4.sub-title-content-commande.col-md-9{
 
 
 
-        /* Adresses */
-        .panel-default>.panel-heading {
-            color: white;
-            background-color: black;
-            border-radius: 0;
-        }
-        .panel-default {
-            border-color: black;
-            border-radius: 0;
-        }
-        .panel-body{
-            padding: 15px 15px 0 15px;
-        }
-        .panel-body ul {
-            list-style: none;
-            padding-left: 10px;
-        }
-        /* Fin adresses */
         .paiement-info{
             padding-bottom: 50px;
         }

@@ -185,6 +185,9 @@ Route::group(['middleware' => ['web']], function () {
             //Liste des clients
             Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ClientsController@showClientList' ]);
 
+            //Page client
+            Route::get('/{client_id}', ['as' => 'details', 'uses' => 'Admin\ClientsController@showClient']);
+
         });
 
         //Routes des commandes

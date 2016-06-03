@@ -1,9 +1,3 @@
-body {
-    padding-bottom: 0 !important;
-    font-family: 'Quicksand',sans-serif;
-    background-color: #ffffff;
-}
-
 #main-nav {
     border-radius: 0;
 }
@@ -192,6 +186,7 @@ nav#main-nav{
 }
 
 /* Header */
+
 .admin h1.page-title {
     font-size: 24px;
     text-transform: uppercase;
@@ -213,3 +208,7 @@ nav#main-nav{
 .table>tbody>tr>td{
     vertical-align: middle;
 }
+
+
+/* Content client details */
+

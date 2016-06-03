@@ -9,6 +9,7 @@
     <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css" >
 
     <!-- JavaScript -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -71,9 +72,7 @@
                 </nav>
                 <h1 class="page-title">Administration - @yield('title')</h1>
                 <div class="container">
-                    <div class="row">
                         @yield('content')
-                    </div>
                 </div>
 
             </div>

@@ -24,7 +24,7 @@
                             <td>{{$client->email}}</td>
 
                             <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-list-alt"></span> Commandes</a></td>
-                            <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Afficher</a></td>
+                            <td><a href="{{ route('admin::clients::details', $client->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Afficher</a></td>
                         </tr>
                     @endforeach
                     </tbody>
