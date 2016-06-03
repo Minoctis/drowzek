@@ -2,7 +2,6 @@
 @section('title', 'Liste des clients')
 @section('content')
 
-    <div class="container">
         <div class="row">
             <div class="table-responsive">
                 <table class="table">
@@ -32,5 +31,4 @@
                 </table>
             </div>
         </div>
-    </div>
 @endsection

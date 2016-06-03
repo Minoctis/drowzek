@@ -17,7 +17,7 @@
     <script type="text/javascript" src=" {{ asset('js/toastr.min.js') }} "></script>
     <script type="text/javascript" src="{{ asset('js/jquery.mjs.nestedSortable.js') }}"></script>
 </head>
-<body>
+<body class="admin">
     <div id="wrapper" class="active">
 
         {{-- Sidebar --}}
@@ -48,7 +48,9 @@
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">Home de goût - Administration - @yield('title')</a>
+                            <a class="navbar-brand" href="#">
+                                <img style="height: 40px;" src="{{ asset('img/white-logo.svg') }}" alt="Logo Home de goût">
+                            </a>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
@@ -67,9 +69,13 @@
                         </ul>
                     </div><!-- /.container-fluid -->
                 </nav>
-                <div class="row">
-                    @yield('content')
+                <h1 class="page-title">Administration - @yield('title')</h1>
+                <div class="container">
+                    <div class="row">
+                        @yield('content')
+                    </div>
                 </div>
+
             </div>
         </div>
 
