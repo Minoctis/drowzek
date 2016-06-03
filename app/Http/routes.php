@@ -28,6 +28,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
 
+    Route::get('page-static',['as' => 'page-static', function(){return view('pages.page-static');}]);
+
 //Routes du front-office
     //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);

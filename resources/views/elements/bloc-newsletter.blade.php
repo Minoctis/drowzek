@@ -9,7 +9,7 @@
                     </p>
                     <div class="form-group">
                         <div class="form-newsletter col-md-9 col-xs-12">
-                            <input type="text" name="newsletter">
+                            <input class="form-control" type="text" name="newsletter">
                         </div>
                         <div class="form-newsletter  col-md-3 col-xs-12">
                             <a href="#" class="hdg-button-default">Ok</a>

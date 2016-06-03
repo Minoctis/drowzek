@@ -743,7 +743,8 @@ hr.divider {
 
 .logout h1.page-title,
 .moncompte h1.page-title,
-.panier h1.page-title{
+.panier h1.page-title,
+.page-static h1.page-title{
     position: relative;
     top: -46px;
     font-size: 24px;
