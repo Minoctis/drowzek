@@ -178,6 +178,19 @@ nav#main-nav{
     margin-bottom:0;
 }
 
+.dropdown-menu,
+#sidebar-wrapper,
+#sidebar-menu li a,
+.sidebar-nav li a,
+.navbar-inverse{
+    background-color: #000000;
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+    background-color: #262626;
+}
+
 /* Header */
 .admin h1.page-title {
     font-size: 24px;
@@ -186,4 +199,17 @@ nav#main-nav{
     padding: 20px;
     margin: 0;
     margin-bottom: 20px;
+}
+
+
+/* Tableaux */
+
+.table>thead>tr>th {
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+    border-color: #000;
+}
+
+.table>tbody>tr>td{
+    vertical-align: middle;
 }
