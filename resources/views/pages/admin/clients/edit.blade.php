@@ -9,6 +9,9 @@
             <div class="admin-bloc-title">
                 <h3>Information du client :</h3>
             </div>
+                <span class="pass-lost">
+                    Ce client à oublier son mot de passe ? <a href="#">Lui envoyer par e-mail</a>
+                </span>
             <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Vous pouvez modifiez les informations du client à partir de ce formulaire.</span>
             <form action="">
 
@@ -39,13 +42,13 @@
                 <!-- Date de naissance -->
                 <div class="form-group">
                     <label class="control-label" for="date-naissance">Date de naissance</label>
-                    <input class="form-control" id="date-naissance" name="date-naissance" type="text" value="{{$client->naissance}}" required>
+                    <input class="form-control" id="date-naissance" name="date-naissance" type="text" value="{{ date("d/m/Y", strtotime($client->naissance)) }}" required>
                 </div>
 
                 <!-- Date d'inscription -->
                 <div class="form-group">
                     <label class="control-label" for="date-inscription">Date d'inscription <span>*</span></label>
-                    <input class="form-control" id="date-inscription" name="date-inscription" type="text" value="{{$client->date_inscription}}" required>
+                    <input class="form-control" id="date-inscription" name="date-inscription" type="text" value="{{date("d/m/Y", strtotime($client->date_inscription))}}" required>
                 </div>
 
                 <!-- Bouton valider -->
@@ -111,6 +114,57 @@
             <div class="admin-bloc-title">
                 <h3>Commandes du client :</h3>
             </div>
+
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Référence</th>
+                            <th>Livraison</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                            <th>Facture</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <form action="#">
+                            <tr class="search-commande">
+                                <td><input name="reference" type="text"></td>
+                                <td><input name="ville" type="text"></td>
+                                <td><input name="date-commande" type="date"></td>
+                                <td>
+                                    <select name="statut" id="statut">
+                                        <option value="">En attente de paiement</option>
+                                        <option value="">Payée</option>
+                                        <option value="">En cours de préparation</option>
+                                        <option value="">Livraison</option>
+                                        <option value="">Livrée</option>
+                                        <option value="">Annulée</option>
+                                    </select>
+                                </td>
+                                <td></td>
+                                <td><input class="hdg-button-small" type="submit" value="Rechercher"></td>
+                            </tr>
+                        </form>
+                        @foreach($commandes as $commande)
+                            <tr>
+                                <td>{{$commande->reference}}</td>
+                                <td>{{$commande->ville_livraison}}</td>
+                                <td>{{ date("d/m/Y", strtotime($commande->date)) }}</td>
+                                <td>{{$commande->statut->libelle}}</td>
+
+
+                                <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> Facture</a></td>
+                                <td><a href="{{ route('admin::clients::details', $client->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Afficher</a></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
 
     </div>

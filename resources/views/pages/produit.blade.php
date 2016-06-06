@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Produit')
+@section('title',  $produit->nom )
 
 @section('page-id', 'fiche-produit')
 
@@ -70,43 +70,39 @@
 						<div class="social">
 							<div class="fb social-icon">
 								<a href="#">
-									<i class="fa fa-facebook"></i> <br>
-									<span>Facebooks</span>
+									<i class="fa fa-facebook"></i>
 								</a>
 							</div>
 							<div class="twitter social-icon">
 								<a href="#">
-									<i class="fa fa-twitter"></i> <br>
-									<span>Twitter</span>
+									<i class="fa fa-twitter"></i>
 								</a>
 							</div>
 							<div class="google-plus social-icon">
 								<a href="#">
-									<i class="fa fa-facebook"></i> <br>
-									<span>Google+</span>
+									<i class="fa fa-google-plus"></i>
 								</a>
 							</div>
 							<div class="instagram social-icon">
 								<a href="#">
-									<i class="fa fa-instagram"></i> <br>
-									<span>Instagram</span>
+									<i class="fa fa-instagram"></i>
 								</a>
 							</div>
 							<div class="pinterest social-icon">
 								<a href="#">
-									<i class="fa fa-pinterest"></i> <br>
-									<span>Pinterest</span>
+									<i class="fa fa-pinterest"></i>
 								</a>
 							</div>
 							<div class="youtube social-icon">
 								<a href="#">
-									<i class="fa fa-youtube"></i> <br>
-									<span>Youtube</span>
+									<i class="fa fa-youtube"></i>
 								</a>
 							</div>
 						</div>
 					</div>
-				</div>		
+				</div>
+				<div class="row"><a class="add-to-wishlist" href="#"><i class="fa fa-heart"></i> Ajouter à mes favorie</a></div>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="ftloubna" data-dnt="true">Tweet</a>
 			</div>
 
 </div>
@@ -183,4 +179,6 @@
 </div>
 
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 @endsection
+

@@ -194,8 +194,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'commandes', 'as' => 'commandes::'], function () {
 
             //Liste des commandes
-            Route::get('/', ['as' => 'liste', function () { return view('pages.admin.commandes.liste'); } ]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\CommandesController@showCommandesList' ]);
 
+            //Page commande
+            Route::get('/{commande_ref}', ['as' => 'details', 'uses' => 'Admin\CommandesController@showCommande']);
         });
 
         //Routes des avis
