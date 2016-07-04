@@ -67,42 +67,18 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<p class="share-content"><i class="fa fa-share-alt-square"></i> Partagez sur les réseaux sociaux</p> 
-						<div class="social">
-							<div class="fb social-icon">
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</div>
-							<div class="twitter social-icon">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-							</div>
-							<div class="google-plus social-icon">
-								<a href="#">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</div>
-							<div class="instagram social-icon">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-							</div>
-							<div class="pinterest social-icon">
-								<a href="#">
-									<i class="fa fa-pinterest"></i>
-								</a>
-							</div>
-							<div class="youtube social-icon">
-								<a href="#">
-									<i class="fa fa-youtube"></i>
-								</a>
-							</div>
+						<div class="">
+							<!-- Go to www.addthis.com/dashboard to customize your tools -->
+							<div class="addthis_sharing_toolbox"></div>
 						</div>
 					</div>
 				</div>
-				<div class="row"><a class="add-to-wishlist" href="#"><i class="fa fa-heart"></i> Ajouter à mes favorie</a></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="ftloubna" data-dnt="true">Tweet</a>
+				<div class="row">
+					<div class="col-xs-12">
+						<a class="add-to-wishlist" href="#"><i class="fa fa-heart"></i> Coup de coeur</a>
+					</div>
+				</div>
+
 			</div>
 
 </div>
@@ -179,6 +155,8 @@
 </div>
 
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-577a29a7cf56b67c"></script>
+
 @endsection
 

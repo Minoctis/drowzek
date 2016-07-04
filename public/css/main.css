@@ -325,6 +325,13 @@ h2.product-title{
 .fiche-produit .product-price{
     font-size: 18px;
 }
+
+.fiche-produit a.add-to-wishlist {
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 18px;
+}
+
 h3.related-product-title,
 h3.selected-product-title,
 h3.comment-product-title{
