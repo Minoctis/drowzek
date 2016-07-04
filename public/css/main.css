@@ -396,7 +396,7 @@ h4.review-title{
     height: auto; width: 100%;
 }
 
-.liste-creation {
+.liste-creation.breadcrumb {
     top: 0px;
     position: relative;
     background-color: #000000;
