@@ -11,9 +11,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-1">{{ $categorie->ordre }}</div>
-                            <div class="col-xs-7">{{ $categorie->nom }}</div>
-                            <div class="col-xs-2"><a href="{{ route('admin::catalogue::categories::edit', $categorie->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></div>
-                            <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></div>
+                            <div class="col-xs-6">{{ $categorie->nom }}</div>
+                            <div class="col-xs-2"><a href="{{ route('admin::catalogue::categories::edit', $categorie->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a></div>
+                            <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -27,9 +27,9 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-xs-1">{{ $child->ordre }}</div>
-                                            <div class="col-xs-7">{{ $child->nom }}</div>
-                                            <div class="col-xs-2"><a href="{{ route('admin::catalogue::categories::edit', $child->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></div>
-                                            <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></div>
+                                            <div class="col-xs-6">{{ $child->nom }}</div>
+                                            <div class="col-xs-2"><a href="{{ route('admin::catalogue::categories::edit', $child->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a></div>
+                                            <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a></div>
                                         </div>
                                     </div>
                                 </div>

@@ -14,8 +14,8 @@
                                 <div class="col-xs-1">{{ $ambiance->ordre }}</div>
                                 <div class="col-xs-4">{{ $ambiance->nom }}</div>
                                 <div class="col-xs-3">0</div>
-                                <div class="col-xs-2"><a href="{{ route('admin::catalogue::ambiances::edit', $ambiance->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></div>
-                                <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></div>
+                                <div class="col-xs-2"><a href="{{ route('admin::catalogue::ambiances::edit', $ambiance->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a></div>
+                                <div class="col-xs-2"><a href="" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a></div>
                             </div>
                         </div>
                     </div>
