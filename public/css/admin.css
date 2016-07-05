@@ -184,7 +184,9 @@ nav#main-nav{
 .dropdown-menu>li>a:hover {
     background-color: #262626;
 }
-
+.sidebar-nav li.active a {
+    background-color: #989392;
+}
 /* Header */
 
 .admin h1.page-title {
