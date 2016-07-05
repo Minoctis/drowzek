@@ -27,17 +27,17 @@
                 <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main-icon" class="glyphicon glyphicon-align-justify"></span></a></li>
             </ul>
             <ul class="sidebar-nav" id="sidebar">
-                <li><a href="{{ route('admin::dashboard') }}">Dashboard<span class="sub-icon glyphicon glyphicon-dashboard"></span></a></li>
-                <li><a href="{{ route('admin::produits::liste') }}">Produits<span class="sub-icon glyphicon glyphicon-lamp"></span></a></li>
-                <li><a href="{{ route('admin::catalogue::dashboard') }}">Catalogue<span class="sub-icon glyphicon glyphicon-th"></span></a></li>
-                <li><a href="{{ route('admin::clients::liste') }}">Clients<span class="sub-icon glyphicon glyphicon-user"></span></a></li>
-                <li><a href="{{ route('admin::commandes::liste') }}">Commandes<span class="sub-icon glyphicon glyphicon-tasks"></span></a></li>
-                <li><a href="{{ route('admin::avis::dashboard') }}">Avis<span class="sub-icon glyphicon glyphicon-comment"></span></a></li>
-                <li><a href="{{ route('admin::promotions::dashboard') }}">Promotions<span class="sub-icon glyphicon glyphicon-tags"></span></a></li>
-                <li><a href="{{ route('admin::pages::dashboard') }}">Pages<span class="sub-icon glyphicon glyphicon-link"></span></a></li>
-                <li><a href="{{ route('admin::mailing::dashboard') }}">Mailing<span class="sub-icon glyphicon glyphicon-envelope"></span></a></li>
-                <li><a href="{{ route('admin::theme::dashboard') }}">Thème<span class="sub-icon glyphicon glyphicon-tint"></span></a></li>
-                <li><a href="{{ route('admin::rapports::dashboard') }}">Rapports<span class="sub-icon glyphicon glyphicon-stats"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::dashboard') }}">Dashboard<span class="sub-icon glyphicon glyphicon-dashboard"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::produits::liste'){{ 'class=active' }}@endif><a href="{{ route('admin::produits::liste') }}">Produits<span class="sub-icon glyphicon glyphicon-lamp"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::catalogue::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::catalogue::dashboard') }}">Catalogue<span class="sub-icon glyphicon glyphicon-th"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::clients::liste'){{ 'class=active' }}@endif><a href="{{ route('admin::clients::liste') }}">Clients<span class="sub-icon glyphicon glyphicon-user"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::commandes::liste'){{ 'class=active' }}@endif><a href="{{ route('admin::commandes::liste') }}">Commandes<span class="sub-icon glyphicon glyphicon-tasks"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::avis::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::avis::dashboard') }}">Avis<span class="sub-icon glyphicon glyphicon-comment"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::promotions::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::promotions::dashboard') }}">Promotions<span class="sub-icon glyphicon glyphicon-tags"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::pages::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::pages::dashboard') }}">Pages<span class="sub-icon glyphicon glyphicon-link"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::mailing::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::mailing::dashboard') }}">Mailing<span class="sub-icon glyphicon glyphicon-envelope"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::theme::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::theme::dashboard') }}">Thème<span class="sub-icon glyphicon glyphicon-tint"></span></a></li>
+                <li @if(\Request::route()->getName() == 'admin::rapports::dashboard'){{ 'class=active' }}@endif><a href="{{ route('admin::rapports::dashboard') }}">Rapports<span class="sub-icon glyphicon glyphicon-stats"></span></a></li>
             </ul>
         </div>
 
@@ -72,7 +72,7 @@
                 </nav>
                 <h1 class="page-title">Administration - @yield('title')</h1>
                 <div class="container">
-                        @yield('content')
+                    @yield('content')
                 </div>
 
             </div>

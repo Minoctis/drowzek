@@ -44,7 +44,7 @@
           </ul>
         </li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ route('compte::accueil') }}"><i class="fa fa-user fa-lg" style='float:left'></i> <span style="padding-left: 20px;" class='visible-xs'>  Mon compte</span> </a></li>
 
