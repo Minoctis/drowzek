@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="col-md-7 col-xs-12 checkout-left-content">
 					<div class="title-checkout-panel">
-						<h3>Choisissez un mode de livraison</h3>
+						<h3>Choisissez un mode de paiement</h3>
 					</div>
 					<ul class="mode-livraison">
 						<!-- mode1 -->
