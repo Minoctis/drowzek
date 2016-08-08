@@ -109,15 +109,15 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('/', ['as' => 'recherche', function () {} ]);
 
             //Ajout de produit
-            Route::get('ajouter', ['as' => 'add', function () {} ]);
-            Route::post('ajouter', ['as' => 'add', function () {} ]);
+            Route::get('ajouter', ['as' => 'add', 'uses' => 'Admin\ProduitsController@getAjouterProduit' ]);
+            Route::post('ajouter', ['as' => 'add', 'uses' => 'Admin\ProduitsController@postAjouterProduit' ]);
 
             //Modifier un produit
-            Route::get('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
+            Route::get('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\ProduitsController@getModifierProduit' ]);
             Route::post('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
 
             //Supprimer un produit
-            Route::post('supprimer/{id}', ['as' => 'delete', function ($id) {} ]);
+            Route::delete('supprimer/{id}', ['as' => 'delete', 'uses' => 'Admin\ProduitsController@deleteProduit' ]);
 
             //Prévisualisation - Ajout/Modification
             Route::post('previsualisation', ['as' => 'preview', function () {} ]);

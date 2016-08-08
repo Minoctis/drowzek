@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 /**
  * App\Models\Produit
  *
@@ -28,6 +30,8 @@ class Produit extends Model
     protected $table = 'produits';
 
     protected $fillable = ['nom', 'description', 'dimensions'];
+
+    protected $dates = ['deleted_at'];
 
     //Relationships
     public function images() {
