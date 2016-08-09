@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="@yield('labelId')">@yield('modalTitle')</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="content-modal-delete">
                 @yield('modalContent')
             </div>
             <div class="modal-footer">

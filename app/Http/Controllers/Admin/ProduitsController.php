@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Response;
 
 class ProduitsController extends Controller
 {
@@ -34,7 +35,7 @@ class ProduitsController extends Controller
 
         $produit->delete();
 
-        if ($produit->trashed()) return true;
-        else return false;
+        if ($produit->trashed()) return Response::json([], 204);
+        else return Response::json([], 404);
     }
 }

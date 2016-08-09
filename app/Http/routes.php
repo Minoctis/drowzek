@@ -117,7 +117,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
 
             //Supprimer un produit
-            Route::delete('supprimer/{id}', ['as' => 'delete', 'uses' => 'Admin\ProduitsController@deleteProduit' ]);
+            Route::delete('/{id}', ['as' => 'delete', 'uses' => 'Admin\ProduitsController@deleteProduit' ]);
 
             //Prévisualisation - Ajout/Modification
             Route::post('previsualisation', ['as' => 'preview', function () {} ]);
