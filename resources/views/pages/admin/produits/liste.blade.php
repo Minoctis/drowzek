@@ -43,7 +43,7 @@
                         <td>@foreach($produit->ambiances as $ambiance)<a href="{{ route('admin::catalogue::ambiances::edit', $ambiance->id) }}">{{ $ambiance->nom }}</a>@endforeach</td>
                         <td>1</td>
                         <td><a href="{{ route('admin::produits::edit', $produit->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
-                        <td><button class="btn btn-default" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>
+                        <td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>
                     </tr>
                     @endforeach
                     </tbody>
