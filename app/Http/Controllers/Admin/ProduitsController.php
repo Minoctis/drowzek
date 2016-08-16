@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Ambiance;
+use App\Models\Categorie;
 use App\Models\Produit;
+use App\Models\ProduitOption;
 use Debugbar;
 use Illuminate\Http\Request;
 
@@ -26,8 +28,13 @@ class ProduitsController extends Controller
         return view('pages.admin.produits.ajouter');
     }
 
-    public function getModifierProduit() {
-        return view('pages.admin.produits.modifier');
+    public function getModifierProduit($produit_id) {
+        $categories = Categorie::all();
+        $produit = Produit::where('id', $produit_id)
+            ->with('options')
+            ->first();
+
+        return view('pages.admin.produits.modifier', ['produit' => $produit], ['categorie' => $categories]);
     }
 
     public function deleteProduit($id) {
