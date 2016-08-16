@@ -290,3 +290,36 @@ form#update-statut {
 .admin .update-button{
     float: right ;
 }
+
+
+/* Fiche produit */
+.produit-header .produit-delete,
+.produit-header .produit-statut{
+    display: inline-block;
+}
+
+.produit-header{
+    text-align: right;
+}
+
+ul.nav.nav-tabs.produit-tabs {
+    margin-bottom: 20px;
+}
+
+.produit-tabs.nav-tabs>li.active>a,
+.produit-tabs.nav-tabs>li.active>a:focus,
+.produit-tabs.nav-tabs>li.active>a:hover {
+    background-color: #ccc;
+    color: #000;
+    border-radius: 0;
+    border-color: #ccc;
+}
+
+.produit-tabs.nav-tabs>li>a:focus,
+.produit-tabs.nav-tabs>li>a:hover {
+    border-radius: 0;
+}
+
+.form-group.submit-button.submit-produit {
+    margin-top: 30px;
+}
