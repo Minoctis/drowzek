@@ -24,12 +24,9 @@
                         <td><input name="date-commande" type="date"></td>
                         <td>
                             <select name="statut" id="statut">
-                                <option value="">En attente de paiement</option>
-                                <option value="">Payée</option>
-                                <option value="">En cours de préparation</option>
-                                <option value="">Livraison</option>
-                                <option value="">Livrée</option>
-                                <option value="">Annulée</option>
+                                @foreach( $commande_statuts as $statut )
+                                    <option value="{{ $statut->id }}">{{ $statut->libelle }}</option>
+                                @endforeach
                             </select>
                         </td>
                         <td></td>

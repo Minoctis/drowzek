@@ -106,7 +106,7 @@
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="images">
-                            <div class="row"> 
+                            <div class="row">
                                 <div class="col-xs-12">
                                     <div class="add-option pull-right">
                                         <button class="btn btn-default">Ajouter une image</button>

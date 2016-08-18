@@ -33,6 +33,7 @@ class ProduitsController extends Controller
         $categories = Categorie::all();
         $produit = Produit::where('id', $produit_id)
             ->with('options')
+            ->with('categorie')
             ->with('images')
             ->first();
 

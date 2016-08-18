@@ -34,6 +34,31 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                        <form action="">
+                            <td><input type="text" class="form-control" placeholder="Référence"></td>
+                            <td><input type="text" class="form-control" placeholder="Nom"></td>
+                            <td>
+                                <select name="nouveau">
+                                    <option value="1">Oui</option>
+                                    <option value="0">Nom</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="categories">
+                                    <option value="test">test</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="ambiances" id="">
+                                    <option value="test">test</option>
+                                </select>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td><input class="hdg-button-small" type="submit" value="Rechercher"></td>
+                        </form>
+                    </tr>
                     @foreach($produits as $produit)
                     <tr>
                         <td>{{$produit->reference}}</td>
