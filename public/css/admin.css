@@ -323,3 +323,8 @@ ul.nav.nav-tabs.produit-tabs {
 .form-group.submit-button.submit-produit {
     margin-top: 30px;
 }
+
+.image-produit-bo img {
+    width: 140px;
+    height: auto;
+}

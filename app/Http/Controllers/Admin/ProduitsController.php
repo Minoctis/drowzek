@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Ambiance;
 use App\Models\Categorie;
 use App\Models\Produit;
+use App\Models\ProduitImage;
 use App\Models\ProduitOption;
 use Debugbar;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class ProduitsController extends Controller
         $categories = Categorie::all();
         $produit = Produit::where('id', $produit_id)
             ->with('options')
+            ->with('images')
             ->first();
 
         return view('pages.admin.produits.modifier', ['produit' => $produit], ['categorie' => $categories]);

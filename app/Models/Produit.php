@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer $categorie_id
  * @property integer $ambiance_id
  * @property integer $reduction_id
+ * @property integer $is_new
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProduitImage[] $images
