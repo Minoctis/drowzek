@@ -7,7 +7,7 @@
 @section('content')
     <div class="moncompte">
         <div class="entete-page">
-            <img src="http://placehold.it/1200x200" class="img img-reponsive" alt="Mon Compte">
+            <img src="{{ asset('img/themes/header-compte.jpg') }}" class="img img-reponsive" alt="Mon Compte">
             <h1 class="page-title">Mon compte</h1>
         </div>
         <div class="container">
@@ -60,13 +60,13 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <ul class="pagination">
+                                <!--ul class="pagination">
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#">4</a></li>
                                     <li><a href="#">5</a></li>
-                                </ul>
+                                </ul-->
                             </div>
                             <!-- Fin de liste produits commandés -->
 

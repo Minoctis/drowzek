@@ -43,7 +43,14 @@
 			@endforeach
 		@else
 			<div class="col-xs-12">
-				<p>Désolé, cette catégorie ne contient pas de produits pour le moment.</p>
+				<p style="text-align: center; font-size: 20px; margin-bottom: 50px;">Désolé, cette catégorie ne contient pas de produits pour le moment.
+					<br>
+					<span style="font-size: 100px;"><i class="fa fa-frown-o"></i></span>
+
+					<br>
+					<br>
+					<a href="{{ route('accueil') }}">Page d'accueil</a>
+				</p>
 			</div>
 		@endif
 	</div>
