@@ -27,4 +27,31 @@ class ClientsController extends Controller
 
         return view('pages.admin.clients.edit', ['client' => $client], ['commandes' => $commandes]);
     }
+
+    public function updateClient($id, Request $request) {
+//        die(var_dump($request->all()));
+        //Validation
+        $this->validate($request, [
+            'civilite' => 'required|numeric',
+            'prenom'      => 'required',
+            'nom'         => 'required',
+            'email'       => 'required|email|unique:clients,email,'.$id,
+            'date_naissance' => 'date',
+        ]);
+        //Update des données
+        $client = Client::find($id);
+        $client->civilite_id = $request->civilite;
+        $client->prenom = $request->prenom;
+        $client->nom = $request->nom;
+        $client->email = $request->email;
+
+//        if ($request->has('date-naissance')) {
+//            $client->date_naissance = date("d/m/Y", strtotime($request->date_naissance));
+//        }
+
+        $client->save();
+
+        return redirect()->route('admin::clients::liste');
+
+    }
 }

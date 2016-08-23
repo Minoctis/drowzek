@@ -187,7 +187,7 @@ Route::group(['middleware' => ['web']], function () {
 
             //Page client
             Route::get('/{client_id}', ['as' => 'details', 'uses' => 'Admin\ClientsController@showClient']);
-
+            Route::post('/{client_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClient']);
         });
 
         //Routes des commandes

@@ -10,15 +10,18 @@
                 <h3>Information du client :</h3>
             </div>
                 <span class="pass-lost">
-                    Ce client à oublier son mot de passe ? <a href="#">Lui envoyer par e-mail</a>
+                    Ce client à oublié son mot de passe ? <a href="#">Lui envoyer par e-mail</a>
                 </span>
-            <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Vous pouvez modifiez les informations du client à partir de ce formulaire.</span>
-            <form action="">
-
+            <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Vous pouvez modifier les informations du client à partir de ce formulaire.</span>
+            <form action="" method="POST">
+                {{ csrf_field() }}
                 <!-- Civilité -->
-                <div class="form-group">
+                <div class="form-inline form-group">
                     <label class="control-label" for="civilite">Civilité <span>*</span></label>
-                    <input class="form-control" id="civilite" name="civilite" type="text" value="{{$client->civilite->libelle}}" required>
+                        <label for="civilite-h">Monsieur</label>
+                        <input class="form-control" name="civilite" id="civilite-h" value="2" type="radio" {{ $client->civilite_id === 2 ? 'checked' : '' }}>
+                        <label for="civilite-f">Madame</label>
+                        <input class="form-control" name="civilite" id="civilite-f" value="1" type="radio" {{ $client->civilite_id === 1 ? 'checked' : '' }}>
                 </div>
 
                 <!-- Nom -->
@@ -42,13 +45,14 @@
                 <!-- Date de naissance -->
                 <div class="form-group">
                     <label class="control-label" for="date-naissance">Date de naissance</label>
-                    <input class="form-control" id="date-naissance" name="date-naissance" type="text" value="{{ date("d/m/Y", strtotime($client->naissance)) }}" required>
+                    <input class="form-control" id="date-naissance" name="date_naissance" type="text" value="{{ $client->date_naissance ? date("d/m/Y", strtotime($client->date_naissance)) : '' }}">
+                    <p class="help-block">format: jj/mm/aaaa</p>
                 </div>
 
                 <!-- Date d'inscription -->
                 <div class="form-group">
-                    <label class="control-label" for="date-inscription">Date d'inscription <span>*</span></label>
-                    <input class="form-control" id="date-inscription" name="date-inscription" type="text" value="{{date("d/m/Y", strtotime($client->date_inscription))}}" required>
+                    <label class="control-label" for="date-inscription">Date d'inscription</label>
+                    <p>{{date("d/m/Y", strtotime($client->date_inscription))}}</p>
                 </div>
 
                 <!-- Bouton valider -->
