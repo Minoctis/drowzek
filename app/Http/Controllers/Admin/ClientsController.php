@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Commande;
 use App\Models\CommandeStatut;
 use App\Models\CommandeProduit;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -44,10 +45,7 @@ class ClientsController extends Controller
         $client->prenom = $request->prenom;
         $client->nom = $request->nom;
         $client->email = $request->email;
-
-//        if ($request->has('date-naissance')) {
-//            $client->date_naissance = date("d/m/Y", strtotime($request->date_naissance));
-//        }
+        $client->date_naissance = empty($request->naissance) ? null : Carbon::createFromFormat('d/m/Y', $request->naissance);
 
         $client->save();
 

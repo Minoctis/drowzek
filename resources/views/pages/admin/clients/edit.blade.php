@@ -45,7 +45,7 @@
                 <!-- Date de naissance -->
                 <div class="form-group">
                     <label class="control-label" for="date-naissance">Date de naissance</label>
-                    <input class="form-control" id="date-naissance" name="date_naissance" type="text" value="{{ $client->date_naissance ? date("d/m/Y", strtotime($client->date_naissance)) : '' }}">
+                    <input class="form-control" id="date-naissance" name="naissance" type="text" value="{{ empty($client->date_naissance) ? '' : date("d/m/Y", strtotime($client->date_naissance))}}">
                     <p class="help-block">format: jj/mm/aaaa</p>
                 </div>
 
