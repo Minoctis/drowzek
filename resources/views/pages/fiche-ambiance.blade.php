@@ -15,7 +15,7 @@
 		<div class="ambiance-header col-xs-12">
 			<div class="col-md-4 col-xs-12">
 				@if($prev_ambiance)
-				<a href="{{ route('ambiances::fiche',$prev_ambiance->slug) }}" class="prev-ambiance" alt="{{ $prev_ambiance->nom }}" title="{{ $prev_ambiance->nom }}"><i class="fa fa-chevron-left"></i> {{ $prev_ambiance->nom }}</a>
+				<h2 class="autre-ambiance"><a href="{{ route('ambiances::fiche',$prev_ambiance->slug) }}" class="prev-ambiance" alt="{{ $prev_ambiance->nom }}" title="{{ $prev_ambiance->nom }}"><i class="fa fa-chevron-left"></i> {{ $prev_ambiance->nom }}</a></h2>
 				@endif
 			</div>
 			<div class="col-md-4 col-xs-12">
@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-md-4 col-xs-12">
 				@if($next_ambiance)
-				<a href="{{ route('ambiances::fiche',$next_ambiance->slug) }}" class="next-ambiance" alt="{{ $next_ambiance->nom }}" title="{{ $next_ambiance->nom }}">{{ $next_ambiance->nom }} <i class="fa fa-chevron-right"></i></a>
+				<h2 class="autre-ambiance"><a href="{{ route('ambiances::fiche',$next_ambiance->slug) }}" class="next-ambiance" alt="{{ $next_ambiance->nom }}" title="{{ $next_ambiance->nom }}">{{ $next_ambiance->nom }} <i class="fa fa-chevron-right"></i></a></h2>
 				@endif
 			</div>
 		</div>

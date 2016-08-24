@@ -184,6 +184,11 @@ h1.titre-ambiance{
 	font-size:28px;
 }
 
+h2.autre-ambiance {
+	margin:0;
+	font-size:14px;
+}
+
 a.prev-ambiance,
 a.next-ambiance,
 h1.titre-ambiance{
