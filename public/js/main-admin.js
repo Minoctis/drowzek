@@ -90,6 +90,48 @@ $('#validate-supprimer-produit').on('click', function() {
     deleteProduit($(this).data('id'));
 });
 
+function rechercheProduits() {
+    $.ajax({
+        url: '/admin/produits/recherche',
+        method: 'post',
+        data: getRechercheProduitData()
+    })
+        .success(function(data) {
+            toastr.success('La recherche a retourné ' + data.length + ' produits.', 'Recherche');
+
+            data.forEach(function(produit) {
+
+                var template = '<tr>' +
+                '<td></td>' +
+                '<td></td>' +
+                '<td><a href=""></a> // <a href=""></a></td>' +
+                '<td><a href=""></a></td>' +
+                '<td></td>' +
+                '<td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>' +
+                '<td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit(, )"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>' +
+                '</tr>';
+            })
+
+        })
+        .error(function() {
+            toastr.error('Une erreur est survenue pendant la recherche de produit', 'Recherche');
+        })
+}
+
+function getRechercheProduitData() {
+    var data = {
+        nom: '',
+        nouveau: '',
+        categorie: ''
+    };
+
+    data.nom = document.querySelector('#recherche-produit-nom').value;
+    data.nouveau = document.querySelector('#recherche-produit-nouveau').value;
+    data.categorie = document.querySelector('#recherche-produit-categorie').value;
+
+    return data;
+}
+
 /* Avis produit */
 function openModalDeleteAvis(id){
     $("#validate-supprimer-avis").attr("data-id", id);

@@ -208,7 +208,7 @@
 				</div>
 
 				<div class="col-md-5 col-xs-12 checkout-right-content recap-panier">
-					@include('elements.checkout-mini-panier')
+{{--					@include('elements.checkout-mini-panier')--}}
 				</div>
 
 			</div>

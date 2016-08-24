@@ -80,6 +80,9 @@ Route::group(['middleware' => ['web']], function () {
         //Supprimer une adresse
         Route::delete('/{id}', ['as' => 'delete', 'uses' => 'Front\CompteController@deleteAdresse' ]);
 
+        Route::post('add-adresse', ['as' => 'addAdresse', 'uses' => 'Front\CompteController@createAdresse']);
+        Route::post('edit-adresse', ['as' => 'editAdresse', 'uses' => 'Front\CompteClientController@editAdresse']);
+
     });
 
 //Routes du Back-office
@@ -109,7 +112,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ProduitsController@listeProduits']);
 
             //Accueil - Recherche/Filtre produits
-            Route::post('/', ['as' => 'recherche', function () {} ]);
+            Route::post('/recherche', ['as' => 'recherche', 'uses' => 'Admin\ProduitsController@rechercheProduit']);
 
             //Ajout de produit
             Route::get('ajouter', ['as' => 'add', 'uses' => 'Admin\ProduitsController@getAjouterProduit' ]);

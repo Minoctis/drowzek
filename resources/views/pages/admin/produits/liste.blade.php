@@ -3,18 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <div class="form-inline form-group">
-                    <label for="">Rechercher un produit: </label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nom, référence...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                        </span>
-                    </div><!-- /input-group -->
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12">
                 <a href="{{ route('admin::produits::add') }}" class="btn btn-default pull-right">Ajouter un produit</a>
             </div>
         </div>
@@ -23,7 +12,6 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Ref.</th>
                         <th>Nom</th>
                         <th>Nouveauté</th>
                         <th>Catégorie</th>
@@ -35,38 +23,35 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <form action="">
-                            <td><input type="text" class="form-control" placeholder="Référence"></td>
-                            <td><input type="text" class="form-control" placeholder="Nom"></td>
-                            <td>
-                                <select name="nouveau">
-                                    <option value="1">Oui</option>
-                                    <option value="0">Nom</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="categories">
-                                    <option value="test">test</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="ambiances" id="">
-                                    <option value="test">test</option>
-                                </select>
-                            </td>
-                            <td></td>
-                            <td></td> 
-                            <td><input class="hdg-button-small" type="submit" value="Rechercher"></td>
-                        </form>
+                        <td><input id="recherche-produit-nom" type="text" name="nom" class="form-control" placeholder="Nom"></td>
+                        <td>
+                            <select name="nouveau" id="recherche-produit-nouveau">
+                                <option value="">Tous</option>
+                                <option value="1">Oui</option>
+                                <option value="0">Non</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="categorie" id="recherche-produit-categorie">
+                                <option value="">Toutes</option>
+                                @foreach($categories as $categorie)
+                                <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td><input class="hdg-button-small" type="button" onclick="rechercheProduits()" value="Rechercher"></td>
                     </tr>
                     @foreach($produits as $produit)
                     <tr>
-                        <td>{{$produit->reference}}</td>
                         <td>{{$produit->nom}}</td>
                         <td>{{ $produit->is_new ? 'Oui' : 'Non' }}</td>
                         <td>@if($produit->categorie->parent->id)<a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->parent->id) }}">{{ $produit->categorie->parent->nom }}@endif</a> // <a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->id) }}">{{ $produit->categorie->nom }}</a></td>
                         <td>@foreach($produit->ambiances as $ambiance)<a href="{{ route('admin::catalogue::ambiances::edit', $ambiance->id) }}">{{ $ambiance->nom }}</a>@endforeach</td>
-                        <td>1</td>
+                        <td>{{ $produit->ambiances->count() }}</td>
                         <td><a href="{{ route('admin::produits::edit', $produit->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                         <td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>
                     </tr>
