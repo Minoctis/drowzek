@@ -61,4 +61,8 @@ class Produit extends Model
     public function options() {
         return $this->hasMany('App\Models\ProduitOption');
     }
+
+    public function avis() {
+        return $this->hasMany('App\Models\Avis');
+    }
 }
