@@ -57,6 +57,9 @@
                                                 <p class="qte">Quantité : {{ $produit->quantite }}</p>
                                                 <p class="price">Prix : {{ $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite) }}€</p>
                                             </div>
+                                            <div class="avis-produit">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#add-avis" onclick="openModalAjoutAvis({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-pencil"></span> Ajouter un avis </button>
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -217,6 +220,7 @@
         </div>
     </div>
 
+    @include('modals.avis.add')
 @endsection
 
 

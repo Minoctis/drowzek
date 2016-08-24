@@ -204,7 +204,11 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'avis', 'as' => 'avis::'], function () {
 
             //Accueil des avis
-            Route::get('/', ['as' => 'dashboard', function () { return view('pages.admin.avis.dashboard'); } ]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\AvisController@showAvisList' ]);
+
+
+            //Supprimer un avis
+            Route::delete('/{id}', ['as' => 'delete', 'uses' => 'Admin\AvisController@deleteAvis' ]);
 
         });
 

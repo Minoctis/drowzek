@@ -47,4 +47,8 @@ class Client extends Authenticatable
     public function paniers() {
         return $this->hasMany('App\Models\Panier');
     }
+
+    public function avis(){
+        return $this->hasMany('App\Models\avis');
+    }
 }

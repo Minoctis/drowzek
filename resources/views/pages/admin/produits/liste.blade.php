@@ -55,7 +55,7 @@
                                 </select>
                             </td>
                             <td></td>
-                            <td></td>
+                            <td></td> 
                             <td><input class="hdg-button-small" type="submit" value="Rechercher"></td>
                         </form>
                     </tr>

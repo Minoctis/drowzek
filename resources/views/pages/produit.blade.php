@@ -52,7 +52,7 @@
 					Dimensions : {{ $produit->dimensions }}
 				</p>
 				<p class="reviews">
-					Note des clients ayant acheté ce produit : 5/5, <a href="#comment">Afficher les avis</a>
+					<!-- Note des clients ayant acheté ce produit : 5/5,--><a href="#comment">Afficher les avis</a>
 				</p>			
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -107,52 +107,34 @@
 		</div>
 		<div class="comment-product" id="comment">
 			<div class="row">
+
 				<h3 class="comment-product-title">Avis des clients</h3>
-				<div style="float:right;">
-					<a class="left carousel-control-comment" href="#myCarousel-comment" data-slide="prev"><i class="fa fa-caret-left fa-2x"></i></a>
-					<a class="right carousel-control-comment" href="#myCarousel-comment" data-slide="next"><i class="fa fa-caret-right fa-2x"></i></a>
+				<div class="avis-slider col-xs-12">
+					@if($avis->count())
+						@foreach($avis as $review)
+							<div>
+								@include('elements.comment')
+							</div>
+						@endforeach
+					@else
+						<p>Il y a pas d'avis sur ce produit</p>
+					@endif
 				</div>
 
-				<div class="well">
-					<!-- Carousel
-                    ================================================== -->
-					<div id="myCarousel-comment" class="carousel slide" data-interval="false">
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="row">
-									@for ($i = 0; $i < 3; $i++)
-										@include('elements.comment')
-									@endfor
-								</div>
-							</div>
-							<div class="item">
-								<div class="row">
-									@for ($i = 0; $i < 3; $i++)
-										@include('elements.comment')
-									@endfor
-								</div>
-							</div>
-							<div class="item">
-								<div class="row">
-									@for ($i = 0; $i < 3; $i++)
-										@include('elements.comment')
-									@endfor
-								</div>
-							</div>
-						</div>
-						<!--
-                        <ol class="carousel-indicators-comment">
-                            <li data-target="#myCarousel-comment" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel-comment" data-slide-to="1"></li>
-                            <li data-target="#myCarousel-comment" data-slide-to="2"></li>
-                        </ol>
-                        -->
-					</div><!-- End Carousel -->
-				</div><!-- End Well -->
 			</div><!-- End Row -->
 		</div>
 	</div>
 </div>
+
+<script>
+	$('.avis-slider').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		nextArrow: '<i class="button-right fa fa-caret-right fa-2x"></i>',
+		prevArrow: '<i class="button-left fa fa-caret-left fa-2x"></i>',
+	});
+</script>
 
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

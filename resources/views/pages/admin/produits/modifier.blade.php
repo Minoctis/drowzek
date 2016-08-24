@@ -163,7 +163,7 @@
 
         </div>
     </div>
-
+    @include('modals.produits.delete')
     <script>
         $(function(argument) {
             $('.bootstrap-switch-input').bootstrapSwitch();

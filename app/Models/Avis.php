@@ -11,6 +11,10 @@ class Avis extends Model
     protected $fillable = ['titre', 'texte', 'produit_id'];
     
     public function produit() {
-        return $this->belongsTo('App\Model\Produit');
+        return $this->belongsTo('App\Models\Produit');
+    }
+
+    public function client() {
+        return $this->belongsTo('App\Models\Client');
     }
 }

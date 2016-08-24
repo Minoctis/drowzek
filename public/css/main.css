@@ -389,6 +389,16 @@ h4.review-title{
     box-shadow: inset 0 21px 50px rgba(0,0,0,.075),0 0 30px rgba(0,0,0,.6);
     -webkit-box-shadow: inset 0 21px 50px rgba(0,0,0,.075),0 0 30px rgba(0,0,0,.6);
 }
+
+.avis-slider .button-right,
+.avis-slider .button-left{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.avis-slider .button-left{
+    right:15px;
+}
 /* END FICHE PRODUIT */
 
 

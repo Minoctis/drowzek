@@ -10,6 +10,7 @@
 <!--        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >-->
         <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css" >
+        <link href="{{ asset('css/slick.css') }}" rel="stylesheet" type="text/css" >
 
 
         <!-- Fonts -->
@@ -19,6 +20,7 @@
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src=" {{ asset('js/bootstrap.min.js') }} "></script>
         <script type="text/javascript" src=" {{ asset('js/toastr.min.js') }} "></script>
+        <script type="text/javascript" src=" {{ asset('js/slick.min.js') }} "></script>
 
 
     </head>

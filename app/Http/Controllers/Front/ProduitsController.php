@@ -6,6 +6,7 @@ use App\Models\Ambiance;
 use App\Models\Categorie;
 use App\Models\Produit;
 use App\Models\ProduitOption;
+use App\Models\Avis;
 use Debugbar;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,10 @@ class ProduitsController extends Controller
     }
 
     public function showProduit($slug) {
-        $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->first();
+        $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->with('avis')->first();
         $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTva')->orderBy('ordre')->get();
+        $avis = Avis::where('produit_id', $produit->id)->where('is_active', 1)->get();
 
-        return view('pages.produit', ['produit' => $produit, 'options' => $options]);
+        return view('pages.produit', ['produit' => $produit, 'options' => $options], ['avis' => $avis] );
     }
 }

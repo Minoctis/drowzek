@@ -89,3 +89,26 @@ function deleteProduit(id) {
 $('#validate-supprimer-produit').on('click', function() {
     deleteProduit($(this).data('id'));
 });
+
+/* Avis produit */
+function openModalDeleteAvis(id){
+    $("#validate-supprimer-avis").attr("data-id", id);
+}
+
+function deleteAvis(id) {
+    $.ajax({
+            url:'/admin/avis/' + id,
+            method: 'delete'
+        })
+        .success(function() {
+            toastr.success('L\'avis a été supprimé', 'Suppresison d\'avis', {onHidden: function() { location.reload(); }, timeOut: 300})
+            $('#delete-produit').modal('hide')
+        })
+        .error(function() {
+            toastr.error('Une erreur est survenue à la suppression de l\'avis.', 'Suppression de l\'avis')
+        })
+}
+
+$('#validate-supprimer-avis').on('click', function() {
+    deleteAvis($(this).data('id'));
+});
