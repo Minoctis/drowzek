@@ -75,7 +75,7 @@
                             </td>
                             <td>
                                 <div class="middle-content prix-ht-value">
-                                    {{ $produit->prix_ht }} €
+                                    {{ round($produit->prix_ht, 2) }} €
                                 </div>
                             </td>
                             <td>
