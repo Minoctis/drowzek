@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 			<div class="img-content">
-				<img src="{{ $produit->produit->images->count() !== 0 ? '/img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/200x200' }}" class="img img-reponsive" alt="">
+				<img src="{{ $produit->produit->images->count() !== 0 ? '/img/products/'.$produit->produit->images[0]->img_name : 'http://placehold.it/200x200' }}" class="img img-reponsive" alt="{{ $produit->produit->nom }}" title="{{ $produit->produit->nom }}">
 			</div>
 		</div>
 
