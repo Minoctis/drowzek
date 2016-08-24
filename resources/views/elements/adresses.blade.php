@@ -2,15 +2,17 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			{{ $adresse->nom_carnet_adresse }}
-			<span class="remove-adresse"><a href="#" data-toggle="modal" data-target="#delete-adresse" onclick="openModalDeleteAdresse({{ $adresse->id }})"><i class="fa fa-minus-square-o"></i></a></span>
+			<span class="remove-adresse"><a href="#"><i class="fa fa-minus-square-o"></i></a></span>
 		</div>
 		<div class="panel-body">
-			<a href="#" class="update-adresse">Mettre à jour</a>
+			<a href="#" class="update-adresse" id="compte-edit-adresse-show">Mettre à jour</a>
 			<ul>
 				<li>
-					<span class="nom-societe">{{ $adresse->societe }}</span> <br>
-					<span class="nom-client">{{ $adresse->prenom_livraison }}</span>
-					<span class="prenom-client"> {{ $adresse->nom_livraison }}</span>
+					<span class="societe-client">{{ $adresse->societe }}&nbsp;</span>
+				</li>
+				<li>
+					<span class="prenom-client">{{ $adresse->prenom_livraison }}</span>
+					<span class="nom-client"> {{ $adresse->nom_livraison }}</span>
 				</li>
 				<li>
 					<span class="adresse">{{ $adresse->adresse }}</span>

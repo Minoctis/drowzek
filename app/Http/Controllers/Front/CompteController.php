@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use URL;
 use Validator;
 
 class CompteController extends Controller
@@ -57,6 +58,8 @@ class CompteController extends Controller
     }
 
     public function showCompteClient() {
+        
+        $client = Client::with('adresses.pays')->find(Auth::user()->id);
 
         $commandes_recentes = Commande::where('client_id', Auth::user()->id)
                                         ->with('statut')
@@ -69,12 +72,12 @@ class CompteController extends Controller
             ->orderBy('date', 'desc')
             ->get();
 
-        $adresses = Adresse::where('client_id', Auth::user()->id)->with('pays')->get();
+
 
         $data = [
             'commandes_recentes' => $commandes_recentes,
             'commandes'          => $commandes,
-            'adresses'           => $adresses
+            'client'             => $client
         ];
 
         return view('pages.compte.accueil', $data);
@@ -111,6 +114,42 @@ class CompteController extends Controller
         ];
 
         return view('pages.compte.detail-commande', $data);
+    }
+
+    public function createAdresse(Request $request) {
+        $this->validate($request, [
+            'adressename'         => 'required',
+            'adresse'             => 'required',
+            'comp-adresse'        => 'required',
+            'cp'                  => 'required',
+            'ville'               => 'required',
+            'nom'                 => 'required',
+            'prenom'              => 'required',
+            'tel'                 => 'required'
+        ]);
+
+        Adresse::create([
+            'client_id' => Auth::user()->id,
+            'adresse_type_id' => 1,
+            'nom_carnet_adresse' => $request->input('adressename'),
+            'adresse' => $request->input('adresse'),
+            'pays_id' => 1,
+            'compl_adresse' => $request->input('comp-adresse'),
+            'societe' => $request->input('societe'),
+            'cp' => $request->input('cp'),
+            'ville' => $request->input('ville'),
+            'nom_livraison' => $request->input('nom'),
+            'prenom_livraison' => $request->input('prenom'),
+            'telephone' => $request->input('tel'),
+        ]);
+
+        $url = URL::route('compte::accueil') . '#adresses';
+
+        return redirect()->route($url);
+    }
+
+    public function editAdresse(Request $request) {
+        Debugbar::info($request->all());
     }
 
     public function deleteAdresse($id) {

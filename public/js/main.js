@@ -199,4 +199,22 @@ jQuery(document).ready(function () {
     $('#validate-supprimer-adresse').on('click', function() {
         deleteAdresse($(this).data('id'));
     });
+    
+    
+    $('#compte-add-adresse-show').on('click', function() {
+        $('#compte-add-adresse').show("slow", "swing");
+    });
+
+    $('#compte-add-adresse-hide').on('click', function() {
+        $('#compte-add-adresse').hide("slow", "swing");
+    });
+
+    $('#compte-edit-adresse-show').on('click', function() {
+        $('#compte-edit-adresse').show("slow", "swing");
+    });
+
+    $('#compte-edit-adresse-hide').on('click', function() {
+        $('#compte-edit-adresse').hide("slow", "swing");
+    })
+
 });

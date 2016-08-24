@@ -59,7 +59,7 @@
 							</tbody>
 						</table>
 					</div>
-				</div> 
+				</div>
 
 				<!-- FIN ACCUEIL DE MON COMPTE -->
 
@@ -80,140 +80,206 @@
 				<div id="adresses" class="tab-pane fade">
 					<h3 class="title-content-compte">Mes adresses</h3>
 					<div class="top-content row">
-						<h4 class='col-md-8 col-xs-12'>Mes adresses enregistrées :</h4>
-						<a class="col-md-4 col-xs-12 add-adresse">Ajouter une adresse <i class="fa fa-angle-right"></i></a>
+						<h4 class="col-md-8 col-xs-12">Mon adresse de facturation :</h4>
+						<?php $index = 0; ?>
+						@foreach($client->adresses as $adresse)
+						@if($adresse->adresse_type_id === 2)
+						<div class="row">
+							<div class="adresse col-xs-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										Adresse de facturation
+										<span class="remove-adresse"><a href="#"><i class="fa fa-minus-square-o"></i></a></span>
+									</div>
+									<div class="panel-body">
+										<a href="#" class="update-adresse">Mettre à jour</a>
+										<ul>
+											<li>
+												<span class="societe-client">Société</span>
+											</li>
+											<li>
+												<span class="nom-client">Prénom</span>
+												<span class="prenom-client"> Nom</span>
+											</li>
+											<li>
+												<span class="adresse">Adresse</span>
+											</li>
+											<li>
+												<span class="compl-adresse">Complément d'adresse</span>
+											</li>
+											<li>
+												<span class="ville">Ville</span>
+												<span class="cp">CP</span>
+											</li>
+											<li>
+												<span class="pays">Pays</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						@elseif($adresse->adresse_type_id !== 2 && $index === 0)
+								<div class="col-xs-12">
+									<p>Pour ajouter votre adresse de facturation <a href="">cliquez-ici</a>.</p>
+								</div>
+						@endif
+							<?php $index++;?>
+						@endforeach
+						<h4 class='col-md-8 col-xs-12'>Mes adresses de livraison :</h4>
+						<a class="col-md-4 col-xs-12 add-adresse" id="compte-add-adresse-show">Ajouter une adresse <i class="fa fa-angle-right"></i></a>
 					</div>
 					<div class="row">
-						@foreach ($adresses as $adresse)
-
+						@foreach($client->adresses as $adresse)
+							@if($adresse->adresse_type_id === 1)
 					    	@include('elements.adresses')
-					    
+							@endif
 					    @endforeach
 					</div>
 
-					<form action="">
+					<form action="{{ route('compte::addAdresse') }}" style="display:none;" method="POST"  id="compte-add-adresse">
+						{{ csrf_field() }}
 
 						<div class="top-content row">
 							<h4 class="">Ajouter une nouvelle adresse :</h4>
 						</div>
 
 
+						<!-- Société -->
+						<div class="form-group">
+							<label class="control-label" for="add-societe">Société <span>*</span></label>
+							<input class="form-control" id="add-societe" name="societe" type="text" required>
+						</div>
+
 						<!-- Prénom -->
 						<div class="form-group">
-							<label class="control-label" for="prenom">Prénom <span>*</span></label>
-							<input class="form-control" id="prenom" name="prenom" type="text" required>
+							<label class="control-label" for="add-prenom">Prénom <span>*</span></label>
+							<input class="form-control" id="add-prenom" name="prenom" type="text" required>
 						</div>
 
 						<!-- nom -->
 						<div class="form-group">
-							<label class="control-label" for="nom">Nom <span>*</span></label>
-							<input class="form-control" id="nom" name="nom" type="text" required>
+							<label class="control-label" for="add-nom">Nom <span>*</span></label>
+							<input class="form-control" id="add-nom" name="nom" type="text" required>
 						</div>
 
 						<!-- Adresse ligne 1 -->
 						<div class="form-group">
-							<label class="control-label" for="adressel1">Adresse ligne 1 <span>*</span></label>
-							<input class="form-control" id="adressel1" name="adressel1" type="text" required>
+							<label class="control-label" for="add-adresse">Adresse <span>*</span></label>
+							<input class="form-control" id="add-adresse" name="adresse" type="text" required>
 						</div>
 
 						<!-- Adresse ligne 2 -->
 						<div class="form-group">
-							<label class="control-label" for="adressel2">Adresse ligne 2 <span>*</span></label>
-							<input class="form-control" id="adressel2" name="adressel2" type="text" required>
+							<label class="control-label" for="add-comp-adresse">Complément d'adresse <span>*</span></label>
+							<input class="form-control" id="add-comp-adresse" name="comp-adresse" type="text" required>
 						</div>
 
 						<!-- Code postale -->
 						<div class="form-group">
-							<label class="control-label" for="cp">Code postale <span>*</span></label>
-							<input class="form-control" id="cp" name="cp" type="text" required>
+							<label class="control-label" for="add-cp">Code postal <span>*</span></label>
+							<input class="form-control" id="add-cp" name="cp" type="text" required>
 						</div>
 
 						<!-- Ville -->
 						<div class="form-group">
-							<label class="control-label" for="ville">Ville <span>*</span></label>
-							<input class="form-control" id="ville" name="ville" type="text" required>
+							<label class="control-label" for="add-ville">Ville <span>*</span></label>
+							<input class="form-control" id="add-ville" name="ville" type="text" required>
 						</div>
 
 						<!-- Pays -->
 						<div class="form-group">
-							<label class="control-label" for="pays">Pays <span>*</span></label>
-							<input class="form-control" id="pays" name="pays" type="text" required>
+							<label class="control-label" for="add-pays">Pays <span>*</span></label>
+							<input class="form-control" id="add-pays" name="pays" type="text" required>
 						</div>
 
 						<!-- Numero Tel -->
 						<div class="form-group">
-							<label class="control-label" for="tel">Numéro de téléphone <span>*</span></label>
-							<input class="form-control" id="tel" name="tel" type="text" required>
+							<label class="control-label" for="add-tel">Numéro de téléphone <span>*</span></label>
+							<input class="form-control" id="add-tel" name="tel" type="text" required>
 						</div>
 
 						<!-- Nom adresse -->
 						<div class="form-group">
-							<label class="control-label" for="adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
-							<input class="form-control" id="adressename" name="adressename" type="text" required>
+							<label class="control-label" for="add-adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
+							<input class="form-control" id="add-adressename" name="adressename" type="text" required>
 						</div>
+
+						<button class="hdg-button-default" id="compte-add-adresse-hide" type="button">Annuler</button>
+						<button class="hdg-button-default" type="submit">Enregistrer</button>
 					</form>
 
 
-					<form action="">
+					<form action="{{ route('compte::editAdresse') }}" method="POST" style="display:none;" id="compte-edit-adresse">
+						{{ csrf_field() }}
 
 						<div class="top-content row">
 							<h4 class="">Mettre à jour votre adresse</h4>
 						</div>
 
 
+						<!-- Société -->
+						<div class="form-group">
+							<label class="control-label" for="update-société">Société <span>*</span></label>
+							<input class="form-control" id="update-société" name="société" type="text" required>
+						</div>
+
 						<!-- Prénom -->
 						<div class="form-group">
-							<label class="control-label" for="prenom">Prénom <span>*</span></label>
-							<input class="form-control" id="prenom" name="prenom" type="text" required>
+							<label class="control-label" for="update-prenom">Prénom <span>*</span></label>
+							<input class="form-control" id="update-prenom" name="prenom" type="text" required>
 						</div>
 
 						<!-- nom -->
 						<div class="form-group">
-							<label class="control-label" for="nom">Nom <span>*</span></label>
-							<input class="form-control" id="nom" name="nom" type="text" required>
+							<label class="control-label" for="update-nom">Nom <span>*</span></label>
+							<input class="form-control" id="update-nom" name="nom" type="text" required>
 						</div>
 
 						<!-- Adresse ligne 1 -->
 						<div class="form-group">
-							<label class="control-label" for="adressel1">Adresse ligne 1 <span>*</span></label>
-							<input class="form-control" id="adressel1" name="adressel1" type="text" required>
+							<label class="control-label" for="update-adress">Adresse <span>*</span></label>
+							<input class="form-control" id="update-adresse" name="adresse" type="text" required>
 						</div>
 
 						<!-- Adresse ligne 2 -->
 						<div class="form-group">
-							<label class="control-label" for="adressel2">Adresse ligne 2 <span>*</span></label>
-							<input class="form-control" id="adressel2" name="adressel2" type="text" required>
+							<label class="control-label" for="update-comp-adresse">Complément d'adresse <span>*</span></label>
+							<input class="form-control" id="update-comp-adresse" name="comp-adresse" type="text" required>
 						</div>
 
 						<!-- Code postale -->
 						<div class="form-group">
-							<label class="control-label" for="cp">Code postale <span>*</span></label>
-							<input class="form-control" id="cp" name="cp" type="text" required>
+							<label class="control-label" for="update-cp">Code postal <span>*</span></label>
+							<input class="form-control" id="update-cp" name="cp" type="text" required>
 						</div>
 
 						<!-- Ville -->
 						<div class="form-group">
-							<label class="control-label" for="ville">Ville <span>*</span></label>
-							<input class="form-control" id="ville" name="ville" type="text" required>
+							<label class="control-label" for="update-ville">Ville <span>*</span></label>
+							<input class="form-control" id="update-ville" name="ville" type="text" required>
 						</div>
 
 						<!-- Pays -->
 						<div class="form-group">
-							<label class="control-label" for="pays">Pays <span>*</span></label>
-							<input class="form-control" id="pays" name="pays" type="text" required>
+							<label class="control-label" for="update-pays">Pays <span>*</span></label>
+							<input class="form-control" id="update-pays" name="pays" type="text" required>
 						</div>
 
 						<!-- Numero Tel -->
 						<div class="form-group">
-							<label class="control-label" for="tel">Numéro de téléphone <span>*</span></label>
-							<input class="form-control" id="tel" name="tel" type="text" required>
+							<label class="control-label" for="update-tel">Numéro de téléphone <span>*</span></label>
+							<input class="form-control" id="update-tel" name="tel" type="text" required>
 						</div>
 
 						<!-- Nom adresse -->
 						<div class="form-group">
-							<label class="control-label" for="adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
-							<input class="form-control" id="adressename" name="adressename" type="text" required>
+							<label class="control-label" for="update-adressename">Donnez un titre à cette adresse pour la retrouver plus facilement <span>*</span></label>
+							<input class="form-control" id="update-adressename" name="adressename" type="text" required>
 						</div>
+
+						<button class="hdg-button-default" id="compte-edit-adresse-hide" type="button">Annuler</button>
+						<button class="hdg-button-default" type="submit">Enregistrer</button>
 					</form>
 
 
