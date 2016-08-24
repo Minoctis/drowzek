@@ -19,12 +19,12 @@
 			     	<div class="carousel-inner cont-slider">
 						@if($produit->images->count() === 0)
 							<div class="item active">
-								<img src="http://placehold.it/1000x1000/999999/cccccc">
+								<img src="http://placehold.it/1000x1000/999999/cccccc" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">
 							</div>
 						@endif
 						@foreach($produit->images as $key => $image)
 							<div class="item{{ $key === 0 ? ' active' : '' }}">
-								<img src="/img/products/{{$image->img_name}}">
+								<img src="/img/products/{{$image->img_name}}" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">
 							</div>
 						@endforeach
 			     	</div>
@@ -32,12 +32,12 @@
 			     	<ol class="carousel-indicators visible-lg visible-md">
 						@if($produit->images->count() === 0)
 							<li class="active" data-slide-to="0" data-target="#myCarousel">
-								<img src="http://placehold.it/1000x1000/999999/cccccc">
+								<img src="http://placehold.it/1000x1000/999999/cccccc" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">
 							</li>
 						@endif
 						@foreach($produit->images as $key => $image)
 							<li {{ $key === 0 ? 'class="active"' : '' }} data-slide-to="{{ $key }}" data-target="#myCarousel">
-								<img src="/img/products/{{$image->img_name}}">
+								<img src="/img/products/{{$image->img_name}}" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">
 							</li>
 						@endforeach
 			     	</ol>                 

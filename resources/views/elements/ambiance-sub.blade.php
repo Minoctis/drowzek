@@ -5,10 +5,10 @@
 			<p>
 				{{ $ambiance->description }}
 			</p>
-			<a href="{{ route('ambiances::fiche', $ambiance->slug) }}" class="hdg-button-small ">
+			<a href="{{ route('ambiances::fiche', $ambiance->slug) }}" class="hdg-button-small " alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}">
 				Découvrir
 			</a>
 		</div>
-		<img class="img-products" src="{{ $ambiance->images->count() ? asset('img/ambiances/'.$ambiance->images[0]->img_name) : 'http://placehold.it/1398x880/999999/cccccc' }}" width="100%" />
+		<img class="img-products" src="{{ $ambiance->images->count() ? asset('img/ambiances/'.$ambiance->images[0]->img_name) : 'http://placehold.it/1398x880/999999/cccccc' }}" width="100%" alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}" />
 	</div>
 </div>

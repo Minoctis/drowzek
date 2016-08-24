@@ -40,14 +40,14 @@
 				   @if (isset($top_ambiances[0]))
 	                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ambiance1">
 	                   <div class="ambiance-content">
-	                       <img src="{{ isset($top_ambiances[0]->images[0]) ? '/img/ambiances/'.$top_ambiances[0]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="">
+	                       <img src="{{ isset($top_ambiances[0]->images[0]) ? '/img/ambiances/'.$top_ambiances[0]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="{{ $top_ambiances[0]->nom }}" title="{{ $top_ambiances[0]->nom }}">
 	                       <div class="ambiance-text">
 	                           <div class="ambiance-name">{{ $top_ambiances[0]->nom }}</div>
 	                           <div class="ambiance-desc">
 								   {{ $top_ambiances[0]->description }}
 							   </div>
 	                           <div class="ambiance-view">
-	                               <a href="{{ route('ambiances::fiche', $top_ambiances[0]->slug) }}" class="hdg-button-default">Voir l'ambiance</a>
+	                               <a href="{{ route('ambiances::fiche', $top_ambiances[0]->slug) }}" class="hdg-button-default" alt="{{ $top_ambiances[0]->nom }}" title="{{ $top_ambiances[0]->nom }}">Voir l'ambiance</a>
 	                           </div>                           
 	                       </div>
 	                   </div>
@@ -57,14 +57,14 @@
 	                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	                    <div class="row ambiance2">
 	                       <div class="ambiance-content">
-							   <img src="{{ isset($top_ambiances[1]->images[0]) ? '/img/ambiances/'.$top_ambiances[1]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="">
+							   <img src="{{ isset($top_ambiances[1]->images[0]) ? '/img/ambiances/'.$top_ambiances[1]->images[0]->img_name : 'http://placehold.it/540x500' }}" alt="{{ $top_ambiances[1]->nom }}" title="{{ $top_ambiances[1]->nom }}">
 	                           <div class="ambiance-text">
 	                               <div class="ambiance-name">{{ $top_ambiances[1]->nom }}</div>
 	                               <div class="ambiance-desc">
 									   {{ $top_ambiances[1]->description }}
 								   </div>
 	                               <div class="ambiance-view">
-	                                   <a href="{{ route('ambiances::fiche', $top_ambiances[1]->slug) }}" class="hdg-button-default">Voir l'ambiance</a>
+	                                   <a href="{{ route('ambiances::fiche', $top_ambiances[1]->slug) }}" class="hdg-button-default" alt="{{ $top_ambiances[1]->nom }}" title="{{ $top_ambiances[1]->nom }}">Voir l'ambiance</a>
 	                               </div>                               
 	                           </div>       
 	                       </div>

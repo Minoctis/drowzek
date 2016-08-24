@@ -15,7 +15,7 @@
 		<div class="ambiance-header col-xs-12">
 			<div class="col-md-4 col-xs-12">
 				@if($prev_ambiance)
-				<a href="{{ route('ambiances::fiche',$prev_ambiance->slug) }}" class="prev-ambiance"><i class="fa fa-chevron-left"></i> {{ $prev_ambiance->nom }}</a>
+				<a href="{{ route('ambiances::fiche',$prev_ambiance->slug) }}" class="prev-ambiance" alt="{{ $prev_ambiance->nom }}" title="{{ $prev_ambiance->nom }}"><i class="fa fa-chevron-left"></i> {{ $prev_ambiance->nom }}</a>
 				@endif
 			</div>
 			<div class="col-md-4 col-xs-12">
@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-md-4 col-xs-12">
 				@if($next_ambiance)
-				<a href="{{ route('ambiances::fiche',$next_ambiance->slug) }}" class="next-ambiance">{{ $next_ambiance->nom }} <i class="fa fa-chevron-right"></i></a>
+				<a href="{{ route('ambiances::fiche',$next_ambiance->slug) }}" class="next-ambiance" alt="{{ $next_ambiance->nom }}" title="{{ $next_ambiance->nom }}">{{ $next_ambiance->nom }} <i class="fa fa-chevron-right"></i></a>
 				@endif
 			</div>
 		</div>
@@ -36,12 +36,12 @@
 							<ol class="carousel-indicators">
 								@if ($ambiance->images->count() === 0)
 									<li data-target="#myCarousel-ambiance" data-slide-to="0" class="active">
-										<img alt="" title="" src="http://placehold.it/170x150/999999/cccccc">
+										<img alt="" title="" src="http://placehold.it/170x150/999999/cccccc" alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}">
 									</li>
 								@endif
 								@foreach($ambiance->images as $index => $image)
 								<li data-target="#myCarousel-ambiance" data-slide-to="{{ $index }}"{{ $index === 0 ? ' class="active"' : '' }}>
-									<img alt="" title="" src="/img/ambiances/{{ $image->img_name }}">
+									<img alt="" title="" src="/img/ambiances/{{ $image->img_name }}" alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}">
 								</li>
 								@endforeach
 							</ol>							
@@ -53,7 +53,7 @@
 							@if ($ambiance->images->count() === 0)
 								<div class="item active">
 									<div class="carousel-page">
-										<img src="http://placehold.it/1200x600/999999/cccccc" class="img-responsive" style="margin:0px auto;"  />
+										<img src="http://placehold.it/1200x600/999999/cccccc" class="img-responsive" style="margin:0px auto;"  alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}" />
 									</div>
 									<div class="carousel-caption">
 										<h5>{{ $ambiance->nom }}</h5>
@@ -64,7 +64,7 @@
 							@foreach($ambiance->images as $index => $image)
 					        <div class="item{{ $index === 0 ? ' active' : '' }}">
 								<div class="carousel-page">
-									<img src="/img/ambiances/{{ $image->img_name }}" class="img-responsive" style="margin:0px auto;"  />
+									<img src="/img/ambiances/{{ $image->img_name }}" class="img-responsive" style="margin:0px auto;"  alt="{{ $ambiance->nom }}" title="{{ $ambiance->nom }}" />
 								</div>
 								<div class="carousel-caption">
 									<h5>{{ $ambiance->nom }}</h5>

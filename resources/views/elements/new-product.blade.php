@@ -3,7 +3,7 @@
 				<div class="image-content">
 					<div class="call-add-basket">
 						<div class="call-product-page">
-							<a href="{{ route('produit', $produit->slug) }}">Afficher</a>
+							<a href="{{ route('produit', $produit->slug) }}" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">Afficher</a>
 						</div>
 					</div>
 					<div class="product-thumbnail-image" style="background-image: url('{{isset($produit->images[0]) ? '/img/products/'.$produit->images[0]->img_name :'http://placehold.it/250x250'}}');">
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="bloc-add-basket">
-					<p><a class="btn btn-primary hdg-button-default button-add-basket" role="button" data-option-id="{{ $produit->options[0]->id }}" data-nom="{{ $produit->nom }}">Ajouter au panier</a></p>
+					<p><a class="btn btn-primary hdg-button-default button-add-basket" role="button" data-option-id="{{ $produit->options[0]->id }}" data-nom="{{ $produit->nom }}" alt="{{ $produit->nom }}" title="{{ $produit->nom }}">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
