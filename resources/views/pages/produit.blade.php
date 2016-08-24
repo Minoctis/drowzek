@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<p class="product-price">
-							Prix : <strong>{{ $options[0]->prix_ht + ($options[0]->prix_ht * $options[0]->tauxTva->valeur / 100) }} €</strong>
+							Prix : <strong>{{ round($options[0]->prix_ht + ($options[0]->prix_ht * $options[0]->tauxTva->valeur / 100), 2) }} €</strong>
 						</p>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

@@ -18,7 +18,7 @@
 						</div>
 						<div class="google-plus social-icon">
 							<a href="#">
-								<i class="fa fa-facebook"></i> <br>
+								<i class="fa fa-google-plus"></i> <br>
 								<span>Google+</span>
 							</a>
 						</div>

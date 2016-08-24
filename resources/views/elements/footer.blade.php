@@ -6,11 +6,9 @@
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 bloc-footer">
 					<h3 class="title-footer">Nos services</h3>
 					<p>
-						<a href="#">Livraison</a><br />
-						<a href="#">Financement</a><br />
-						<a href="#">Catalogue</a><br />
-						<a href="#">Garanties</a><br />
 						<a href="#">Conditions générales de vente</a><br />
+						<a href="#">Livraison</a><br />
+						<a href="#">Garanties</a><br />
 					</p>
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 bloc-footer">
