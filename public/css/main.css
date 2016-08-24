@@ -399,6 +399,15 @@ h4.review-title{
 .avis-slider .button-left{
     right:15px;
 }
+
+.produit-options .item img {
+    width: 30px;
+    height: auto;
+}
+
+.produit-options {
+    margin-bottom: 10px;
+}
 /* END FICHE PRODUIT */
 
 

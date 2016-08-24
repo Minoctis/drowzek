@@ -328,3 +328,8 @@ ul.nav.nav-tabs.produit-tabs {
     width: 140px;
     height: auto;
 }
+
+.produit-image-options-admin img{
+    width: 30px;
+    height: auto;
+}

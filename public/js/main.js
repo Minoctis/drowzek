@@ -175,4 +175,28 @@ jQuery(document).ready(function () {
         });
     });
 
+
+    /* Compte client => suppression adresse */
+
+    function openModalDeleteAdresse(id){
+        $("#validate-supprimer-adresse").attr("data-id", id);
+    }
+
+    function deleteAdresse(id) {
+        $.ajax({
+                url:'/compte/accueil/' + id,
+                method: 'delete'
+            })
+            .success(function() {
+                toastr.success('L\'adresse a été supprimé', 'Suppresison de l\'adresse', {onHidden: function() { location.reload(); }, timeOut: 300})
+                $('#delete-produit').modal('hide')
+            })
+            .error(function() {
+                toastr.error('Une erreur est survenue à la suppression de l\'adresse.', 'Suppression de l\'adresse')
+            })
+    }
+
+    $('#validate-supprimer-adresse').on('click', function() {
+        deleteAdresse($(this).data('id'));
+    });
 });

@@ -84,11 +84,11 @@
 						<a class="col-md-4 col-xs-12 add-adresse">Ajouter une adresse <i class="fa fa-angle-right"></i></a>
 					</div>
 					<div class="row">
-						@for ($i = 0; $i < 3; $i++)
+						@foreach ($adresses as $adresse)
 
 					    	@include('elements.adresses')
 					    
-					    @endfor						
+					    @endforeach
 					</div>
 
 					<form action="">

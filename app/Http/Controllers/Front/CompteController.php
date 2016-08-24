@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Adresse;
 use App\Models\Client;
 use App\Models\Commande;
 use App\Models\CommandeProduit;
@@ -68,11 +69,12 @@ class CompteController extends Controller
             ->orderBy('date', 'desc')
             ->get();
 
-
+        $adresses = Adresse::where('client_id', Auth::user()->id)->with('pays')->get();
 
         $data = [
             'commandes_recentes' => $commandes_recentes,
-            'commandes'          => $commandes
+            'commandes'          => $commandes,
+            'adresses'           => $adresses
         ];
 
         return view('pages.compte.accueil', $data);
@@ -109,5 +111,14 @@ class CompteController extends Controller
         ];
 
         return view('pages.compte.detail-commande', $data);
+    }
+
+    public function deleteAdresse($id) {
+        $adresse = Avis::find($id);
+
+        $adresse->delete();
+
+        if ($adresse->trashed()) return Response::json([], 204);
+        else return Response::json([], 404);
     }
 }

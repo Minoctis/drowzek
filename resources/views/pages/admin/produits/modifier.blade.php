@@ -85,7 +85,7 @@
                                     @foreach( $produit->options as $option)
                                         <tr>
                                             <td>{{ $option->libelle }}</td>
-                                            <td>{{ $option->img_name }}</td>
+                                            <td class="produit-image-options-admin"><img src="{{ '/img/products/options/'.$option->img_name }}" alt=""></td>
                                             <td>{{ $option->prix_ht }}</td>
                                             <td>
                                                 <div class="pull-right">

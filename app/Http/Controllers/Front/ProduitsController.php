@@ -37,7 +37,10 @@ class ProduitsController extends Controller
         $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->with('avis')->first();
         $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTva')->orderBy('ordre')->get();
         $avis = Avis::where('produit_id', $produit->id)->where('is_active', 1)->get();
+        $new_produits = Produit::where('is_new', 1)
+            ->with('images')
+            ->get();
 
-        return view('pages.produit', ['produit' => $produit, 'options' => $options], ['avis' => $avis] );
+        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits], ['avis' => $avis] );
     }
 }

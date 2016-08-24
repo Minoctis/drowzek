@@ -77,6 +77,9 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::post('info-utilisateur', ['as' => 'updateClient', 'uses' => 'Front\CompteController@updateCompteClient']);
 
+        //Supprimer une adresse
+        Route::delete('/{id}', ['as' => 'delete', 'uses' => 'Front\CompteController@deleteAdresse' ]);
+
     });
 
 //Routes du Back-office
