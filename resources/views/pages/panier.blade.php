@@ -157,11 +157,7 @@
                 <div class="selected-product">
                     <div class="row">
                         <h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
-                        @for ($i = 0; $i < 4; $i++)
-
-                            @include('elements.related-product')
-
-                        @endfor
+                        <!-- Ajout des nouveautés -->
                     </div>
                 </div>
         </div>
