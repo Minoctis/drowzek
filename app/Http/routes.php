@@ -28,7 +28,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
 
-    Route::get('page-static',['as' => 'page-static', function(){return view('pages.page-static');}]);
+    Route::get('page-static',['as' => 'page-static', function() {return view('pages.page-static');}]);
+
+    Route::get('cgv',['as' => 'cgv', function() {return view('pages.cgv');}]);
 
 //Routes du front-office
     //Accueil
