@@ -95,11 +95,12 @@
 		<div class="related-product">
 			<div class="row">
 				<h3 class="related-product-title">Produits dans la même catégorie</h3>
-				@for ($i = 0; $i < 4; $i++)
+				@foreach ($related_produits as $related_produit)
 
-					@include('elements.same-cat-product')
+						@include('elements.same-cat-product')
 
-				@endfor
+				@endforeach
+
 			</div>
 		</div>
 		<div class="selected-product">

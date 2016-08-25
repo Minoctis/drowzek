@@ -35,13 +35,15 @@ class ProduitsController extends Controller
 
     public function showProduit($slug) {
         $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->with('avis')->first();
+        $produit_cat = Produit::where('slug', $slug)->pluck('categorie_id')->first();
         $options = ProduitOption::where('produit_id', $produit->id)->with('tauxTva')->orderBy('ordre')->get();
         $avis = Avis::where('produit_id', $produit->id)->where('is_active', 1)->get();
         $new_produits = Produit::where('is_new', 1)
             ->with('images')
             ->where('slug','!=',$slug)
             ->get();
+        $related_produits = Produit::where('categorie_id', $produit_cat)->where('slug','!=',$slug)->take(4)->with('categorie')->get();
 
-        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits], ['avis' => $avis] );
+        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits, 'related_produits' => $related_produits], ['avis' => $avis] );
     }
 }
