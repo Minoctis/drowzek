@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Produit;
 use App\Models\ProduitImage;
 use App\Models\ProduitOption;
+use DB;
 use Debugbar;
 use Illuminate\Http\Request;
 
@@ -60,22 +61,26 @@ class ProduitsController extends Controller
     }
 
     public function rechercheProduit(Request $request) {
-        $produits = Produit::orderBy('nom', 'asc');
+        $produits = Produit::with('ambiances')->with('categorie.parent');
 
         if ($request->has('nom') && !empty($request->nom)) {
             $produits->where('nom', 'like', $request->nom.'%');
         }
 
-        if ($request->has('nouveau') && !empty($request->nouveau)) {
+        if ($request->has('nouveau') && isset($request->nouveau)) {
             $produits->where('is_new', $request->nouveau);
         }
 
         if ($request->has('categorie') && !empty($request->categorie)) {
-            $produits->where('categorie_id', $request->categorie);
+            $produits->whereHas('categorie', function ($query) use ($request) {
+                $query->where(function ($subQuery) use ($request) {
+                    $subQuery->where('id', $request->categorie)->orWhere('parent_id', $request->categorie);
+                });
+            });
         }
         
         $produits = $produits->get();
-        
+
         return Response::json($produits, 200);
     }
 }

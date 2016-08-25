@@ -99,18 +99,38 @@ function rechercheProduits() {
         .success(function(data) {
             toastr.success('La recherche a retourné ' + data.length + ' produits.', 'Recherche');
 
-            data.forEach(function(produit) {
+            // Cache of the template
+            var template = document.getElementById("template-list-item");
+            // Get the contents of the template
+            var templateHtml = template.innerHTML;
+            // Final HTML variable as empty string
+            var listHtml = "";
 
-                var template = '<tr>' +
-                '<td></td>' +
-                '<td></td>' +
-                '<td><a href=""></a> // <a href=""></a></td>' +
-                '<td><a href=""></a></td>' +
-                '<td></td>' +
-                '<td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>' +
-                '<td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit(, )"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>' +
-                '</tr>';
-            })
+            data.forEach(function(produit) {
+                var lienCatParent = '';
+                var ambiances = '';
+
+                if (produit.categorie.parent.id) {
+                    lienCatParent = '<a href="/admin/catalogue/categories/modifier/' + produit.categorie.parent.id + '">' + produit.categorie.parent.nom + '</a>';
+                }
+
+                produit.ambiances.forEach(function(ambiance) {
+                   ambiances += '<a href="/admin/catalogue/ambiances/edit/' + ambiance.id + '">' + ambiance.nom + '</a>';
+                });
+                
+                listHtml += templateHtml.replace(/##nom##/g, produit.nom)
+                    .replace(/##nouveau##/g, produit.is_new ? 'Oui' : 'Non')
+                    .replace(/##lienCatParent##/g, lienCatParent)
+                    .replace(/##lienCatEnfant##/g, '/admin/catalogue/categories/modifier/' + produit.categorie.id)
+                    .replace(/##nomCatEnfant##/g, produit.categorie.nom)
+                    .replace(/##ambiances##/g, ambiances)
+                    .replace(/##ambiancesTotal##/g, produit.ambiances.length)
+                    .replace(/##lienEditProduit##/g, '/admin/produits/modifier/' + produit.id)
+                    .replace(/##produit_id##/g, produit.id)
+                    .replace(/##produit_nom##/g, produit.nom);
+        });
+            $("#table-liste-produits>tbody").find("tr:gt(0)").remove();
+            $("#table-liste-produits>tbody").append(listHtml);
 
         })
         .error(function() {
