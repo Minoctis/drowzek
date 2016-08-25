@@ -105,11 +105,11 @@
 		<div class="selected-product">
 			<div class="row">
 				<h3 class="selected-product-title">Produits sélectionnés pour vous</h3>
-				@for ($i = 0; $i < 4; $i++)
+				@foreach ($new_produits as $new_produit)
 
-					@include('elements.related-product')
+					@include('elements.new-product')
 
-				@endfor
+				@endforeach
 			</div>
 		</div>
 		<div class="comment-product" id="comment">

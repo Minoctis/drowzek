@@ -38,7 +38,7 @@
 				@if($index === $rand_newsletter)
 					@include('elements.bloc-newsletter')
 				@endif
-				@include('elements.new-product')
+				@include('elements.product')
 
 			@endforeach
 		@else

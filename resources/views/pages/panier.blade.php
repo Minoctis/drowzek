@@ -137,7 +137,14 @@
             </div>
         </div>
         @else
-            <p>Votre panier ne contient pas de produits.</p>
+            <p style="text-align: center; font-size: 20px; margin-bottom: 50px;">Votre panier ne contient pas de produits.
+                <br>
+                <span style="font-size: 100px;"><i class="fa fa-frown-o"></i></span>
+
+                <br>
+                <br>
+                <a href="{{ route('accueil') }}">Page d'accueil</a>
+            </p>
         @endif
         @if($produits->count() !== 0)
         <div class="bottom-panier">

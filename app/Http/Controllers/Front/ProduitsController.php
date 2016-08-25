@@ -39,6 +39,7 @@ class ProduitsController extends Controller
         $avis = Avis::where('produit_id', $produit->id)->where('is_active', 1)->get();
         $new_produits = Produit::where('is_new', 1)
             ->with('images')
+            ->where('slug','!=',$slug)
             ->get();
 
         return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits], ['avis' => $avis] );

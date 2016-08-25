@@ -19,7 +19,7 @@
 		<h1 class="title">Nouveauté</h1>
 	    <div class="container">
 			<div class="row">
-			    @foreach ($new_produits as $produit)
+			    @foreach ($new_produits as $new_produit)
 
 			    	@include('elements.new-product')
 			    

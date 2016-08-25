@@ -21,7 +21,7 @@ class PanierController extends Controller
 {
     public function showPanier(Request $request) {
         $data = $this->getPanierData($request);
-        
+
         return view('pages.panier', $data);
     }
 
