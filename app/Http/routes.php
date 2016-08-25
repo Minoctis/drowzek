@@ -32,6 +32,10 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('cgv',['as' => 'cgv', function() {return view('pages.cgv');}]);
 
+    Route::get('livraison',['as' => 'livraison', function() {return view('pages.livraison');}]);
+
+    Route::get('garantie',['as' => 'garantie', function() {return view('pages.garantie');}]);
+
 //Routes du front-office
     //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
