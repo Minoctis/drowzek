@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Hôm de goût - @yield('title')</title>
-        <meta name="description" content="Hôm de goût, Philippe Drowzek, designer de meubles avant-gardistes, vente d'accessoires complémentaires." />
+        <title>Home de Goût - @yield('title')</title>
+        <meta name="description" content="Home de Goût, Philippe Drowzek, designer de meubles avant-gardistes, vente d'accessoires complémentaires." />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- CSS -->
         <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
