@@ -6,9 +6,9 @@
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 bloc-footer">
 					<h3 class="title-footer">Nos services</h3>
 					<p>
-						<a href="cgv" alt="Conditions générales de vente" title="Conditions générales de vente">Conditions générales de vente</a><br />
-						<a href="livraison" alt="Livraison" title="Livraison">Livraison</a><br />
-						<a href="garantie" alt="Garanties" title="Garanties">Garanties</a><br />
+						<a href="{{ route('cgv') }}" alt="Conditions générales de vente" title="Conditions générales de vente">Conditions générales de vente</a><br />
+						<a href="{{ route('livraison') }}" alt="Livraison" title="Livraison">Livraison</a><br />
+						<a href="{{ route('garantie') }}" alt="Garanties" title="Garanties">Garanties</a><br />
 					</p>
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 bloc-footer">
@@ -29,7 +29,7 @@
 		<div class="container">
 			<div class="col-lg-12">
 				<p>
-					<a href="#" alt="Nous contacter" title="Nous contacter">Contact</a> | <a href="#" alt="Politique de confidentialité" title="Politique de confidentialité">Politique de confidentialité</a> | <a href="#" alt="Mentions légales" title="Mentions légales">Mentions légales</a> | <a href="#" alt="Plan du site" title="Plan du site">Plan du site</a>
+					<a href="#" alt="Nous contacter" title="Nous contacter">Contact</a> | <a href="{{ route('plan-site') }}" alt="Plan du site" title="Plan du site">Plan du site</a>
 				</p>
 			</div>
 		</div>

@@ -31,6 +31,11 @@ class CatalogueController extends Controller
         return view('pages.ambiance', ['ambiances' => $ambiances]);
     }
 
+    public function showListeAmbiancesPlanSite() {
+        $ambiances = Ambiance::with('images')->orderBy('ordre', 'asc')->get();
+        return view('pages.plan-site', ['ambiances' => $ambiances]);
+    }
+
     public function showAmbiance($slug) {
         $ambiance = Ambiance::where('slug', $slug)
                             ->with('images')

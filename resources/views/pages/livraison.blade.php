@@ -5,7 +5,7 @@
 @section('page-id', 'livraison')
 
 @section('breadcrumbs')
-    <li class="active">Page static</li>
+    <li class="active">Livraison</li>
 @endsection
 
 @section('content')

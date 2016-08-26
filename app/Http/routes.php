@@ -36,6 +36,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('garantie',['as' => 'garantie', function() {return view('pages.garantie');}]);
 
+    Route::get('plan-site',['as' => 'plan-site', 'uses' => 'Front\CatalogueController@showListeAmbiancesPlanSite' ]);
+
 //Routes du front-office
     //Accueil
     Route::get('/', ['as' => 'accueil', 'uses' => 'Front\ProduitsController@showIndex']);
