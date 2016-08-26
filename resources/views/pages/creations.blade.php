@@ -39,7 +39,6 @@
 					@include('elements.bloc-newsletter')
 				@endif
 				@include('elements.product')
-
 			@endforeach
 		@else
 			<div class="col-xs-12">

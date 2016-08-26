@@ -42,7 +42,11 @@ class ProduitsController extends Controller
             ->with('images')
             ->where('slug','!=',$slug)
             ->get();
-        $related_produits = Produit::where('categorie_id', $produit_cat)->where('slug','!=',$slug)->take(4)->with('categorie')->get();
+        $related_produits = Produit::where('categorie_id', $produit_cat)
+            ->where('slug','!=',$slug)
+            ->take(4)->with('categorie')
+            ->orderBy('id', 'desc')
+            ->get();
 
         return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits, 'related_produits' => $related_produits], ['avis' => $avis] );
     }
