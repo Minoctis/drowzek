@@ -30,7 +30,7 @@
 					@if($index === $rand_newsletter)
 						@include('elements.bloc-newsletter')
 					@endif
-					@include('elements.new-product')
+					@include('elements.product')
 				@endforeach
 			@endforeach
 		@elseif($categorie->produits->count() !== 0)
@@ -46,7 +46,6 @@
 				<p style="text-align: center; font-size: 20px; margin-bottom: 50px;">Désolé, cette catégorie ne contient pas de produits pour le moment.
 					<br>
 					<span style="font-size: 100px;"><i class="fa fa-frown-o"></i></span>
-
 					<br>
 					<br>
 					<a href="{{ route('accueil') }}">Page d'accueil</a>

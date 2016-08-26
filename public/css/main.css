@@ -639,7 +639,7 @@ hr.divider {
     padding: 10px 50px;
     background-color: #dddddd;
     margin: 0;
-    width: 255px;
+    width: 100%;
 }
 
 .moncompte ul.mon-compte-nav {
