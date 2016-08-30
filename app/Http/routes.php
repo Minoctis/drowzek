@@ -254,7 +254,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'theme', 'as' => 'theme::'], function () {
 
             //Accueil du thème
-            Route::get('/', ['as' => 'dashboard', function () { return view('pages.admin.theme.dashboard'); } ]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ThemeController@showThemeList' ]);
 
         });
 

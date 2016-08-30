@@ -174,3 +174,6 @@ function deleteAvis(id) {
 $('#validate-supprimer-avis').on('click', function() {
     deleteAvis($(this).data('id'));
 });
+
+
+/* Theme */

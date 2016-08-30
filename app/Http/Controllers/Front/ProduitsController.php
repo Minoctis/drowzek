@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Produit;
 use App\Models\ProduitOption;
 use App\Models\Avis;
+use App\Models\Theme;
 use Debugbar;
 use Illuminate\Http\Request;
 
@@ -25,9 +26,15 @@ class ProduitsController extends Controller
                                     ->with('images')
                                     ->get();
 
+        $slide = Theme::orderByRaw("RAND()")->where('type','slider')->first();
+
+        $opportunite = Theme::where('type', 'opportunite')->first();
+
         $data = [
             'new_produits' => $new_produits,
-            'top_ambiances' => $top_ambiances
+            'top_ambiances' => $top_ambiances,
+            'slide' => $slide,
+            'opportunite' => $opportunite
         ];
 
         return view('pages.front', $data);

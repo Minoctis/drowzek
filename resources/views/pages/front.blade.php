@@ -10,9 +10,9 @@
 
 	<!-- SLIDER -->
 	<div class="slider-hp">
-
-		<img src="{{ asset('img/themes/slider/slide3.jpg') }}" alt="">
-
+		<a href="{{ $slide->lien }}" title="{{ $slide->titre }}">
+			<img src="{{ asset('img/themes/slider/'. $slide->image_url ) }}" alt="">
+		</a>
     </div> 
     <!-- FIN SLIDER -->
 
@@ -99,9 +99,11 @@
 
     <!-- Les opportnités -->
 	<div class="opportunity">
-		<div class="opp-image">
-			<img class="opportunity-img" src="{{ asset('img/themes/opportunite.jpg') }}" alt="">
-		</div>
+		<a class="opp-lien-image" href="{{ $opportunite->lien }}" title="{{ $opportunite->titre }}">
+			<div class="opp-image">
+				<img class="opportunity-img" src="{{ asset('img/themes/opportunites/'. $opportunite->image_url ) }}" titre={{ $opportunite->titre }}>
+			</div>
+		</a>
 
 		<div class="container">
 		    <!--h1 class="title">Opportunité exeptionnelle</h1>
