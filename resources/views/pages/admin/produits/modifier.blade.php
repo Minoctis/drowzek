@@ -36,24 +36,30 @@
 
                                 <!-- Nom produit -->
                                 <div class="form-group">
-                                    <label class="control-label" for="civilite">Nom : <span>*</span></label>
-                                    <input class="form-control" id="civilite" name="civilite" type="text" value="{{$produit->nom}}" required>
+                                    <label class="control-label" for="nom">Nom : <span>*</span></label>
+                                    <input class="form-control" id="nom" name="nom" type="text" value="{{$produit->nom}}" required>
+                                </div>
+
+                                <!-- Nom produit -->
+                                <div class="form-group">
+                                    <label class="control-label" for="slug">Chemin : <span>*</span></label>
+                                    <input class="form-control" id="slug" name="slug" type="text" value="{{$produit->slug}}" required>
                                 </div>
 
                                 <!-- Dimension produit -->
                                 <div class="form-group">
-                                    <label class="control-label" for="civilite">Dimensions : <span>*</span></label>
-                                    <input class="form-control" id="civilite" name="civilite" type="text" value="{{$produit->dimensions}}" required>
+                                    <label class="control-label" for="dimension">Dimensions : <span>*</span></label>
+                                    <input class="form-control" id="dimension" name="dimension" type="text" value="{{$produit->dimensions}}" required>
                                 </div>
 
                                 <!-- description produit -->
                                 <div class="form-group">
-                                    <label class="control-label" for="civilite">Descripiton : <span>*</span></label>
-                                    <textarea class="form-control" id="civilite" name="civilite" type="text" rows="5" required>{{$produit->description}}</textarea>
+                                    <label class="control-label" for="description">Descripiton : <span>*</span></label>
+                                    <textarea class="form-control" id="description" name="description" type="text" rows="5" required>{{$produit->description}}</textarea>
                                 </div>
 
                                 <!-- catégorie produit -->
-                                <label class="control-label" for="civilite">Catégorie : <span>*</span></label>
+                                <label class="control-label" for="categorie">Catégorie : <span>*</span></label>
                                 <select name="categorie" id="categorie" class="form-control" required>
                                     @foreach($categories as $categorie)
                                         <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
