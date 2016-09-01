@@ -18,10 +18,10 @@
 
 		<div class="container">
 			<div class="row">
-				<h2><a href="{{ route('accueil') }}">Accueil</a></h2>
+				<h3><a href="{{ route('accueil') }}">Accueil</a></h3>
 			</div>
 			<div class="row">
-				<h2>Catégories</h2>
+				<h3>Catégories</h3>
 				<!-- listing catégories -->
 				@foreach($categories as $categorie)
 					<li class="col-sm-6 col-md-2 categorie {{ $categorie->slug }}">
@@ -39,9 +39,9 @@
 				@endforeach
 			</div>
 			<div class="row">
-				<h2>
+				<h3>
 					<a href="{{ route('ambiances::liste') }}">Ambiances</a>
-				</h2>
+				</h3>
 				<!-- éléments secondaires ambiance -->
 				<ul>
 					@foreach ($ambiances as $ambiance)
@@ -54,18 +54,18 @@
 				</ul>
 				
 				<p>
-					<h2><a href="{{ route('panier') }}">Panier</a></h2>
+					<h3><a href="{{ route('panier') }}">Panier</a></h3>
 				</p>
 				<p>
-					<h2><a href="{{ route('cgv') }}" alt="Conditions générales de vente" title="Conditions générales de vente">
+					<h3><a href="{{ route('cgv') }}" alt="Conditions générales de vente" title="Conditions générales de vente">
 						Conditions générales de vente
-					</a></h2>
+					</a></h3>
 				</p>
 				<p>
-					<h2><a href="{{ route('livraison') }}" alt="Livraison" title="Livraison">Livraison</a><br /></h2>
+					<h3><a href="{{ route('livraison') }}" alt="Livraison" title="Livraison">Livraison</a><br /></h3>
 				</p>
 				<p>
-					<h2><a href="{{ route('garantie') }}" alt="Garanties" title="Garanties">Garanties</a><br /></h2>
+					<h3><a href="{{ route('garantie') }}" alt="Garanties" title="Garanties">Garanties</a><br /></h3>
 				</p>
 			</div>
 		</div>
