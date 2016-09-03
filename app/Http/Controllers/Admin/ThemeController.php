@@ -25,5 +25,24 @@ class ThemeController extends Controller
         return view('pages.admin.theme.liste', $data);
     }
 
+    public function updateSlide($id, Request $request) {
+        //die(var_dump($request->all()));
+        //Validation
+        $this->validate($request, [
+            'titre' => 'required',
+            'lien'      => 'required',
+        ]);
+
+        //Update des données
+        $slide = Theme::find($id);
+        $slide->titre = $request->titre;
+        $slide->lien = $request->lien;
+
+        $slide->save();
+
+        return redirect()->route('admin::theme::liste');
+
+    }
+
 
 }
