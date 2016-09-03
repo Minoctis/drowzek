@@ -29,5 +29,25 @@ class PagesController extends Controller
         return view('pages.admin.pages.edit', ['page' => $page]);
     }
 
+    public function updatePage($id, Request $request) {
+//        die(var_dump($request->all()));
+        //Validation
+        $this->validate($request, [
+            'titre' => 'required',
+            'desc'      => 'required'
+        ]);
+
+        //Update des données
+        $page = Pages::find($id);
+        $page->titre = $request->titre;
+        $page->description = $request->desc;
+
+        $page->save();
+
+
+        return redirect()->route('admin::pages::liste');
+
+    }
+
 
 }

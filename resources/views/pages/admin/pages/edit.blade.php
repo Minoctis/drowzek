@@ -10,6 +10,7 @@
                 </div>
 
                 <form action="" method="POST">
+                    {{ csrf_field() }}
                     <!-- Nom -->
                     <div class="form-group">
                         <label class="control-label" for="titre">Titre <span>*</span></label>

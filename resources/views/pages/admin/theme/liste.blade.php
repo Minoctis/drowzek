@@ -48,8 +48,56 @@
                                             </td>
                                             <td>{{ $slide->titre }}</td>
                                             <td>{{ $slide->lien }}</td>
-                                            <td><button class="btn btn-warning" data-toggle="modal" data-target="#update-slide"><span class="glyphicon glyphicon-pencil"></span> Modifier</button></td>
+                                            <td><button class="btn btn-warning" data-toggle="modal" data-target="#update-slide-{{ $slide->id }}" <span class="glyphicon glyphicon-pencil"></span> Modifier</button></td>
                                         </tr>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="update-slide-{{ $slide->id }}" tabindex="-1" role="dialog" aria-labelledby="update-slide-label">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="update-slide-label">Modifier un slides</h4>
+                                                    </div>
+                                                    <form action="" method="POST">
+                                                        {{ csrf_field() }}
+                                                    <div class="modal-body">
+                                                        <div class="form-update-slide">
+
+                                                                <!-- Image -->
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="titre">Ajouter une nouvelle image : <span>*</span></label>
+                                                                    <input type="file" value="{{ $slide->image_url }}" name="file">
+                                                                </div>
+
+                                                                <!-- Titre -->
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="titre">Titre : <span>*</span></label><br>
+                                                                    <input type="text" value="{{ $slide->titre }}" name="titre">
+                                                                </div>
+
+                                                                <!-- Lien -->
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="lien">Lien : <span>*</span></label><br>
+                                                                    <input type="text" value="{{ $slide->lien }}" name="lien">
+                                                                </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="pull-right">
+                                                            <button class="btn bnt-default" data-dismiss="modal">Annuler</button>
+                                                            <!-- Bouton valider -->
+                                                            <div class="form-group submit-button" style="float: right;">
+                                                                <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -94,5 +142,4 @@
 
         </div>
     </div>
-    @include('modals.theme.update-slide')
 @endsection

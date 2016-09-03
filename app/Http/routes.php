@@ -242,6 +242,7 @@ Route::group(['middleware' => ['web']], function () {
 
             //Edit page
             Route::get('/{id}', ['as' => 'details', 'uses' => 'Admin\PagesController@showPage']);
+            Route::post('/{id}', ['as' => 'update', 'uses' => 'Admin\PagesController@updatePage']);
 
         });
 
@@ -258,6 +259,7 @@ Route::group(['middleware' => ['web']], function () {
 
             //Accueil du thème
             Route::get('/', ['as' => 'liste', 'uses' => 'Admin\ThemeController@showThemeList' ]);
+            Route::post('/{id}', ['as' => 'update', 'uses' => 'Admin\ThemeController@updateSlide']);
 
         });
 

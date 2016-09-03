@@ -1,5 +1,5 @@
 @extends('modals.modal')
-@section('modalId', 'update-slide')
+@section('modalId', 'update-slide'.$slide->id)
 @section('labelId', 'update-slide-label')
 @section('modalTitle', 'Modifier un slide')
 @section('modalContent')
@@ -20,7 +20,7 @@
             <!-- Lien -->
             <div class="form-group">
                 <label class="control-label" for="lien">Lien : <span>*</span></label><br>
-                <input type="text" value="{{ $slide->lein }}" name="lien">
+                <input type="text" value="{{ $slide->lien }}" name="lien">
             </div>
 
         </form>
