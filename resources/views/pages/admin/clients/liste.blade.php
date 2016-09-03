@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>Civilité</th>
@@ -23,8 +23,8 @@
                             <td>{{$client->prenom}}</td>
                             <td>{{$client->email}}</td>
 
-                            <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-list-alt"></span> Commandes</a></td>
-                            <td><a href="{{ route('admin::clients::details', $client->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Afficher</a></td>
+                            <td><a href="{{ route('admin::clients::details', $client->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Modifier</a></td>
+                            <td><a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></td>
                         </tr>
                     @endforeach
                     </tbody>

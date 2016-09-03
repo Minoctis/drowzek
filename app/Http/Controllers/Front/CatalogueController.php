@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\Ambiance;
 use App\Models\Categorie;
+use App\Models\Pages;
 use App\Models\ProduitOption;
 use Debugbar;
 use Illuminate\Http\Request;
@@ -23,12 +24,15 @@ class CatalogueController extends Controller
             }
         }
         $rand_newsletter = rand(0,$total_produits - 1);
-        return view('pages.creations', ['categorie' => $categorie, "rand_newsletter" => $rand_newsletter]);
+        $pages = Pages::all();
+        return view('pages.creations', ['categorie' => $categorie, "rand_newsletter" => $rand_newsletter], ['pages' => $pages]);
     }
 
     public function showListeAmbiances() {
         $ambiances = Ambiance::with('images')->orderBy('ordre', 'asc')->get();
-        return view('pages.ambiance', ['ambiances' => $ambiances]);
+        $pages = Pages::all();
+
+        return view('pages.ambiance', ['ambiances' => $ambiances], ['pages' => $pages]);
     }
 
     public function showListeAmbiancesPlanSite() {
@@ -46,11 +50,14 @@ class CatalogueController extends Controller
 
         $rand_newsletter = rand(0,$ambiance->produits->count() - 1);
 
+        $pages = Pages::all();
+
         $data = [
             'ambiance' => $ambiance,
             'prev_ambiance' => $prev_ambiance,
             'next_ambiance' => $next_ambiance,
-            'rand_newsletter' => $rand_newsletter
+            'rand_newsletter' => $rand_newsletter,
+            'pages' => $pages
         ];
         Debugbar::info($rand_newsletter);
         return view('pages.fiche-ambiance', $data);

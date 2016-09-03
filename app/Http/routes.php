@@ -238,7 +238,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'pages', 'as' => 'pages::'], function () {
 
             //Accueil du pages
-            Route::get('/', ['as' => 'dashboard', function () { return view('pages.admin.pages.dashboard'); } ]);
+            Route::get('/', ['as' => 'liste', 'uses' => 'Admin\PagesController@showListPages' ]);
+
+            //Edit page
+            Route::get('/{id}', ['as' => 'details', 'uses' => 'Admin\PagesController@showPage']);
 
         });
 

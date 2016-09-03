@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\Ambiance;
 use App\Models\Categorie;
+use App\Models\Pages;
 use App\Models\Produit;
 use App\Models\ProduitOption;
 use App\Models\Avis;
@@ -30,11 +31,14 @@ class ProduitsController extends Controller
 
         $opportunite = Theme::where('type', 'opportunite')->first();
 
+        $pages = Pages::all();
+
         $data = [
             'new_produits' => $new_produits,
             'top_ambiances' => $top_ambiances,
             'slide' => $slide,
-            'opportunite' => $opportunite
+            'opportunite' => $opportunite,
+            'pages' => $pages
         ];
 
         return view('pages.front', $data);
@@ -54,7 +58,8 @@ class ProduitsController extends Controller
             ->take(4)->with('categorie')
             ->orderBy('id', 'desc')
             ->get();
+        $pages = Pages::all();
 
-        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits, 'related_produits' => $related_produits], ['avis' => $avis] );
+        return view('pages.produit', ['produit' => $produit, 'options' => $options, 'new_produits' => $new_produits, 'related_produits' => $related_produits], ['avis' => $avis], ['pages' => $pages] );
     }
 }
