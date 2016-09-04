@@ -5,14 +5,13 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 bloc-footer">
 					<h3 class="title-footer">Nos services</h3>
-					<p>Si vous voyez ça c'est normal</p>
-					<!--p>
+					<p>
 
 						@foreach($pages as $page)
-							<a href="{{ asset('/'.$page->slug) }}" alt="{{ $page->titre }}" title="{{ $page->titre }}">{{ $page->titre }}</a>
+							<a href="{{ route('page', ['slug' => $page->slug]) }}" alt="{{ $page->titre }}" title="{{ $page->titre }}">{{ $page->titre }}</a>
 							<br>
 						@endforeach
-					</p-->
+					</p>
 				</div>
 				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 bloc-footer">
 					<h3 class="title-footer">A propos de nous</h3>

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Categorie;
+use App\Models\Pages;
 use Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,7 +21,9 @@ class AppServiceProvider extends ServiceProvider
             view()->share('user', $user);
         }
         $categories = Categorie::with('children')->whereNull('parent_id')->orderBy('ordre', 'asc')->get();
+        $pages = Pages::all();
         view()->share('categories', $categories);
+        view()->share('pages', $pages);
     }
 
     /**
