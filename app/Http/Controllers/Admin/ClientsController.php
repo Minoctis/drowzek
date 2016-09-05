@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Adresse;
 use App\Models\Client;
 use App\Models\Commande;
 use App\Models\CommandeStatut;
 use App\Models\CommandeProduit;
+use App\Models\Pays;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -24,9 +26,15 @@ class ClientsController extends Controller
 
     public function showClient($client_id){
         $client = Client::where('id',$client_id)->with('civilite')->with('adresses')->first();
+        $pays = Pays::all();
         $commandes = Commande::where('client_id', $client_id)->with('statut')->get();
+        $data = [
+            'client' => $client,
+            'pays' => $pays,
+            'commandes' => $commandes
+        ];
 
-        return view('pages.admin.clients.edit', ['client' => $client], ['commandes' => $commandes]);
+        return view('pages.admin.clients.edit', $data);
     }
 
     public function updateClient($id, Request $request) {
@@ -48,6 +56,42 @@ class ClientsController extends Controller
         $client->date_naissance = empty($request->naissance) ? null : Carbon::createFromFormat('d/m/Y', $request->naissance);
 
         $client->save();
+
+        return redirect()->route('admin::clients::liste');
+
+    }
+
+    public function updateClientAdresse($adresse_id, Request $request) {
+        //die(var_dump($request->all()));
+        //Validation
+        $this->validate($request, [
+            'societe'             => '',
+            'nom_adresse'         => 'required',
+            'adresse'             => 'required',
+            'compl_adresse'        => '',
+            'cp'                  => 'required',
+            'ville'               => 'required',
+            'nom'                 => 'required',
+            'prenom'              => 'required',
+            'tel'                 => 'required',
+            'pays'                => 'required'
+        ]);
+
+        //Update des données
+        $adresse = Adresse::where('id', $adresse_id);
+
+        $adresse->nom_carnet_adresse = $request->nom_adresse;
+        $adresse->adresse            = $request->adresse;
+        $adresse->compl_adresse      = $request->compl_adresse;
+        $adresse->societe            = $request->societe;
+        $adresse->cp                 = $request->cp;
+        $adresse->ville              = $request->ville;
+        $adresse->nom_livraison      = $request->nom;
+        $adresse->prenom_livraison   = $request->prenom;
+        $adresse->telephone          = $request->tel;
+        $adresse->pays_id            = $request->pays;
+
+        $adresse->save();
 
         return redirect()->route('admin::clients::liste');
 

@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
 
-    Route::get('/{slug}', ['as' => 'page', 'uses' => 'Front\PagesController@showPage']);
+    Route::get('/{slug}', ['as' => 'page', 'uses' => 'Front\ProduitsController@showPageStatic']);
 
     Route::get('cgv',['as' => 'cgv', function() {return view('pages.cgv');}]);
 
@@ -97,7 +97,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
         //Dashboard
-        Route::get('/', ['as' => 'dashboard', function () { return view('pages.admin.dashboard'); }]);
+        Route::get('/', ['as' => 'dashboard', 'uses' => 'Admin\DashboardController@showDashboard']);
 
         //Login
         Route::get('login', ['as' => 'login', function () {} ]);
@@ -202,6 +202,7 @@ Route::group(['middleware' => ['web']], function () {
             //Page client
             Route::get('/{client_id}', ['as' => 'details', 'uses' => 'Admin\ClientsController@showClient']);
             Route::post('/{client_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClient']);
+            Route::post('/{client_id}/adresse/{adresse_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClientAdresse']);
         });
 
         //Routes des commandes

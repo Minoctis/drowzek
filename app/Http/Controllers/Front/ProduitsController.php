@@ -44,6 +44,13 @@ class ProduitsController extends Controller
         return view('pages.front', $data);
     }
 
+    public function showPageStatic($slug) {
+        $page = Pages::where('slug', $slug)->first();
+
+
+        return view('pages.page-static', ['page' => $page] );
+    }
+
     public function showProduit($slug) {
         $produit = Produit::where('slug', $slug)->with('images')->with('categorie')->with('avis')->first();
         $produit_cat = Produit::where('slug', $slug)->pluck('categorie_id')->first();
