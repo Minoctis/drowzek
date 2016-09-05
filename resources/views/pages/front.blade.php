@@ -1,5 +1,3 @@
-
-
 @extends('layouts.front')
 
 @section('title', 'Page d\'accueil')
