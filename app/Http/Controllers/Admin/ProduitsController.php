@@ -21,7 +21,7 @@ class ProduitsController extends Controller
         $ambiances = Ambiance::all();
         $categories = Categorie::all();
         
-        $produits = Produit::with('categorie.parent')->with('ambiances')->get();
+        $produits = Produit::withTrashed()->with('categorie.parent')->with('ambiances')->get();
         
         $data = [
             'produits' => $produits,
