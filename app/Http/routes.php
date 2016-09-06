@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
 
-    Route::get('/{slug}', ['as' => 'page', 'uses' => 'Front\ProduitsController@showPageStatic']);
+    Route::get('/pages/{slug}', ['as' => 'page-static', 'uses' => 'Front\ProduitsController@showPageStatic']);
 
     Route::get('cgv',['as' => 'cgv', function() {return view('pages.cgv');}]);
 
@@ -213,6 +213,9 @@ Route::group(['middleware' => ['web']], function () {
 
             //Page commande
             Route::get('/{commande_ref}', ['as' => 'details', 'uses' => 'Admin\CommandesController@showCommande']);
+
+            //Update produit
+            Route::post('/{commande_ref}/{commande_produit_libelle}', ['as' => 'update', 'uses' => 'Admin\CommandesController@updateProductCommande']);
         });
 
         //Routes des avis

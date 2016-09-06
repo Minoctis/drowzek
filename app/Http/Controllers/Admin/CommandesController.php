@@ -8,6 +8,8 @@ use App\Models\CommandeStatut;
 use App\Models\Client;
 use App\Models\Civilite;
 use App\Models\Pays;
+use App\Models\Produit;
+use App\Models\ProduitOption;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -39,7 +41,10 @@ class CommandesController extends Controller
         $commande_total_HT = 0;
         $commande_total_TTC = 0;
 
+
+
         foreach($commande_produits as $produit) {
+            $produits = Produit::where('nom', $produit->produit_libelle)->with('options')->get();
             $commande_total_HT += $produit->prix_unitaire_ht * $produit->quantite;
             $commande_total_TTC += $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite);
         }
@@ -49,8 +54,28 @@ class CommandesController extends Controller
             'commande_produits'  => $commande_produits,
             'commande_total_HT'  => $commande_total_HT,
             'commande_total_TTC' => $commande_total_TTC,
+            'produits'           => $produits
         ];
 
         return view('pages.admin.commandes.edit', ['commande' => $commande], $data);
+    }
+
+    public function updateProductCommande($commande_produit_libelle, Request $request){
+        //die(var_dump($request->all()));
+        //Validation
+        $this->validate($request, [
+            'qt'         => 'required',
+            'option'     => 'required'
+        ]);
+
+        //Update des données
+        $commande_produit = CommandeProduit::where('produit_libelle', $commande_produit_libelle);
+
+        $commande_produit->quantite         = $request->qt;
+        $commande_produit->option_libelle   = $request->option;
+
+        $adresse->save();
+
+        return redirect()->route('admin::commandes::edit');
     }
 }

@@ -16,7 +16,7 @@
             <p>
                 <span class="glyphicon glyphicon-euro"></span>
                 Total :
-                <span>9 998 €</span>
+                <span>{{ $commande_total_TTC }} €</span>
             </p>
         </div>
 
@@ -24,7 +24,7 @@
             <p>
                 <span class="glyphicon glyphicon-book"></span>
                 Produit :
-                <span>2</span>
+                <span>{{ $commande_produits->count() }}</span>
             </p>
         </div>
 
@@ -138,12 +138,12 @@
                     <h4 class="client-name">Client : {{ $commande->client->nom.' '.$commande->client->prenom }}</h4>
                 </div>
                 <div class="bloc-content">
-                    <a href="" class="update-button btn btn-default">Mettre à jour</a>
+                    <a href="{{ route('admin::clients::details', $commande->client->id) }}" class="update-button btn btn-default">Mettre à jour</a>
                     <ul class="list-unstyled">
                         <li><span class="glyphicon glyphicon-envelope"></span> {{$commande->client->email}}</li>
                         <li><span class="glyphicon glyphicon-phone"></span>{{$commande->telephone_livraison}}</li>
                         <li>Date d'anniversaire : {{date("d/m/Y", strtotime($commande->client->date_naissance))}}</li>
-                        <li>Date d'anniversaire : {{date("d/m/Y", strtotime($commande->client->date_inscription))}}</li>
+                        <li>Date d'inscription : {{date("d/m/Y", strtotime($commande->client->date_inscription))}}</li>
                     </ul>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="bloc-content">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <tr>
                                 <th>Nom</th>
@@ -188,14 +188,66 @@
                             </thead>
                             <tbody>
                             @foreach($commande_produits as $produit)
+                                @foreach($produits as $commande_produit)
                                 <tr>
                                     <td>{{ $produit->produit_libelle }} </td>
                                     <td>{{ $produit->prix_unitaire_ht }}</td>
                                     <td>{{ $produit->quantite }}</td>
                                     <td>{{ $produit->option_libelle }}</td>
-                                    <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
+                                    <td><a href="" class="btn btn-default" data-toggle="modal" data-target="#update-product-{{ $produit->id }}"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                                     <td><a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></td>
                                 </tr>
+                                @endforeach
+
+
+                                <div class="modal fade" id="update-product-{{ $produit->id }}" tabindex="-1" role="dialog" aria-labelledby="update-produit-label-{{ $produit->id }}">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="update-slide-label">Modifier l'opportunité</h4>
+                                            </div>
+                                            <form action="/admin/commandes/{{ $commande->reference }}/{{ $produit->produit_libelle }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <div class="modal-body">
+                                                    <div class="form-update-produit">
+
+                                                        <p>Produit : <b>{{ $produit->produit_libelle }}</b> </p>
+
+                                                        <!-- Quantité -->
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="qt">Quantité : <span>*</span></label><br>
+                                                            <input type="text" value="{{ $produit->quantite }}" name="qt">
+                                                        </div>
+
+                                                        <!-- Options -->
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="option">Option : <span>*</span></label><br>
+                                                            <select name="options" id="">
+                                                               @foreach($produits as $commande_produit)
+                                                                   @foreach( $commande_produit->options as $option)
+                                                                        <option value="{{ $option->libelle }}">{{ $option->libelle }}</option>
+                                                                    @endforeach
+                                                               @endforeach
+                                                            </select>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="pull-right">
+                                                        <button class="btn bnt-default" data-dismiss="modal">Annuler</button>
+                                                        <!-- Bouton valider -->
+                                                        <div class="form-group submit-button" style="float: right;">
+                                                            <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                             </tbody>
                         </table>

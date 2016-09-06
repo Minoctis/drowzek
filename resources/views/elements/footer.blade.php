@@ -8,7 +8,7 @@
 					<p>
 
 						@foreach($pages as $page)
-							<a href="{{ route('page', ['slug' => $page->slug]) }}" alt="{{ $page->titre }}" title="{{ $page->titre }}">{{ $page->titre }}</a>
+							<a href="{{ route('page-static', ['slug' => $page->slug]) }}" alt="{{ $page->titre }}" title="{{ $page->titre }}">{{ $page->titre }}</a>
 							<br>
 						@endforeach
 					</p>
