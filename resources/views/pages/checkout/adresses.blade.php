@@ -44,25 +44,11 @@
 							</div>
 							<div class="panel-body">
 								<a href="#" class="update-adresse">Mettre à jour</a>
-								<ul>
-									<li>
-										<span class="nom-client">{{ $client->prenom }}</span>
-										<span class="prenom-client"> {{ $client->nom }}</span>
-									</li>
-									<li>
-										<span class="adresse">{{ $client->adresse }}</span>
-									</li>
-									<li>
-										<span class="compl-adresse">Complement d'adresse</span>
-									</li>
-									<li>
-										<span class="ville">Lille</span>
-										<span class="cp">59000</span>
-									</li>
-									<li>
-										<span class="pays">France</span>
-									</li>
-								</ul>
+								@foreach($client->adresses as $adresse)
+									@if($adresse->adresse_type_id === 1)
+							    	@include('elements.adresses-facturation')
+									@endif
+							    @endforeach
 							</div>
 						</div>
 					</div>
@@ -85,25 +71,11 @@
 							</div>
 							<div class="panel-body">
 								<a href="#" class="update-adresse">Mettre à jour</a>
-								<ul>
-									<li>
-										<span class="nom-client">{{ $client->prenom }}</span>
-										<span class="prenom-client"> {{ $client->nom }}</span>
-									</li>
-									<li>
-										<span class="adresse">{{$client->adresse }}</span>
-									</li>
-									<li>
-										<span class="compl-adresse">Appartement 3</span>
-									</li>
-									<li>
-										<span class="ville">Lille</span>
-										<span class="cp">59000</span>
-									</li>
-									<li>
-										<span class="pays">France</span>
-									</li>
-								</ul>
+								@foreach($client->adresses as $adresse)
+											@if($adresse->adresse_type_id === 2)
+									    	@include('elements.adresses-facturation')
+											@endif
+									    @endforeach
 							</div>
 						</div>
 					</div>
