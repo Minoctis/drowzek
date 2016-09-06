@@ -93,28 +93,11 @@
 									</div>
 									<div class="panel-body">
 										<a href="#" class="update-adresse">Mettre à jour</a>
-										<ul>
-											<li>
-												<span class="societe-client">Société</span>
-											</li>
-											<li>
-												<span class="nom-client">Prénom</span>
-												<span class="prenom-client"> Nom</span>
-											</li>
-											<li>
-												<span class="adresse">Adresse</span>
-											</li>
-											<li>
-												<span class="compl-adresse">Complément d'adresse</span>
-											</li>
-											<li>
-												<span class="ville">Ville</span>
-												<span class="cp">CP</span>
-											</li>
-											<li>
-												<span class="pays">Pays</span>
-											</li>
-										</ul>
+										@foreach($client->adresses as $adresse)
+											@if($adresse->adresse_type_id === 2)
+									    	@include('elements.adresses-facturation')
+											@endif
+									    @endforeach
 									</div>
 								</div>
 							</div>

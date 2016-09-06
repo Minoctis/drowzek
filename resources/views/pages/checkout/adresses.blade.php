@@ -50,7 +50,7 @@
 										<span class="prenom-client"> {{ $client->nom }}</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue nationale</span>
+										<span class="adresse">{{ $client->adresse }}</span>
 									</li>
 									<li>
 										<span class="compl-adresse">Complement d'adresse</span>
@@ -91,7 +91,7 @@
 										<span class="prenom-client"> {{ $client->nom }}</span>
 									</li>
 									<li>
-										<span class="adresse">100 rue nationale</span>
+										<span class="adresse">{{$client->adresse }}</span>
 									</li>
 									<li>
 										<span class="compl-adresse">Appartement 3</span>
