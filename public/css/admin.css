@@ -356,3 +356,14 @@ ul.nav.nav-tabs.produit-tabs {
     width: 30px;
     height: auto;
 }
+
+
+/* Dashboard admin */
+
+.item-dashboard-page {
+    text-align: center;
+    display: block;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}

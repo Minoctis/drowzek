@@ -49,6 +49,10 @@ class CommandesController extends Controller
             $commande_total_TTC += $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite);
         }
 
+        foreach($produits as $commande_produit){
+            $options = $commande_produit->options;
+        }
+
         $data = [
             'commande'    => $commande,
             'commande_produits'  => $commande_produits,

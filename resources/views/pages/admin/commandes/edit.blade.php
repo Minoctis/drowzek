@@ -171,7 +171,7 @@
         <div class="col-xs-12 commandes-client">
             <div class="wrapper-commandes-client">
                 <div class="bloc-header">
-                    <h4 class="client-name">Les produits commandés ({{ $commande_produits->count() }})</h4>
+                    <h4 class="client-name">Les produits commandés ({{ $commande_produits->count() }})</h4>test
                 </div>
                 <div class="bloc-content">
                     <div class="table-responsive">
@@ -188,7 +188,6 @@
                             </thead>
                             <tbody>
                             @foreach($commande_produits as $produit)
-                                @foreach($produits as $commande_produit)
                                 <tr>
                                     <td>{{ $produit->produit_libelle }} </td>
                                     <td>{{ $produit->prix_unitaire_ht }}</td>
@@ -197,7 +196,6 @@
                                     <td><a href="" class="btn btn-default" data-toggle="modal" data-target="#update-product-{{ $produit->id }}"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                                     <td><a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></td>
                                 </tr>
-                                @endforeach
 
 
                                 <div class="modal fade" id="update-product-{{ $produit->id }}" tabindex="-1" role="dialog" aria-labelledby="update-produit-label-{{ $produit->id }}">
