@@ -46,14 +46,14 @@
                         <td><input class="hdg-button-small" type="button" onclick="rechercheProduits()" value="Rechercher"></td>
                     </tr>
                     @foreach($produits as $produit)
-                    <tr class="{{ $produit->trashed() ? 'bg-danger' : '' }}">
+                    <tr>
                         <td>{{$produit->nom}}</td>
                         <td>{{ $produit->is_new ? 'Oui' : 'Non' }}</td>
                         <td>@if($produit->categorie->parent->id)<a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->parent->id) }}">{{ $produit->categorie->parent->nom }}</a>@endif // <a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->id) }}">{{ $produit->categorie->nom }}</a></td>
                         <td>@foreach($produit->ambiances as $ambiance)<a href="{{ route('admin::catalogue::ambiances::edit', $ambiance->id) }}">{{ $ambiance->nom }}</a>@endforeach</td>
                         <td>{{ $produit->options->count() }}</td>
                         <td><a href="{{ route('admin::produits::edit', $produit->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
-                        <td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})" {{ $produit->trashed() ? 'disabled' : '' }}><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>
+                        <td><input class="bootstrap-switch-input" data-on-color="success" data-off-color="danger" type="checkbox" {{ $produit->trashed() ? '' : 'checked' }} onchange="deleteRestoreProduit(this, {{ $produit->id }})"></td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -73,4 +73,9 @@
         </tr>
     </script>
     @include('modals.produits.delete')
+    <script>
+        $(function(argument) {
+            $('.bootstrap-switch-input').bootstrapSwitch();
+        })
+    </script>
 @endsection

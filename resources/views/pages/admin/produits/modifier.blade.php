@@ -17,7 +17,7 @@
                     </div>
                     <div class="produit-header">
                         <div class="produit-statut">
-                            <input class="bootstrap-switch-input" data-on-color="success" data-off-color="danger" type="checkbox" checked>
+                            <input class="bootstrap-switch-input" data-on-color="success" data-off-color="danger" type="checkbox" {{ $produit->trashed() ? '' : 'checked' }} onchange="deleteRestoreProduit(this, {{ $produit->id }})">
                         </div>
                         {{--<div class="produit-delete">--}}
                             {{--<button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button>--}}

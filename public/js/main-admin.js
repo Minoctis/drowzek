@@ -67,29 +67,6 @@ function getAmbiancesData() {
     return json;
 }
 
-function openModalDeleteProduit(id, nom) {
-    $('#content-modal-delete').innerHTML = document.querySelector('#content-modal-delete').innerHTML.replace('[produitNom]', nom);
-    $('#validate-supprimer-produit').attr("data-id", id);
-}
-
-function deleteProduit(id) {
-    $.ajax({
-        url:'/admin/produits/' + id,
-        method: 'delete'
-    })
-        .success(function() {
-            toastr.success('Le produit a été supprimé', 'Suppresison de produit', {onHidden: function() { location.reload(); }, timeOut: 300});
-            $('#delete-produit').modal('hide')
-        })
-        .error(function() {
-            toastr.error('Une erreur est survenue à la suppression du produit.', 'Suppression de produit')
-        })
-}
-
-$('#validate-supprimer-produit').on('click', function() {
-    deleteProduit($(this).data('id'));
-});
-
 function rechercheProduits() {
     $.ajax({
         url: '/admin/produits/recherche',
@@ -150,6 +127,34 @@ function getRechercheProduitData() {
     data.categorie = document.querySelector('#recherche-produit-categorie').value;
 
     return data;
+}
+
+function deleteRestoreProduit(checkbox, id) {
+    console.log('etat produit', checkbox.checked)
+    if (checkbox.checked) {
+        $.ajax({
+                url:'/admin/produits/' + id+ '/restore',
+                method: 'put'
+            })
+            .success(function() {
+                toastr.success('Le produit a été réactivé', 'Etat du produit');
+            })
+            .error(function() {
+                toastr.error('Une erreur est survenue à la suppression du produit.', 'Etat du produit')
+            })
+    }
+    else {
+        $.ajax({
+                url:'/admin/produits/' + id,
+                method: 'delete'
+            })
+            .success(function() {
+                toastr.success('Le produit a été désactivé', 'Etat du produit');
+            })
+            .error(function() {
+                toastr.error('Une erreur est survenue à la désactivation du produit.', 'Etat du produit')
+            })
+    }
 }
 
 /* Avis produit */
