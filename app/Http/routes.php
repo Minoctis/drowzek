@@ -96,6 +96,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::post('add-adresse', ['as' => 'addAdresse', 'uses' => 'Front\CompteController@createAdresse']);
         Route::post('edit-adresse', ['as' => 'editAdresse', 'uses' => 'Front\CompteClientController@editAdresse']);
+        Route::post('add-avis/{produit_id}', ['as' => 'addAvis', 'uses' => 'Front\CompteController@addAvis']);
 
     });
 

@@ -1,7 +1,7 @@
 @extends('modals.modal')
-@section('modalId', 'add-avis')
+@section('modalId', 'add-avis-product-' . $commande_produit->id)
 @section('labelId', 'add-avis-label')
-@section('modalTitle', 'Ajouter un avis')
+@section('modalTitle', 'Ajouter un avis pour le produit ' . $produit->produit_libelle)
 @section('modalContent')
     <div class="form-add-avis">
         <form action="">

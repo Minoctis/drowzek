@@ -370,7 +370,9 @@ ul.nav.nav-tabs.produit-tabs {
     display: block;
     background-color: white;
     border: 1px solid #ddd;
-    padding: 10px 15px;
+    padding: 30% 15px;
+    cursor: pointer;
+    min-height:200px;
 }
 
 

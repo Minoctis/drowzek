@@ -46,22 +46,75 @@
                             <!-- Liste des produits commandés -->
                             <div class="produit-commandes">
                                 <div class="row">
-                                    @foreach($commande_produits as $produit)
-                                        <div class="produit col-md-3 col-sm-6 col-xs-12">
-                                            {{--<div class="img-content">--}}
-                                            {{--<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">--}}
-                                            {{--</div>--}}
-                                            <div class="produit-infos">
-                                                <h4 class="title-produit">{{ $produit->produit_libelle }}</h4>
-                                                <p class="options">Matières : {{ $produit->option_libelle }}</p>
-                                                <p class="qte">Quantité : {{ $produit->quantite }}</p>
-                                                <p class="price">Prix : {{ $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite) }}€</p>
+                                    @foreach($commande_produits as $key => $produit)
+
+                                            <div class="produit col-md-3 col-sm-6 col-xs-12">
+                                                {{--<div class="img-content">--}}
+                                                {{--<img src="http://placehold.it/200x200" class="img img-reponsive" alt="">--}}
+                                                {{--</div>--}}
+                                                <div class="produit-infos">
+                                                    <h4 class="title-produit">{{ $produit->produit_libelle }}</h4>
+                                                    <p class="options">Matières : {{ $produit->option_libelle }}</p>
+                                                    <p class="qte">Quantité : {{ $produit->quantite }}</p>
+                                                    <p class="price">Prix : {{ $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite) }}€</p>
+                                                </div>
+
+                                                @foreach($produits as $commande_produit)
+                                                    @if($commande_produit->nom == $produit->produit_libelle)
+                                                        <div class="avis-produit">
+                                                            <button class="btn btn-success" data-toggle="modal" data-target="#add-avis-product-{{ $commande_produit->id }}"><span class="glyphicon glyphicon-pencil"></span> Ajouter un avis </button>
+                                                        </div>
+                                                        {{ $commande_produit->nom }} : {{ $commande_produit->id }}
+                                                                <!-- Modal -->
+                                                        <div class="modal fade" id="add-avis-product-{{ $commande_produit->id }}" tabindex="-1" role="dialog" aria-labelledby="add-avis-label">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h4 class="modal-title" id="update-slide-label">Ajouter un avis pour le produit : {{ $commande_produit->nom }}</h4>
+                                                                    </div>
+                                                                    <form action="/compte/add-avis/{{ $commande_produit->id }}" method="POST">
+                                                                        {{ csrf_field() }}
+                                                                        <div class="modal-body">
+                                                                            <div class="form-add-avis">
+
+                                                                                <input type="text" value="{{ $commande_produit->id }}" name="produit_id">
+
+                                                                                <!-- Titre de l'avis -->
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label" for="titre">Titre : <span>*</span></label>
+                                                                                    <input class="form-control" id="titre" name="titre" type="text" required>
+                                                                                </div>
+
+                                                                                <!-- Description de l'avis -->
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label" for="desc">Description : <span>*</span></label>
+                                                                                    <textarea class="form-control" id="desc" name="desc" type="text" required></textarea>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <div class="pull-right">
+                                                                                <button class="btn bnt-default" data-dismiss="modal">Annuler</button>
+                                                                                <!-- Bouton valider -->
+                                                                                <div class="form-group submit-button" style="float: right;">
+                                                                                    <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
                                             </div>
-                                            <div class="avis-produit">
-                                                <button class="btn btn-success" data-toggle="modal" data-target="#add-avis" onclick="openModalAjoutAvis({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-pencil"></span> Ajouter un avis </button>
-                                            </div>
-                                        </div>
-                                    @endforeach
+
+
+                                    @endforeacH
+
                                 </div>
                                 <!--ul class="pagination">
                                     <li><a href="#">1</a></li>
@@ -219,8 +272,6 @@
             </div>
         </div>
     </div>
-
-    @include('modals.avis.add')
 @endsection
 
 
