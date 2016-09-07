@@ -37,7 +37,7 @@
                     <h4 class="commande-ref">Commande N° : {{ $commande->reference }} </h4>
                 </div>
                 <div class="bloc-content">
-                    <a class="facture" href="{{ route('facture', $commande->reference) }}"><span class="glyphicon glyphicon-file"></span> Voir la facture</a>
+                    <a class="facture" target="_blank" href="{{ route('facture', $commande->reference) }}""><span class="glyphicon glyphicon-file"></span> Voir la facture</a>
 
                     <p>Commande passé le : <span class="glyphicon glyphicon-calendar"></span> {{  date("d/m/Y", strtotime($commande->date)) }}</p>
 

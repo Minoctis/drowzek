@@ -39,7 +39,7 @@
                         <div class="commande-infos">
                             <div class="top-content row">
                                 <h4 class="sub-title-content-commande col-md-9 col-xs-12">Information de la commande :</h4>
-                                <p class="infos-link facture col-md-3 col-xs-12"><a href="#">Imprimer la facture</a></p>
+                                <p class="infos-link facture col-md-3 col-xs-12"><a target="_blank" href="{{ route('facture', $detail_commande->reference) }}">Imprimer la facture</a></p>
                             </div>
 
 

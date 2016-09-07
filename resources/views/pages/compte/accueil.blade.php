@@ -52,7 +52,7 @@
 								<td><a href="#">{{ $commande_recente->reference }}</a></td>
 								<td>{{ date("d/m/Y", strtotime($commande_recente->date)) }}</td>
 								<td>{{ $commande_recente->statut->libelle }}</td>
-								<td><a href="#"><i class="fa fa-file-text"></i></a></td>
+								<td><a target="_blank" href="{{ route('facture', $commande_recente->reference) }}"><i class="fa fa-file-text"></i></a></td>
 								<td><a href="{{ route('compte::detailCommande', $commande_recente->reference) }}"><i class="fa fa-external-link"></i></a></td>
 							</tr>
 							@endforeach

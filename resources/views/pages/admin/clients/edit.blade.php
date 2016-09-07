@@ -229,7 +229,7 @@
                                             <td>{{$commande->statut->libelle}}</td>
 
 
-                                            <td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> Facture</a></td>
+                                            <td><a target="_blank" href="{{ route('facture', $commande->reference) }}" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> Facture</a></td>
                                             <td><a href="{{ route('admin::commandes::details', $commande->reference) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Afficher</a></td>
                                         </tr>
 
