@@ -46,7 +46,7 @@
                         <td><input class="hdg-button-small" type="button" onclick="rechercheProduits()" value="Rechercher"></td>
                     </tr>
                     @foreach($produits as $produit)
-                    <tr>
+                    <tr @if ($produit->trashed()) class="disable" @endif>
                         <td>{{$produit->nom}}</td>
                         <td>{{ $produit->is_new ? 'Oui' : 'Non' }}</td>
                         <td>@if($produit->categorie->parent->id)<a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->parent->id) }}">{{ $produit->categorie->parent->nom }}</a>@endif // <a href="{{ route('admin::catalogue::categories::edit', $produit->categorie->id) }}">{{ $produit->categorie->nom }}</a></td>

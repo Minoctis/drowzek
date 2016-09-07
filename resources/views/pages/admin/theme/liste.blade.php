@@ -67,7 +67,7 @@
                                                                 <!-- Image -->
                                                                 <div class="form-group">
                                                                     <label class="control-label" for="image">Ajouter une nouvelle image : <span>*</span></label>
-                                                                    <input type="file" value="" name="image">
+                                                                    <input type="file" name="img">
                                                                 </div>
 
                                                                 <!-- Titre -->
@@ -145,7 +145,7 @@
                                                                 <!-- Image -->
                                                                 <div class="form-group">
                                                                     <label class="control-label" for="image">Ajouter une nouvelle image : <span>*</span></label>
-                                                                    <input type="file" value="" name="image">
+                                                                    <input type="file" name="img">
                                                                 </div>
 
                                                                 <!-- Titre -->

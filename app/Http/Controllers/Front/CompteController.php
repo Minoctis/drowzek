@@ -83,6 +83,37 @@ class CompteController extends Controller
         return view('pages.compte.accueil', $data);
     }
 
+    public function showFacture($reference){
+        $commande = Commande::where('reference', $reference)
+            ->with('client')
+            ->with('statut')
+            ->with('paiementType')
+            ->with('paysLivraison')
+            ->with('paysFacturation')
+            ->first();
+
+
+        $commande_produits = CommandeProduit::where('commande_id', $commande->id)
+            ->with('taux_tva')
+            ->get();
+        $commande_total_HT = 0;
+        $commande_total_TTC = 0;
+
+        foreach($commande_produits as $produit) {
+            $commande_total_HT += $produit->prix_unitaire_ht * $produit->quantite;
+            $commande_total_TTC += $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite);
+        }
+
+        $data = [
+            'commande'    => $commande,
+            'commande_produits'  => $commande_produits,
+            'commande_total_HT'  => $commande_total_HT,
+            'commande_total_TTC' => $commande_total_TTC
+        ];
+
+        return view('pages.invoice.facture', $data);
+    }
+
     public function detailCommande($reference) {
         $commande = Commande::where('reference', $reference)
             ->with('statut')

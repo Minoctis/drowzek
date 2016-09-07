@@ -314,6 +314,11 @@ a.update-adresse {
     float: right;
 }
 
+/* Liste produit */
+
+tr.disable {
+    background-color: #FFCCCC;
+}
 
 /* Fiche produit */
 .produit-header .produit-delete,
@@ -366,4 +371,25 @@ ul.nav.nav-tabs.produit-tabs {
     background-color: white;
     border: 1px solid #ddd;
     padding: 10px 15px;
+}
+
+
+/* Catalogue */
+.panel.panel-default.ui-sortable-handle {
+    border-color: #ddd;
+    background-color: #ffffff;
+    margin-top: 5px;
+    display: block;
+}
+
+ol.children {
+    margin-bottom: 10px;
+}
+
+.liste-categorie {
+    padding-left: 0;
+}
+
+.liste-categorie .panel-body {
+    padding: 15px;
 }

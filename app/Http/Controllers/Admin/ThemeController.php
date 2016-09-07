@@ -30,11 +30,21 @@ class ThemeController extends Controller
         //Validation
         $this->validate($request, [
             'titre' => 'required',
-            'lien'      => 'required',
+            'lien'  => 'required',
+            'img'   => ''
         ]);
 
         //Update des données
         $slide = Theme::find($id);
+
+        if ($request->hasFile('img')) {
+            //Enregistrement de l'image
+            $extension = $request->file('img')->getClientOriginalExtension();
+            $imageName = 'slide-' . $id . '.' . $extension;
+            $request->file('img')->move(base_path() . '/public/img/themes/slider', $imageName);
+
+            $slide->image_url = $imageName;
+        }
         $slide->titre = $request->titre;
         $slide->lien = $request->lien;
 

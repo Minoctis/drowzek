@@ -80,11 +80,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('ajout-panier', ['as' => 'ajout-panier', 'uses' => 'Front\PanierController@addProductToPanier']);
     Route::post('edit-panier', ['as' => 'edit-panier', 'uses' => 'Front\PanierController@editPanier']);
 
+    // Routes facture
+    Route::get('facture/{reference}', ['as' => 'facture', 'uses' => 'Front\CompteController@showFacture']);
     //Routes du compte utlisateur
     Route::group(['prefix' => 'compte', 'as' => 'compte::', 'middleware' => 'auth'], function () {
         //compte utilisateur accueil
         Route::get('accueil', ['as' => 'accueil', 'uses' => 'Front\CompteController@showCompteClient']);
         Route::get('commande/{reference}', ['as' => 'detailCommande', 'uses' => 'Front\CompteController@detailCommande']);
+
 
         Route::post('info-utilisateur', ['as' => 'updateClient', 'uses' => 'Front\CompteController@updateCompteClient']);
 
@@ -206,7 +209,7 @@ Route::group(['middleware' => ['web']], function () {
             //Page client
             Route::get('/{client_id}', ['as' => 'details', 'uses' => 'Admin\ClientsController@showClient']);
             Route::post('/{client_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClient']);
-            Route::post('/{client_id}/adresse/{adresse_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClientAdresse']);
+            Route::post('/adresse/{adresse_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClientAdresse']);
         });
 
         //Routes des commandes

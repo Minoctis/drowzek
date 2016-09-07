@@ -74,7 +74,7 @@
 
                     <div role="tabpanel" class="tab-pane" id="adresses">
                         <div class="row">
-                        @foreach($client->adresses as $adresse)
+                        @foreach($adresses as $adresse)
                             <div class="adresse col-md-6 col-xs-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -119,10 +119,11 @@
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                 <h4 class="modal-title" id="update-slide-label">Modifier l'adresse</h4>
                                             </div>
-                                            <form action="/admin/clients/{{ $client->id }}/adresse/{{ $adresse->id }}" method="POST">
+                                            <form action="/admin/clients/adresse/{{ $adresse->id }}" method="POST">
                                                 {{ csrf_field() }}
                                                 <div class="modal-body">
                                                     <div class="form-update-adresse">
+                                                        <input type="text" value="{{ $adresse->id }}" name="id" style="display: none;">
                                                         <!-- Société -->
                                                         <div class="form-group">
                                                             <label class="control-label" for="societe">Société :</label><br>
@@ -132,13 +133,13 @@
                                                         <!-- Prénom -->
                                                         <div class="form-group">
                                                             <label class="control-label" for="prenom">Prénom : <span>*</span></label><br>
-                                                            <input type="text" value="{{ $adresse->prenom_livraison }}" name="prenom">
+                                                            <input type="text" value="{{ $adresse->prenom_livraison }}" name="prenom_livraison">
                                                         </div>
 
                                                         <!-- Nom -->
                                                         <div class="form-group">
                                                             <label class="control-label" for="prenom">Nom : <span>*</span></label><br>
-                                                            <input type="text" value="{{ $adresse->nom_livraison }}" name="nom">
+                                                            <input type="text" value="{{ $adresse->nom_livraison }}" name="nom_livraison">
                                                         </div>
 
                                                         <!-- Adresse -->

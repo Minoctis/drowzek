@@ -22,7 +22,7 @@
                         <td>{{ $preview->texte }}</td>
                         <td>
                             <div class="avis-statut">
-                                <input class="bootstrap-switch-input" data-id="{{ $preview->id }}" data-on-color="success" data-off-color="danger" type="checkbox" {{ $preview->is_active ? '' : 'checked' }}>
+                                <input class="bootstrap-switch-input" data-id="{{ $preview->id }}" data-on-color="success" data-off-color="danger" type="checkbox" {{ $preview->is_active ? 'checked' : '' }}>
                             </div>
                         </td>
                         <td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-avis" onclick="openModalDeleteAvis({{ $preview->id }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>

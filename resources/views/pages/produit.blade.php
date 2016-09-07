@@ -120,9 +120,11 @@
 				<div class="avis-slider col-xs-12">
 					@if($avis->count())
 						@foreach($avis as $review)
+							@if($review->is_active == 1)
 							<div>
 								@include('elements.comment')
 							</div>
+							@endif
 						@endforeach
 					@else
 						<p>Il y a pas d'avis sur ce produit</p>

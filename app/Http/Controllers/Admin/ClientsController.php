@@ -26,11 +26,13 @@ class ClientsController extends Controller
 
     public function showClient($client_id){
         $client = Client::where('id',$client_id)->with('civilite')->with('adresses')->first();
+        $adresses = Adresse::where('client_id', $client_id)->with('pays')->get();
         $pays = Pays::all();
         $commandes = Commande::where('client_id', $client_id)->with('statut')->get();
         $data = [
             'client' => $client,
             'pays' => $pays,
+            'adresses' => $adresses,
             'commandes' => $commandes
         ];
 
@@ -61,24 +63,25 @@ class ClientsController extends Controller
 
     }
 
-    public function updateClientAdresse($adresse_id, Request $request) {
+    public function updateClientAdresse($id, Request $request) {
         //die(var_dump($request->all()));
         //Validation
         $this->validate($request, [
+            'id'                  => 'required',
             'societe'             => '',
             'nom_adresse'         => 'required',
             'adresse'             => 'required',
             'compl_adresse'        => '',
             'cp'                  => 'required',
             'ville'               => 'required',
-            'nom'                 => 'required',
-            'prenom'              => 'required',
+            'nom_livraison'                 => 'required',
+            'prenom_livraison'              => 'required',
             'tel'                 => 'required',
             'pays'                => 'required'
         ]);
 
         //Update des données
-        $adresse = Adresse::where('id', $adresse_id);
+        $adresse = Adresse::find($id);
 
         $adresse->nom_carnet_adresse = $request->nom_adresse;
         $adresse->adresse            = $request->adresse;
@@ -86,8 +89,8 @@ class ClientsController extends Controller
         $adresse->societe            = $request->societe;
         $adresse->cp                 = $request->cp;
         $adresse->ville              = $request->ville;
-        $adresse->nom_livraison      = $request->nom;
-        $adresse->prenom_livraison   = $request->prenom;
+        $adresse->nom_livraison      = $request->nom_livraison;
+        $adresse->prenom_livraison   = $request->prenom_livraison;
         $adresse->telephone          = $request->tel;
         $adresse->pays_id            = $request->pays;
 

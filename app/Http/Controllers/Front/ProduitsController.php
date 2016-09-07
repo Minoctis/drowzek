@@ -48,7 +48,7 @@ class ProduitsController extends Controller
         $page = Pages::where('slug', $slug)->first();
 
 
-        return view('pages.page-static', ['page-static' => $page] );
+        return view('pages.page-static', ['page' => $page] );
     }
 
     public function showProduit($slug) {
