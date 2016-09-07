@@ -12,7 +12,7 @@
             <i class="fa fa-lock fa-3x"></i>
             <h3 class="small-title">Paiement sécurisé</h3>
             <div class="content">
-                <p>Virement - Paiement en plusieurs fois</p>
+                <p>Paiement par carte bancaire</p>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -20,7 +20,6 @@
             <h3 class="small-title">Moyens de paiement</h3>
             <div class="content">
                 <i class="fa fa-cc-visa fa-2x"></i>
-                <i class="fa fa-cc-paypal fa-2x"></i>
                 <i class="fa fa-cc-amex fa-2x"></i>
                 <i class="fa fa-cc-mastercard fa-2x"></i>
             </div>
