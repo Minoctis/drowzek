@@ -67,6 +67,9 @@ Route::group(['middleware' => ['web']], function () {
         //Page 3 du tunnel, le paiement
         Route::get('/paiement', ['as' => 'paiement', 'uses' => 'Front\PanierController@showPaiement']);
 
+        //Page 4 bis du tunnel, le "faux" TPE
+        Route::get('/tpe', ['as' => 'tpe', 'uses' => 'Front\PanierController@showTpe']);
+
         //Page 4 du tunnel, la confirmation
         Route::get('/confirmation', ['as' => 'confirmation', 'uses' => 'Front\PanierController@showConfirmation']);
 

@@ -107,8 +107,16 @@ class PanierController extends Controller
 
     public function showPaiement(Request $request) {
         $data = $this->getPanierData($request);
+        $data['client'] = Client::find(Auth::user()->id);
         
         return view('pages.checkout.paiement', $data);
+    }
+
+    public function showTpe(Request $request) {
+        $data = $this->getPanierData($request);
+        $data['client'] = Client::find(Auth::user()->id);
+        
+        return view('pages.checkout.tpe', $data);
     }
 
     public function showConfirmation(Request $request) {

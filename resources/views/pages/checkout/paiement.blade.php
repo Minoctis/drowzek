@@ -68,25 +68,11 @@
 							</div>
 							<div class="panel-body">
 
-								<ul>
-									<li>
-										<span class="nom-client">Jean</span>
-										<span class="prenom-client"> Dupont</span>
-									</li>
-									<li>
-										<span class="adresse">100 rue nationale</span>
-									</li>
-									<li>
-										<span class="compl-adresse">Appartement 3</span>
-									</li>
-									<li>
-										<span class="ville">Lille</span>
-										<span class="cp">59000</span>
-									</li>
-									<li>
-										<span class="pays">France</span>
-									</li>
-								</ul>
+								@foreach($client->adresses as $adresse)
+									@if($adresse->adresse_type_id === 2)
+							    	@include('elements.adresses-facturation')
+									@endif
+							    @endforeach
 						</div>
 					</div>
 
@@ -97,25 +83,11 @@
 							</div>
 							<div class="panel-body">
 
-								<ul>
-									<li>
-										<span class="nom-client">Jean</span>
-										<span class="prenom-client"> Dupont</span>
-									</li>
-									<li>
-										<span class="adresse">100 rue nationale</span>
-									</li>
-									<li>
-										<span class="compl-adresse">Appartement 3</span>
-									</li>
-									<li>
-										<span class="ville">Lille</span>
-										<span class="cp">59000</span>
-									</li>
-									<li>
-										<span class="pays">France</span>
-									</li>
-								</ul>
+								@foreach($client->adresses as $adresse)
+											@if($adresse->adresse_type_id === 2)
+									    	@include('elements.adresses-facturation')
+											@endif
+									    @endforeach
 						</div>
 					</div>
 
@@ -139,7 +111,7 @@
 	<div class="checkout-footer">
 		<a class="back-to-panier" href="{{ route('panier') }}">Revenir au panier</a>
 
-		<a class="next-step hdg-button-small" href="{{ route('checkout::confirmation') }}">Procéder au paiement</a>
+		<a class="next-step hdg-button-small" href="{{ route('checkout::tpe') }}">Procéder au paiement</a>
 	</div>
 </div>
 </form>
