@@ -104,10 +104,10 @@
                         <table class="table">
                             <tr>
                                 <td>
-                                    <select name="shipping" id="shipping">
+                                    <!--<select name="shipping" id="shipping">-->
                                         <option value="17">Livraison à domicile</option>
-                                        <option value="100">Transporteur privé</option>
-                                    </select>
+                                        <!--<option value="100">Transporteur privé</option>-->
+                                    <!-- </select>-->
                                 </td>
                                 <td><span id="shipping-value">17</span> €</td>
                             </tr>
