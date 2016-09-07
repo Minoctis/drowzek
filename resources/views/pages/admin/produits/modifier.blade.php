@@ -4,32 +4,32 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="admin-bloc">
-                <div class="is-new">
-                    <p>Marquer ce produit comme une nouveauté ?</p>
+                <form method="POST">
+                    <div class="is-new">
+                        <p>Marquer ce produit comme une nouveauté ?</p>
 
-                    <label>Oui</label>
-                    <input type="radio" name="isNew" value="1" {{ $produit->is_new ? 'checked' : '' }}>
+                        <label>Oui</label>
+                        <input type="radio" name="isNew" value="1" {{ $produit->is_new ? 'checked' : '' }}>
 
-                    <label>Non</label>
-                    <input type="radio" name="isNew" value="0" {{ $produit->is_new ? '' : 'checked' }}>
-                    <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Cela vous permet de rendre le produit visible sur la page d'accueil.</span>
-                </div>
-                <div class="produit-header">
-                    <div class="produit-statut">
-                        <input class="bootstrap-switch-input" data-on-color="success" data-off-color="danger" type="checkbox" checked>
+                        <label>Non</label>
+                        <input type="radio" name="isNew" value="0" {{ $produit->is_new ? '' : 'checked' }}>
+                        <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Cela vous permet de rendre le produit visible sur la page d'accueil.</span>
                     </div>
-                    <div class="produit-delete">
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button>
+                    <div class="produit-header">
+                        <div class="produit-statut">
+                            <input class="bootstrap-switch-input" data-on-color="success" data-off-color="danger" type="checkbox" checked>
+                        </div>
+                        {{--<div class="produit-delete">--}}
+                            {{--<button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit({{ $produit->id }}, {{ '"'.$produit->nom.'"' }})"><span class="glyphicon glyphicon-trash"></span> Supprimer</button>--}}
+                        {{--</div>--}}
                     </div>
-                </div>
 
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs produit-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#infos" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Informations</a></li>
-                    <li role="presentation"><a href="#prix" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Prix</a></li>
-                    <li role="presentation"><a href="#images" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Images</a></li>
-                </ul>
-                <form action="">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs produit-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#infos" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Informations</a></li>
+                        <li role="presentation"><a href="#prix" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Prix</a></li>
+                        <li role="presentation"><a href="#images" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Images</a></li>
+                    </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="infos">
@@ -62,7 +62,11 @@
                                 <label class="control-label" for="categorie">Catégorie : <span>*</span></label>
                                 <select name="categorie" id="categorie" class="form-control" required>
                                     @foreach($categories as $categorie)
-                                        <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+                                        <optgroup label="{{ $categorie->nom }}">
+                                            @foreach($categorie->children as $child)
+                                                <option value="{{ $child->id }}" {{ $produit->categorie_id === $child->id ? 'selected' : '' }}>{{ $child->nom }}</option>
+                                            @endforeach
+                                        </optgroup>
                                     @endforeach
                                 </select>
 
@@ -160,13 +164,9 @@
                         <div class="form-group submit-button submit-produit pull-right">
                             <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour les informations" />
                         </div>
-
                     </div>
-
                 </form>
-
             </div>
-
         </div>
     </div>
     @include('modals.produits.delete')

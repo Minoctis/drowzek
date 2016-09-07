@@ -128,10 +128,11 @@ Route::group(['middleware' => ['web']], function () {
 
             //Modifier un produit
             Route::get('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\ProduitsController@getModifierProduit' ]);
-            Route::post('modifier/{id}', ['as' => 'edit', function ($id) {} ]);
+            Route::post('modifier/{id}', ['as' => 'edit', 'uses' => 'Admin\ProduitsController@postModifierProduit' ]);
 
             //Supprimer un produit
             Route::delete('/{id}', ['as' => 'delete', 'uses' => 'Admin\ProduitsController@deleteProduit' ]);
+            Route::put('/{id}/restore', ['as' => 'restore', 'uses' => 'Admin\ProduitsController@restoreProduit' ]);
 
             //Prévisualisation - Ajout/Modification
             Route::post('previsualisation', ['as' => 'preview', function () {} ]);

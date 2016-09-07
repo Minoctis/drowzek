@@ -41,14 +41,40 @@ class ProduitsController extends Controller
     }
 
     public function getModifierProduit($produit_id) {
-        $categories = Categorie::all();
+        $categories = Categorie::with('children')->get();
         $produit = Produit::where('id', $produit_id)
+            ->withTrashed()
             ->with('options')
             ->with('categorie')
             ->with('images')
             ->first();
 
         return view('pages.admin.produits.modifier', ['produit' => $produit], ['categorie' => $categories]);
+    }
+
+    public function postModifierProduit($id, Request $request) {
+        //Validation
+        $this->validate($request, [
+            'nom'  => 'required|unique:produits,nom,'.$id,
+            'slug' => ['required', 'regex:/^[a-z][-a-z0-9]*$/', 'unique:produits,slug,'.$id],
+            'dimension' => 'required',
+            'description' => 'required',
+            'categorie' => 'required',
+            'isNew' => 'required'
+        ]);
+        //Update des données
+        $produit = Produit::withTrashed()->find($id);
+        $produit->nom = $request->nom;
+        $produit->slug = $request->slug;
+        $produit->dimensions = $request->dimension;
+        $produit->description = $request->description;
+        $produit->categorie_id = $request->categorie;
+        $produit->is_new = $request->isNew;
+        //Si changement de l'image
+
+        $produit->save();
+        //Redirection
+        return redirect()->route('admin::produits::edit', $id);
     }
 
     public function deleteProduit($id) {
@@ -58,6 +84,15 @@ class ProduitsController extends Controller
 
         if ($produit->trashed()) return Response::json([], 204);
         else return Response::json([], 404);
+    }
+
+    public function restoreProduit($id) {
+        $produit = Produit::withTrashed()->where('id', $id)->first();
+
+        $produit->restore();
+
+        if (!$produit->trashed()) return Response::json([], 204);
+        else return Response::json([], 500);
     }
 
     public function rechercheProduit(Request $request) {
