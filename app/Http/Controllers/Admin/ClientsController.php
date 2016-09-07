@@ -12,6 +12,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use URL;
+use Validator;
 use App\Http\Controllers\Controller;
 
 class ClientsController extends Controller
@@ -66,7 +69,8 @@ class ClientsController extends Controller
     public function updateClientAdresse($id, Request $request) {
         //die(var_dump($request->all()));
         //Validation
-        $this->validate($request, [
+
+        $data = array(
             'id'                  => 'required',
             'societe'             => '',
             'nom_adresse'         => 'required',
@@ -74,11 +78,15 @@ class ClientsController extends Controller
             'compl_adresse'        => '',
             'cp'                  => 'required',
             'ville'               => 'required',
-            'nom_livraison'                 => 'required',
-            'prenom_livraison'              => 'required',
+            'nom_livraison'       => 'required',
+            'prenom_livraison'    => 'required',
             'tel'                 => 'required',
             'pays'                => 'required'
-        ]);
+        );
+
+        $validation = Validator::make($request->all(), $data);
+
+
 
         //Update des données
         $adresse = Adresse::find($id);
@@ -96,7 +104,7 @@ class ClientsController extends Controller
 
         $adresse->save();
 
-        return redirect()->route('admin::clients::liste');
+        return Redirect::to(URL::previous());
 
     }
 }

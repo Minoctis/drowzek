@@ -96,7 +96,7 @@ class ProduitsController extends Controller
     }
 
     public function rechercheProduit(Request $request) {
-        $produits = Produit::with('ambiances')->with('categorie.parent');
+        $produits = Produit::withTrashed()->with('ambiances')->with('categorie.parent');
 
         if ($request->has('nom') && !empty($request->nom)) {
             $produits->where('nom', 'like', $request->nom.'%');

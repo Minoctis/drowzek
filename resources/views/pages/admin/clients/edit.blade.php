@@ -2,7 +2,10 @@
 @section('title', $client->nom.' '.$client->prenom)
 @section('content')
 
-<div class="row">
+<div class="row" style="
+    background-color: white;
+    border: 1px solid #ddd;
+">
         <div class="col-xs-12">
             <div class="admin-bloc">
 
@@ -105,7 +108,7 @@
                                                 <span class="pays">France</span>
                                             </li>
                                             <li>
-                                                <span class="tel">{{$adresse->telephones}}</span>
+                                                <span class="tel">{{$adresse->telephone}}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -173,7 +176,7 @@
                                                         <!-- Tél -->
                                                         <div class="form-group">
                                                             <label class="control-label" for="ville">Téléphone : <span>*</span></label><br>
-                                                            <input type="text" value="{{ $adresse->telephones }}" name="tel">
+                                                            <input type="text" value="{{ $adresse->telephone }}" name="tel">
                                                         </div>
 
                                                         <!-- Tél -->

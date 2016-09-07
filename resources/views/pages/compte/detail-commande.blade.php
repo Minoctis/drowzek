@@ -64,8 +64,8 @@
                                                         <div class="avis-produit">
                                                             <button class="btn btn-success" data-toggle="modal" data-target="#add-avis-product-{{ $commande_produit->id }}"><span class="glyphicon glyphicon-pencil"></span> Ajouter un avis </button>
                                                         </div>
-                                                        {{ $commande_produit->nom }} : {{ $commande_produit->id }}
-                                                                <!-- Modal -->
+
+                                                        <!-- Modal -->
                                                         <div class="modal fade" id="add-avis-product-{{ $commande_produit->id }}" tabindex="-1" role="dialog" aria-labelledby="add-avis-label">
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
