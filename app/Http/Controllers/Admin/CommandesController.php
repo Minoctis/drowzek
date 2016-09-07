@@ -10,10 +10,12 @@ use App\Models\Civilite;
 use App\Models\Pays;
 use App\Models\Produit;
 use App\Models\ProduitOption;
+use Debugbar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Response;
 
 class CommandesController extends Controller
 {
@@ -81,5 +83,15 @@ class CommandesController extends Controller
         $adresse->save();
 
         return redirect()->route('admin::commandes::edit');
+    }
+
+    public function updateStatut($id, Request $request) {
+        $commande = Commande::find($id);
+
+        $commande->commande_statut_id = $request->statut_id;
+
+        $commande->save();
+
+        return Response::json([], 200);
     }
 }

@@ -71,7 +71,7 @@
             <td>##ambiances##</td>
             <td>##ambiancesTotal##</td>
             <td><a href="##lienEditProduit##" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
-            <td><button class="btn btn-danger" data-toggle="modal" data-target="#delete-produit" onclick="openModalDeleteProduit(##produit_id##, ##produit_nom##)"><span class="glyphicon glyphicon-trash"></span> Supprimer</button></td>
+            <td></td>
         </tr>
     </script>
     @include('modals.produits.delete')

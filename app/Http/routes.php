@@ -224,6 +224,8 @@ Route::group(['middleware' => ['web']], function () {
 
             //Update produit
             Route::post('/{commande_ref}/{commande_produit_libelle}', ['as' => 'update', 'uses' => 'Admin\CommandesController@updateProductCommande']);
+
+            Route::put('{id}/statut', ['as' => 'updateStatut', 'uses' => 'Admin\CommandesController@updateStatut']);
         });
 
         //Routes des avis

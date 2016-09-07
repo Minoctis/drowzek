@@ -181,4 +181,22 @@ $('#validate-supprimer-avis').on('click', function() {
 });
 
 
+function updateCommandeStatut(select, id){
+    $.ajax({
+            url:'/admin/commandes/' + id + '/statut/',
+            method: 'put',
+            data: commandeStatutData(select.value)
+        })
+        .success(function() {
+            toastr.success('Le statut de comande a été mis à jour.', 'Statut de commande');
+        })
+        .error(function() {
+            toastr.error('Une erreur est survenue à la mise à jour du statut de commande', 'Statut de commande')
+        })
+}
+
+function commandeStatutData(statutId) {
+    return {statut_id: statutId}
+}
+
 /* Theme */
