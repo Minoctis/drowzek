@@ -24,37 +24,20 @@
 			<div class="row">
 				<div class="col-md-7 col-xs-12 checkout-left-content">
 					<div class="title-checkout-panel">
-						<h3>Choisissez un mode de paiement</h3>
+						<h3>Mode de paiement</h3>
 					</div>
 					<ul class="mode-livraison">
 						<!-- mode1 -->
 						<div class="row">
-							<input name="livraison" type="radio" checked />
 							<li>
 								<div class="col-md-10 col-xs-10">
 									<span class="carte-bancaire">carte bancaire</span> <br>
 									
 								</div>
-
-								
-								
 							</li>
 						</div>
 						<!-- fin mode1 -->
 
-						<!-- mode2 -->
-						<div class="row">
-							<input name="livraison" type="radio" />
-							<li>
-								<div class="col-md-10 col-xs-10">
-									<span class="Paypal">Paypal</span> <br>
-									
-								</div>
-
-																
-							</li>
-						</div>
-						<!-- fin mode2 -->
                         <div class="row">
 							<p><input name="livraison" type="checkbox" /> J'accepte les <a href="#">conditions générales de ventes</a></p>
 
