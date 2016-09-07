@@ -129,6 +129,64 @@ function getRechercheProduitData() {
     return data;
 }
 
+function rechercheCommandeData() {
+    var data = {
+        reference: document.querySelector('#recherche-commande-reference').value,
+        ville: document.querySelector('#recherche-commande-ville').value,
+        client: document.querySelector('#recherche-commande-client').value,
+        date: document.querySelector('#recherche-commande-date').value,
+        statut: document.querySelector('#recherche-commande-statut').value
+    };
+    return data;
+}
+
+function rechercheCommande() {
+    $.ajax({
+            url: '/admin/commandes/recherche',
+            method: 'post',
+            data: rechercheCommandeData()
+        })
+        .success(function(data) {
+            toastr.success('La recherche a retourné ' + data.commandes.length + ' commandes.', 'Recherche');
+
+            // Cache of the template
+            var template = document.getElementById("template-list-item");
+            var option = document.getElementById("template-list-option");
+            // Get the contents of the template
+            var templateHtml = template.innerHTML;
+            var optionHtml = option.innerHTML;
+            // Final HTML variable as empty string
+            var listHtml = "";
+
+            data.commandes.forEach(function(commande) {
+                var statuts = '';
+
+                data.commande_statuts.forEach(function(statut) {
+                    statuts += optionHtml.replace(/##statut_id##/g, statut.id)
+                        .replace(/##selected##/g, statut.id === commande.commande_statut_id ? 'selected' : '')
+                        .replace(/##libelle##/g, statut.libelle)
+                });
+
+                var date = new Date(commande.created_at);
+                var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
+
+                listHtml += templateHtml.replace(/##reference##/g, commande.reference)
+                    .replace(/##ville##/g, commande.ville_livraison)
+                    .replace(/##nom##/g, commande.nom_livraison)
+                    .replace(/##date##/g, date.getDate() + '/' + month + '/' + date.getFullYear())
+                    .replace(/##id##/g, commande.id)
+                    .replace(/##options##/g, statuts)
+                    .replace(/##lien_edition##/g, '/admin/commandes/' + commande.reference)
+            });
+            $("#table-liste-commandes>tbody").find("tr:gt(0)").remove();
+            $("#table-liste-commandes>tbody").append(listHtml);
+
+        })
+        .error(function() {
+            toastr.error('Une erreur est survenue pendant la recherche de commande', 'Recherche');
+        })
+}
+
 function deleteRestoreProduit(checkbox, id) {
     console.log('etat produit', checkbox.checked)
     if (checkbox.checked) {

@@ -226,6 +226,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('/{commande_ref}/{commande_produit_libelle}', ['as' => 'update', 'uses' => 'Admin\CommandesController@updateProductCommande']);
 
             Route::put('{id}/statut', ['as' => 'updateStatut', 'uses' => 'Admin\CommandesController@updateStatut']);
+
+            Route::post('/recherche', ['as' => 'recherche', 'uses' => 'Admin\CommandesController@rechercheCommande']);
         });
 
         //Routes des avis

@@ -80,7 +80,7 @@ class CommandesController extends Controller
         $commande_produit->quantite         = $request->qt;
         $commande_produit->option_libelle   = $request->option;
 
-        $adresse->save();
+        $commande_produit->save();
 
         return redirect()->route('admin::commandes::edit');
     }
@@ -93,5 +93,30 @@ class CommandesController extends Controller
         $commande->save();
 
         return Response::json([], 200);
+    }
+
+    public function rechercheCommande(Request $request) {
+        $commande_statuts = CommandeStatut::all();
+        $commandes = Commande::with('statut');
+
+        if ($request->has('reference') && !empty($request->reference)) {
+            $commandes->where('reference', 'like', '%'.$request->reference.'%');
+        }
+
+        if ($request->has('ville') && isset($request->ville)) {
+            $commandes->where('ville_livraison', 'like', '%'.$request->ville.'%');
+        }
+
+        if ($request->has('client') && isset($request->client)) {
+            $commandes->where('nom_livraison', 'like', '%'.$request->client.'%');
+        }
+
+        if ($request->has('statut') && isset($request->statut)) {
+            $commandes->where('commande_statut_id', $request->statut);
+        }
+
+        $commandes = $commandes->get();
+
+        return Response::json(["commandes" => $commandes, "commande_statuts" => $commande_statuts], 200);
     }
 }

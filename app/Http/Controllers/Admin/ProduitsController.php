@@ -99,7 +99,7 @@ class ProduitsController extends Controller
         $produits = Produit::withTrashed()->with('ambiances')->with('categorie.parent');
 
         if ($request->has('nom') && !empty($request->nom)) {
-            $produits->where('nom', 'like', $request->nom.'%');
+            $produits->where('nom', 'like', '%'.$request->nom.'%');
         }
 
         if ($request->has('nouveau') && isset($request->nouveau)) {
