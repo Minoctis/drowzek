@@ -50,10 +50,11 @@
 								<span class="remove-adresse"><a href="#"><i class="fa fa-minus-square-o"></i></a></span>
 							</div>
 							<div class="panel-body">
-
+								<?php $countFacturation = 0; ?>
 								@foreach($client->adresses as $adresse)
-									@if($adresse->adresse_type_id === 2)
+									@if($adresse->adresse_type_id === 2 && $countFacturation == 0)
 							    	@include('elements.adresses-facturation')
+										<?php $countFacturation++; ?>
 									@endif
 							    @endforeach
 						</div>
@@ -65,32 +66,22 @@
 								<span class="remove-adresse"><a href="#"><i class="fa fa-minus-square-o"></i></a></span>
 							</div>
 							<div class="panel-body">
-
+								<?php $countLivraison = 0 ?>
 								@foreach($client->adresses as $adresse)
-											@if($adresse->adresse_type_id === 2)
-									    	@include('elements.adresses-facturation')
-											@endif
-									    @endforeach
+									@if($adresse->adresse_type_id === 1 && $countLivraison == 0)
+							    	@include('elements.adresses-facturation')
+										<?php $countLivraison++ ?>
+									@endif
+							    @endforeach
 						</div>
 					</div>
-
-
 				</div>
-
-
-
-
-				
-
-
 				<div class="col-md-5 col-xs-12 checkout-right-content recap-panier">
 					@include('elements.checkout-mini-panier')
 				</div>
 			</div>
-
 		</div>
 	</div>
-
 	<div class="checkout-footer">
 		<a class="back-to-panier" href="{{ route('panier') }}">Revenir au panier</a>
 
