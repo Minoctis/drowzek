@@ -18,7 +18,7 @@
 	<div class="container">
         @if($produits->count() !== 0)
         <div class="top-panier">
-            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
+            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="{{ route('accueil') }}">continuer mes achats</a></div>
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
             <!-- <a class="hdg-button-default">commande securisé</a>-->
         </div>
@@ -56,7 +56,7 @@
                                     Matières : {{ $produit->libelle }}<br>
                                     quantité : <span class="quantite-value">{{ $quantites[$produit->id] }}</span><br>
                                     TVA: <span class="tva-value">{{ $produit->tauxTva->valeur }}</span> %
-                                    <p class="button-update-produit-detail"><a class="link" href="#">Modifier les options</a></p>
+                                    <!-- <p class="button-update-produit-detail"><a class="link" href="#">Modifier les options</a></p>-->
                                 </div>
                                 <div class="middle-content edit-produit-detail" style="display: none;">
                                     <div class="form-group">
@@ -148,7 +148,7 @@
         @endif
         @if($produits->count() !== 0)
         <div class="bottom-panier">
-            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="#">continuer mes achats</a></div>
+            <div class="achat"><i class="fa fa-chevron-left" aria-hidden="true"></i> <a class="link" href="{{ route('accueil') }}">continuer mes achats</a></div>
             <a class="link" href="{{ route('checkout::adresses') }}"><div class=" securise hdg-button-default">commande securisé</div></a>
             <!-- <a class="hdg-button-default">commande securisé</a>-->
         </div>

@@ -55,13 +55,13 @@
 					<!-- Note des clients ayant acheté ce produit : 5/5,--><a href="#comment">Afficher les avis</a>
 				</p>			
 				<div class="row">
-					<div class="col-lg-12 produit-options">
+					<!-- <div class="col-lg-12 produit-options">
 						<div class="row">
 							@foreach($options as $option)
 								<div class="item col-md-1 col-xs-12"><a href=""><img src="{{ '/img/products/options/'.$option->img_name }}" title="{{ $option->libelle }}"></a></div>
 							@endforeach
 						</div>
-					</div>
+					</div> -->
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<p class="product-price">
 							Prix : <strong>{{ round($options[0]->prix_ht + ($options[0]->prix_ht * $options[0]->tauxTva->valeur / 100), 2) }} €</strong>

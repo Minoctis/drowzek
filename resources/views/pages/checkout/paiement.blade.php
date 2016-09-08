@@ -39,7 +39,7 @@
 						<!-- fin mode1 -->
 
                         <div class="row">
-							<p><input name="livraison" type="checkbox" /> J'accepte les <a href="#">conditions générales de ventes</a></p>
+							<p><input name="livraison" type="checkbox" /> J'accepte les <a href="../pages/cgv" target="_blank">conditions générales de ventes</a></p>
 
 						</div>
 
