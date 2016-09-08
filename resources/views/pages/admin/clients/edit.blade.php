@@ -13,6 +13,10 @@
                 <h3>Information du client :</h3>
             </div>
                 <span class="pass-lost">
+
+                    <form action="/sendemail/{{ $client->id }}" method="POST">test
+                        <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour les informations" />
+                    </form>
                     Ce client à oublié son mot de passe ? <a href="#">Lui envoyer par e-mail</a>
                 </span>
             <span class="informations"><span class="glyphicon glyphicon-info-sign"></span> Vous pouvez modifier les informations du client à partir de ce formulaire.</span>

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use URL;
 use Validator;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class ClientsController extends Controller
 {
@@ -103,6 +104,29 @@ class ClientsController extends Controller
         $adresse->pays_id            = $request->pays;
 
         $adresse->save();
+
+        return Redirect::to(URL::previous());
+
+    }
+
+    public function sendPassword($client_id, Request $request){
+
+        $client = Client::find($client_id)->first();
+        $data = array(
+            'name'      => "Learning Laravel",
+            'client'    => $client->email,
+        );
+
+        Mail::send('pages.emails.welcome', $data, function ($message) {
+
+            $message->from('loubna.fattouh@gmail.com', 'Home de goût');
+
+            $message->to('loubna.fattouh@gmail.com')->subject('Vos accès Home de goût');
+
+
+        });
+
+        return "Your email has been sent successfully";
 
         return Redirect::to(URL::previous());
 

@@ -2,7 +2,10 @@
 @section('title', 'Liste des clients')
 @section('content')
 
-        <div class="row">
+        <div class="row" style="
+    background-color: white;
+    border: 1px solid #ddd;
+">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>

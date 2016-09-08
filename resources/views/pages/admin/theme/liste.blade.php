@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Gestion du thème')
 @section('content')
-    <div class="row">
+    <div class="row" style="
+    background-color: white;
+    border: 1px solid #ddd;
+">
+
         <div class="col-xs-12">
             <div class="admin-bloc">
                 <div class="is-new">
@@ -42,7 +46,7 @@
                                     <tbody>
                                     @foreach($slides as $slide)
                                         <tr>
-                                            <td>{{ $slide->id }}</td>
+                                            <td>{{ $slide->id }}</td>cuc
                                             <td>
                                                 <img style="max-width: 100%;" src="{{ asset('img/themes/slider/'. $slide->image_url ) }}" alt="">
                                             </td>

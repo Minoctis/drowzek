@@ -20,7 +20,10 @@ class ProduitsController extends Controller
     public function showIndex() {
         $new_produits = Produit::where('is_new', 1)
                                 ->with('images')
+                                ->orderBy('updated_at', 'desc')
+                                ->take(4)
                                 ->get();
+
 
         $top_ambiances = Ambiance::orderBy('ordre', 'asc')
                                     ->take(3)
@@ -29,7 +32,7 @@ class ProduitsController extends Controller
 
         $slide = Theme::orderByRaw("RAND()")->where('type','slider')->first();
 
-        $opportunite = Theme::where('type', 'opportunite')->first();
+        $opportunite = Theme::where('type', 'opportunite')->orderBy('id','desc')->first();
 
         $pages = Pages::all();
 

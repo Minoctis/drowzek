@@ -6,6 +6,12 @@ use App\Models\Theme;
 
 use Debugbar;
 use Illuminate\Http\Request;
+use Validator;
+use Faker\Provider\Image;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Input;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -26,13 +32,19 @@ class ThemeController extends Controller
     }
 
     public function updateSlide($id, Request $request) {
-        //die(var_dump($request->all()));
+        die(var_dump($request->all()));
         //Validation
-        $this->validate($request, [
+
+
+
+        $data = array(
             'titre' => 'required',
             'lien'  => 'required',
-            'img'   => ''
-        ]);
+            'img'   => 'required|mimes:png'
+        );
+
+        $validation = Validator::make($request->all(), $data);
+
 
         //Update des données
         $slide = Theme::find($id);

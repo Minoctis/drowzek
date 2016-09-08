@@ -37,7 +37,7 @@
                     <h4 class="commande-ref">Commande N° : {{ $commande->reference }} </h4>
                 </div>
                 <div class="bloc-content">
-                    <a class="facture" target="_blank" href="{{ route('facture', $commande->reference) }}""><span class="glyphicon glyphicon-file"></span> Voir la facture</a>
+                    <a class="facture" target="_blank" href="{{ route('facture', $commande->reference) }}"><span class="glyphicon glyphicon-file"></span> Voir la facture</a>
 
                     <p>Commande passé le : <span class="glyphicon glyphicon-calendar"></span> {{  date("d/m/Y", strtotime($commande->date)) }}</p>
 
@@ -50,13 +50,10 @@
                     </table>
 
                     <form action="#" id="update-statut">
-                        <select name="statut" id="statut">
-                            <option value="">En attente de paiement</option>
-                            <option value="">Payée</option>
-                            <option value="">En cours de préparation</option>
-                            <option value="">Livraison</option>
-                            <option value="">Livrée</option>
-                            <option value="">Annulée</option>
+                        <select name="statut" class="select-commande-statut" onchange="updateCommandeStatut(this, {{ $commande->id }})">
+                           @foreach($statuts as $statut)
+                                <option value="{{ $statut->id }}">{{ $statut->libelle }}</option>
+                           @endforeach
                         </select>
                         <input class="hdg-button-small" type="submit" value="Mettre à jour l'état">
                     </form>

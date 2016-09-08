@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 @section('title', $page->titre)
 @section('content')
-    <div class="row">
+    <div class="row" style="
+    background-color: white;
+    border: 1px solid #ddd;
+">
         <div class="col-xs-12">
             <div class="admin-bloc">
 

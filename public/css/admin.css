@@ -321,7 +321,7 @@ tr.disable {
 }
 
 .liste-produit-BO,
-.list-commandes-BO,
+.liste-commandes-BO,
 .liste-avis-BO,
 .liste-pages-BO{
     background-color: white;
@@ -357,6 +357,7 @@ ul.nav.nav-tabs.produit-tabs {
 .produit-tabs.nav-tabs>li>a:hover,
 .produit-tabs.nav-tabs>li>a{
     border-radius: 0;
+    background-color: #eee;
 }
 
 .form-group.submit-button.submit-produit {

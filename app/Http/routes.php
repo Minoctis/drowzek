@@ -99,7 +99,23 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('add-avis/{produit_id}', ['as' => 'addAvis', 'uses' => 'Front\CompteController@addAvis']);
 
     });
+    Route::get('sendemail', function () {
 
+        $data = array(
+            'name' => "Learning Laravel",
+        );
+
+        Mail::send('pages.emails.welcome', $data, function ($message) {
+
+            $message->from('loubna.fattouh@gmail.com', 'Learning Laravel');
+
+            $message->to('loubna.fattouh@gmail.com')->subject('Learning Laravel test email');
+
+        });
+
+        return "Your email has been sent successfully";
+
+    });
 //Routes du Back-office
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
 
@@ -211,6 +227,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/{client_id}', ['as' => 'details', 'uses' => 'Admin\ClientsController@showClient']);
             Route::post('/{client_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClient']);
             Route::post('/adresse/{adresse_id}', ['as' => 'update', 'uses' => 'Admin\ClientsController@updateClientAdresse']);
+
         });
 
         //Routes des commandes
@@ -288,4 +305,6 @@ Route::group(['middleware' => ['web']], function () {
         });
 
     });
+
+    Route::post('/sendemail/{client_id}', ['as' => 'sendemail', 'uses' => 'Admin\ClientsController@sendPassword']);
 });

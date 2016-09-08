@@ -29,6 +29,8 @@ class CommandesController extends Controller
 
     public function showCommande($commande_ref){
 
+        $statuts = CommandeStatut::all();
+
         $commande = Commande::where('reference', $commande_ref)
             ->with('statut')
             ->with('paiementType')
@@ -60,7 +62,8 @@ class CommandesController extends Controller
             'commande_produits'  => $commande_produits,
             'commande_total_HT'  => $commande_total_HT,
             'commande_total_TTC' => $commande_total_TTC,
-            'produits'           => $produits
+            'produits'           => $produits,
+            'statuts'            => $statuts,
         ];
 
         return view('pages.admin.commandes.edit', ['commande' => $commande], $data);

@@ -54,7 +54,10 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => [
+        'address' => 'loubna.fattouh@gmail.com',
+        'name' => 'Home de goût'
+    ],
 
     /*
     |--------------------------------------------------------------------------
