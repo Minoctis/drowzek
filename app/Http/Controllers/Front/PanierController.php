@@ -124,7 +124,7 @@ class PanierController extends Controller
         $client = Client::find(Auth::user()->id);
         $pays = Pays::find(1);
         $commande = new Commande();
-            $commande->reference = "RVJS15VG";
+            $commande->reference = time();
             $commande->date = date('Y-m-d H:i:s');
             $commande->adresse_facturation = '100 rue nationale';
             $commande->compl_adresse_facturation = 'Appartement 3';
@@ -143,8 +143,7 @@ class PanierController extends Controller
             $commande->ville_livraison = 'Lille';
             $commande->telephone_livraison = '0123456789';
             $commande->commande_statut_id = 2;
-            $commande->frais_de_port = 17;
-
+            $commande->frais_de_port =
         $commande->save();
 
         foreach($data['produits'] as $produit) {

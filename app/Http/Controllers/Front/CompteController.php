@@ -10,6 +10,7 @@ use App\Models\CommandeProduit;
 use App\Models\CommandeStatut;
 use App\Models\Produit;
 use Auth;
+use DB;
 use Debugbar;
 use Hash;
 use Illuminate\Http\Request;
@@ -158,7 +159,6 @@ class CompteController extends Controller
         $this->validate($request, [
             'adressename'         => 'required',
             'adresse'             => 'required',
-            'comp-adresse'        => 'required',
             'cp'                  => 'required',
             'ville'               => 'required',
             'nom'                 => 'required',
@@ -166,24 +166,27 @@ class CompteController extends Controller
             'tel'                 => 'required'
         ]);
 
-        Adresse::create([
-            'client_id' => Auth::user()->id,
-            'adresse_type_id' => 1,
-            'nom_carnet_adresse' => $request->input('adressename'),
-            'adresse' => $request->input('adresse'),
-            'pays_id' => 1,
-            'compl_adresse' => $request->input('comp-adresse'),
-            'societe' => $request->input('societe'),
-            'cp' => $request->input('cp'),
-            'ville' => $request->input('ville'),
-            'nom_livraison' => $request->input('nom'),
-            'prenom_livraison' => $request->input('prenom'),
-            'telephone' => $request->input('tel'),
-        ]);
+        $client_id = Auth::user()->id;
+
+        $adresse = new Adresse;
+
+        $adresse->client_id = $client_id;
+        $adresse->adresse_type_id = 1;
+        $adresse->nom_carnet_adresse = $request->input('adressename');
+        $adresse->adresse = $request->input('adresse');
+        $adresse->pays_id = 1;
+        $adresse->compl_adresse = $request->has('comp-adresse') ? $request->input('comp-adresse') : '';
+        $adresse->societe = $request->has('societe') ? $request->input('societe') : '';
+        $adresse->cp = $request->input('cp');
+        $adresse->ville = $request->input('ville');
+        $adresse->nom_livraison = $request->input('nom');
+        $adresse->prenom_livraison = $request->input('prenom');
+        $adresse->telephone = $request->input('tel');
+        $adresse->save();
 
         $url = URL::route('compte::accueil') . '#adresses';
 
-        return redirect()->route($url);
+        return redirect($url);
     }
 
     public function editAdresse(Request $request) {

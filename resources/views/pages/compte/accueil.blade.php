@@ -130,8 +130,8 @@
 
 						<!-- Société -->
 						<div class="form-group">
-							<label class="control-label" for="add-societe">Société <span>*</span></label>
-							<input class="form-control" id="add-societe" name="societe" type="text" required>
+							<label class="control-label" for="add-societe">Société</label>
+							<input class="form-control" id="add-societe" name="societe" type="text">
 						</div>
 
 						<!-- Prénom -->
@@ -154,8 +154,8 @@
 
 						<!-- Adresse ligne 2 -->
 						<div class="form-group">
-							<label class="control-label" for="add-comp-adresse">Complément d'adresse <span>*</span></label>
-							<input class="form-control" id="add-comp-adresse" name="comp-adresse" type="text" required>
+							<label class="control-label" for="add-comp-adresse">Complément d'adresse</label>
+							<input class="form-control" id="add-comp-adresse" name="comp-adresse" type="text">
 						</div>
 
 						<!-- Code postale -->
