@@ -24,12 +24,14 @@
 			<div class="row">
 				<div class="col-md-12 col-xs-12 checkout">
 					<div class="title-checkout-panel">
-						<h3>Merci pour votre commande N</h3>
+						<h3>Merci pour votre commande</h3>
 					</div>
 					 
 					 <div class="row">
-					 	<p>Vous avez effectué une commande d'un montant de {{ round($total_ht, 2) + round($total_tva, 2) + 17 }} € sur notre boutique homedegout.com par carte bancaire.</p>
-					 	<p>Vous pouvez accéder à tout moment au suivi de votre commande et télécharger votre facture dans <a href="{{ route('compte::accueil') }}#commandes">Historique commandes </a>de la rubrique <a href="{{ route('compte::accueil') }}">Mon compte</a> sur notre site.</p>
+						 <div class="col-xs-12">
+							 <p>Vous avez effectué une commande d'un montant de {{ round($total_ht, 2) + round($total_tva, 2) + 17 }} € sur notre boutique homedegout.com par carte bancaire.</p>
+							 <p>Vous pouvez accéder à tout moment au suivi de votre commande et télécharger votre facture dans <a href="{{ route('compte::accueil') }}#commandes">Historique commandes </a>de la rubrique <a href="{{ route('compte::accueil') }}">Mon compte</a> sur notre site.</p>
+						 </div>
 					 </div>
 						<!-- mode1 -->
 						
