@@ -56,7 +56,7 @@
                                                     <h4 class="title-produit">{{ $produit->produit_libelle }}</h4>
                                                     <p class="options">Matières : {{ $produit->option_libelle }}</p>
                                                     <p class="qte">Quantité : {{ $produit->quantite }}</p>
-                                                    <p class="price">Prix : {{ $produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite) }}€</p>
+                                                    <p class="price">Prix : {{ round($produit->prix_unitaire_ht * $produit->quantite + ($produit->taux_tva->valeur / 100 * $produit->prix_unitaire_ht * $produit->quantite), 2) }}€</p>
                                                 </div>
 
                                                 @foreach($produits as $commande_produit)
@@ -138,25 +138,25 @@
                                         <table class="table">
                                             <tr>
                                                 <td>Frais de port :</td>
-                                                <td>{{ $detail_commande->frais_de_port }} €</td>
+                                                <td>{{ round($detail_commande->frais_de_port, 2) }} €</td>
                                             </tr>
                                             <tr>
                                                 <td>Total HT :</td>
-                                                <td>{{ $commande_total_HT }} €</td>
+                                                <td>{{ round($commande_total_HT, 2) }} €</td>
                                             </tr>
                                             <tr>
                                                 <td>Total TTC :</td>
-                                                <td>{{ $commande_total_TTC }} €</td>
+                                                <td>{{ round($commande_total_TTC, 2) }} €</td>
                                             </tr>
                                             <tr>
                                                 <td>Dont TVA :</td>
-                                                <td>{{ $commande_total_TTC - $commande_total_HT }} €</td>
+                                                <td>{{ round($commande_total_TTC - $commande_total_HT, 2) }} €</td>
                                             </tr>
 
                                             <!-- Montant Total -->
                                             <tr class="last">
                                                 <td>Montant Total :</td>
-                                                <td>{{ $commande_total_TTC + $detail_commande->frais_de_port }} €</td>
+                                                <td>{{ round($commande_total_TTC + $detail_commande->frais_de_port, 2) }} €</td>
                                             </tr>
                                             <!-- Fin Montant Total -->
 

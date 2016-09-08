@@ -53,7 +53,7 @@
             <td>{{ $produit->produit_libelle }}</td>
             <td>{{ $produit->quantite }}</td>
             <td>{{ $produit->option_libelle }}</td>
-            <td>{{ $produit->prix_unitaire_ht }}</td>
+            <td>{{ round($produit->prix_unitaire_ht, 2) }}</td>
         </tr>
         @endforeach
         </tbody>
@@ -61,7 +61,7 @@
         <tr>
             <td colspan="3">− Payé par {{ $commande->paiementType->libelle }} −</td>
             <td>Total:</td>
-            <td>{{ $commande_total_TTC }}</td>
+            <td>{{ round($commande_total_TTC, 2) }}</td>
         </tr>
         </tfoot>
     </table>
