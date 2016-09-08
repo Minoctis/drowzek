@@ -44,9 +44,11 @@
 							</div>
 							<div class="panel-body">
 								<a href="#" class="update-adresse">Mettre à jour</a>
+								<?php $countLivraison = 0 ?>
 								@foreach($client->adresses as $adresse)
-									@if($adresse->adresse_type_id === 1)
+									@if($adresse->adresse_type_id === 1 && $countLivraison == 0)
 							    	@include('elements.adresses-facturation')
+										<?php $countLivraison++ ?>
 									@endif
 							    @endforeach
 							</div>
@@ -71,9 +73,11 @@
 							</div>
 							<div class="panel-body">
 								<a href="#" class="update-adresse">Mettre à jour</a>
+								<?php $countFacturation = 0; ?>
 								@foreach($client->adresses as $adresse)
-											@if($adresse->adresse_type_id === 2)
+											@if($adresse->adresse_type_id === 2 && $countFacturation == 0)
 									    	@include('elements.adresses-facturation')
+												<?php $countFacturation++; ?>
 											@endif
 									    @endforeach
 							</div>
