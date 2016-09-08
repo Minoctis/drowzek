@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 @section('title', 'Modifier le produit : ' .$produit->nom)
 @section('content')
-    <div class="row">
+    <div class="row" style="
+    background-color: white;
+    border: 1px solid #ddd;
+">
         <div class="col-xs-12">
             <div class="admin-bloc">
                 <form method="POST">

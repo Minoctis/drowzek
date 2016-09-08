@@ -31,6 +31,8 @@ class CommandesController extends Controller
 
         $statuts = CommandeStatut::all();
 
+        $pays = Pays::get();
+
         $commande = Commande::where('reference', $commande_ref)
             ->with('statut')
             ->with('paiementType')
@@ -64,6 +66,7 @@ class CommandesController extends Controller
             'commande_total_TTC' => $commande_total_TTC,
             'produits'           => $produits,
             'statuts'            => $statuts,
+            'pays'              => $pays
         ];
 
         return view('pages.admin.commandes.edit', ['commande' => $commande], $data);
@@ -121,5 +124,40 @@ class CommandesController extends Controller
         $commandes = $commandes->get();
 
         return Response::json(["commandes" => $commandes, "commande_statuts" => $commande_statuts], 200);
+    }
+
+    public function updateAdresseCommande($commande_id, Request $request){
+        $commande = Commande::where()->get();
+
+        //die(var_dump($request->all()));
+        //Validation
+
+        $data = array(
+            'commande_id'               => 'required',
+            'societe_livraison'         => '',
+            'adresse_livraison'         => 'required',
+            'compl_adresse_livraison'   => '',
+            'ville_livraison'           => 'required',
+            'pays_livraison'            => 'required',
+            'tel_livraison'             => 'required',
+        );
+
+        $validation = Validator::make($request->all(), $data);
+
+
+
+        //Update des données
+        $commande = Commande::find($request->commande_id);
+
+        $commande->societe_livraison = $request->societe_livraison;
+        $commande->adresse_livraison            = $request->adresse_livraison;
+        $commande->compl_adresse_livraison      = $request->compl_adresse_livraison;
+        $commande->ville_livraison            = $request->ville_livraison;
+        $commande->pays_livraison                 = $request->pays_livraison;
+        $commande->tel_livraison              = $request->tel_livraison;
+
+        $commande->save();
+
+        return Redirect::to(URL::previous());
     }
 }

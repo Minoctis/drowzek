@@ -2,6 +2,11 @@ body{
     background-color: #F2F2F2;
 }
 
+
+.breadcrumb{
+    top: auto !important;
+}
+
 #main-nav {
     border-radius: 0;
 }

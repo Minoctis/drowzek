@@ -5,6 +5,7 @@
         <div class="row" style="
     background-color: white;
     border: 1px solid #ddd;
+    padding: 10px 15px;
 ">
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -27,7 +28,7 @@
                             <td>{{$client->email}}</td>
 
                             <td><a href="{{ route('admin::clients::details', $client->id) }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Modifier</a></td>
-                            <td><a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></td>
+                            <td><!--a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Supprimer</a--></td>
                         </tr>
                     @endforeach
                     </tbody>

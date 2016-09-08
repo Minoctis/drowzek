@@ -32,10 +32,8 @@ class ThemeController extends Controller
     }
 
     public function updateSlide($id, Request $request) {
-        die(var_dump($request->all()));
+        //die(var_dump($request->all()));
         //Validation
-
-
 
         $data = array(
             'titre' => 'required',

@@ -67,7 +67,7 @@
                                 Adresse de livraison
                             </div>
                             <div class="panel-body">
-                                <a href="" class="update-button">Modifier</a>
+                                <a href="" class="update-button"  data-toggle="modal" data-target="#update-adresse-livraison">Modifier</a>
                                 <ul>
                                     <li>
                                         <span class="adresse">{{ $commande->adresse_livraison }}</span>
@@ -88,7 +88,79 @@
                                     <li>
                                         <span class="tel">{{$commande->telephone_livraison}}</span>
                                     </li>
+
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="update-adresse-livraison" tabindex="-1" role="dialog" aria-labelledby="update-adresse-livraison-label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="update-slide-label">Modifier l'adresse</h4>
+                                    </div>
+
+
+                                    <form action="{{ $commande->reference }}/adresse_livraison" method="POST">
+                                        {{ csrf_field() }}
+                                        <div class="modal-body">
+                                            <div class="form-update-adresse">
+
+                                                <input type="text" name="commande_id" value="{{ $commande->id }}" style="display: none;">
+                                                <!-- Société -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="societe">Société :</label><br>
+                                                    <input type="text" value="{{ $commande->societe_livraison }}" name="societe_livraison">
+                                                </div>
+
+                                                <!-- Adresse -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="adresse">Adresse : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->adresse_livraison }}" name="adresse_livraison">
+                                                </div>
+
+                                                <!-- Compl adresse -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="compl_adresse">Complément d'adresse :</label><br>
+                                                    <input type="text" value="{{ $commande->compl_adresse_livraison }}" name="compl_adresse_livraison">
+                                                </div>
+
+                                                <!-- Ville -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="ville">Ville : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->ville_livraison }}" name="ville_livraison">
+                                                </div>
+
+                                                <!-- Pays -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="pays">Pays : <span>*</span></label><br>
+                                                    <select name="pays_livraison" id="">
+                                                        @foreach($pays as $pays_adresse)
+                                                            <option value="{{ $pays_adresse->id }}">{{$pays_adresse->libelle}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                                <!-- Tél -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="ville">Téléphone : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->telephone_livraison }}" name="tel_livraison">
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="pull-right">
+                                                <button class="btn bnt-default" data-dismiss="modal">Annuler</button>
+                                                <!-- Bouton valider -->
+                                                <div class="form-group submit-button" style="float: right;">
+                                                    <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +171,7 @@
                                 Adresse de facturation
                             </div>
                             <div class="panel-body">
-                                <a href="" class="update-button">Modifier</a>
+                                <a href="" class="update-button" data-toggle="modal" data-target="#update-adresse-facturation">Modifier</a>
                                 <ul>
                                     <li>
                                         <span class="adresse">{{ $commande->adresse_facturation }}</span>
@@ -121,6 +193,74 @@
                                         <span class="tel">{{$commande->telephone_facturation}}</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="update-adresse-facturation" tabindex="-1" role="dialog" aria-labelledby="update-adresse-facturation-label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="update-slide-label">Modifier l'adresse</h4>
+                                    </div>
+                                    <form action="" method="POST">
+                                        {{ csrf_field() }}
+                                        <div class="modal-body">
+                                            <div class="form-update-adresse">
+                                                <!-- Société -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="societe">Société :</label><br>
+                                                    <input type="text" value="{{ $commande->societe_facturation }}" name="societe_facturation">
+                                                </div>
+
+
+                                                <!-- Adresse -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="adresse">Adresse : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->adresse_facturation }}" name="adresse_facturation">
+                                                </div>
+
+                                                <!-- Compl adresse -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="compl_adresse">Complément d'adresse :</label><br>
+                                                    <input type="text" value="{{ $commande->compl_adresse_facturation }}" name="compl_adresse_facturation">
+                                                </div>
+
+                                                <!-- Ville -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="ville">Ville : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->ville_facturation }}" name="ville_facturation">
+                                                </div>
+
+                                                <!-- Pays -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="pays">Pays : <span>*</span></label><br>
+                                                    <select name="pays_facturation" id="">
+                                                        @foreach($pays as $pays_adresse)
+                                                            <option value="{{ $pays_adresse->id }}">{{$pays_adresse->libelle}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                                <!-- Tél -->
+                                                <div class="form-group">
+                                                    <label class="control-label" for="ville">Téléphone : <span>*</span></label><br>
+                                                    <input type="text" value="{{ $commande->telephone_livraison }}" name="tel_facturation">
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="pull-right">
+                                                <button class="btn bnt-default" data-dismiss="modal">Annuler</button>
+                                                <!-- Bouton valider -->
+                                                <div class="form-group submit-button" style="float: right;">
+                                                    <input class="hdg-button-small" id="submit" name="submit" type="submit" value="Mettre à jour" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

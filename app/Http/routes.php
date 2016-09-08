@@ -245,6 +245,11 @@ Route::group(['middleware' => ['web']], function () {
             Route::put('{id}/statut', ['as' => 'updateStatut', 'uses' => 'Admin\CommandesController@updateStatut']);
 
             Route::post('/recherche', ['as' => 'recherche', 'uses' => 'Admin\CommandesController@rechercheCommande']);
+
+            Route::post('/{commande_ref}/adresse_livraison', ['as' => 'updateAdresseLivraison', 'uses' => 'Admin\CommandesController@updateAdresseCommande']);
+
+
+
         });
 
         //Routes des avis
