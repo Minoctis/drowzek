@@ -23,7 +23,7 @@
 				<li class="active"><a data-toggle="tab" href="#accueil"><i class="fa fa-home"></i> Accueil de mon compte</a></li>
 				<li><a data-toggle="tab" href="#commandes">Mes commandes</a></li>
 				<li><a data-toggle="tab" href="#adresses">Mes adresses</a></li>
-				<li><a data-toggle="tab" href="#favorites">Mes produits enregistrés</a></li>
+				<!-- <li><a data-toggle="tab" href="#favorites">Mes produits enregistrés</a></li>-->
 				<li><a data-toggle="tab" href="#infos"><i class="fa fa-user"></i> Mes informations personnelles</a></li>
 			</ul>
 		</div>

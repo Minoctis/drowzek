@@ -82,7 +82,7 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<a class="add-to-wishlist" href="#"><i class="fa fa-heart"></i> Coup de coeur</a>
+						<!--<a class="add-to-wishlist" href="#"><i class="fa fa-heart"></i> Coup de coeur</a>-->
 					</div>
 				</div>
 

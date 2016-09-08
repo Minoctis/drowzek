@@ -46,7 +46,7 @@
                                         <p>{{ $produit->produit->nom }}</p>
                                         categorie: {{ $produit->produit->categorie->nom }}<br>
                                         disponible en plusieurs coloris<br>
-                                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link delete-produit" data-id="{{ $produit->id }}" href="#">supprimer</a></span>
+                                        <!-- <span><a class="link" href="#">Sauvegarder</a> <span> |--> </span> <a class="link delete-produit" data-id="{{ $produit->id }}" href="#">supprimer</a></span>
                                     </div>
                                 </div>
 
@@ -93,11 +93,11 @@
             <div class="row">
                 <div class="sub-title-content-commande col-md-4 col-xs-12">
                     <div class="actions-panier">
-                        <span><a class="link" href="#">Sauvegarder</a> <span> | </span> <a class="link" href="#">Vider le panier</a></span>
+                       <!-- <span><a class="link" href="#">Sauvegarder</a> <span> |--> </span> <a class="link" href="#">Vider le panier</a></span>
                     </div>
-                    <div class="code-promo">
-                        <span><a class="link" href="#">Code remise ou promotion ?</a> <span>
-                    </div>
+                    <!--<div class="code-promo">
+                         <span><a class="link" href="#">Code remise ou promotion ?</a> <span>
+                    </div> -->
                 </div>
                 <div class="recap-infos col-md-8 col-xs-12">
                     <div class="table-responsive">
